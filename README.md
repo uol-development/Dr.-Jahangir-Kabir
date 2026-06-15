@@ -11,7 +11,7 @@ Everything is plain HTML/CSS with a tiny bit of vanilla JS.
 ## Structure
 
 ```
-jk-lifestyle-website/
+dr jahangir kabir/
 ├── index.html        ← the homepage (the full clone)
 ├── about.html        ┐
 ├── six-pillars.html  │  inner pages — same header/footer, branded content
