@@ -1,0 +1,12 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.vscode/
+.idea/
+
+# Build/preview artifacts
+images/_*.png
+*.log

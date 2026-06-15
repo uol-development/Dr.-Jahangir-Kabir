@@ -1,0 +1,168 @@
+/* =========================================================================
+   Shared header + footer (single source of truth) and small interactions.
+   Each page has <header id="site-header"></header> and
+   <footer id="site-footer"></footer>; the body carries data-page="home"
+   (etc.) so the matching nav item is highlighted.
+   ========================================================================= */
+
+const NAV_LINKS = [
+  { key: "home",        label: "Home",                    href: "index.html" },
+  { key: "about",       label: "About Dr. Jahangir Kabir", href: "about.html" },
+  { key: "six-pillars", label: "The Six Pillars",          href: "six-pillars.html" },
+  { key: "ecosystem",   label: "Ecosystem",                href: "ecosystem.html" },
+  { key: "programs",    label: "Programs",                 href: "programs.html" },
+  { key: "blog",        label: "Blog",                     href: "blog.html" },
+  { key: "contact",     label: "Contact",                  href: "contact.html" },
+];
+
+const LOGO_SVG = `
+<svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <rect x="1.5" y="1.5" width="45" height="45" rx="12" stroke="#c9a05c" stroke-width="1.5"/>
+  <path d="M17 13v13.5c0 3.6-1.8 5.5-4.6 5.5-1.6 0-2.9-.6-3.8-1.6" stroke="#f4efe4" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <path d="M25 13v22M25 24l9-11M27 24l9 11" stroke="#f4efe4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M33 9c2.6.4 4.6 2.2 5 4.8-2.6-.4-4.6-2.2-5-4.8z" fill="#c9a05c"/>
+</svg>`;
+
+const ICON = {
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  menu:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
+  close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  pin:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>',
+  mail:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+  facebook:  '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-3.5 1.4-3.5 3.6V11H8v3h2.5v7h3v-7H16l.5-3h-3V9.8c0-.6.3-.8 1-.8z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
+  youtube:   '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.6 7.9.6 7.9.6s6 0 7.9-.6a3 3 0 0 0 2.1-2.1c.3-1.3.4-2.5.4-3.8s-.1-2.5-.4-3.8zM10 15V9l5.2 3z"/></svg>',
+  linkedin:  '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5h-3V21h3V8.5zM5 3.5A1.8 1.8 0 1 0 5 7a1.8 1.8 0 0 0 0-3.5zM21 21h-3v-6.4c0-1.6-.6-2.6-2-2.6-1.1 0-1.7.7-2 1.5-.1.2-.1.6-.1.9V21h-3V8.5h3v1.7c.4-.7 1.2-1.7 3-1.7 2.2 0 3.8 1.4 3.8 4.5V21z"/></svg>',
+};
+
+const badge = (icon) => `<span class="badge">${icon}</span>`;
+
+function buildHeader(active) {
+  const links = NAV_LINKS
+    .map((l) => `<a href="${l.href}"${l.key === active ? ' class="is-active"' : ""}>${l.label}</a>`)
+    .join("");
+  return `
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Dr. Jahangir Kabir — home">
+      ${LOGO_SVG}
+      <span>
+        <span class="brand__name">Dr. Jahangir Kabir</span>
+        <span class="brand__tag">Lifestyle Medicine Physician | Educator | Founder</span>
+      </span>
+    </a>
+    <nav class="nav" id="primary-nav" aria-label="Primary">${links}</nav>
+    <div class="header-cta">
+      <a class="btn btn--gold" href="contact.html">Start Your Health Journey ${badge(ICON.arrow)}</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">${ICON.menu}</button>
+    </div>
+  </div>`;
+}
+
+function buildFooter() {
+  const quick = [
+    ["About Dr. Jahangir Kabir", "about.html"],
+    ["The Six Pillars", "six-pillars.html"],
+    ["Ecosystem", "ecosystem.html"],
+    ["Programs", "programs.html"],
+    ["Blog", "blog.html"],
+    ["Contact", "contact.html"],
+  ];
+  const orgs = [
+    ["Health Revolution", "ecosystem.html"],
+    ["Ultimate Organic Life", "ecosystem.html"],
+    ["JK Fitness Arena", "ecosystem.html"],
+    ["JK Food Arena", "ecosystem.html"],
+    ["JK Prokriti Krishi", "ecosystem.html"],
+  ];
+  const li = (rows) => rows.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join("");
+  return `
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Dr. Jahangir Kabir — home">
+          ${LOGO_SVG}
+          <span>
+            <span class="brand__name">Dr. Jahangir Kabir</span>
+            <span class="brand__tag">Lifestyle Medicine Physician | Educator | Founder</span>
+          </span>
+        </a>
+        <p class="footer-about">Dedicated to helping people build better health through education, lifestyle guidance, and sustainable wellbeing.</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook">${ICON.facebook}</a>
+          <a href="#" aria-label="Instagram">${ICON.instagram}</a>
+          <a href="#" aria-label="YouTube">${ICON.youtube}</a>
+          <a href="#" aria-label="LinkedIn">${ICON.linkedin}</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>${li(quick)}</ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Our Organizations</h5>
+        <ul>${li(orgs)}</ul>
+      </div>
+
+      <div class="footer-col contact">
+        <h5>Contact Information</h5>
+        <ul class="contact-list">
+          <li>${ICON.pin}<span>House: 2/BT, Noor Tower (Block D),<br>Road: 01, Sector: 02, Aftabnagar,<br>Dhaka-1212</span></li>
+          <li>${ICON.phone}<span>+880 9678 242404</span></li>
+          <li>${ICON.mail}<span>info@jklifestyle.com</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h5>Newsletter</h5>
+        <p>Get practical health tips, updates, and inspiration.</p>
+        <form onsubmit="return false;">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input id="footer-email" type="email" placeholder="Your Email Address" autocomplete="email">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2025 Dr. Jahangir Kabir. All Rights Reserved.</span>
+      <span class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </span>
+    </div>
+  </div>`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const active = document.body.dataset.page || "home";
+
+  const header = document.getElementById("site-header");
+  if (header) {
+    header.className = "site-header";
+    header.innerHTML = buildHeader(active);
+  }
+
+  const footer = document.getElementById("site-footer");
+  if (footer) {
+    footer.className = "site-footer";
+    footer.innerHTML = buildFooter();
+  }
+
+  // Mobile nav toggle
+  const toggle = document.getElementById("nav-toggle");
+  const nav = document.getElementById("primary-nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.innerHTML = open ? ICON.close : ICON.menu;
+    });
+  }
+
+  // Expose icons for inline page use if needed
+  window.SITE_ICON = ICON;
+});
