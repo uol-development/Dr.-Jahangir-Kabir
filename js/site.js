@@ -110,8 +110,8 @@ function buildFooter() {
         <h5>Contact Information</h5>
         <ul class="contact-list">
           <li>${ICON.pin}<span>House: 2/BT, Noor Tower (Block D),<br>Road: 01, Sector: 02, Aftabnagar,<br>Dhaka-1212</span></li>
-          <li>${ICON.phone}<span>+880 9678 242404</span></li>
-          <li>${ICON.mail}<span>info@jklifestyle.com</span></li>
+          <li>${ICON.phone}<a href="tel:+8809678242404">+880 9678 242404</a></li>
+          <li>${ICON.mail}<a href="mailto:info@jklifestyle.com">info@jklifestyle.com</a></li>
         </ul>
       </div>
 
