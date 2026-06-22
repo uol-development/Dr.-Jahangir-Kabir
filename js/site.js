@@ -7,7 +7,7 @@
 
 const NAV_LINKS = [
   { key: "home",        label: "Home",                    href: "index.html" },
-  { key: "about",       label: "About Dr. Jahangir Kabir", href: "about.html" },
+  { key: "about",       label: "About",                    href: "about.html" },
   { key: "5-pillars", label: "5 Pillars",          href: "5-pillars.html" },
   { key: "ecosystem",   label: "Ecosystem",                href: "ecosystem.html" },
   { key: "programs",    label: "Programs",                 href: "programs.html" },
@@ -51,7 +51,7 @@ function buildHeader(active) {
         <span class="brand__tag">Lifestyle Medicine Physician | Educator | Founder</span>
       </span>
     </a>
-    <nav class="nav" id="primary-nav" aria-label="Primary">${links}</nav>
+    <nav class="nav" id="primary-nav" aria-label="Primary">${links}<a class="btn btn--gold nav__cta" href="contact.html">Start Your Health Journey ${badge(ICON.arrow)}</a></nav>
     <div class="header-cta">
       <a class="btn btn--gold" href="contact.html">Start Your Health Journey ${badge(ICON.arrow)}</a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">${ICON.menu}</button>
@@ -62,7 +62,7 @@ function buildHeader(active) {
 function buildFooter() {
   const quick = [
     ["About Dr. Jahangir Kabir", "about.html"],
-    ["The Six Pillars", "six-pillars.html"],
+    ["The Five Pillars", "5-pillars.html"],
     ["Ecosystem", "ecosystem.html"],
     ["Programs", "programs.html"],
     ["Blog", "blog.html"],
