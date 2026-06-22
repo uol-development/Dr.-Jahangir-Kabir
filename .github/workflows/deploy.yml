@@ -28,4 +28,5 @@ jobs:
             **/.github/**
             **/.vscode/**
             README.md
+            website-concept.md
             **/*.log

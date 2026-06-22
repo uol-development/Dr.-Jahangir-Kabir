@@ -250,12 +250,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   box-shadow: var(--shadow-lg);
   border: 1px solid rgba(255, 255, 255, .06);
 }
-.hero__portrait .photo,
+.photo,
 .photo-fallback {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
 }
+.hero__portrait .photo { object-position: 58% center; }
 .photo-fallback {
   display: grid; place-items: center;
   background:
@@ -322,6 +323,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   box-shadow: var(--shadow-md);
   z-index: 2;
 }
+.about__photo .frame .photo { object-position: 60% 30%; }
+.about__photo .frame::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(18, 35, 25, .04), rgba(26, 55, 37, .5));
+  mix-blend-mode: multiply; z-index: 3; pointer-events: none;
+}
 .about__photo .leaf-deco {
   position: absolute;
   left: -30px; bottom: -26px;
@@ -330,6 +337,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .about h2 { font-size: clamp(1.8rem, 2.8vw, 2.3rem); }
 .about__lead { color: var(--muted-light); }
+.credline {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: .82rem; font-weight: 600; color: var(--green-700);
+  background: #eaf1ea; border: 1px solid #d7e4d8;
+  padding: 8px 14px; border-radius: 999px; margin: 0 0 20px;
+}
+.credline svg { width: 16px; height: 16px; color: var(--green-600); flex: none; }
 
 .pillars {
   display: grid;
@@ -554,23 +568,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .media-seminar svg { width: 70px; height: 70px; }
 
-/* Product trio placeholder */
+/* Product showcase (real product photography) */
+.feat-card .media--products { aspect-ratio: auto; background: linear-gradient(180deg, #fbf9f3, #f1ece0); }
 .products {
-  display: flex; align-items: flex-end; justify-content: center; gap: 16px;
-  width: 100%; height: 100%;
-  background: linear-gradient(180deg, #f7f3ea, #efe8d8);
+  display: grid; grid-template-columns: repeat(4, 1fr); align-items: center;
+  gap: 8px; width: 100%; padding: 20px 16px;
 }
-.jar {
-  width: 78px; border-radius: 10px 10px 6px 6px;
-  background: linear-gradient(180deg, #1d3a26, #0f2014);
-  border: 1px solid rgba(0, 0, 0, .15);
-  box-shadow: var(--shadow-md);
-  display: flex; align-items: flex-end; justify-content: center;
-  position: relative;
+.products img {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform .25s ease;
 }
-.jar::before { content: ""; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 46px; height: 12px; border-radius: 6px; background: #c9a05c; }
-.jar .label { width: 64px; margin-bottom: 16px; padding: 10px 0; border-radius: 4px; background: rgba(255, 255, 255, .92); color: #16301f; font-size: .5rem; text-align: center; letter-spacing: .1em; font-weight: 700; }
-.jar.j1 { height: 150px; } .jar.j2 { height: 178px; background: linear-gradient(180deg, #3a2f12, #1b1607);} .jar.j3 { height: 138px; background: linear-gradient(180deg, #20415a, #102233);}
+.products img:hover { transform: translateY(-6px) scale(1.03); }
 
 /* =========================================================================
    CHALLENGE BANNER
@@ -580,7 +589,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: #fff;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(12, 26, 16, .55), rgba(12, 26, 16, .75)),
+    linear-gradient(180deg, rgba(12, 26, 16, .72) 0%, rgba(12, 26, 16, .82) 100%),
+    url("../images/fitness.jpg") center 30% / cover no-repeat,
     radial-gradient(120% 140% at 50% 0%, #c9a05c 0%, #4d6b3f 26%, #1c3a26 55%, #0f2014 100%);
 }
 .challenge__inner { padding: 64px 0; }
