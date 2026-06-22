@@ -1,0 +1,31 @@
+name: Deploy to cPanel via FTP
+
+# Runs automatically every time you push to the main branch
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:   # also lets you run it manually from the Actions tab
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Upload to hosting via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:    ${{ secrets.FTP_SERVER }}
+          username:  ${{ secrets.FTP_USERNAME }}
+          password:  ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          protocol: ftps
+          # Files that should NOT be uploaded to the live site:
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/.vscode/**
+            README.md
+            **/*.log

@@ -8,7 +8,7 @@
 const NAV_LINKS = [
   { key: "home",        label: "Home",                    href: "index.html" },
   { key: "about",       label: "About Dr. Jahangir Kabir", href: "about.html" },
-  { key: "six-pillars", label: "The Six Pillars",          href: "six-pillars.html" },
+  { key: "5-pillars", label: "5 Pillars",          href: "5-pillars.html" },
   { key: "ecosystem",   label: "Ecosystem",                href: "ecosystem.html" },
   { key: "programs",    label: "Programs",                 href: "programs.html" },
   { key: "blog",        label: "Blog",                     href: "blog.html" },
