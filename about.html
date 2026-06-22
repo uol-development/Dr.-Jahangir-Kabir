@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — Dr. Jahangir Kabir</title>
-  <meta name="description" content="A life dedicated to helping people live healthier lives through lifestyle-focused healthcare, education, and awareness.">
+  <meta name="description" content="Dr. Jahangir Kabir — MBBS (Chittagong Medical College, 2000) — has spent 25+ years on lifestyle-focused, preventive health education. A life dedicated to helping people live healthier lives.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .about-intro { display:grid; grid-template-columns:0.85fr 1.15fr; gap:48px; align-items:center; }
+    .about-intro .about__photo { max-width:380px; }
+    .disclaimer { max-width:760px; margin:0 auto; font-size:.84rem; color:var(--muted-light); border:1px dashed var(--line-light); border-radius:14px; padding:16px 20px; background:#fbf9f3; }
+    @media (max-width:860px){ .about-intro { grid-template-columns:1fr; gap:32px; } .about-intro .about__photo { max-width:300px; margin-inline:auto; } }
+  </style>
 </head>
 <body data-page="about">
   <header id="site-header"></header>
@@ -17,16 +23,88 @@
       <div class="container">
         <p class="crumbs">Home · About</p>
         <h1>About Dr. Jahangir Kabir</h1>
-        <p>A life dedicated to helping people live healthier lives through lifestyle-focused healthcare, education, and public awareness.</p>
+        <p>A life dedicated to helping people live healthier lives through lifestyle-focused education, research, and public awareness.</p>
       </div>
     </section>
-    <section class="page-body">
+
+    <section class="section" style="background:var(--cream)">
+      <div class="container about-intro">
+        <div class="about__photo">
+          <div class="frame">
+            <img class="photo" src="images/dr-hero.jpg" alt="Dr. Jahangir Kabir presenting at a health seminar" width="600" height="750" loading="lazy">
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow eyebrow--muted">Who is Dr. Jahangir Kabir?</p>
+          <h2>A Physician Devoted To Everyday Health</h2>
+          <span class="divider"></span>
+          <p class="credline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> MBBS, Chittagong Medical College (2000) &middot; 25+ years in lifestyle medicine</p>
+          <p class="text-muted">Dr. Jahangir Kabir is a physician, educator, and researcher, and one of Bangladesh's most recognised advocates of lifestyle-focused healthcare. For more than two decades he has worked to help people understand the connection between everyday choices and long-term wellbeing.</p>
+          <p class="text-muted">Throughout his years of practice he observed a recurring challenge: people were being treated for health concerns while still struggling with the lifestyle factors shaping their overall health. That realisation became a mission — to make preventive, evidence-informed health knowledge accessible to everyone.</p>
+          <a class="btn btn--dark" href="contact.html" style="margin-top:8px">Start Your Health Journey <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-dark section">
       <div class="container">
-        <p class="lede text-muted">Dr. Jahangir Kabir is a physician, educator, researcher, and one of Bangladesh's most recognized advocates of lifestyle-focused healthcare. For more than two decades he has worked to help people understand the connection between everyday choices and long-term wellbeing.</p>
-        <h2>The Philosophy</h2>
-        <p>Throughout his years of medical practice, he observed a recurring challenge: many individuals were receiving treatment for health concerns while continuing to struggle with the lifestyle factors influencing their overall wellbeing. This realization inspired years of study, education, and public awareness focused on healthier daily choices.</p>
-        <h2>A Movement, Not Just A Practice</h2>
-        <p>What began as a healthcare philosophy gradually evolved into the JK Lifestyle Ecosystem — a network of organizations where healthcare, nutrition, fitness, education, organic living, and community support work together toward a shared purpose.</p>
+        <div style="max-width:760px">
+          <p class="eyebrow">The Philosophy</p>
+          <h2>Better Health Is Built, Not Prescribed</h2>
+          <p style="color:var(--muted-dark); margin-top:14px">His approach rests on a simple idea: sustainable health comes from better daily choices — nutrition, movement, sleep, stress and habits — supported by, and never replacing, proper medical care. What began as a healthcare philosophy gradually grew into the JK Lifestyle Ecosystem, a network of organisations working toward a shared purpose.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="eco section" style="text-align:left">
+      <div class="container">
+        <p class="eyebrow eyebrow--muted" style="text-align:center">The Five Pillars</p>
+        <h2 style="text-align:center">The Foundations Of His Approach</h2>
+        <p class="eco__sub" style="text-align:center">A simple, repeatable framework for preventive, lifestyle-focused health.</p>
+        <div class="eco__grid" style="grid-template-columns:repeat(5,1fr)">
+          <article class="eco-card"><span class="eco-card__icon is-organic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-4 0-7 2-7 6 0 4 3 6 7 6s7-2 7-6c0-4-3-6-7-6z"/><path d="M12 8a4 4 0 0 1 4-4"/></svg></span><h3>Nutrition</h3><p>Everyday eating habits that support sustainable health.</p></article>
+          <article class="eco-card"><span class="eco-card__icon is-fitness"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="5" r="2"/><path d="M6 21l3-5 4 2 1 3M13 13l-2-3-4 1-2 3M13 13l4 1 2 4"/></svg></span><h3>Movement</h3><p>Consistent, accessible activity for strength and vitality.</p></article>
+          <article class="eco-card"><span class="eco-card__icon is-health"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg></span><h3>Sleep</h3><p>Restful, restorative sleep as a cornerstone of wellbeing.</p></article>
+          <article class="eco-card"><span class="eco-card__icon is-krishi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c5-3 8-6.5 8-11a4 4 0 0 0-8-1 4 4 0 0 0-8 1c0 4.5 3 8 8 11z"/></svg></span><h3>Stress</h3><p>Habits to manage stress and protect mental balance.</p></article>
+          <article class="eco-card"><span class="eco-card__icon is-food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9 14l2 2 4-4"/></svg></span><h3>Daily Habits</h3><p>Small choices that compound into lasting change.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact section">
+      <div class="container impact__grid">
+        <div class="impact__lead">
+          <p class="eyebrow">Selected Work &amp; Impact</p>
+          <h3>Two Decades Of Education And Awareness</h3>
+          <p>Every person reached and every healthier habit adopted reflects the true impact of this work.</p>
+        </div>
+        <div class="impact__stats">
+          <div class="impact-stat"><span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>25+ Years</b><span>Of Experience</span></div>
+          <div class="impact-stat"><span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="8" r="3.5"/><path d="M21 20v-2a4 4 0 0 0-3-3.9"/></svg></span><b>10 Lac+</b><span>People Reached</span></div>
+          <div class="impact-stat"><span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11"/></svg></span><b>5 Organisations</b><span>In The Ecosystem</span></div>
+          <div class="impact-stat"><span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></span><b>Nationwide</b><span>Community Impact</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--cream)">
+      <p class="disclaimer">Dr. Jahangir Kabir's work is focused on lifestyle education and preventive health. It is complementary to, and not a substitute for, professional medical care. For diagnosis, treatment, or any serious or urgent condition, please consult a qualified physician.</p>
+    </section>
+
+    <section class="final section">
+      <div class="container final__grid">
+        <div class="final__avatar">
+          <img class="photo" src="images/dr-hero.jpg" alt="Dr. Jahangir Kabir" width="150" height="150" loading="lazy">
+        </div>
+        <div class="final__text">
+          <p class="eyebrow">Join The Movement</p>
+          <h3>Better Health Begins With Better Choices</h3>
+          <p>Learn the lifestyle fundamentals, explore the ecosystem, and take a more active role in your long-term wellbeing.</p>
+        </div>
+        <div class="final__actions">
+          <a class="btn btn--gold" href="contact.html">Start Your Health Journey <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a class="btn btn--outline-light" href="ecosystem.html">Explore The Ecosystem <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
       </div>
     </section>
   </main>
