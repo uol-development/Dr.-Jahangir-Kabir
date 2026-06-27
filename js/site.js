@@ -136,6 +136,12 @@ function buildFooter() {
   </div>`;
 }
 
+function buildActionBar() {
+  return `
+  <a class="mobile-bar__icon" href="tel:+8809678242404" aria-label="Call">${ICON.phone}</a>
+  <a class="btn btn--gold mobile-bar__cta" href="contact.html">Get Started ${badge(ICON.arrow)}</a>`;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const active = document.body.dataset.page || "home";
 
@@ -149,6 +155,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (footer) {
     footer.className = "site-footer";
     footer.innerHTML = buildFooter();
+  }
+
+  // Mobile sticky action bar (thumb-reachable primary actions on phones)
+  if (!document.querySelector(".mobile-bar")) {
+    const bar = document.createElement("div");
+    bar.className = "mobile-bar";
+    bar.setAttribute("aria-label", "Quick actions");
+    bar.innerHTML = buildActionBar();
+    document.body.appendChild(bar);
   }
 
   // Mobile nav toggle

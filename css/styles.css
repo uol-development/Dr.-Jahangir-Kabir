@@ -71,7 +71,7 @@ p { margin: 0 0 1rem; }
 ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Helpers ---------- */
-.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: 24px; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: clamp(18px, 5vw, 24px); }
 .eyebrow {
   font-family: var(--sans);
   font-size: .72rem;
@@ -441,7 +441,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* Ecosystem orbit diagram */
 .orbit {
   position: relative;
-  width: 280px; height: 280px;
+  width: min(280px, 78vw); height: min(280px, 78vw);
   margin: 26px auto 30px;
 }
 .orbit__ring {
@@ -770,6 +770,32 @@ ul { margin: 0; padding: 0; list-style: none; }
 .page-body .lede { max-width: 760px; }
 .page-body h2 { font-size: 1.8rem; margin: 36px 0 14px; }
 .page-body p { color: var(--muted-light); max-width: 760px; }
+
+/* =========================================================================
+   MOBILE STICKY ACTION BAR — thumb-reachable primary actions on phones
+   ========================================================================= */
+.mobile-bar { display: none; }
+@media (max-width: 768px) {
+  .mobile-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(15, 31, 21, .97);
+    border-top: 1px solid var(--line-dark);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  .mobile-bar__icon {
+    display: grid; place-items: center; flex: none;
+    width: 50px; height: 50px; border-radius: 12px;
+    border: 1px solid rgba(201, 160, 92, .45);
+    background: rgba(255, 255, 255, .04);
+    color: var(--gold-soft);
+  }
+  .mobile-bar__icon svg { width: 22px; height: 22px; }
+  .mobile-bar__cta { flex: 1; justify-content: center; padding-left: 20px; }
+  body { padding-bottom: 76px; }
+}
 
 /* =========================================================================
    RESPONSIVE
