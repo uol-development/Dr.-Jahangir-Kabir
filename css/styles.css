@@ -356,8 +356,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
-  margin: 26px 0;
-  padding: 22px 4px;
+  margin: 12px 0;
+  padding: 16px 4px;
   border-top: 1px solid var(--line-light);
   border-bottom: 1px solid var(--line-light);
 }
@@ -479,6 +479,30 @@ ul { margin: 0; padding: 0; list-style: none; }
 .orbit__node.n4 { top: 50%;  left: 0%;   color: #dd8a2e; }
 .orbit__node.n5 { top: 92%;  left: 14%;  color: #5a9e34; }
 .orbit__node.n6 { top: 92%;  left: 86%;  color: #2f6fb0; }
+
+/* Organizations grid (labeled, replaces orbit) */
+.org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 26px 0 30px; }
+.org-grid li {
+  display: flex; gap: 12px; align-items: center;
+  padding: 14px; border-radius: 12px;
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, .03);
+  transition: border-color .2s ease, background .2s ease;
+}
+.org-grid li:hover { border-color: rgba(201, 160, 92, .5); background: rgba(255, 255, 255, .05); }
+.org-grid__icon {
+  width: 40px; height: 40px; flex: none;
+  border-radius: 10px; display: grid; place-items: center;
+  background: rgba(201, 160, 92, .12); color: var(--gold-soft);
+}
+.org-grid__icon svg { width: 22px; height: 22px; }
+.org-grid b { display: block; font-family: var(--sans); font-weight: 600; font-size: .9rem; color: #fff; line-height: 1.2; }
+.org-grid span { display: block; font-size: .75rem; color: var(--muted-dark); margin-top: 3px; }
+.org-grid li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 540px) {
+  .org-grid { grid-template-columns: 1fr; }
+  .org-grid li:last-child:nth-child(odd) { grid-column: auto; }
+}
 
 /* =========================================================================
    ECOSYSTEM CARDS
