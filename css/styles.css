@@ -313,13 +313,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .about { background: var(--cream); }
 .about__grid {
   display: grid;
-  grid-template-columns: 0.82fr 1.25fr 0.9fr;
-  gap: 44px;
-  align-items: start;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  align-items: stretch;
 }
+.about__media { display: flex; flex-direction: column; justify-content: center; gap: 28px; }
 .about__photo {
   position: relative;
-  align-self: center;
 }
 .about__photo .frame {
   position: relative;
@@ -376,7 +376,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   border: 1px solid #e1e4d6;
   border-radius: var(--radius);
   padding: 34px 30px;
-  align-self: start;
   overflow: hidden;
 }
 .quote-card .mark { font-family: var(--serif); font-size: 4.5rem; line-height: .7; color: var(--gold); }
@@ -803,9 +802,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 1080px) {
   .hero__grid { grid-template-columns: 1fr; }
   .hero__portrait { min-height: 380px; }
-  .about__grid { grid-template-columns: 1fr 1fr; }
-  .about__photo { grid-column: 1 / -1; max-width: 320px; }
-  .quote-card { grid-column: 1 / -1; }
+  .about__grid { grid-template-columns: 1fr; }
+  .about__media { max-width: 360px; margin-inline: auto; }
   .eco__grid { grid-template-columns: repeat(3, 1fr); }
   .impact__grid { grid-template-columns: 1fr; }
   .impact__stats { grid-template-columns: repeat(5, 1fr); }
