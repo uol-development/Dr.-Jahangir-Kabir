@@ -2,6 +2,8 @@
   "_comment": "Media manifest — change any site image here WITHOUT touching code. Either (a) edit the path below to point at a new file, or (b) replace the file in /images with the same name. Changes appear automatically on the live site. Paths are relative to the site root.",
 
   "hero":            "images/dr-hero.jpg",
+  "aboutHero":       "images/dr-hero.jpg",
+  "aboutTrust":      "images/dr-hero.jpg",
   "aboutHome":       "images/dr-hero.jpg",
   "finalHome":       "images/dr-hero.jpg",
   "aboutPage":       "images/dr-hero.jpg",
