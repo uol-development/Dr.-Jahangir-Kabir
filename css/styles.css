@@ -512,7 +512,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .eco__sub { color: var(--muted-light); max-width: 620px; margin: 12px auto 46px; }
 .eco__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   text-align: left;
 }

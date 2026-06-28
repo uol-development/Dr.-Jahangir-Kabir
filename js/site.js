@@ -75,7 +75,6 @@ function buildFooter() {
     ["JK Food Arena", "https://www.facebook.com/JkFoodArenaLtd/"],
     ["JK Prakritik Krishi", "https://www.facebook.com/JkPrakritikKrishi/"],
     ["JK Tech", "https://www.facebook.com/jktechltd"],
-    ["Sinbad", "https://www.sinbadresort.com/"],
   ];
   const li = (rows) => rows.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join("");
   const liExt = (rows) =>
