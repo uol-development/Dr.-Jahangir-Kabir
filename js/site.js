@@ -48,7 +48,7 @@ function buildHeader(active) {
       ${LOGO_SVG}
       <span>
         <span class="brand__name">Dr. Jahangir Kabir</span>
-        <span class="brand__tag">Lifestyle Medicine Physician | Educator | Founder</span>
+        <span class="brand__tag">Physician · Lifestyle Specialist · Founder of JK Lifestyle</span>
       </span>
     </a>
     <nav class="nav" id="primary-nav" aria-label="Primary">${links}<a class="btn btn--gold nav__cta" href="contact.html">Start Your Health Journey ${badge(ICON.arrow)}</a></nav>
@@ -69,13 +69,23 @@ function buildFooter() {
     ["Contact", "contact.html"],
   ];
   const orgs = [
-    ["Health Revolution", "ecosystem.html"],
-    ["Ultimate Organic Life", "ecosystem.html"],
-    ["JK Fitness Arena", "ecosystem.html"],
-    ["JK Food Arena", "ecosystem.html"],
-    ["JK Prokriti Krishi", "ecosystem.html"],
+    ["Health Revolution", "https://www.healthrevolutionltd.com/"],
+    ["Ultimate Organic Life", "https://ultimateorganiclife.com/"],
+    ["JK Fitness Arena", "https://www.jkfitnessarena.com/"],
+    ["JK Food Arena", "https://www.facebook.com/JkFoodArenaLtd/"],
+    ["JK Prakritik Krishi", "https://www.facebook.com/JkPrakritikKrishi/"],
+    ["JK Tech", "https://www.facebook.com/jktechltd"],
+    ["Sinbad", "https://www.sinbadresort.com/"],
   ];
   const li = (rows) => rows.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join("");
+  const liExt = (rows) =>
+    rows
+      .map(([t, h]) =>
+        h.startsWith("http")
+          ? `<li><a href="${h}" target="_blank" rel="noopener">${t}</a></li>`
+          : `<li><a href="${h}">${t}</a></li>`
+      )
+      .join("");
   return `
   <div class="container">
     <div class="footer-grid">
@@ -84,15 +94,13 @@ function buildFooter() {
           ${LOGO_SVG}
           <span>
             <span class="brand__name">Dr. Jahangir Kabir</span>
-            <span class="brand__tag">Lifestyle Medicine Physician | Educator | Founder</span>
+            <span class="brand__tag">Physician · Lifestyle Specialist · Founder of JK Lifestyle</span>
           </span>
         </a>
-        <p class="footer-about">Dedicated to helping people build better health through education, lifestyle guidance, and sustainable wellbeing.</p>
+        <p class="footer-about">Helping people heal naturally and live a disease-free, medicine-free life through balanced diet, fasting, exercise, sleep and mental peace.</p>
         <div class="social">
-          <a href="#" aria-label="Facebook">${ICON.facebook}</a>
-          <a href="#" aria-label="Instagram">${ICON.instagram}</a>
-          <a href="#" aria-label="YouTube">${ICON.youtube}</a>
-          <a href="#" aria-label="LinkedIn">${ICON.linkedin}</a>
+          <a href="https://www.facebook.com/DrJahangirkabircmc/" target="_blank" rel="noopener" aria-label="Facebook">${ICON.facebook}</a>
+          <a href="https://www.youtube.com/@DrJahangirKabir" target="_blank" rel="noopener" aria-label="YouTube">${ICON.youtube}</a>
         </div>
       </div>
 
@@ -103,7 +111,7 @@ function buildFooter() {
 
       <div class="footer-col">
         <h5>Our Organizations</h5>
-        <ul>${li(orgs)}</ul>
+        <ul>${liExt(orgs)}</ul>
       </div>
 
       <div class="footer-col contact">
@@ -127,7 +135,7 @@ function buildFooter() {
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; 2025 Dr. Jahangir Kabir. All Rights Reserved.</span>
+      <span>&copy; 2026 Dr. Jahangir Kabir. All Rights Reserved.</span>
       <span class="links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms &amp; Conditions</a>
