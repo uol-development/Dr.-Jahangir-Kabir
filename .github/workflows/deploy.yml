@@ -1,11 +1,11 @@
 name: Deploy to cPanel via FTP
 
-# Auto-deploy on push is DISABLED for now (GitHub only — not publishing to hosting yet).
-# To go live later: uncomment the push trigger below and add the FTP_* secrets.
+# Auto-deploy: every push to main publishes the site to cPanel hosting via FTPS.
+# Requires 4 repo secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD, FTP_SERVER_DIR.
 on:
-  # push:
-  #   branches: [ main ]
-  workflow_dispatch:   # run manually from the Actions tab when you're ready to deploy
+  push:
+    branches: [ main ]
+  workflow_dispatch:   # also runnable manually from the Actions tab
 
 jobs:
   ftp-deploy:
