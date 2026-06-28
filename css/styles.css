@@ -603,6 +603,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 .impact-tag__icon svg { width: 16px; height: 16px; stroke-width: 1.5; }
 .impact-tag__text { font-size: .85rem; color: var(--on-dark); line-height: 1.3; }
 
+/* Legacy stat row — used on the About page's impact section */
+.impact__stats.is-stats { grid-template-columns: repeat(4, 1fr); gap: 0; }
+.impact-stat { text-align: center; padding: 8px 14px; display: grid; gap: 10px; justify-items: center; }
+.impact-stat + .impact-stat { border-left: 1px solid var(--line-dark); }
+.impact-stat__icon { color: var(--gold-soft); }
+.impact-stat__icon svg { width: 30px; height: 30px; stroke-width: 1.4; }
+.impact-stat b { font-family: var(--serif); font-size: 1.05rem; color: #fff; line-height: 1.15; }
+.impact-stat span { font-size: .76rem; color: var(--muted-dark); }
+
 /* =========================================================================
    EVENTS & PRODUCTS
    ========================================================================= */
@@ -942,6 +951,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .duo { grid-template-columns: 1fr; }
   .eco__grid { grid-template-columns: repeat(2, 1fr); }
   .impact__figures { grid-template-columns: repeat(3, 1fr); }
+  .impact__stats.is-stats { grid-template-columns: repeat(2, 1fr); }
+  .impact-stat:nth-child(odd) { border-left: none; }
   .feat__grid { grid-template-columns: 1fr; }
   .challenge__top { flex-direction: column; align-items: flex-start; text-align: left; }
   .challenge__cta { align-self: flex-start; }
