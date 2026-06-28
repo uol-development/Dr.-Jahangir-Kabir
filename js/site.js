@@ -117,9 +117,9 @@ function buildFooter() {
       <div class="footer-col contact">
         <h5>Contact Information</h5>
         <ul class="contact-list">
-          <li>${ICON.pin}<span>House: 2/BT, Noor Tower (Block D),<br>Road: 01, Sector: 02, Aftabnagar,<br>Dhaka-1212</span></li>
+          <li>${ICON.pin}<span>House 29/31, Noor Tower (Block D),<br>Road 01, Sector 02, Jahurul Islam City,<br>Aftabnagar, Badda, Dhaka 1212</span></li>
           <li>${ICON.phone}<a href="tel:+8809678242404">+880 9678 242404</a></li>
-          <li>${ICON.mail}<a href="mailto:info@jklifestyle.com">info@jklifestyle.com</a></li>
+          <li>${ICON.mail}<a href="mailto:info@ultimateorganiclife.com">info@ultimateorganiclife.com</a></li>
         </ul>
       </div>
 
