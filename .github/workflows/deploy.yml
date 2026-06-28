@@ -33,13 +33,10 @@ jobs:
           set ftp:passive-mode true;
           set net:timeout 25; set net:max-retries 2; set net:reconnect-interval-base 5;
           open -u '$FTP_USERNAME','$FTP_PASSWORD' 'ftp://$FTP_SERVER';
-          mirror --reverse --verbose --no-perms \
-            --exclude-glob .git* \
-            --exclude-glob .github* \
-            --exclude-glob .vscode* \
-            --exclude-glob *.log \
-            --exclude README.md \
-            --exclude website-concept.md \
-            ./ '$FTP_SERVER_DIR';
+          echo '>>>PWD'; pwd;
+          echo '>>>HOME'; cls -la;
+          echo '>>>PUBLIC_HTML'; cls -la public_html;
+          echo '>>>DOMAINDIR'; cls -la drjahangirkabir.com;
+          echo '>>>PH_DOMAIN'; cls -la public_html/drjahangirkabir.com;
           bye
           "
