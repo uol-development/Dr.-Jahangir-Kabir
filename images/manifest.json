@@ -1,0 +1,19 @@
+{
+  "_comment": "Media manifest — change any site image here WITHOUT touching code. Either (a) edit the path below to point at a new file, or (b) replace the file in /images with the same name. Changes appear automatically on the live site. Paths are relative to the site root.",
+
+  "hero":            "images/dr-hero.jpg",
+  "aboutHome":       "images/dr-hero.jpg",
+  "finalHome":       "images/dr-hero.jpg",
+  "aboutPage":       "images/dr-hero.jpg",
+  "aboutFinal":      "images/dr-hero.jpg",
+  "programSeminar":  "images/dr-hero.jpg",
+  "programFitness":  "images/fitness.jpg",
+  "blogNutrition":   "images/products/chia.jpg",
+  "blogMovement":    "images/fitness.jpg",
+  "challengeBg":     "images/fitness.jpg",
+
+  "productCoconut":  "images/products/coconut-oil.png",
+  "productChia":     "images/products/chia.jpg",
+  "productOlive":    "images/products/olive.jpg",
+  "productQuinoa":   "images/products/quinoa.jpg"
+}

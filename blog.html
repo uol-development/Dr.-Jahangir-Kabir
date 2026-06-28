@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=8">
+  <link rel="stylesheet" href="css/styles.css?v=9">
   <style>
     .tri-card .media--blend { background:linear-gradient(180deg,#fbf9f3,#f1ece0); display:grid; place-items:center; }
     .tri-card .media--blend img { width:auto; height:88%; object-fit:contain; mix-blend-mode:multiply; }
@@ -36,14 +36,14 @@
     <section class="tri section">
       <div class="container tri__grid">
         <article class="tri-card">
-          <div class="media media--blend"><img src="images/products/chia.jpg" alt="Organic chia seed" loading="lazy"></div>
+          <div class="media media--blend"><img data-img="blogNutrition" src="images/products/chia.jpg" alt="Organic chia seed" loading="lazy" decoding="async"></div>
           <p class="eyebrow eyebrow--muted">Nutrition</p>
           <h4>Building Better Eating Habits</h4>
           <p>Practical, sustainable steps toward a healthier relationship with food — without extremes.</p>
           <a class="btn btn--outline-dark" href="#" style="margin-top:auto">Read Article <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         </article>
         <article class="tri-card">
-          <div class="media"><img src="images/fitness.jpg" alt="Strength training in the gym" loading="lazy"></div>
+          <div class="media"><img data-img="blogMovement" src="images/fitness.jpg" alt="Strength training in the gym" width="1620" height="1080" loading="lazy" decoding="async"></div>
           <p class="eyebrow eyebrow--muted">Movement</p>
           <h4>Why Consistent Movement Matters</h4>
           <p>How regular, accessible activity supports strength, energy, and long-term wellbeing.</p>
@@ -72,6 +72,6 @@
     </section>
   </main>
   <footer id="site-footer"></footer>
-  <script src="js/site.js?v=8"></script>
+  <script src="js/site.js?v=9"></script>
 </body>
 </html>

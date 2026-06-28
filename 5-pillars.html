@@ -8,7 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=8">
+  <link rel="stylesheet" href="css/styles.css?v=9">
+  <style>
+    /* This page wants 3 pillars per row on desktop; collapses responsively */
+    .eco__grid { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px) { .eco__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .eco__grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body data-page="five-pillars">
   <header id="site-header"></header>
@@ -23,7 +29,7 @@
 
     <section class="eco section" style="text-align:left">
       <div class="container">
-        <div class="eco__grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="eco__grid">
           <article class="eco-card"><span class="eco-card__icon is-organic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-4 0-7 2-7 6 0 4 3 6 7 6s7-2 7-6c0-4-3-6-7-6z"/><path d="M12 8a4 4 0 0 1 4-4"/></svg></span><h3>Nutrition</h3><p>Building everyday eating habits that support sustainable, long-term health — real food, balanced choices, and mindful portions.</p></article>
           <article class="eco-card"><span class="eco-card__icon is-fitness"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="5" r="2"/><path d="M6 21l3-5 4 2 1 3M13 13l-2-3-4 1-2 3M13 13l4 1 2 4"/></svg></span><h3>Movement</h3><p>Consistent, accessible physical activity for strength, mobility, and vitality — at any age and any starting point.</p></article>
           <article class="eco-card"><span class="eco-card__icon is-health"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg></span><h3>Sleep</h3><p>Restful, restorative sleep as a cornerstone of physical and mental wellbeing — and a foundation the others depend on.</p></article>
@@ -34,7 +40,7 @@
       </div>
     </section>
 
-    <section class="challenge">
+    <section class="challenge" data-bg="challengeBg">
       <div class="container challenge__inner">
         <div class="challenge__top">
           <h2>Movement Is A Habit<br>You Can Practise Every Day.</h2>
@@ -54,6 +60,6 @@
     </section>
   </main>
   <footer id="site-footer"></footer>
-  <script src="js/site.js?v=8"></script>
+  <script src="js/site.js?v=9"></script>
 </body>
 </html>

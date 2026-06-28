@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=8">
+  <link rel="stylesheet" href="css/styles.css?v=9">
   <style>
     .prod-note { max-width:560px; margin-top:12px; }
     .cert-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
@@ -17,7 +17,8 @@
     #products .media--products { background:linear-gradient(180deg,#fbf9f3,#f1ece0); border:1px solid var(--line-light); border-radius:var(--radius); overflow:hidden; }
     #products .products { grid-template-columns:repeat(4,1fr); grid-template-rows:none; height:auto; }
     #products .product-chip { aspect-ratio:1/1; }
-    @media (max-width:540px){ #products .products { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:768px){ #products .products { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:380px){ #products .products { grid-template-columns:1fr; } }
   </style>
 </head>
 <body data-page="ecosystem">
@@ -50,10 +51,10 @@
         <p class="prod-note text-muted">A selection of organic foods and oils chosen to support healthier daily living — with certification and traceable sourcing as a deliberate commitment to transparency.</p>
         <div class="media media--products" style="margin-top:26px">
           <div class="products">
-            <figure class="product-chip"><img src="images/products/coconut-oil.png" alt="Ultimate Organic extra virgin coconut oil" loading="lazy"></figure>
-            <figure class="product-chip"><img src="images/products/chia.jpg" alt="Ultimate Organic chia seed" loading="lazy"></figure>
-            <figure class="product-chip"><img src="images/products/olive.jpg" alt="Ultimate Organic extra virgin olive oil" loading="lazy"></figure>
-            <figure class="product-chip"><img src="images/products/quinoa.jpg" alt="Ultimate Organic tricolor quinoa" loading="lazy"></figure>
+            <figure class="product-chip"><img data-img="productCoconut" src="images/products/coconut-oil.png" alt="Ultimate Organic extra virgin coconut oil" loading="lazy" decoding="async"></figure>
+            <figure class="product-chip"><img data-img="productChia" src="images/products/chia.jpg" alt="Ultimate Organic chia seed" loading="lazy" decoding="async"></figure>
+            <figure class="product-chip"><img data-img="productOlive" src="images/products/olive.jpg" alt="Ultimate Organic extra virgin olive oil" loading="lazy" decoding="async"></figure>
+            <figure class="product-chip"><img data-img="productQuinoa" src="images/products/quinoa.jpg" alt="Ultimate Organic tricolor quinoa" loading="lazy" decoding="async"></figure>
           </div>
         </div>
         <div class="cert-row">
@@ -64,7 +65,7 @@
       </div>
     </section>
 
-    <section class="challenge">
+    <section class="challenge" data-bg="challengeBg">
       <div class="container challenge__inner">
         <div class="challenge__top">
           <h2>One Ecosystem.<br>Many Ways To Live Healthier.</h2>
@@ -74,6 +75,6 @@
     </section>
   </main>
   <footer id="site-footer"></footer>
-  <script src="js/site.js?v=8"></script>
+  <script src="js/site.js?v=9"></script>
 </body>
 </html>

@@ -172,11 +172,38 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
       const open = nav.classList.toggle("is-open");
+      document.body.classList.toggle("nav-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       toggle.innerHTML = open ? ICON.close : ICON.menu;
     });
   }
+
+  // ---- Dynamic images: resolve [data-img] / [data-bg] from images/manifest.json ----
+  // Change any image by editing images/manifest.json (or replacing the file) — no code edits needed.
+  const IMG_FALLBACK =
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23ece5d6'/%3E%3Cpath d='M150 205c18-66 86-104 156-116-18 66-86 104-156 116z' fill='%23c9a05c' opacity='.45'/%3E%3C/svg%3E";
+  const wireFallback = (img) => {
+    img.addEventListener("error", function onErr() {
+      img.removeEventListener("error", onErr);
+      if (img.getAttribute("src") !== IMG_FALLBACK) img.src = IMG_FALLBACK;
+    });
+  };
+  const applyImages = (map) => {
+    document.querySelectorAll("img[data-img]").forEach((img) => {
+      const src = map && map[img.dataset.img];
+      if (src) img.src = src;
+      wireFallback(img);
+    });
+    document.querySelectorAll("[data-bg]").forEach((el) => {
+      const src = map && map[el.dataset.bg];
+      if (src) el.style.setProperty("--cms-bg", `url("${src}")`);
+    });
+  };
+  fetch("images/manifest.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : null))
+    .then(applyImages)
+    .catch(() => applyImages(null));
 
   // Expose icons for inline page use if needed
   window.SITE_ICON = ICON;
