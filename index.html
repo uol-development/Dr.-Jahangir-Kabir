@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=6">
 </head>
 <body data-page="home">
 
@@ -220,29 +220,34 @@
         <div class="impact__lead">
           <p class="eyebrow">Selected Work &amp; Impact</p>
           <h3>Creating Positive Change Through Education And Awareness</h3>
+          <span class="divider"></span>
           <p>Every person reached. Every healthier habit adopted. Every positive moment shared. These moments represent the true impact.</p>
         </div>
         <div class="impact__stats">
-          <div class="impact-stat">
-            <span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="8" r="3.5"/><path d="M21 20v-2a4 4 0 0 0-3-3.9"/></svg></span>
-            <b>10 Lac+</b><span>People Reached</span>
+          <div class="impact__figures">
+            <div class="figure-stat">
+              <b class="figure-stat__value">10 Lac<span class="figure-stat__plus">+</span></b>
+              <span class="figure-stat__label">People Reached</span>
+            </div>
+            <div class="figure-stat">
+              <b class="figure-stat__value">25<span class="figure-stat__plus">+</span></b>
+              <span class="figure-stat__label">Years of Experience</span>
+            </div>
+            <div class="figure-stat">
+              <b class="figure-stat__value">Nationwide</b>
+              <span class="figure-stat__label">Community Impact</span>
+            </div>
           </div>
-          <div class="impact-stat">
-            <span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <b>25+ Years</b><span>Of Experience</span>
-          </div>
-          <div class="impact-stat">
-            <span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></span>
-            <b>Nationwide</b><span>Community Impact</span>
-          </div>
-          <div class="impact-stat">
-            <span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6c3-1.5 6-1.5 9 0v13c-3-1.5-6-1.5-9 0zM21 6c-3-1.5-6-1.5-9 0v13c3-1.5 6-1.5 9 0z"/></svg></span>
-            <b>Lifestyle-Focused</b><span>Health Education</span>
-          </div>
-          <div class="impact-stat">
-            <span class="impact-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M19 7a7 7 0 0 1 0 10"/></svg></span>
-            <b>Wellness Programs</b><span>&amp; Awareness Initiatives</span>
-          </div>
+          <ul class="impact__tags">
+            <li class="impact-tag">
+              <span class="impact-tag__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6c3-1.5 6-1.5 9 0v13c-3-1.5-6-1.5-9 0zM21 6c-3-1.5-6-1.5-9 0v13c3-1.5 6-1.5 9 0z"/></svg></span>
+              <span class="impact-tag__text">Lifestyle-focused health education</span>
+            </li>
+            <li class="impact-tag">
+              <span class="impact-tag__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M19 7a7 7 0 0 1 0 10"/></svg></span>
+              <span class="impact-tag__text">Wellness programs &amp; awareness initiatives</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -255,8 +260,9 @@
           <h3>Bringing Health Knowledge To Communities</h3>
           <p>Seminars, workshops, conferences, and public events that create greater awareness around nutrition, lifestyle, prevention, and sustainable wellbeing.</p>
           <div class="media">
-            <div class="media-seminar" role="img" aria-label="Seminar audience">
+            <div class="media-seminar" role="img" aria-label="Seminars, workshops and community health events">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM12 16v3M8 22h8"/><path d="M7 12l3-3 2 2 4-4"/></svg>
+              <span class="media-seminar__caption">Seminars &middot; Workshops &middot; Community Events</span>
             </div>
           </div>
           <a class="btn btn--dark" href="programs.html">View Events &amp; Initiatives <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
@@ -268,10 +274,10 @@
           <p>Carefully selected wellness-focused products and healthier living solutions designed to support your journey.</p>
           <div class="media media--products">
             <div class="products">
-              <img src="images/products/coconut-oil.png" alt="Ultimate Organic extra virgin coconut oil" loading="lazy">
-              <img src="images/products/chia.jpg" alt="Ultimate Organic chia seed" loading="lazy">
-              <img src="images/products/olive.jpg" alt="Ultimate Organic extra virgin olive oil" loading="lazy">
-              <img src="images/products/quinoa.jpg" alt="Ultimate Organic tricolor quinoa" loading="lazy">
+              <figure class="product-chip"><img src="images/products/coconut-oil.png" alt="Ultimate Organic extra virgin coconut oil" loading="lazy"></figure>
+              <figure class="product-chip"><img src="images/products/chia.jpg" alt="Ultimate Organic chia seed" loading="lazy"></figure>
+              <figure class="product-chip"><img src="images/products/olive.jpg" alt="Ultimate Organic extra virgin olive oil" loading="lazy"></figure>
+              <figure class="product-chip"><img src="images/products/quinoa.jpg" alt="Ultimate Organic tricolor quinoa" loading="lazy"></figure>
             </div>
           </div>
           <a class="btn btn--dark" href="ecosystem.html">Explore Products <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
@@ -360,6 +366,6 @@
 
   <footer id="site-footer"></footer>
 
-  <script src="js/site.js?v=5"></script>
+  <script src="js/site.js?v=6"></script>
 </body>
 </html>
