@@ -151,7 +151,8 @@
     .ab-it__impact p { color:var(--muted-dark); font-size:.92rem; } .ab-it__impact p strong{color:#fff}
     .trust-list { display:grid; gap:12px; margin:22px 0; }
     .trust-list li { display:flex; align-items:center; gap:12px; font-size:.95rem; color:var(--ink-700); }
-    .trust-list .tick { width:26px; height:26px; flex:none; border-radius:50%; display:grid; place-items:center; background:#e6f1e9; color:#2e7d46; }
+    .trust-list .tick, .cred-list .tick { flex:none; border-radius:50%; display:grid; place-items:center; background:#e6f1e9; color:#2e7d46; }
+    .trust-list .tick { width:26px; height:26px; }
     .trust-list .tick svg { width:15px; height:15px; }
     .ab-it__trust .who { display:flex; align-items:center; gap:16px; margin-top:24px; padding-top:22px; border-top:1px solid var(--line-light); }
     .ab-it__trust .who img { width:84px; height:84px; border-radius:50%; object-fit:cover; flex:none; border:2px solid rgba(201,160,92,.4); }
@@ -191,7 +192,7 @@
     .cred-card h3 { font-family:var(--sans); font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin:0 0 16px; }
     .cred-list { display:grid; gap:11px; margin:0; padding:0; list-style:none; }
     .cred-list li { display:flex; gap:11px; align-items:flex-start; font-size:.92rem; color:var(--ink-700); line-height:1.45; }
-    .cred-list .tick { width:22px; height:22px; flex:none; border-radius:50%; display:grid; place-items:center; background:#e6f1e9; color:#2e7d46; margin-top:1px; }
+    .cred-list .tick { width:22px; height:22px; margin-top:1px; }
     .cred-list .tick svg { width:13px; height:13px; }
     @media (max-width:768px){ .ab-creds__grid { grid-template-columns:1fr; } }
 
@@ -451,6 +452,6 @@
 
   </main>
   <footer id="site-footer"></footer>
-  <script src="js/site.js?v=14"></script>
+  <script src="js/site.js?v=15"></script>
 </body>
 </html>

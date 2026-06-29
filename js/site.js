@@ -31,12 +31,11 @@ const ICON = {
   phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>',
   mail:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
   facebook:  '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-3.5 1.4-3.5 3.6V11H8v3h2.5v7h3v-7H16l.5-3h-3V9.8c0-.6.3-.8 1-.8z"/></svg>',
-  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
   youtube:   '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.6 7.9.6 7.9.6s6 0 7.9-.6a3 3 0 0 0 2.1-2.1c.3-1.3.4-2.5.4-3.8s-.1-2.5-.4-3.8zM10 15V9l5.2 3z"/></svg>',
-  linkedin:  '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5h-3V21h3V8.5zM5 3.5A1.8 1.8 0 1 0 5 7a1.8 1.8 0 0 0 0-3.5zM21 21h-3v-6.4c0-1.6-.6-2.6-2-2.6-1.1 0-1.7.7-2 1.5-.1.2-.1.6-.1.9V21h-3V8.5h3v1.7c.4-.7 1.2-1.7 3-1.7 2.2 0 3.8 1.4 3.8 4.5V21z"/></svg>',
 };
 
 const badge = (icon) => `<span class="badge">${icon}</span>`;
+const APPOINTMENT_URL = "https://jklifestyleltd.com/appointment/";
 
 function buildHeader(active) {
   const links = NAV_LINKS
@@ -51,9 +50,9 @@ function buildHeader(active) {
         <span class="brand__tag">Physician · Lifestyle Specialist · Founder of JK Lifestyle</span>
       </span>
     </a>
-    <nav class="nav" id="primary-nav" aria-label="Primary">${links}<a class="btn btn--gold nav__cta" href="https://jklifestyleltd.com/appointment/" target="_blank" rel="noopener">Get An Appointment ${badge(ICON.arrow)}</a></nav>
+    <nav class="nav" id="primary-nav" aria-label="Primary">${links}<a class="btn btn--gold nav__cta" href="${APPOINTMENT_URL}" target="_blank" rel="noopener">Get An Appointment ${badge(ICON.arrow)}</a></nav>
     <div class="header-cta">
-      <a class="btn btn--gold" href="https://jklifestyleltd.com/appointment/" target="_blank" rel="noopener">Get An Appointment ${badge(ICON.arrow)}</a>
+      <a class="btn btn--gold" href="${APPOINTMENT_URL}" target="_blank" rel="noopener">Get An Appointment ${badge(ICON.arrow)}</a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">${ICON.menu}</button>
     </div>
   </div>`;
@@ -75,8 +74,8 @@ function buildFooter() {
     ["JK Food Arena", "https://www.facebook.com/JkFoodArenaLtd/"],
     ["JK Prakritik Krishi", "https://www.facebook.com/JkPrakritikKrishi/"],
   ];
-  const li = (rows) => rows.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join("");
-  const liExt = (rows) =>
+  // One renderer for both lists: external (http) hrefs open in a new tab; internal links don't.
+  const li = (rows) =>
     rows
       .map(([t, h]) =>
         h.startsWith("http")
@@ -109,7 +108,7 @@ function buildFooter() {
 
       <div class="footer-col">
         <h5>Our Organizations</h5>
-        <ul>${liExt(orgs)}</ul>
+        <ul>${li(orgs)}</ul>
       </div>
 
       <div class="footer-col contact">
