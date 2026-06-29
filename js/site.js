@@ -51,9 +51,9 @@ function buildHeader(active) {
         <span class="brand__tag">Physician · Lifestyle Specialist · Founder of JK Lifestyle</span>
       </span>
     </a>
-    <nav class="nav" id="primary-nav" aria-label="Primary">${links}<a class="btn btn--gold nav__cta" href="contact.html">Start Your Health Journey ${badge(ICON.arrow)}</a></nav>
+    <nav class="nav" id="primary-nav" aria-label="Primary">${links}<a class="btn btn--gold nav__cta" href="https://jklifestyleltd.com/appointment/" target="_blank" rel="noopener">Get An Appointment ${badge(ICON.arrow)}</a></nav>
     <div class="header-cta">
-      <a class="btn btn--gold" href="contact.html">Start Your Health Journey ${badge(ICON.arrow)}</a>
+      <a class="btn btn--gold" href="https://jklifestyleltd.com/appointment/" target="_blank" rel="noopener">Get An Appointment ${badge(ICON.arrow)}</a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">${ICON.menu}</button>
     </div>
   </div>`;
