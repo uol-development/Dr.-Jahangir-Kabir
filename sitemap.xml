@@ -1,77 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://drjahangirkabir.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://drjahangirkabir.com/" />
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://drjahangirkabir.com/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/about.html" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/about.html" />
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://drjahangirkabir.com/5-pillars.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/5-pillars.html" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/5-pillars.html" />
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drjahangirkabir.com/diet-chart.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drjahangirkabir.com/lifestyle-disease.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://drjahangirkabir.com/ecosystem.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/ecosystem.html" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/ecosystem.html" />
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://drjahangirkabir.com/programs.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/programs.html" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/programs.html" />
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drjahangirkabir.com/success-stories.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drjahangirkabir.com/blog.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drjahangirkabir.com/faq.html</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drjahangirkabir.com/blog.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/blog.html" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/blog.html" />
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drjahangirkabir.com/lifestyle-disease.html</loc>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/lifestyle-disease.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/lifestyle-disease.html" />
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://drjahangirkabir.com/appointment.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/appointment.html" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/appointment.html" />
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://drjahangirkabir.com/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drjahangirkabir.com/contact.html" />
-    <xhtml:link rel="alternate" hreflang="bn" href="https://drjahangirkabir.com/contact.html" />
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drjahangirkabir.com/medical-disclaimer.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drjahangirkabir.com/privacy-policy.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://drjahangirkabir.com/terms.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
