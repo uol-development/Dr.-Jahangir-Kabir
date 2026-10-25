@@ -3,4 +3,31 @@ Allow: /
 Disallow: /private/
 Disallow: /tmp/
 
+# Explicitly Allow Generative AI & Answer Engine Crawlers (AEO/GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# LLM Knowledge Base & XML Sitemap
+# LLMs-Txt: https://drjahangirkabir.com/llms.txt
 Sitemap: https://drjahangirkabir.com/sitemap.xml

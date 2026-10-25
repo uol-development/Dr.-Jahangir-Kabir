@@ -6880,253 +6880,729 @@ img[src*="dr-hero.jpg"] {
 
 
 /* ==========================================================================
-   EXECUTIVE MEDICAL LUXURY UPGRADE — BESPOKE EDITORIAL UI/UX
-   Eliminates generic template / AI-built look across all pages
+   EXECUTIVE MEDICAL LUXURY UPGRADE & AEO/GEO EDITORIAL DESIGN SYSTEM
+   Principal UI/UX & Technical AEO/GEO Architecture for drjahangirkabir.com
    ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+
 :root {
-  --default-font: "Inter", "Hind Siliguri", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --heading-font: "Playfair Display", "Hind Siliguri", Georgia, serif;
-  --nav-font: "Inter", "Hind Siliguri", sans-serif;
-  --background-color: #fbfaf7;
-  --surface-color: #ffffff;
-  --default-color: #2c3a32;
-  --heading-color: #0e2419;
-  --accent-color: #14532d;
+  /* 1. Elevated Font Stack: Editorial Serif + Precision Sans + Spec Monospace + Bengali */
+  --font-display: "Playfair Display", "Cormorant Garamond", "Hind Siliguri", Georgia, serif;
+  --font-sans: "Inter", "Hind Siliguri", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  --default-font: var(--font-sans);
+  --heading-font: var(--font-display);
+  --nav-font: var(--font-sans);
+
+  /* 2. Calibrated Warm Luxury Surface Palette (Zero Harsh #000000 on #FFFFFF) */
+  --surface-canvas: #FAF9F6;       /* Primary Alabaster Canvas */
+  --surface-secondary: #F2F0EA;    /* Secondary Warm Stone Containers */
+  --surface-elevated: #FCFBF9;     /* Elevated Editorial Cards */
+  --surface-forest: #0C1F16;       /* Deep Botanical Executive Dark */
+  --surface-forest-soft: #132E21;
+
+  /* 3. Opacity-Based Ink Hierarchy (Derived from Single Charcoal-Forest Base #141413) */
+  --ink-rgb: 20, 20, 19;
+  --ink-100: rgba(var(--ink-rgb), 1);      /* 100% — Primary Headings & Lead Answers */
+  --ink-75: rgba(var(--ink-rgb), 0.75);    /* 75%  — Editorial Body Copy */
+  --ink-50: rgba(var(--ink-rgb), 0.50);    /* 50%  — Muted Captions, Metadata, Timestamps */
+
+  /* Accents & Hairline Borders */
+  --accent-emerald: #133A27;
+  --accent-gold: #9E7B3B;
+  --accent-gold-light: #DFC28B;
+  --border-hairline: 1px solid rgba(20, 20, 19, 0.08);
+  --border-hairline-strong: 1px solid rgba(20, 20, 19, 0.14);
+  --border-gold-hairline: 1px solid rgba(158, 123, 59, 0.32);
+
+  /* MediNest variable mappings */
+  --background-color: var(--surface-canvas);
+  --surface-color: var(--surface-elevated);
+  --default-color: var(--ink-75);
+  --heading-color: var(--ink-100);
+  --accent-color: var(--accent-emerald);
 }
 
 .light-background {
-  --background-color: #f4f1ea;
-  --surface-color: #ffffff;
+  --background-color: var(--surface-secondary) !important;
+  --surface-color: var(--surface-elevated) !important;
+  background-color: var(--surface-secondary) !important;
+}
+
+/* Global Font Rendering & Subpixel Smoothing */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #fbfaf7;
-  color: #2c3a32;
+  background-color: var(--surface-canvas) !important;
+  color: var(--ink-75) !important;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  line-height: 1.65;
   letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
 }
 
-h1, h2, .heading-title, .hero-title, .section-heading {
-  font-family: "Playfair Display", "Hind Siliguri", Georgia, serif !important;
-  letter-spacing: -0.015em;
-  color: #0e2419;
+/* ==========================================================================
+   1. FLUID TYPE SCALE & HARD TYPOGRAPHIC CONSTRAINTS
+   ========================================================================== */
+h1, .h1, .heading-title, .hero-title {
+  font-family: var(--font-display) !important;
+  font-size: clamp(2.25rem, 1.75rem + 2.2vw, 3.5rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--ink-100);
+  max-width: 22ch;
 }
 
-h3, h4, h5, h6 {
-  font-family: "Inter", "Hind Siliguri", sans-serif;
-  letter-spacing: -0.01em;
+h2, .h2, .section-heading, .section-title h2 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.75rem, 1.45rem + 1.35vw, 2.5rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ink-100);
+  max-width: 25ch;
+}
+
+.text-center h1,
+.text-center h2,
+.section-title h2,
+.page-title .heading h1.heading-title {
+  margin-inline: auto;
+}
+
+h3, .h3 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.35rem, 1.2rem + 0.65vw, 1.75rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--ink-100);
+  max-width: 32ch;
+}
+
+h4, .h4 {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.32 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--ink-100);
+}
+
+h5, .h5 {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.005em !important;
+  color: var(--ink-100);
+}
+
+h6, .h6 {
+  font-family: var(--font-sans) !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase;
+  color: var(--ink-100);
+}
+
+/* Body Copy & Editorial Line-Length Cap (60ch–65ch) */
+p, .aeo-prose p, .aeo-prose li {
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--ink-75);
+  max-width: 65ch;
+}
+
+.text-center p,
+.section-title p,
+.page-title .heading p {
+  margin-inline: auto;
+}
+
+/* Lead Paragraphs & Answer-First Opening Sentences */
+.lead,
+.lead-description,
+.aeo-lead-answer {
+  font-size: clamp(1.125rem, 1.06rem + 0.25vw, 1.22rem) !important;
+  line-height: 1.62 !important;
+  font-weight: 500 !important;
+  color: var(--ink-100) !important;
+  max-width: 64ch !important;
+}
+
+/* Eyebrows / Spec Labels (12px, uppercase, +0.11em tracking, weight 600) */
+.jk-gold-badge,
+.jk-pillar-card__eyebrow,
+.jk-metric-card__eyebrow,
+.aeo-eyebrow,
+.department-category,
+.service-category,
+.book-ribbon {
+  font-family: var(--font-sans) !important;
+  font-size: 0.75rem !important; /* 12px */
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.11em !important;
+  text-transform: uppercase !important;
+}
+
+/* Muted Metadata / Captions (50% Opacity) */
+.text-muted,
+small,
+.small,
+figcaption,
+.aeo-meta-muted {
+  color: var(--ink-50) !important;
+}
+
+/* Strict Tabular Numerals for Metrics, Prices, Tables, Dates & Specs */
+table, th, td, time, dd,
+.tabular-nums,
+.jk-metric-card__value,
+.jk-pillar-card__num,
+.stat .number,
+.stat-number,
+.metric-number,
+.purecounter,
+.time-tag,
+.aeo-spec-grid dd {
+  font-variant-numeric: tabular-nums !important;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* ==========================================================================
+   MULTILINGUAL / BILINGUAL SCRIPT HANDLING (:lang(bn))
+   Prevents clipping of Bengali vowel diacritics (কার / রেফ) & removes negative tracking
+   ========================================================================== */
+:lang(bn),
+[lang="bn"],
+.bn-text,
+.jk-pillar-card__bn {
+  font-family: "Hind Siliguri", var(--font-sans) !important;
+  letter-spacing: 0 !important;
+  word-spacing: 0.02em;
+}
+
+h1:lang(bn), h2:lang(bn), h3:lang(bn), h4:lang(bn),
+:lang(bn) h1, :lang(bn) h2, :lang(bn) h3, :lang(bn) h4,
+[lang="bn"] h1, [lang="bn"] h2, [lang="bn"] h3 {
+  font-family: "Hind Siliguri", serif !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0 !important;
+  font-weight: 600 !important;
+  padding-top: 0.06em;
+  max-width: 28ch;
+}
+
+p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
+:lang(bn) p, :lang(bn) li, [lang="bn"] p, [lang="bn"] li {
+  line-height: 1.75 !important;
+  letter-spacing: 0 !important;
+}
+
+/* ==========================================================================
+   2. LUXURY UI POLISH, VERTICAL RHYTHM & 1PX HAIRLINE ARCHITECTURE
+   ========================================================================== */
+section,
+.section {
+  padding: clamp(64px, 8vw, 116px) 0 !important;
+  background-color: var(--surface-canvas);
+}
+
+/* Eliminate BootstrapMade Template Section-Title Underlines */
+.section-title {
+  padding-bottom: 52px !important;
+}
+
+.section-title h2 {
+  color: var(--ink-100) !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+.section-title h2::before {
+  display: none !important;
+}
+
+.section-title h2::after {
+  width: 48px !important;
+  height: 1.5px !important;
+  background: var(--accent-gold) !important;
 }
 
 /* Refined Glassmorphic Executive Header */
 .header {
-  background: rgba(255, 255, 255, 0.94) !important;
+  background: rgba(250, 249, 246, 0.92) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(18, 35, 25, 0.08);
-  box-shadow: 0 4px 30px rgba(14, 36, 25, 0.04);
+  border-bottom: var(--border-hairline) !important;
+  box-shadow: none !important;
 }
 
 .header .logo-mark {
-  background: linear-gradient(135deg, #0e2419 0%, #1b4332 100%) !important;
-  color: #e2c286 !important;
-  border: 1.5px solid #c9a05c !important;
-  font-family: "Playfair Display", Georgia, serif;
-  letter-spacing: 0.03em;
+  background: var(--surface-forest) !important;
+  color: var(--accent-gold-light) !important;
+  border: 1px solid var(--accent-gold) !important;
+  font-family: var(--font-display);
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+
+.header .logo .sitename {
+  font-family: var(--font-display);
+  font-weight: 600 !important;
+  color: var(--ink-100) !important;
 }
 
 .header .logo .sitename span {
-  color: #9e7832 !important;
+  color: var(--accent-gold) !important;
 }
 
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
-  background: linear-gradient(135deg, #0e2419 0%, #1b4332 100%) !important;
-  color: #f5e6c8 !important;
-  border: 1px solid rgba(201, 160, 92, 0.55) !important;
-  box-shadow: 0 8px 20px rgba(14, 36, 25, 0.16) !important;
-  font-size: 13.5px;
-  letter-spacing: 0.01em;
+  background: var(--surface-forest) !important;
+  color: #FAF9F6 !important;
+  border: 1px solid rgba(158, 123, 59, 0.5) !important;
+  box-shadow: none !important;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .header .btn-getstarted:hover {
-  background: linear-gradient(135deg, #c9a05c 0%, #b08743 100%) !important;
-  color: #0e2419 !important;
-  border-color: #c9a05c !important;
+  background: var(--accent-gold) !important;
+  color: #141413 !important;
+  border-color: var(--accent-gold) !important;
 }
 
 /* Refined Executive Eyebrow Badge */
 .jk-gold-badge {
-  background: #f5efe2 !important;
-  color: #0e2419 !important;
-  border: 1px solid rgba(176, 135, 67, 0.38) !important;
-  padding: 6px 16px !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(14, 36, 25, 0.04);
+  background: var(--surface-secondary) !important;
+  color: var(--ink-100) !important;
+  border: var(--border-gold-hairline) !important;
+  padding: 5px 14px !important;
+  border-radius: 50px;
+  box-shadow: none !important;
 }
 
 .jk-gold-badge i {
-  color: #9e7832 !important;
+  color: var(--accent-gold) !important;
+}
+
+/* Cinematic Deep Executive Forest & Brushed Champagne Gold Hero (#hero) */
+.hero {
+  background: radial-gradient(95% 110% at 82% 18%, rgba(28, 68, 46, 0.48) 0%, rgba(12, 31, 22, 0) 62%),
+              linear-gradient(160deg, #0C1F16 0%, #112A1E 55%, #08150E 100%) !important;
+  padding-top: 140px !important;
+  padding-bottom: 104px !important;
+  border-bottom: 1px solid rgba(158, 123, 59, 0.35);
+}
+
+.hero .background-elements {
+  display: none !important;
+}
+
+.hero .hero-image .main-image {
+  transform: none !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(223, 194, 139, 0.42) !important;
+  box-shadow: 0 28px 64px -24px rgba(0, 0, 0, 0.6) !important;
+  max-height: 560px !important;
+  object-fit: cover;
+  object-position: center 12% !important;
+}
+
+.hero .hero-image .floating-card {
+  background: rgba(12, 31, 22, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(223, 194, 139, 0.38) !important;
+  border-radius: 14px !important;
+  padding: 12px 18px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero .hero-image .floating-card.emergency-card {
+  top: 20px !important;
+  left: -12px !important;
+}
+
+.hero .hero-image .floating-card.emergency-card .card-content i {
+  font-size: 1.2rem !important;
+  color: #0C1F16 !important;
+  background: var(--accent-gold-light) !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+}
+
+.hero .hero-image .floating-card.emergency-card .card-content .text .label {
+  font-size: 0.7rem !important;
+  color: rgba(250, 249, 246, 0.65) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero .hero-image .floating-card.emergency-card .card-content .text .number {
+  font-family: var(--font-mono) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: #FAF9F6 !important;
+}
+
+.hero .hero-image .floating-card.stats-card {
+  bottom: 20px !important;
+  right: -12px !important;
+  gap: 1.5rem !important;
+  padding: 14px 22px !important;
+}
+
+.hero .hero-image .floating-card.stats-card .stat-item .number {
+  font-family: var(--font-display) !important;
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  color: var(--accent-gold-light) !important;
+}
+
+.hero .hero-image .floating-card.stats-card .stat-item .label {
+  font-size: 0.72rem !important;
+  color: rgba(250, 249, 246, 0.65) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero .hero-content .jk-gold-badge {
+  background: rgba(223, 194, 139, 0.1) !important;
+  color: var(--accent-gold-light) !important;
+  border-color: rgba(223, 194, 139, 0.35) !important;
+}
+
+.hero .hero-content .jk-gold-badge i {
+  color: var(--accent-gold-light) !important;
+}
+
+.hero .hero-content .hero-title {
+  color: #FAF9F6 !important;
+  max-width: 19ch;
+  margin-bottom: 1.25rem !important;
+}
+
+.hero .hero-content .hero-title span {
+  color: var(--accent-gold-light) !important;
+  font-style: italic;
+}
+
+.hero .hero-content .hero-description {
+  color: rgba(250, 249, 246, 0.78) !important;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem) !important;
+  line-height: 1.68 !important;
+  max-width: 62ch;
+  margin-bottom: 2rem !important;
+}
+
+.hero .hero-content .hero-description strong {
+  color: #FAF9F6;
+  font-weight: 500;
+}
+
+.hero .hero-content .hero-description a {
+  color: var(--accent-gold-light) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero .hero-stats .stat-group {
+  background: rgba(250, 249, 246, 0.03);
+  border: 1px solid rgba(223, 194, 139, 0.22);
+  border-radius: 14px;
+  padding: 16px 22px;
+  gap: 2rem !important;
+}
+
+.hero .hero-stats .stat-group .stat i {
+  font-size: 1.4rem !important;
+  color: var(--accent-gold-light) !important;
+  padding: 12px !important;
+  background: rgba(223, 194, 139, 0.1) !important;
+  border: 1px solid rgba(223, 194, 139, 0.25);
+  border-radius: 10px !important;
+}
+
+.hero .hero-stats .stat-group .stat .stat-text .number {
+  font-family: var(--font-display) !important;
+  font-size: 1.65rem !important;
+  font-weight: 500 !important;
+  color: #FAF9F6 !important;
+}
+
+.hero .hero-stats .stat-group .stat .stat-text .label {
+  font-size: 0.78rem !important;
+  color: rgba(250, 249, 246, 0.6) !important;
+}
+
+.hero .cta-section .cta-buttons .btn.btn-primary {
+  background: var(--accent-gold-light) !important;
+  color: #141413 !important;
+  font-weight: 600 !important;
+  border-radius: 50px !important;
+  padding: 14px 30px !important;
+  border: 1px solid var(--accent-gold-light) !important;
+  box-shadow: none !important;
+}
+
+.hero .cta-section .cta-buttons .btn.btn-primary:hover {
+  background: #FAF9F6 !important;
+  border-color: #FAF9F6 !important;
+  transform: translateY(-1px);
+}
+
+.hero .cta-section .cta-buttons .btn.btn-secondary {
+  background: transparent !important;
+  border: 1px solid rgba(223, 194, 139, 0.4) !important;
+  color: #FAF9F6 !important;
+  border-radius: 50px !important;
+  padding: 14px 26px !important;
+}
+
+.hero .cta-section .cta-buttons .btn.btn-secondary:hover {
+  background: rgba(223, 194, 139, 0.12) !important;
+  border-color: var(--accent-gold-light) !important;
+}
+
+.hero .cta-section .quick-actions .action-link {
+  color: rgba(250, 249, 246, 0.72) !important;
+  font-size: 0.875rem;
+}
+
+.hero .cta-section .quick-actions .action-link i {
+  color: var(--accent-gold-light) !important;
 }
 
 /* Page Title Banner — Deep Executive Forest & Champagne Gold */
 .page-title .heading {
-  background: radial-gradient(90% 120% at 85% 10%, rgba(36, 78, 52, 0.55) 0%, rgba(14, 36, 25, 0) 60%),
-              linear-gradient(160deg, #0e2419 0%, #132f20 55%, #0a1911 100%) !important;
-  padding: 130px 0 72px !important;
-  border-bottom: 1px solid rgba(201, 160, 92, 0.25);
+  background: radial-gradient(90% 120% at 85% 10%, rgba(28, 68, 46, 0.45) 0%, rgba(12, 31, 22, 0) 60%),
+              linear-gradient(160deg, #0C1F16 0%, #112A1E 55%, #08150E 100%) !important;
+  padding: 132px 0 76px !important;
+  border-bottom: 1px solid rgba(158, 123, 59, 0.3);
 }
 
 .page-title .heading .jk-gold-badge {
-  background: rgba(201, 160, 92, 0.14) !important;
-  color: #e2c286 !important;
-  border-color: rgba(201, 160, 92, 0.4) !important;
+  background: rgba(223, 194, 139, 0.1) !important;
+  color: var(--accent-gold-light) !important;
+  border-color: rgba(223, 194, 139, 0.35) !important;
 }
 
 .page-title .heading .jk-gold-badge i {
-  color: #e2c286 !important;
+  color: var(--accent-gold-light) !important;
 }
 
 .page-title .heading h1.heading-title {
-  color: #ffffff !important;
-  font-size: clamp(2.1rem, 3.8vw, 3.1rem) !important;
-  line-height: 1.16 !important;
+  color: #FAF9F6 !important;
+  max-width: 24ch;
   margin-bottom: 18px !important;
 }
 
 .page-title .heading p {
-  color: #c9d5cc !important;
-  font-size: 1.06rem !important;
-  line-height: 1.75 !important;
-  max-width: 780px;
-  margin-inline: auto;
+  color: rgba(250, 249, 246, 0.75) !important;
+  max-width: 65ch;
+}
+
+.page-title .heading p strong {
+  color: #FAF9F6;
+  font-weight: 500;
+}
+
+.page-title .heading p a {
+  color: var(--accent-gold-light) !important;
 }
 
 .page-title nav.breadcrumbs {
-  background: #f3efe4 !important;
-  border-bottom: 1px solid rgba(14, 36, 25, 0.08) !important;
+  background: var(--surface-secondary) !important;
+  border-bottom: var(--border-hairline) !important;
   padding: 14px 0 !important;
 }
 
-/* Hide clunky SEO TOC blocks on main landing pages; keep only on article page */
+/* Hide legacy inline RankMath TOC blocks on non-article pages */
 body:not(.article-page) .wp-block-rank-math-toc-block {
   display: none !important;
 }
 
-/* Bespoke Executive Pillar Cards (5-pillars.html & index.html) */
+/* ==========================================================================
+   HAIRLINE CARD ARCHITECTURE (Replaces Heavy Drop Shadows with 1px Borders)
+   ========================================================================== */
+.jk-metric-card {
+  background: var(--surface-elevated);
+  border: var(--border-hairline);
+  border-top: 2px solid var(--accent-gold);
+  border-radius: 14px;
+  padding: 28px 24px;
+  height: 100%;
+  box-shadow: none !important;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.jk-metric-card:hover {
+  border-color: rgba(158, 123, 59, 0.55);
+  transform: translateY(-2px);
+}
+
+.jk-metric-card__eyebrow {
+  display: inline-block;
+  color: var(--accent-gold);
+  background: var(--surface-secondary);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.jk-metric-card__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.7rem + 1vw, 2.5rem);
+  font-weight: 500;
+  color: var(--ink-100);
+  line-height: 1.08;
+  margin-bottom: 10px;
+}
+
+.jk-metric-card__title {
+  font-family: var(--font-sans) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: var(--ink-100);
+  margin-bottom: 8px;
+}
+
+.jk-metric-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink-75);
+  margin-bottom: 0;
+}
+
+.jk-executive-banner {
+  background: var(--surface-forest);
+  border: 1px solid rgba(223, 194, 139, 0.35);
+  border-radius: 16px;
+  padding: 32px 36px;
+  color: #FAF9F6;
+  box-shadow: none !important;
+}
+
+/* Bespoke Executive Pillar Cards — 1px Hairline Editorial Bento */
 .jk-pillar-card {
-  background: #ffffff;
-  border: 1px solid rgba(14, 36, 25, 0.09);
-  border-radius: 22px;
+  background: var(--surface-elevated);
+  border: var(--border-hairline);
+  border-radius: 16px;
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 14px 38px -16px rgba(14, 36, 25, 0.08);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-  position: relative;
+  box-shadow: none !important;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .jk-pillar-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 56px -20px rgba(14, 36, 25, 0.16);
-  border-color: rgba(201, 160, 92, 0.65);
+  transform: translateY(-3px);
+  border-color: rgba(158, 123, 59, 0.55);
 }
 
 .jk-pillar-card__body {
-  padding: 34px 32px 26px;
+  padding: 32px 28px 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .jk-pillar-card__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .jk-pillar-card__icon {
-  width: 62px;
-  height: 62px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #0e2419 0%, #1b4332 100%);
-  border: 1px solid rgba(201, 160, 92, 0.45);
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: var(--surface-forest);
+  border: 1px solid rgba(223, 194, 139, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e2c286;
-  font-size: 26px;
-  box-shadow: 0 10px 24px -8px rgba(14, 36, 25, 0.35);
+  color: var(--accent-gold-light);
+  font-size: 22px;
 }
 
 .jk-pillar-card__num {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 2.3rem;
-  font-weight: 700;
-  line-height: 1;
-  color: rgba(176, 135, 67, 0.24);
-  letter-spacing: -0.02em;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--ink-50);
 }
 
 .jk-pillar-card__eyebrow {
-  display: inline-block;
-  font-size: 11.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #9e7832;
+  color: var(--accent-gold);
   margin-bottom: 6px;
 }
 
 .jk-pillar-card__title {
-  font-family: "Playfair Display", "Hind Siliguri", Georgia, serif !important;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0e2419;
-  margin-bottom: 6px;
-  line-height: 1.25;
+  font-family: var(--font-display) !important;
+  font-size: 1.45rem !important;
+  font-weight: 500 !important;
+  color: var(--ink-100);
+  margin-bottom: 8px;
 }
 
 .jk-pillar-card__bn {
   display: inline-block;
-  font-family: "Hind Siliguri", sans-serif;
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #1b4332;
-  background: #f2efe6;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent-emerald);
+  background: var(--surface-secondary);
+  border: var(--border-hairline);
   padding: 3px 12px;
   border-radius: 50px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   align-self: flex-start;
 }
 
 .jk-pillar-card__desc {
-  font-size: 0.97rem;
-  line-height: 1.72;
-  color: #435349;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--ink-75);
   margin-bottom: 0;
   flex: 1;
 }
 
 .jk-pillar-card__protocol {
-  background: linear-gradient(145deg, #0e2419 0%, #163626 100%);
-  padding: 22px 32px;
-  border-top: 1px solid rgba(201, 160, 92, 0.3);
-  color: #eef2e8;
+  background: var(--surface-forest);
+  padding: 18px 28px;
+  border-top: 1px solid rgba(223, 194, 139, 0.25);
+  color: #FAF9F6;
 }
 
 .jk-pillar-card__protocol-title {
-  font-size: 11px;
-  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #e2c286;
-  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold-light);
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7137,100 +7613,462 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 7px;
+  gap: 6px;
 }
 
 .jk-pillar-card__list li {
-  font-size: 0.86rem;
-  color: #d6e2d9;
+  font-size: 0.84rem;
+  color: rgba(250, 249, 246, 0.82);
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
 }
 
 .jk-pillar-card__list li i {
-  color: #e2c286;
-  font-size: 14px;
-  flex-shrink: 0;
+  color: var(--accent-gold-light);
+  font-size: 13px;
 }
 
-/* Guarantee High-Contrast Icons on All Department Cards & Service Cards */
-.featured-departments .department-card {
-  border-radius: 20px !important;
-  border: 1px solid rgba(14, 36, 25, 0.09) !important;
-  box-shadow: 0 12px 32px -14px rgba(14, 36, 25, 0.07) !important;
-  padding: 34px 30px !important;
-  background: #ffffff !important;
-}
-
-.featured-departments .department-card:hover {
-  border-color: rgba(201, 160, 92, 0.65) !important;
-  transform: translateY(-5px);
-}
-
-.featured-departments .department-card .card-icon {
-  width: 58px !important;
-  height: 58px !important;
-  border-radius: 15px !important;
-  background: linear-gradient(135deg, #0e2419 0%, #1b4332 100%) !important;
-  border: 1px solid rgba(201, 160, 92, 0.45) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-bottom: 22px !important;
-}
-
-.featured-departments .department-card .card-icon i {
-  color: #e2c286 !important;
-  font-size: 24px !important;
-}
-
-.services .service-card {
-  border: 1px solid rgba(14, 36, 25, 0.09) !important;
-  border-radius: 22px !important;
-  box-shadow: 0 12px 34px -14px rgba(14, 36, 25, 0.07) !important;
-  background: #ffffff !important;
-}
-
-.services .service-card:hover {
-  border-color: #c9a05c !important;
-  transform: translateY(-6px) !important;
-}
-
-.services .service-icon {
-  width: 62px !important;
-  height: 62px !important;
+/* Global Hairline Overrides for MediNest & Bootstrap Containers */
+.bg-white.rounded-4.shadow-sm.border,
+.featured-departments .featured-department,
+.services .service-card,
+.jk-product-card,
+.about .mission-section .mission-item,
+.contact .info-box,
+.appointment .process-steps .step-item,
+.appointment .appointment-form-wrapper,
+.contact .php-email-form,
+.home-about .content-wrapper .highlight-box,
+.home-about .content-wrapper .metrics-row .metric-box {
+  background: var(--surface-elevated) !important;
+  border: var(--border-hairline-strong) !important;
   border-radius: 16px !important;
-  background: linear-gradient(135deg, #0e2419 0%, #1b4332 100%) !important;
-  border: 1px solid rgba(201, 160, 92, 0.45) !important;
+  box-shadow: none !important;
 }
 
-.services .service-icon i {
-  color: #e2c286 !important;
-  font-size: 25px !important;
+.featured-departments .featured-department {
+  padding: 44px;
+  margin-bottom: 56px !important;
+}
+
+.services .service-icon,
+.about .mission-section .mission-item .mission-icon,
+.contact .info-box i,
+.appointment .info-items .info-item .icon-wrapper,
+.appointment .process-steps .step-item .step-icon,
+.home-about .content-wrapper .highlight-box .highlight-icon {
+  background: var(--surface-forest) !important;
+  color: var(--accent-gold-light) !important;
+  border: 1px solid rgba(223, 194, 139, 0.4) !important;
+}
+
+.services .service-icon i,
+.about .mission-section .mission-item .mission-icon i,
+.appointment .info-items .info-item .icon-wrapper i,
+.appointment .process-steps .step-item .step-icon i,
+.home-about .content-wrapper .highlight-box .highlight-icon i {
+  color: var(--accent-gold-light) !important;
 }
 
 .services .service-header .service-category {
-  background: #f5efe2 !important;
-  color: #8c6724 !important;
-  border: 1px solid rgba(201, 160, 92, 0.35) !important;
+  background: var(--surface-secondary) !important;
+  color: var(--accent-gold) !important;
+  border: var(--border-gold-hairline) !important;
 }
 
 .services .service-features .feature-badge {
-  background: #f4f1ea !important;
-  color: #1b4332 !important;
-  font-weight: 600 !important;
-  border: 1px solid rgba(14, 36, 25, 0.08);
+  background: var(--surface-secondary) !important;
+  color: var(--ink-100) !important;
+  border: var(--border-hairline);
 }
 
-.services .service-btn {
-  background: #0e2419 !important;
-  color: #f5e6c8 !important;
-  border: 1px solid rgba(201, 160, 92, 0.4) !important;
+.services .service-btn,
+.btn-success,
+.appointment .appointment-form-wrapper .btn-appointment,
+.contact .php-email-form button[type=submit],
+.call-to-action .hero-content .primary-btn,
+.home-about .content-wrapper .action-buttons .btn-explore {
+  background: var(--surface-forest) !important;
+  color: #FAF9F6 !important;
+  border: 1px solid rgba(223, 194, 139, 0.45) !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease !important;
 }
 
-.services .service-card:hover .service-btn {
-  background: linear-gradient(135deg, #c9a05c 0%, #b08743 100%) !important;
-  color: #0e2419 !important;
-  border-color: #c9a05c !important;
+.services .service-card:hover .service-btn,
+.btn-success:hover,
+.appointment .appointment-form-wrapper .btn-appointment:hover,
+.contact .php-email-form button[type=submit]:hover,
+.call-to-action .hero-content .primary-btn:hover,
+.home-about .content-wrapper .action-buttons .btn-explore:hover {
+  background: var(--accent-gold-light) !important;
+  color: #141413 !important;
+  border-color: var(--accent-gold-light) !important;
+}
+
+.btn-outline-success {
+  border: 1px solid var(--ink-100) !important;
+  color: var(--ink-100) !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+}
+
+.btn-outline-success:hover {
+  background: var(--surface-forest) !important;
+  border-color: var(--surface-forest) !important;
+  color: #FAF9F6 !important;
+}
+
+.call-to-action .contact-banner {
+  background: var(--surface-forest) !important;
+  border: 1px solid rgba(223, 194, 139, 0.38) !important;
+  border-radius: 18px !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   3 & 4. BLOG UI/UX FOR AEO (ANSWER ENGINE OPTIMIZATION) & E-E-A-T ARCHITECTURE
+   ========================================================================== */
+
+/* E-E-A-T High-Trust Top Metadata Byline Bar */
+.eeat-byline-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 28px;
+  padding: 18px 24px;
+  background: var(--surface-secondary);
+  border: var(--border-hairline-strong);
+  border-radius: 12px;
+  margin-bottom: 28px;
+  font-size: 0.875rem;
+}
+
+.eeat-byline-bar__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eeat-byline-bar__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  border: 1px solid var(--accent-gold);
+}
+
+.eeat-byline-bar__name {
+  font-weight: 600;
+  color: var(--ink-100);
+  display: block;
+}
+
+.eeat-byline-bar__role {
+  font-size: 0.8rem;
+  color: var(--ink-50);
+  display: block;
+}
+
+.eeat-byline-bar__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: 0.8125rem;
+  color: var(--ink-75);
+}
+
+.eeat-byline-bar__meta time {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-100);
+}
+
+/* "Answer-First" Key Takeaways Component (Below H1/Byline) */
+.aeo-takeaways {
+  background: var(--surface-secondary);
+  border: var(--border-hairline-strong);
+  border-left: 3px solid var(--surface-forest);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-bottom: 40px;
+}
+
+.aeo-takeaways__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: var(--border-hairline);
+}
+
+.aeo-takeaways__label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-emerald);
+}
+
+.aeo-takeaways__summary {
+  font-size: 1.05rem !important;
+  font-weight: 500;
+  line-height: 1.68 !important;
+  color: var(--ink-100) !important;
+  max-width: 65ch;
+  margin-bottom: 18px;
+}
+
+.aeo-takeaways__list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 10px;
+}
+
+.aeo-takeaways__list li {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--ink-75);
+  max-width: 64ch;
+}
+
+.aeo-takeaways__list li strong {
+  color: var(--ink-100);
+  font-weight: 600;
+}
+
+/* Desktop Asymmetric Sticky 2-Column Layout (25% Left Rail TOC + 75% 65ch Reading Column) */
+.aeo-article-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 25%) minmax(0, 75%);
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 991.98px) {
+  .aeo-article-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.aeo-toc-rail {
+  position: sticky;
+  top: 110px;
+  background: var(--surface-elevated);
+  border: var(--border-hairline-strong);
+  border-radius: 12px;
+  padding: 22px 20px;
+}
+
+@media (max-width: 991.98px) {
+  .aeo-toc-rail {
+    position: static;
+  }
+}
+
+.aeo-toc-rail__title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-50);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: var(--border-hairline);
+}
+
+.aeo-toc-rail__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.aeo-toc-rail__list li a {
+  display: block;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--ink-75);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-left: 2px solid transparent;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.2s ease;
+}
+
+.aeo-toc-rail__list li a:hover,
+.aeo-toc-rail__list li a:focus {
+  color: var(--ink-100);
+  background: var(--surface-secondary);
+  border-left-color: var(--accent-gold);
+}
+
+.aeo-prose {
+  background: var(--surface-elevated);
+  border: var(--border-hairline-strong);
+  border-radius: 16px;
+  padding: clamp(24px, 4vw, 52px);
+}
+
+.aeo-prose > * {
+  max-width: 65ch;
+}
+
+.aeo-prose > .aeo-full-bleed,
+.aeo-prose > figure,
+.aeo-prose > .table-responsive,
+.aeo-prose > .aeo-spec-grid,
+.aeo-prose > .aeo-takeaways,
+.aeo-prose > .eeat-byline-bar,
+.aeo-prose > .eeat-author-footer {
+  max-width: 100%;
+}
+
+.aeo-prose h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  padding-top: 1.75rem;
+  border-top: var(--border-hairline);
+}
+
+.aeo-prose h2:first-of-type {
+  margin-top: 1.5rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Editorial Comparison Table (Horizontal 1px Borders Only, Zero Vertical Borders, Right-Aligned Tabular Numerals) */
+.aeo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  font-size: 0.92rem;
+  background: transparent;
+}
+
+.aeo-table caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-50);
+  padding-bottom: 10px;
+}
+
+.aeo-table th,
+.aeo-table td {
+  padding: 14px 16px;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: var(--border-hairline-strong) !important;
+  vertical-align: top;
+  text-align: left;
+}
+
+.aeo-table thead th {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--ink-100);
+  background: var(--surface-secondary);
+  border-top: var(--border-hairline-strong) !important;
+  border-bottom: 1.5px solid rgba(20, 20, 19, 0.2) !important;
+}
+
+.aeo-table th.num,
+.aeo-table td.num {
+  text-align: right !important;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums !important;
+  white-space: nowrap;
+}
+
+/* Semantic <dl>/<dt>/<dd> Description List "Spec Card" Grid */
+.aeo-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1px;
+  background: rgba(20, 20, 19, 0.08);
+  border: var(--border-hairline-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 28px 0;
+}
+
+.aeo-spec-item {
+  background: var(--surface-elevated);
+  padding: 18px 20px;
+  margin: 0;
+}
+
+.aeo-spec-item dt {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-50);
+  margin-bottom: 6px;
+}
+
+.aeo-spec-item dd {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ink-100);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Speakable Pull-Quote Component (2px Solid Left Border, Serif Italic) */
+blockquote.aeo-speakable {
+  margin: 32px 0;
+  padding: 20px 28px;
+  border-left: 2px solid var(--ink-100) !important;
+  background: var(--surface-secondary);
+  border-radius: 0 12px 12px 0;
+}
+
+blockquote.aeo-speakable p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.05rem + 0.35vw, 1.35rem) !important;
+  line-height: 1.55 !important;
+  color: var(--ink-100) !important;
+  margin-bottom: 10px;
+}
+
+blockquote.aeo-speakable footer,
+blockquote.aeo-speakable cite {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-50);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* E-E-A-T Author Bio & Primary Sources Footer */
+.eeat-author-footer {
+  margin-top: 44px;
+  padding: 28px 32px;
+  background: var(--surface-secondary);
+  border: var(--border-hairline-strong);
+  border-radius: 14px;
 }
