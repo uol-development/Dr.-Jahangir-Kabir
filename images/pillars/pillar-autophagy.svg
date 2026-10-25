@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" height="320">
+  <defs>
+    <linearGradient id="bgFast" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2017"/>
+      <stop offset="60%" stop-color="#163826"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="goldFast" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2c286"/>
+      <stop offset="100%" stop-color="#c9a05c"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="320" fill="url(#bgFast)"/>
+  <circle cx="530" cy="260" r="110" fill="#ffffff" fill-opacity="0.04"/>
+
+  <!-- Left Visual: 16:8 Fasting Clock -->
+  <g transform="translate(135, 160)" font-family="Inter, sans-serif">
+    <circle cx="0" cy="0" r="88" fill="#0b1710" stroke="url(#goldFast)" stroke-width="3"/>
+    <!-- 16h Fasting Arc -->
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#22c55e" stroke-width="12" stroke-dasharray="300 152" stroke-linecap="round" transform="rotate(-90)"/>
+    <!-- 8h Eating Arc -->
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#e2c286" stroke-width="12" stroke-dasharray="135 317" stroke-linecap="round" transform="rotate(155)"/>
+    <text x="0" y="-6" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="800">16 : 8</text>
+    <text x="0" y="18" text-anchor="middle" fill="#86efac" font-size="11.5" font-weight="700" letter-spacing="1.2">AUTOPHAGY</text>
+    <text x="0" y="36" text-anchor="middle" fill="#e2c286" font-size="10.5" font-weight="600">CELLULAR RENEWAL</text>
+  </g>
+
+  <!-- Right Timeline -->
+  <g transform="translate(265, 62)" font-family="Inter, sans-serif">
+    <text x="0" y="0" fill="#e2c286" font-size="12" font-weight="700" letter-spacing="1.5">PILLAR 02 · INTERMITTENT FASTING</text>
+    <text x="0" y="28" fill="#ffffff" font-size="21" font-weight="700">Cellular Recycling &amp; Detox</text>
+
+    <rect x="0" y="48" width="295" height="48" rx="10" fill="#ffffff" fill-opacity="0.09" stroke="#22c55e" stroke-opacity="0.4"/>
+    <text x="16" y="69" fill="#86efac" font-size="12" font-weight="700">16 HOURS FASTING WINDOW (8 PM – 12 PM)</text>
+    <text x="16" y="86" fill="#e2e8f0" font-size="12.5">Lowers insulin &amp; triggers cellular cleanup</text>
+
+    <rect x="0" y="106" width="295" height="48" rx="10" fill="#ffffff" fill-opacity="0.09" stroke="#e2c286" stroke-opacity="0.4"/>
+    <text x="16" y="127" fill="#e2c286" font-size="12" font-weight="700">8 HOURS NOURISHMENT (12 PM – 8 PM)</text>
+    <text x="16" y="144" fill="#e2e8f0" font-size="12.5">2 nutrient-dense organic meals · zero snacking</text>
+
+    <rect x="0" y="164" width="295" height="48" rx="10" fill="#ffffff" fill-opacity="0.09" stroke="#38bdf8" stroke-opacity="0.4"/>
+    <text x="16" y="185" fill="#7dd3fc" font-size="12" font-weight="700">NOBEL-PRIZE CELLULAR MECHANISM</text>
+    <text x="16" y="202" fill="#e2e8f0" font-size="12.5">Reverses insulin resistance &amp; inflammation</text>
+  </g>
+</svg>

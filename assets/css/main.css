@@ -6828,3 +6828,52 @@ section,
   color: #3a4a3f;
 }
 
+/*--------------------------------------------------------------
+# Visual Audit Fixes: High-Contrast Icons & Uncropped Card Images
+--------------------------------------------------------------*/
+.departments .department-item .department-icon {
+  background: #e8f5ee !important;
+  border: 1px solid rgba(21, 128, 61, 0.25) !important;
+}
+
+.departments .department-item .department-icon i {
+  color: #15803d !important;
+  font-size: 28px !important;
+}
+
+.departments .department-item:hover .department-icon {
+  background: linear-gradient(135deg, #122319 0%, #15803d 100%) !important;
+  border-color: #c9a05c !important;
+}
+
+.departments .department-item:hover .department-icon i {
+  color: #ffffff !important;
+}
+
+.departments .department-item .department-image {
+  height: 225px;
+  background: #122319;
+}
+
+.departments .department-item .department-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Prevent portrait head-cropping across all cards */
+img[src*="dr-portrait.jpg"],
+img[src*="dr-hero.jpg"] {
+  object-position: center 15% !important;
+}
+
+/* Prevent product bottles/packets from being cut off at top/bottom */
+.featured-services .service-image img[src*="images/products/"],
+.home-about .small-image img[src*="images/products/"] {
+  object-fit: contain !important;
+  background: linear-gradient(180deg, #fbf9f3 0%, #f1ece0 100%);
+  padding: 12px;
+}
+
+
