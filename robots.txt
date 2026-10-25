@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /tmp/
 
 Sitemap: https://drjahangirkabir.com/sitemap.xml
