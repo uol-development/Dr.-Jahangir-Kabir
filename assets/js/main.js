@@ -283,6 +283,9 @@
             sent.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>ধন্যবাদ! আপনার অনুরোধটি গৃহীত হয়েছে। দ্রুত বুকিং নিশ্চিত করতে হেল্পলাইনে (+880 9678 242404) কল করুন অথবা <a href="https://jklifestyleltd.com/appointment/" target="_blank" class="text-white text-decoration-underline fw-bold">JK Lifestyle Official Portal</a> ভিজিট করুন।';
           }
           form.reset();
+          if (form.classList.contains('appointment-form')) {
+            window.location.href = 'https://jklifestyleltd.com/appointment/';
+          }
         }, 500);
       });
     });
