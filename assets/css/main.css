@@ -351,6 +351,19 @@ table, th, td, time, dd,
   word-spacing: 0.02em;
 }
 
+:lang(bn) .jk-gold-badge,
+:lang(bn) .jk-pillar-card__eyebrow,
+:lang(bn) .jk-metric-card__eyebrow,
+:lang(bn) .aeo-eyebrow,
+:lang(bn) .department-category,
+:lang(bn) .service-category,
+:lang(bn) .book-ribbon {
+  font-family: "Hind Siliguri", var(--font-sans) !important;
+  font-size: 0.8125rem !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+}
+
 h1:lang(bn), h2:lang(bn), h3:lang(bn), h4:lang(bn),
 :lang(bn) h1, :lang(bn) h2, :lang(bn) h3, :lang(bn) h4,
 [lang="bn"] h1, [lang="bn"] h2, [lang="bn"] h3 {
