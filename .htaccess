@@ -1,5 +1,16 @@
-Options -MultiViews
+# ============================================================================
+# Dr. Muhammad Jahangir Kabir (drjahangirkabir.com) — Hardened Apache Config
+# Clean Extensionless URLs + OWASP Security Headers + Core Web Vitals Caching
+# ============================================================================
+
+Options -Indexes -MultiViews
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
 RewriteEngine On
+
+# 0. Block direct HTTP access to protected directories & dot-directories
+RewriteRule ^(cms-data|\.git|\.github|\.vscode)(/|$) - [F,L]
 
 # 1. Redirect /index.html to /
 RewriteCond %{QUERY_STRING} !cms_visual_editor=1 [NC]
@@ -16,3 +27,47 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# Block access to sensitive configuration, backup, and log files
+<FilesMatch "(^\.|\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|env)$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# OWASP Recommended HTTP Security Headers
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Content-Security-Policy "default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data: blob:; media-src 'self' https:; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https:; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://jklifestyleltd.com;"
+  Header always unset X-Powered-By
+</IfModule>
+
+# Gzip / Deflate Compression for Fast Page Delivery
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript application/json image/svg+xml
+</IfModule>
+
+# Browser Caching for Core Web Vitals (LCP / CLS / FID)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

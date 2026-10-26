@@ -37,7 +37,7 @@ let cmsState = {
   unsavedChanges: false
 };
 
-// Utility: SHA-256 hash in browser (with pure JS fallback for non-HTTPS/file://)
+// Utility: Pure JS + WebCrypto SHA-256 hash in browser (no plaintext credentials stored)
 async function sha256Hex(str) {
   if (window.crypto && window.crypto.subtle) {
     try {
@@ -46,12 +46,70 @@ async function sha256Hex(str) {
       return Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, '0')).join('');
     } catch (e) {}
   }
-  const known = {
-    'JKAdmin@2026': '8579210885c9159d52e90328a11637e4a5204fb235d936c33b4445a6e4214b80',
-    'JKEditor@2026': '73977b6f55250919376942a8e4314a0c3c40b2548441400f3c7c0a0d5471c5b4',
-    'JKSeo@2026': 'f62f2c8d3584b445e979787699a24136270e53953350d2b6511510035059641b'
-  };
-  return known[str] || ('hash-' + str);
+  // Pure JS SHA-256 fallback for non-HTTPS / file:// environments
+  function rightRotate(value, amount) {
+    return (value >>> amount) | (value << (32 - amount));
+  }
+  const mathPow = Math.pow;
+  const maxWord = mathPow(2, 32);
+  let result = '';
+  const words = [];
+  const utf8Str = unescape(encodeURIComponent(str));
+  const asciiBitLength = utf8Str.length * 8;
+  let hash = [];
+  const k = [];
+  let primeCounter = 0;
+  const isComposite = {};
+  for (let candidate = 2; primeCounter < 64; candidate++) {
+    if (!isComposite[candidate]) {
+      for (let i = 0; i < 313; i += candidate) isComposite[i] = candidate;
+      hash[primeCounter] = (mathPow(candidate, 0.5) * maxWord) | 0;
+      k[primeCounter++] = (mathPow(candidate, 1 / 3) * maxWord) | 0;
+    }
+  }
+  let padded = utf8Str + '\x80';
+  while ((padded.length % 64) - 56) padded += '\x00';
+  for (let i = 0; i < padded.length; i++) {
+    const j = padded.charCodeAt(i);
+    words[i >> 2] |= j << ((3 - (i % 4)) * 8);
+  }
+  words[words.length] = (asciiBitLength / maxWord) | 0;
+  words[words.length] = asciiBitLength;
+  for (let j = 0; j < words.length;) {
+    const w = words.slice(j, (j += 16));
+    const oldHash = hash.slice(0);
+    for (let i = 0; i < 64; i++) {
+      const w15 = w[i - 15], w2 = w[i - 2];
+      const a = hash[0], e = hash[4];
+      const temp1 =
+        hash[7] +
+        (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25)) +
+        ((e & hash[5]) ^ (~e & hash[6])) +
+        k[i] +
+        (w[i] =
+          i < 16
+            ? w[i]
+            : (w[i - 16] +
+                (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3)) +
+                w[i - 7] +
+                (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10))) |
+              0);
+      const temp2 =
+        (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22)) +
+        ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+      hash = [(temp1 + temp2) | 0].concat(hash);
+      hash[4] = (hash[4] + temp1) | 0;
+      hash.pop();
+    }
+    for (let i = 0; i < 8; i++) hash[i] = (hash[i] + oldHash[i]) | 0;
+  }
+  for (let i = 0; i < 8; i++) {
+    for (let j = 3; j + 1; j--) {
+      const b = (hash[i] >> (j * 8)) & 255;
+      result += (b < 16 ? 0 : '') + b.toString(16);
+    }
+  }
+  return result;
 }
 
 function escapeHtml(str) {
@@ -156,13 +214,22 @@ async function callCmsApi(action, payload = {}) {
     if (cmsState.session && cmsState.session.token) {
       headers['X-CMS-Token'] = cmsState.session.token;
     }
+    if (cmsState.session && cmsState.session.csrfToken) {
+      headers['X-CSRF-Token'] = cmsState.session.csrfToken;
+    }
     const res = await fetch(`api/cms.php?action=${encodeURIComponent(action)}`, {
       method: 'POST',
+      credentials: 'same-origin',
       headers,
       body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
+    const data = await res.json().catch(() => null);
+    if (!res.ok) {
+      if (data && data.error) {
+        showToast(data.error, 'error');
+      }
+      throw new Error((data && data.error) || ('HTTP ' + res.status));
+    }
     cmsState.serverAvailable = true;
     updateServerStatusBadge(true);
     return data;
@@ -201,7 +268,7 @@ async function initCmsDatabase() {
 
   if (window.location.protocol !== 'file:') {
     try {
-      const pingRes = await fetch('api/cms.php?action=ping');
+      const pingRes = await fetch('api/cms.php?action=ping', { credentials: 'same-origin' });
       if (pingRes.ok) {
         const pingData = await pingRes.json();
         if (pingData && pingData.ok) {
@@ -222,6 +289,12 @@ async function initCmsDatabase() {
 }
 
 // ==================== AUTHENTICATION & SESSION ====================
+const OFFLINE_USER_HASHES = {
+  admin: '8579210885c9159d52e90328a11637e4a5204fb235d936c33b4445a6e4214b80',
+  editor: '73977b6f55250919376942a8e4314a0c3c40b2548441400f3c7c0a0d5471c5b4',
+  seo: 'f62f2c8d3584b445e979787699a24136270e53953350d2b6511510035059641b'
+};
+
 function toggleLoginPassword() {
   const input = document.getElementById('loginPassword');
   const icon = document.getElementById('loginPwdToggleIcon');
@@ -235,11 +308,11 @@ function toggleLoginPassword() {
   }
 }
 
-function fillDemoCredentials(user, pass) {
+function fillDemoCredentials(user) {
   const u = document.getElementById('loginUsername');
   const p = document.getElementById('loginPassword');
   if (u) u.value = user;
-  if (p) p.value = pass;
+  if (p) p.focus();
 }
 
 async function handleLoginSubmit(e) {
@@ -254,13 +327,22 @@ async function handleLoginSubmit(e) {
     try {
       const res = await fetch('api/cms.php?action=login', {
         method: 'POST',
+        credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: usernameInput, password: passwordInput })
       });
       const data = await res.json();
+      if (!res.ok || (data && data.ok === false)) {
+        if (errBox && errTxt) {
+          errTxt.textContent = (data && data.error) || 'Invalid username or password.';
+          errBox.classList.remove('hidden');
+        }
+        return;
+      }
       if (data && data.ok && data.token) {
         cmsState.session = {
           token: data.token,
+          csrfToken: data.csrfToken || '',
           username: data.user.username,
           name: data.user.name,
           role: data.user.role,
@@ -268,7 +350,11 @@ async function handleLoginSubmit(e) {
         };
         localStorage.setItem(CMS_SESSION_KEY, JSON.stringify(cmsState.session));
         const stateRes = await fetch('api/cms.php?action=get_state', {
-          headers: { 'X-CMS-Token': data.token }
+          credentials: 'same-origin',
+          headers: {
+            'X-CMS-Token': data.token,
+            'X-CSRF-Token': data.csrfToken || ''
+          }
         });
         if (stateRes.ok) {
           const stateData = await stateRes.json();
@@ -284,24 +370,37 @@ async function handleLoginSubmit(e) {
     } catch (err) {}
   }
 
+  // Client-side rate limit check for offline / static fallback
+  const lockKey = 'jk_cms_login_lockout';
+  const attemptsKey = 'jk_cms_login_attempts';
+  const lockUntil = Number(sessionStorage.getItem(lockKey) || 0);
+  if (Date.now() < lockUntil) {
+    const mins = Math.ceil((lockUntil - Date.now()) / 60000);
+    if (errBox && errTxt) {
+      errTxt.textContent = `Too many failed login attempts. Account locked for ${mins} minute(s).`;
+      errBox.classList.remove('hidden');
+    }
+    return;
+  }
+
   const users = (cmsState.db && cmsState.db.users) || [];
-  const defaultPasswords = {
-    admin: 'JKAdmin@2026',
-    editor: 'JKEditor@2026',
-    seo: 'JKSeo@2026'
-  };
   const inputHash = await sha256Hex(passwordInput);
   const matchedUser = users.find(u => {
     if (!u.active) return false;
     const unameMatch = u.username.toLowerCase() === usernameInput.toLowerCase() || (u.email && u.email.toLowerCase() === usernameInput.toLowerCase());
     if (!unameMatch) return false;
-    if (u.passwordHash === inputHash) return true;
-    if (u.plainPassword && u.plainPassword === passwordInput) return true;
-    if (defaultPasswords[u.username] === passwordInput) return true;
+    const expectedHash = u.passwordHash || OFFLINE_USER_HASHES[u.username];
+    if (expectedHash && expectedHash === inputHash) return true;
     return false;
   });
 
   if (!matchedUser) {
+    const attempts = Number(sessionStorage.getItem(attemptsKey) || 0) + 1;
+    sessionStorage.setItem(attemptsKey, String(attempts));
+    if (attempts >= 5) {
+      sessionStorage.setItem(lockKey, String(Date.now() + 15 * 60 * 1000));
+      sessionStorage.removeItem(attemptsKey);
+    }
     if (errBox && errTxt) {
       errTxt.textContent = 'Invalid username or password. Please verify your credentials and try again.';
       errBox.classList.remove('hidden');
@@ -309,9 +408,13 @@ async function handleLoginSubmit(e) {
     return;
   }
 
+  sessionStorage.removeItem(attemptsKey);
+  sessionStorage.removeItem(lockKey);
+
   matchedUser.lastLogin = new Date().toISOString();
   cmsState.session = {
     token: 'local-token-' + Date.now(),
+    csrfToken: 'local-csrf-' + Date.now(),
     username: matchedUser.username,
     name: matchedUser.name,
     role: matchedUser.role,
@@ -326,6 +429,8 @@ async function handleLoginSubmit(e) {
 function completeLoginSuccess() {
   const overlay = document.getElementById('cmsAuthOverlay');
   if (overlay) overlay.classList.add('hidden');
+  const pwdInput = document.getElementById('loginPassword');
+  if (pwdInput) pwdInput.value = '';
 
   const nameEl = document.getElementById('cmsCurrentUserName');
   const roleEl = document.getElementById('cmsCurrentUserRole');
@@ -343,12 +448,25 @@ function completeLoginSuccess() {
   showToast(`Welcome back, ${cmsState.session?.name || 'Admin'}! Admin Panel is ready.`, 'success');
 }
 
-function cmsLogout() {
+async function cmsLogout() {
+  if (cmsState.serverAvailable && cmsState.session?.token) {
+    try {
+      await fetch('api/cms.php?action=logout', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CMS-Token': cmsState.session.token,
+          'X-CSRF-Token': cmsState.session.csrfToken || ''
+        }
+      });
+    } catch (e) {}
+  }
   localStorage.removeItem(CMS_SESSION_KEY);
   cmsState.session = null;
   const overlay = document.getElementById('cmsAuthOverlay');
   if (overlay) overlay.classList.remove('hidden');
-  showToast('You have been signed out successfully.', 'info');
+  showToast('You have been signed out and your session has been terminated.', 'info');
 }
 
 // ==================== ADMIN PANEL SELF-CUSTOMIZER ENGINE ====================
@@ -987,8 +1105,11 @@ function updateActivePageField(field, value) {
   if (badge) badge.classList.remove('hidden');
 }
 
-// Listen for messages from the Visual Editor iframe
+// Listen for messages from the Visual Editor iframe (strict same-origin verification)
 window.addEventListener('message', function (event) {
+  if (window.location.protocol !== 'file:' && event.origin !== window.location.origin) {
+    return;
+  }
   const data = event.data;
   if (!data || !data.type) return;
 
@@ -1082,7 +1203,8 @@ function pushVisualElementUpdate() {
     if (hrefEl) payload.href = hrefEl.value;
   }
 
-  iframe.contentWindow.postMessage(payload, '*');
+  const targetOrigin = window.location.protocol === 'file:' ? '*' : window.location.origin;
+  iframe.contentWindow.postMessage(payload, targetOrigin);
 }
 
 function openMediaPickerForInspector() {
@@ -2290,7 +2412,11 @@ function renderUsersModule(container) {
                 </div>
                 <div class="text-xs text-[#414750] font-mono mt-0.5">Username: ${escapeHtml(u.username)} · ${escapeHtml(u.email)}</div>
               </div>
-              <div class="flex items-center gap-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <button type="button" onclick="openChangePasswordModal('${escapeHtml(u.username)}')" class="admin-btn-secondary !py-1 !px-2.5 !text-xs" title="Reset / Change Password">
+                  <span class="material-symbols-outlined text-sm text-[#004b80]">lock_reset</span>
+                  <span>Password</span>
+                </button>
                 <select onchange="changeUserRole(${idx}, this.value)" class="admin-input !py-1 !text-xs !w-auto">
                   ${Object.keys(roles).map(rk => `<option value="${rk}" ${u.role === rk ? 'selected' : ''}>${rk}</option>`).join('')}
                 </select>
@@ -2398,6 +2524,14 @@ function openAddUserModal() {
   `);
 }
 
+function validateStrongPassword(pass) {
+  if (!pass || pass.length < 8) return 'Password must be at least 8 characters long.';
+  if (!/[A-Z]/.test(pass)) return 'Password must include at least one uppercase letter.';
+  if (!/[a-z]/.test(pass)) return 'Password must include at least one lowercase letter.';
+  if (!/[0-9]/.test(pass)) return 'Password must include at least one number.';
+  return null;
+}
+
 async function handleAddNewUser(e) {
   e.preventDefault();
   const name = document.getElementById('newUserName')?.value.trim();
@@ -2405,6 +2539,12 @@ async function handleAddNewUser(e) {
   const email = document.getElementById('newUserEmail')?.value.trim();
   const role = document.getElementById('newUserRole')?.value || 'editor';
   const pass = document.getElementById('newUserPassword')?.value || '';
+
+  const pwdErr = validateStrongPassword(pass);
+  if (pwdErr) {
+    showToast(pwdErr, 'error');
+    return;
+  }
 
   const passwordHash = await sha256Hex(pass);
   cmsState.db.users.push({
@@ -2414,7 +2554,6 @@ async function handleAddNewUser(e) {
     name,
     role,
     passwordHash,
-    plainPassword: pass,
     active: true,
     lastLogin: 'Never'
   });
@@ -2422,7 +2561,57 @@ async function handleAddNewUser(e) {
   closeCmsModal();
   await callCmsApi('save_users', { newUser: { username, email, name, role, password: pass }, roles: cmsState.db.roles });
   renderUsersModule(document.getElementById('cmsModuleViewport'));
-  showToast(`User "${username}" created successfully!`, 'success');
+  showToast(`User "${username}" created successfully with strong password hashing!`, 'success');
+}
+
+function openChangePasswordModal(targetUsername) {
+  const isSelf = cmsState.session && cmsState.session.username === targetUsername;
+  if (!isSelf && !requirePermission('users.write', 'Change Another User Password')) return;
+
+  openCmsModal(`Change Password for "${escapeHtml(targetUsername)}"`, `
+    <form onsubmit="handleChangePasswordSubmit(event, '${escapeHtml(targetUsername)}')" class="space-y-4 text-xs sm:text-sm">
+      <div class="p-3 rounded-xl bg-[#eff4ff] border border-[#c4dcff] text-xs text-[#004b80]">
+        <strong>Password Policy:</strong> Minimum 8 characters, including at least one uppercase letter, one lowercase letter, and one number.
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-[#414750] mb-1">New Password</label>
+        <input id="changePwdNew" type="password" required minlength="8" placeholder="Enter strong new password" class="admin-input">
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-[#414750] mb-1">Confirm New Password</label>
+        <input id="changePwdConfirm" type="password" required minlength="8" placeholder="Confirm new password" class="admin-input">
+      </div>
+      <div class="flex justify-end gap-2 pt-3 border-t border-[#dbe4f0]">
+        <button type="button" onclick="closeCmsModal()" class="admin-btn-secondary">Cancel</button>
+        <button type="submit" class="admin-btn-primary">Update Password</button>
+      </div>
+    </form>
+  `);
+}
+
+async function handleChangePasswordSubmit(e, targetUsername) {
+  e.preventDefault();
+  const newPass = document.getElementById('changePwdNew')?.value || '';
+  const confirmPass = document.getElementById('changePwdConfirm')?.value || '';
+  if (newPass !== confirmPass) {
+    showToast('Passwords do not match.', 'error');
+    return;
+  }
+  const pwdErr = validateStrongPassword(newPass);
+  if (pwdErr) {
+    showToast(pwdErr, 'error');
+    return;
+  }
+  const newHash = await sha256Hex(newPass);
+  const userObj = (cmsState.db?.users || []).find(u => u.username === targetUsername);
+  if (userObj) {
+    userObj.passwordHash = newHash;
+    delete userObj.plainPassword;
+  }
+  addAuditEntry('PASSWORD_CHANGED', `Updated password hash for user ${targetUsername}`);
+  closeCmsModal();
+  await callCmsApi('change_password', { username: targetUsername, newPassword: newPass });
+  showToast(`Password for "${targetUsername}" updated securely!`, 'success');
 }
 
 async function saveUsersAndRoles() {

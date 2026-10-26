@@ -202,7 +202,7 @@
           <label class="block text-xs font-bold uppercase tracking-wider text-[#414750] mb-1.5" for="loginUsername">Username or Email</label>
           <div class="relative">
             <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-[#717781] text-lg">person</span>
-            <input id="loginUsername" type="text" required value="admin" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="admin">
+            <input id="loginUsername" type="text" required autocomplete="username" value="admin" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="admin">
           </div>
         </div>
 
@@ -210,32 +210,32 @@
           <label class="block text-xs font-bold uppercase tracking-wider text-[#414750] mb-1.5" for="loginPassword">Password</label>
           <div class="relative">
             <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-[#717781] text-lg">lock</span>
-            <input id="loginPassword" type="password" required value="JKAdmin@2026" class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="••••••••••••">
-            <button type="button" onclick="toggleLoginPassword()" class="absolute right-3 top-2.5 text-[#717781] hover:text-[#004b80]">
+            <input id="loginPassword" type="password" required autocomplete="current-password" class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="Enter your administrator password">
+            <button type="button" onclick="toggleLoginPassword()" class="absolute right-3 top-2.5 text-[#717781] hover:text-[#004b80]" aria-label="Toggle Password Visibility">
               <span class="material-symbols-outlined text-lg" id="loginPwdToggleIcon">visibility</span>
             </button>
           </div>
         </div>
 
-        <!-- Quick Role Credential Selector -->
+        <!-- Role Account Selector (No Plaintext Passwords in HTML) -->
         <div class="p-3.5 rounded-2xl bg-[#eff4ff] border border-[#c4dcff] space-y-2">
           <div class="flex items-center justify-between">
             <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#004b80] flex items-center gap-1">
               <span class="material-symbols-outlined text-sm">verified_user</span>
-              <span>Quick Role Credential Fill</span>
+              <span>Select Role Account</span>
             </span>
-            <span class="text-[11px] text-[#006c49] font-bold">SHA-256 RBAC</span>
+            <span class="text-[11px] text-[#006c49] font-bold">WAF + CSRF + Rate-Limited</span>
           </div>
           <div class="grid grid-cols-3 gap-2">
-            <button type="button" onclick="fillDemoCredentials('admin', 'JKAdmin@2026')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#006c49] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+            <button type="button" onclick="fillDemoCredentials('admin')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#006c49] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
               <div class="text-xs font-extrabold">Super Admin</div>
               <div class="text-[10px] opacity-75 font-mono">admin</div>
             </button>
-            <button type="button" onclick="fillDemoCredentials('editor', 'JKEditor@2026')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+            <button type="button" onclick="fillDemoCredentials('editor')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
               <div class="text-xs font-extrabold">Content Editor</div>
               <div class="text-[10px] opacity-75 font-mono">editor</div>
             </button>
-            <button type="button" onclick="fillDemoCredentials('seo', 'JKSeo@2026')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+            <button type="button" onclick="fillDemoCredentials('seo')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
               <div class="text-xs font-extrabold">SEO Manager</div>
               <div class="text-[10px] opacity-75 font-mono">seo</div>
             </button>

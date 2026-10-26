@@ -1,35 +1,62 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /cms-data/
 Disallow: /private/
 Disallow: /tmp/
 
-# Explicitly Allow Generative AI & Answer Engine Crawlers (AEO/GEO)
+# Explicitly Allow Generative AI & Answer Engine Crawlers (AEO/GEO) on Public Content
 User-agent: GPTBot
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cms-data/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cms-data/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cms-data/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cms-data/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cms-data/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cms-data/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cms-data/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /cms-data/
 
 # LLM Knowledge Base & XML Sitemap
 # LLMs-Txt: https://drjahangirkabir.com/llms.txt
 # LLMs-Full-Txt: https://drjahangirkabir.com/llms-full.txt
-# LLMs-Page: https://drjahangirkabir.com/llms.html
 Sitemap: https://drjahangirkabir.com/sitemap.xml

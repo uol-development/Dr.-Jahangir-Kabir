@@ -239,12 +239,14 @@
         alt: selectedEl.getAttribute('alt') || '',
         className: selectedEl.className || ''
       };
+      var targetOrigin = window.location.protocol === 'file:' ? '*' : window.location.origin;
       if (window.parent && window.parent !== window) {
-        window.parent.postMessage(payload, '*');
+        window.parent.postMessage(payload, targetOrigin);
       }
     }, true);
 
     window.addEventListener('message', function (event) {
+      if (window.location.protocol !== 'file:' && event.origin !== window.location.origin) return;
       var data = event.data;
       if (!data || !data.type) return;
 
@@ -283,12 +285,13 @@
     function sendUpdatedMainHtml() {
       var mainEl = document.querySelector('main');
       var h1El = document.querySelector('h1');
+      var targetOrigin = window.location.protocol === 'file:' ? '*' : window.location.origin;
       if (window.parent && window.parent !== window && mainEl) {
         window.parent.postMessage({
           type: 'CMS_MAIN_HTML_UPDATED',
           mainHtml: mainEl.innerHTML,
           h1: h1El ? h1El.innerText.trim() : ''
-        }, '*');
+        }, targetOrigin);
       }
     }
 
@@ -323,6 +326,7 @@
           alt: img.getAttribute('alt') || ''
         });
       });
+      var targetOrigin = window.location.protocol === 'file:' ? '*' : window.location.origin;
       if (window.parent && window.parent !== window) {
         window.parent.postMessage({
           type: 'CMS_PAGE_STRUCTURE_DATA',
@@ -330,7 +334,7 @@
           buttons: buttons,
           images: images,
           mainHtml: mainEl.innerHTML
-        }, '*');
+        }, targetOrigin);
       }
     }
 
