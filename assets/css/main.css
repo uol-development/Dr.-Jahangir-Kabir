@@ -12,51 +12,51 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
-/* Fonts */
+/* Fonts — Google Stitch "Health Revolution Clinical Wellness" Design System */
 :root {
-  --default-font: "Inter", "Hind Siliguri", "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --heading-font: "Playfair Display", "Hind Siliguri", Georgia, serif;
-  --nav-font: "Poppins", "Inter", "Hind Siliguri", sans-serif;
-  --jk-gold: #c9a05c;
-  --jk-gold-soft: #e2c286;
-  --jk-forest: #122319;
-  --jk-emerald: #15803d;
-  --jk-cream: #f4efe4;
+  --default-font: "Plus Jakarta Sans", "Inter", "Hind Siliguri", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --heading-font: "Cormorant Garamond", "Playfair Display", "Hind Siliguri", Georgia, serif;
+  --nav-font: "Plus Jakarta Sans", "Inter", "Hind Siliguri", sans-serif;
+  --jk-gold: #0B63A5;
+  --jk-gold-soft: #10B981;
+  --jk-forest: #0A2540;
+  --jk-emerald: #10B981;
+  --jk-cream: #EFF4FF;
 }
 
-/* Global Colors - Customised for Dr. Muhammad Jahangir Kabir & JK Lifestyle */
+/* Global Colors — Stitch Clinical Wellness Palette (#F8F9FF / #001C37 / #0B63A5 / #10B981) */
 :root { 
-  --background-color: #ffffff;
-  --default-color: #2d3c33;
-  --heading-color: #122319;
-  --accent-color: #15803d;
-  --surface-color: #ffffff;
-  --contrast-color: #ffffff;
+  --background-color: #F8F9FF;
+  --default-color: #414750;
+  --heading-color: #001C37;
+  --accent-color: #10B981;
+  --surface-color: #FFFFFF;
+  --contrast-color: #FFFFFF;
 }
 
 /* Nav Menu Colors */
 :root {
-  --nav-color: #1c3124;
-  --nav-hover-color: #15803d;
-  --nav-mobile-background-color: #ffffff;
-  --nav-dropdown-background-color: #ffffff;
-  --nav-dropdown-color: #1c3124;
-  --nav-dropdown-hover-color: #15803d;
+  --nav-color: #414750;
+  --nav-hover-color: #10B981;
+  --nav-mobile-background-color: #FFFFFF;
+  --nav-dropdown-background-color: #FFFFFF;
+  --nav-dropdown-color: #001C37;
+  --nav-dropdown-hover-color: #0B63A5;
 }
 
 /* Color Presets */
 
 .light-background {
-  --background-color: #f6f9f6;
-  --surface-color: #ffffff;
+  --background-color: #EFF4FF;
+  --surface-color: #FFFFFF;
 }
 
 .dark-background {
-  --background-color: #0f2014;
-  --default-color: #eef2e8;
-  --heading-color: #ffffff;
-  --surface-color: #173020;
-  --contrast-color: #ffffff;
+  --background-color: #0A192F;
+  --default-color: #CBD5E1;
+  --heading-color: #FFFFFF;
+  --surface-color: #0A2540;
+  --contrast-color: #FFFFFF;
 }
 
 /* Smooth scroll */
@@ -6412,517 +6412,71 @@ section,
 }
 
 /*--------------------------------------------------------------
-# JK Lifestyle & Dr. Muhammad Jahangir Kabir Custom UI/UX Layer
+# Google Stitch "Health Revolution Clinical Wellness" Design System
+# Project ID: projects/2023498464243357919
+# Applied across all 15 pages while preserving 100% of present texts
 --------------------------------------------------------------*/
-.header {
-  --background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(21, 128, 61, 0.1);
-}
 
-.header .logo .logo-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, #122319 0%, #15803d 100%);
-  border: 1.5px solid #c9a05c;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #f4efe4;
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  margin-right: 11px;
-  box-shadow: 0 6px 16px rgba(18, 35, 25, 0.18);
-}
-
-.header .logo .sitename {
-  font-size: 21px;
-  font-weight: 700;
-  color: #122319;
-  line-height: 1.15;
-}
-
-.header .logo .sitename span {
-  color: #15803d;
-}
-
-.header .logo .logo-sub {
-  display: block;
-  font-size: 10.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #6b7c70;
-  margin-top: 2px;
-}
-
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
-  background: linear-gradient(135deg, #122319 0%, #15803d 100%);
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 50px;
-  padding: 9px 22px;
-  border: 1px solid rgba(201, 160, 92, 0.45);
-  box-shadow: 0 6px 18px rgba(21, 128, 61, 0.22);
-}
-
-.header .btn-getstarted:hover {
-  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.jk-gold-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(201, 160, 92, 0.16), rgba(21, 128, 61, 0.1));
-  color: #122319;
-  border: 1px solid rgba(201, 160, 92, 0.45);
-  border-radius: 50px;
-  padding: 6px 16px;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.jk-gold-badge i {
-  color: #b08743;
-}
-
-.hero .hero-image .main-image {
-  object-fit: cover;
-  object-position: center top;
-  max-height: 560px;
-  width: 100%;
-  border-radius: 24px;
-  border: 3px solid rgba(201, 160, 92, 0.35);
-}
-
-/* Organic Product Cards */
-.jk-product-card {
-  background: #ffffff;
-  border-radius: 18px;
-  border: 1px solid rgba(21, 128, 61, 0.12);
-  overflow: hidden;
-  transition: all 0.35s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 8px 26px rgba(18, 35, 25, 0.05);
-}
-
-.jk-product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(18, 35, 25, 0.12);
-  border-color: #c9a05c;
-}
-
-.jk-product-img {
-  background: linear-gradient(180deg, #fbf9f3 0%, #f1ece0 100%);
-  padding: 24px;
-  height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.jk-product-img img {
-  max-height: 190px;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.35s ease;
-}
-
-.jk-product-card:hover .jk-product-img img {
-  transform: scale(1.06);
-}
-
-.jk-product-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: #122319;
-  color: #e2c286;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 4px 11px;
-  border-radius: 50px;
-}
-
-.jk-product-body {
-  padding: 22px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.jk-product-body h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #122319;
-}
-
-.jk-product-body p {
-  font-size: 14px;
-  color: #54665b;
-  margin-bottom: 16px;
-  flex: 1;
-}
-
-/* JK Diet Chart Section & Printable Guide */
-.jk-diet-section {
-  background: linear-gradient(160deg, #122319 0%, #0d1b12 100%);
-  color: #eef2e8;
-  position: relative;
-  overflow: hidden;
-}
-
-.jk-diet-section h2,
-.jk-diet-section h3,
-.jk-diet-section h4 {
-  color: #ffffff;
-}
-
-.jk-diet-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(201, 160, 92, 0.28);
-  border-radius: 18px;
-  padding: 26px;
-  height: 100%;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-}
-
-.jk-diet-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: #c9a05c;
-  transform: translateY(-4px);
-}
-
-.jk-diet-card .time-tag {
-  display: inline-block;
-  background: rgba(201, 160, 92, 0.2);
-  color: #e2c286;
-  border: 1px solid rgba(201, 160, 92, 0.4);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 50px;
-  margin-bottom: 12px;
-}
-
-.jk-btn-gold {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #c9a05c 0%, #b08743 100%);
-  color: #122319 !important;
-  font-weight: 700;
-  padding: 13px 28px;
-  border-radius: 50px;
-  border: none;
-  box-shadow: 0 10px 25px rgba(201, 160, 92, 0.3);
-  transition: all 0.3s ease;
-}
-
-.jk-btn-gold:hover {
-  background: linear-gradient(135deg, #e2c286 0%, #c9a05c 100%);
-  transform: translateY(-2px);
-  color: #122319 !important;
-}
-
-.jk-btn-outline-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff !important;
-  font-weight: 600;
-  padding: 13px 26px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-.jk-btn-outline-light:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: #c9a05c;
-  color: #e2c286 !important;
-}
-
-/* Books & Publications */
-.jk-book-card {
-  background: linear-gradient(145deg, #173020, #102116);
-  border: 1px solid rgba(201, 160, 92, 0.35);
-  border-radius: 16px;
-  padding: 26px;
-  color: #eef2e8;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.jk-book-card:hover {
-  transform: translateY(-5px);
-  border-color: #c9a05c;
-}
-
-.jk-book-card .book-ribbon {
-  display: inline-block;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #e2c286;
-  background: rgba(201, 160, 92, 0.18);
-  padding: 4px 12px;
-  border-radius: 50px;
-  margin-bottom: 14px;
-  font-weight: 700;
-}
-
-.jk-book-card h4 {
-  color: #ffffff;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.footer {
-  background: #0e1d13;
-  color: #d6e0d7;
-  border-top: 3px solid #c9a05c;
-}
-
-.footer h4,
-.footer .sitename {
-  color: #ffffff !important;
-}
-
-.footer .footer-links ul a {
-  color: #b4c3b6;
-}
-
-.footer .footer-links ul a:hover {
-  color: #e2c286;
-}
-
-.footer .social-links a {
-  color: #e2c286;
-  border-color: rgba(201, 160, 92, 0.4);
-}
-
-.footer .social-links a:hover {
-  background: #c9a05c;
-  color: #122319;
-  border-color: #c9a05c;
-}
-
-/* Print stylesheet for Beginner's JK Diet Chart PDF */
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #jkDietModal,
-  #jkDietModal * {
-    visibility: visible;
-  }
-  #jkDietModal {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-  .no-print {
-    display: none !important;
-  }
-}
-
-/*--------------------------------------------------------------
-# JK Lifestyle SEO Components (TOC, Skip Link, Compliance Note)
---------------------------------------------------------------*/
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 16px;
-  z-index: 10000;
-  background: #122319;
-  color: #e2c286 !important;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 700;
-  border: 2px solid #c9a05c;
-  transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-  top: 12px;
-}
-
-.wp-block-rank-math-toc-block {
-  background: linear-gradient(135deg, #f6f9f6 0%, #fbf9f3 100%);
-  border: 1px solid rgba(201, 160, 92, 0.45);
-  border-left: 5px solid #15803d;
-  border-radius: 16px;
-  padding: 18px 24px;
-  margin-bottom: 28px;
-  box-shadow: 0 6px 20px rgba(18, 35, 25, 0.05);
-}
-
-.wp-block-rank-math-toc-block .toc-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #122319;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.wp-block-rank-math-toc-block ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-}
-
-.wp-block-rank-math-toc-block ul li a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #15803d;
-  background: #ffffff;
-  border: 1px solid rgba(21, 128, 61, 0.2);
-  padding: 5px 14px;
-  border-radius: 50px;
-  transition: all 0.25s ease;
-}
-
-.wp-block-rank-math-toc-block ul li a:hover {
-  background: #15803d;
-  color: #ffffff;
-  border-color: #15803d;
-  transform: translateY(-1px);
-}
-
-.jk-compliance-note {
-  background: #fcfaf5;
-  border: 1px solid rgba(201, 160, 92, 0.45);
-  border-left: 4px solid #c9a05c;
-  border-radius: 12px;
-  padding: 16px 20px;
-  font-size: 13.5px;
-  color: #3a4a3f;
-}
-
-/*--------------------------------------------------------------
-# Visual Audit Fixes: High-Contrast Icons & Uncropped Card Images
---------------------------------------------------------------*/
-.departments .department-item .department-icon {
-  background: #e8f5ee !important;
-  border: 1px solid rgba(21, 128, 61, 0.25) !important;
-}
-
-.departments .department-item .department-icon i {
-  color: #15803d !important;
-  font-size: 28px !important;
-}
-
-.departments .department-item:hover .department-icon {
-  background: linear-gradient(135deg, #122319 0%, #15803d 100%) !important;
-  border-color: #c9a05c !important;
-}
-
-.departments .department-item:hover .department-icon i {
-  color: #ffffff !important;
-}
-
-.departments .department-item .department-image {
-  height: 225px;
-  background: #122319;
-}
-
-.departments .department-item .department-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-/* Prevent portrait head-cropping across all cards */
-img[src*="dr-portrait.jpg"],
-img[src*="dr-hero.jpg"] {
-  object-position: center 15% !important;
-}
-
-/* Prevent product bottles/packets from being cut off at top/bottom */
-.featured-services .service-image img[src*="images/products/"],
-.home-about .small-image img[src*="images/products/"] {
-  object-fit: contain !important;
-  background: linear-gradient(180deg, #fbf9f3 0%, #f1ece0 100%);
-  padding: 12px;
-}
-
-
-
-
-/* ==========================================================================
-   EXECUTIVE MEDICAL LUXURY UPGRADE & AEO/GEO EDITORIAL DESIGN SYSTEM
-   Principal UI/UX & Technical AEO/GEO Architecture for drjahangirkabir.com
-   ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* 1. Elevated Font Stack: Editorial Serif + Precision Sans + Spec Monospace + Bengali */
-  --font-display: "Playfair Display", "Cormorant Garamond", "Hind Siliguri", Georgia, serif;
-  --font-sans: "Inter", "Hind Siliguri", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* 1. Stitch Font Pairing: Cormorant Garamond / Playfair Display + Plus Jakarta Sans + JetBrains Mono + Hind Siliguri */
+  --font-display: "Cormorant Garamond", "Playfair Display", "Hind Siliguri", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", "Hind Siliguri", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
 
   --default-font: var(--font-sans);
   --heading-font: var(--font-display);
   --nav-font: var(--font-sans);
 
-  /* 2. Calibrated Warm Luxury Surface Palette (Zero Harsh #000000 on #FFFFFF) */
-  --surface-canvas: #FAF9F6;       /* Primary Alabaster Canvas */
-  --surface-secondary: #F2F0EA;    /* Secondary Warm Stone Containers */
-  --surface-elevated: #FCFBF9;     /* Elevated Editorial Cards */
-  --surface-forest: #0C1F16;       /* Deep Botanical Executive Dark */
-  --surface-forest-soft: #132E21;
+  /* 2. Stitch "Health Revolution" Surface & Brand Palette */
+  --surface-canvas: #F8F9FF;          /* Soft Airy Clinical Sky-White Canvas (#f8f9ff / #f4f8fb) */
+  --surface-secondary: #EFF4FF;       /* Soft Ice-Blue Container Surface (#eff4ff) */
+  --surface-mint: #E8F7F0;            /* Soft Clinical Mint Tint (#e8f7f0 / #ecfdf5) */
+  --surface-elevated: #FFFFFF;        /* Pure Crisp Elevated White Cards */
+  --surface-forest: #0A2540;          /* Brand Clinical Navy (#0A2540 / #001C37) */
+  --surface-forest-soft: #12375C;     /* Lighter Clinical Navy */
+  --surface-navy-deep: #0A192F;       /* Deep Executive Navy Footer & Banner (#0A192F / #061729) */
 
-  /* 3. Opacity-Based Ink Hierarchy (Derived from Single Charcoal-Forest Base #141413) */
-  --ink-rgb: 20, 20, 19;
-  --ink-100: rgba(var(--ink-rgb), 1);      /* 100% — Primary Headings & Lead Answers */
-  --ink-75: rgba(var(--ink-rgb), 0.75);    /* 75%  — Editorial Body Copy */
-  --ink-50: rgba(var(--ink-rgb), 0.50);    /* 50%  — Muted Captions, Metadata, Timestamps */
+  /* 3. Stitch Opacity & Ink Hierarchy (Derived from Deep Clinical Navy #001C37) */
+  --ink-rgb: 0, 28, 55;
+  --ink-100: #001C37;                 /* 100% — Primary Headings & Lead Answers */
+  --ink-75: #414750;                  /* 75%  — Editorial Body Copy (#414750 / #526478) */
+  --ink-50: #717781;                  /* 50%  — Muted Captions, Metadata, Timestamps */
 
-  /* Accents & Hairline Borders */
-  --accent-emerald: #133A27;
-  --accent-gold: #9E7B3B;
-  --accent-gold-light: #DFC28B;
-  --border-hairline: 1px solid rgba(20, 20, 19, 0.08);
-  --border-hairline-strong: 1px solid rgba(20, 20, 19, 0.14);
-  --border-gold-hairline: 1px solid rgba(158, 123, 59, 0.32);
+  /* 4. Stitch Brand Accents, Gradients & Borders */
+  --brand-navy: #0A2540;
+  --brand-navy-deep: #0A192F;
+  --brand-blue: #0B63A5;
+  --brand-blue-dark: #004B80;
+  --brand-green: #10B981;
+  --brand-green-dark: #059669;
+  --brand-teal: #006C49;
+  --brand-cyan: #06B6D4;
+
+  /* Compatibility mappings for existing semantic classes */
+  --accent-emerald: #10B981;
+  --accent-gold: #0B63A5;
+  --accent-gold-light: #10B981;
+
+  --btn-gradient: linear-gradient(135deg, #0B63A5 0%, #10B981 100%);
+  --btn-gradient-hover: linear-gradient(135deg, #004B80 0%, #059669 100%);
+  --text-gradient: linear-gradient(135deg, #0B63A5 0%, #059669 55%, #10B981 100%);
+
+  --border-hairline: 1px solid #DBE4F0;
+  --border-hairline-strong: 1px solid #C1C7D2;
+  --border-gold-hairline: 1px solid rgba(16, 185, 129, 0.30);
+
+  --shadow-stitch-sm: 0 4px 20px -2px rgba(10, 37, 64, 0.05);
+  --shadow-stitch-md: 0 12px 32px -4px rgba(10, 37, 64, 0.08);
+  --shadow-stitch-lg: 0 24px 48px -12px rgba(10, 37, 64, 0.14);
 
   /* MediNest variable mappings */
   --background-color: var(--surface-canvas);
   --surface-color: var(--surface-elevated);
   --default-color: var(--ink-75);
   --heading-color: var(--ink-100);
-  --accent-color: var(--accent-emerald);
+  --accent-color: var(--brand-green);
 }
 
 .light-background {
@@ -6942,7 +6496,7 @@ body {
   background-color: var(--surface-canvas) !important;
   color: var(--ink-75) !important;
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.0625rem);
   line-height: 1.65;
   letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
@@ -6951,27 +6505,43 @@ body {
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
 }
 
+::selection {
+  background: rgba(16, 185, 129, 0.22);
+  color: #0A2540;
+}
+
+/* Bootstrap Utility Color Overrides to Match Stitch Palette */
+.text-success {
+  color: #059669 !important;
+}
+.bg-success {
+  background-color: #10B981 !important;
+}
+.border-success {
+  border-color: #10B981 !important;
+}
+
 /* ==========================================================================
-   1. FLUID TYPE SCALE & HARD TYPOGRAPHIC CONSTRAINTS
+   1. STITCH FLUID TYPE SCALE & HARD TYPOGRAPHIC CONSTRAINTS
    ========================================================================== */
 h1, .h1, .heading-title, .hero-title {
   font-family: var(--font-display) !important;
-  font-size: clamp(2.25rem, 1.75rem + 2.2vw, 3.5rem) !important;
-  font-weight: 500 !important;
+  font-size: clamp(2.4rem, 1.85rem + 2.4vw, 3.85rem) !important;
+  font-weight: 600 !important;
   line-height: 1.08 !important;
-  letter-spacing: -0.025em !important;
+  letter-spacing: -0.02em !important;
   color: var(--ink-100);
-  max-width: 22ch;
+  max-width: 24ch;
 }
 
 h2, .h2, .section-heading, .section-title h2 {
   font-family: var(--font-display) !important;
-  font-size: clamp(1.75rem, 1.45rem + 1.35vw, 2.5rem) !important;
-  font-weight: 500 !important;
+  font-size: clamp(1.9rem, 1.5rem + 1.5vw, 2.75rem) !important;
+  font-weight: 600 !important;
   line-height: 1.12 !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: -0.018em !important;
   color: var(--ink-100);
-  max-width: 25ch;
+  max-width: 26ch;
 }
 
 .text-center h1,
@@ -6983,18 +6553,18 @@ h2, .h2, .section-heading, .section-title h2 {
 
 h3, .h3 {
   font-family: var(--font-display) !important;
-  font-size: clamp(1.35rem, 1.2rem + 0.65vw, 1.75rem) !important;
+  font-size: clamp(1.4rem, 1.22rem + 0.7vw, 1.85rem) !important;
   font-weight: 600 !important;
   line-height: 1.22 !important;
-  letter-spacing: -0.015em !important;
+  letter-spacing: -0.01em !important;
   color: var(--ink-100);
-  max-width: 32ch;
+  max-width: 34ch;
 }
 
 h4, .h4 {
   font-family: var(--font-sans) !important;
   font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3rem) !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   line-height: 1.32 !important;
   letter-spacing: -0.01em !important;
   color: var(--ink-100);
@@ -7012,7 +6582,7 @@ h5, .h5 {
 h6, .h6 {
   font-family: var(--font-sans) !important;
   font-size: 0.875rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   line-height: 1.45 !important;
   letter-spacing: 0.04em !important;
   text-transform: uppercase;
@@ -7021,8 +6591,8 @@ h6, .h6 {
 
 /* Body Copy & Editorial Line-Length Cap (60ch–65ch) */
 p, .aeo-prose p, .aeo-prose li {
-  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
-  line-height: 1.65;
+  font-size: clamp(1rem, 0.96rem + 0.16vw, 1.08rem);
+  line-height: 1.68;
   color: var(--ink-75);
   max-width: 65ch;
 }
@@ -7038,13 +6608,13 @@ p, .aeo-prose p, .aeo-prose li {
 .lead-description,
 .aeo-lead-answer {
   font-size: clamp(1.125rem, 1.06rem + 0.25vw, 1.22rem) !important;
-  line-height: 1.62 !important;
+  line-height: 1.65 !important;
   font-weight: 500 !important;
   color: var(--ink-100) !important;
   max-width: 64ch !important;
 }
 
-/* Eyebrows / Spec Labels (12px, uppercase, +0.11em tracking, weight 600) */
+/* Eyebrows / Spec Labels (12px, uppercase, +0.10em tracking, weight 700) */
 .jk-gold-badge,
 .jk-pillar-card__eyebrow,
 .jk-metric-card__eyebrow,
@@ -7053,14 +6623,14 @@ p, .aeo-prose p, .aeo-prose li {
 .service-category,
 .book-ribbon {
   font-family: var(--font-sans) !important;
-  font-size: 0.75rem !important; /* 12px */
-  font-weight: 600 !important;
-  line-height: 1.3 !important;
-  letter-spacing: 0.11em !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.10em !important;
   text-transform: uppercase !important;
 }
 
-/* Muted Metadata / Captions (50% Opacity) */
+/* Muted Metadata / Captions */
 .text-muted,
 small,
 .small,
@@ -7115,15 +6685,140 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
 }
 
 /* ==========================================================================
-   2. LUXURY UI POLISH, VERTICAL RHYTHM & 1PX HAIRLINE ARCHITECTURE
+   2. STITCH GLOBAL HEADER & NAVIGATION (Sticky Glassmorphic White/Sky Bar)
+   ========================================================================== */
+.header {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #DBE4F0 !important;
+  box-shadow: 0 1px 10px rgba(0, 28, 55, 0.05) !important;
+  padding: 14px 0 !important;
+}
+
+.header .logo .logo-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0B63A5 0%, #10B981 100%) !important;
+  border: 2px solid #E8F7F0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF !important;
+  font-family: var(--font-sans);
+  font-weight: 800 !important;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-right: 12px;
+  box-shadow: 0 4px 12px rgba(11, 99, 165, 0.20) !important;
+  transition: transform 0.25s ease;
+}
+
+.header .logo:hover .logo-mark {
+  transform: scale(1.05);
+}
+
+.header .logo .sitename {
+  font-family: var(--font-sans) !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #0A2540 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.header .logo .sitename span {
+  color: #10B981 !important;
+}
+
+.header .logo .logo-sub {
+  display: block;
+  font-family: var(--font-sans) !important;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: #0B63A5 !important;
+  margin-top: 2px;
+}
+
+@media (min-width: 1200px) {
+  .navmenu a,
+  .navmenu a:focus {
+    font-family: var(--font-sans) !important;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    color: #414750 !important;
+    padding: 10px 14px !important;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .navmenu li:hover > a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: #004B80 !important;
+    font-weight: 600 !important;
+    background: #EFF4FF;
+  }
+
+  .navmenu .dropdown ul {
+    border-radius: 16px !important;
+    border: 1px solid #DBE4F0 !important;
+    box-shadow: 0 12px 32px -4px rgba(10, 37, 64, 0.12) !important;
+    padding: 8px !important;
+    min-width: 280px !important;
+    background: #FFFFFF !important;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #001C37 !important;
+    border-radius: 10px !important;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover > a {
+    background: #EFF4FF !important;
+    color: #0B63A5 !important;
+  }
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-sans) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  padding: 10px 24px !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.28) !important;
+  transition: all 0.25s ease !important;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.38) !important;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   3. STITCH LUMINOUS CLINICAL HERO SECTION (#hero) & ARCHED PORTRAIT
    ========================================================================== */
 section,
 .section {
-  padding: clamp(64px, 8vw, 116px) 0 !important;
+  padding: clamp(64px, 7vw, 108px) 0 !important;
   background-color: var(--surface-canvas);
 }
 
-/* Eliminate BootstrapMade Template Section-Title Underlines */
 .section-title {
   padding-bottom: 52px !important;
 }
@@ -7139,300 +6834,339 @@ section,
 }
 
 .section-title h2::after {
-  width: 48px !important;
-  height: 1.5px !important;
-  background: var(--accent-gold) !important;
+  width: 56px !important;
+  height: 3px !important;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #0B63A5 0%, #10B981 100%) !important;
 }
 
-/* Refined Glassmorphic Executive Header */
-.header {
-  background: rgba(250, 249, 246, 0.92) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: var(--border-hairline) !important;
-  box-shadow: none !important;
-}
-
-.header .logo-mark {
-  background: var(--surface-forest) !important;
-  color: var(--accent-gold-light) !important;
-  border: 1px solid var(--accent-gold) !important;
-  font-family: var(--font-display);
-  font-weight: 600 !important;
-  box-shadow: none !important;
-}
-
-.header .logo .sitename {
-  font-family: var(--font-display);
-  font-weight: 600 !important;
-  color: var(--ink-100) !important;
-}
-
-.header .logo .sitename span {
-  color: var(--accent-gold) !important;
-}
-
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
-  background: var(--surface-forest) !important;
-  color: #FAF9F6 !important;
-  border: 1px solid rgba(158, 123, 59, 0.5) !important;
-  box-shadow: none !important;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.header .btn-getstarted:hover {
-  background: var(--accent-gold) !important;
-  color: #141413 !important;
-  border-color: var(--accent-gold) !important;
-}
-
-/* Refined Executive Eyebrow Badge */
+/* Stitch Emerald Clinical Verification Pill (.jk-gold-badge) */
 .jk-gold-badge {
-  background: var(--surface-secondary) !important;
-  color: var(--ink-100) !important;
-  border: var(--border-gold-hairline) !important;
-  padding: 5px 14px !important;
-  border-radius: 50px;
-  box-shadow: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E8F7F0 !important;
+  color: #006C49 !important;
+  border: 1px solid rgba(16, 185, 129, 0.30) !important;
+  border-radius: 9999px !important;
+  padding: 6px 16px !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08) !important;
 }
 
 .jk-gold-badge i {
-  color: var(--accent-gold) !important;
+  color: #10B981 !important;
 }
 
-/* Cinematic Deep Executive Forest & Brushed Champagne Gold Hero (#hero) */
+/* Stitch Luminous Clinical Hero (#hero) */
 .hero {
-  background: radial-gradient(95% 110% at 82% 18%, rgba(28, 68, 46, 0.48) 0%, rgba(12, 31, 22, 0) 62%),
-              linear-gradient(160deg, #0C1F16 0%, #112A1E 55%, #08150E 100%) !important;
-  padding-top: 140px !important;
-  padding-bottom: 104px !important;
-  border-bottom: 1px solid rgba(158, 123, 59, 0.35);
+  background:
+    radial-gradient(circle at 8% 18%, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0) 42%),
+    radial-gradient(circle at 92% 24%, rgba(6, 182, 212, 0.12) 0%, rgba(6, 182, 212, 0) 45%),
+    linear-gradient(180deg, #EFF4FF 0%, #F8F9FF 68%, #FFFFFF 100%) !important;
+  padding-top: 136px !important;
+  padding-bottom: 96px !important;
+  border-bottom: 1px solid #DBE4F0 !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero .background-elements {
   display: none !important;
 }
 
-.hero .hero-image .main-image {
-  transform: none !important;
-  border-radius: 20px !important;
-  border: 1px solid rgba(223, 194, 139, 0.42) !important;
-  box-shadow: 0 28px 64px -24px rgba(0, 0, 0, 0.6) !important;
-  max-height: 560px !important;
-  object-fit: cover;
-  object-position: center 12% !important;
+/* Stitch Organic Arched Hero Portrait Frame */
+.hero .hero-image {
+  position: relative;
+  padding: 12px;
 }
 
+.hero .hero-image::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  bottom: 12px;
+  left: 12px;
+  background: #E5EEFF;
+  border: 1px solid #DBE4F0;
+  border-radius: 96px 96px 32px 32px;
+  transform: rotate(-2.5deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero .hero-image .main-image {
+  position: relative;
+  z-index: 1;
+  transform: none !important;
+  border-radius: 88px 88px 28px 28px !important;
+  border: 5px solid #FFFFFF !important;
+  box-shadow: 0 24px 48px -12px rgba(10, 37, 64, 0.16) !important;
+  max-height: 560px !important;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 12% !important;
+  background: #FFFFFF;
+}
+
+/* Stitch Crisp White Glassmorphic Floating Cards on Hero Portrait */
 .hero .hero-image .floating-card {
-  background: rgba(12, 31, 22, 0.92) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border: 1px solid rgba(223, 194, 139, 0.38) !important;
-  border-radius: 14px !important;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid #DBE4F0 !important;
+  border-radius: 18px !important;
   padding: 12px 18px !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 14px 32px rgba(10, 37, 64, 0.12) !important;
 }
 
 .hero .hero-image .floating-card.emergency-card {
-  top: 20px !important;
-  left: -12px !important;
+  top: 24px !important;
+  left: -10px !important;
 }
 
 .hero .hero-image .floating-card.emergency-card .card-content i {
   font-size: 1.2rem !important;
-  color: #0C1F16 !important;
-  background: var(--accent-gold-light) !important;
+  color: #10B981 !important;
+  background: #E8F7F0 !important;
+  border: 1px solid rgba(16, 185, 129, 0.25);
   padding: 10px !important;
-  border-radius: 10px !important;
+  border-radius: 12px !important;
 }
 
 .hero .hero-image .floating-card.emergency-card .card-content .text .label {
   font-size: 0.7rem !important;
-  color: rgba(250, 249, 246, 0.65) !important;
+  color: #717781 !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-weight: 600;
 }
 
 .hero .hero-image .floating-card.emergency-card .card-content .text .number {
   font-family: var(--font-mono) !important;
   font-size: 0.95rem !important;
-  font-weight: 500 !important;
-  color: #FAF9F6 !important;
+  font-weight: 700 !important;
+  color: #001C37 !important;
 }
 
 .hero .hero-image .floating-card.stats-card {
-  bottom: 20px !important;
-  right: -12px !important;
+  bottom: 24px !important;
+  right: -10px !important;
   gap: 1.5rem !important;
   padding: 14px 22px !important;
 }
 
 .hero .hero-image .floating-card.stats-card .stat-item .number {
   font-family: var(--font-display) !important;
-  font-size: 1.5rem !important;
-  font-weight: 500 !important;
-  color: var(--accent-gold-light) !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: #0B63A5 !important;
 }
 
 .hero .hero-image .floating-card.stats-card .stat-item .label {
   font-size: 0.72rem !important;
-  color: rgba(250, 249, 246, 0.65) !important;
+  color: #526478 !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-weight: 600;
 }
 
+/* Hero Copy & Typography in Stitch Theme */
 .hero .hero-content .jk-gold-badge {
-  background: rgba(223, 194, 139, 0.1) !important;
-  color: var(--accent-gold-light) !important;
-  border-color: rgba(223, 194, 139, 0.35) !important;
+  background: #E8F7F0 !important;
+  color: #006C49 !important;
+  border-color: rgba(16, 185, 129, 0.30) !important;
 }
 
 .hero .hero-content .jk-gold-badge i {
-  color: var(--accent-gold-light) !important;
+  color: #10B981 !important;
 }
 
 .hero .hero-content .hero-title {
-  color: #FAF9F6 !important;
-  max-width: 19ch;
+  color: #0A2540 !important;
+  max-width: 20ch;
   margin-bottom: 1.25rem !important;
+  font-weight: 700 !important;
 }
 
 .hero .hero-content .hero-title span {
-  color: var(--accent-gold-light) !important;
+  background: linear-gradient(135deg, #0B63A5 0%, #059669 55%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #0B63A5 !important;
   font-style: italic;
+  font-weight: 600;
 }
 
 .hero .hero-content .hero-description {
-  color: rgba(250, 249, 246, 0.78) !important;
+  color: #414750 !important;
   font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem) !important;
-  line-height: 1.68 !important;
+  line-height: 1.7 !important;
   max-width: 62ch;
-  margin-bottom: 2rem !important;
+  margin-bottom: 1.75rem !important;
 }
 
 .hero .hero-content .hero-description strong {
-  color: #FAF9F6;
-  font-weight: 500;
+  color: #001C37;
+  font-weight: 600;
 }
 
 .hero .hero-content .hero-description a {
-  color: var(--accent-gold-light) !important;
+  color: #0B63A5 !important;
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
+/* Hero Stats Bar in Stitch Crisp White Container */
 .hero .hero-stats .stat-group {
-  background: rgba(250, 249, 246, 0.03);
-  border: 1px solid rgba(223, 194, 139, 0.22);
-  border-radius: 14px;
-  padding: 16px 22px;
+  background: #FFFFFF !important;
+  border: 1px solid #DBE4F0 !important;
+  border-radius: 20px !important;
+  padding: 18px 24px !important;
   gap: 2rem !important;
+  box-shadow: var(--shadow-stitch-sm) !important;
 }
 
 .hero .hero-stats .stat-group .stat i {
   font-size: 1.4rem !important;
-  color: var(--accent-gold-light) !important;
+  color: #0B63A5 !important;
   padding: 12px !important;
-  background: rgba(223, 194, 139, 0.1) !important;
-  border: 1px solid rgba(223, 194, 139, 0.25);
-  border-radius: 10px !important;
+  background: #EFF4FF !important;
+  border: 1px solid #DBE4F0 !important;
+  border-radius: 12px !important;
 }
 
 .hero .hero-stats .stat-group .stat .stat-text .number {
   font-family: var(--font-display) !important;
-  font-size: 1.65rem !important;
-  font-weight: 500 !important;
-  color: #FAF9F6 !important;
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #001C37 !important;
 }
 
 .hero .hero-stats .stat-group .stat .stat-text .label {
   font-size: 0.78rem !important;
-  color: rgba(250, 249, 246, 0.6) !important;
+  font-weight: 600;
+  color: #526478 !important;
 }
 
+/* Hero CTA Buttons (Stitch .btn-gradient & Outline Pill) */
 .hero .cta-section .cta-buttons .btn.btn-primary {
-  background: var(--accent-gold-light) !important;
-  color: #141413 !important;
+  background: var(--btn-gradient) !important;
+  color: #FFFFFF !important;
   font-weight: 600 !important;
-  border-radius: 50px !important;
-  padding: 14px 30px !important;
-  border: 1px solid var(--accent-gold-light) !important;
-  box-shadow: none !important;
+  border-radius: 9999px !important;
+  padding: 14px 32px !important;
+  border: none !important;
+  box-shadow: 0 8px 22px rgba(11, 99, 165, 0.22) !important;
+  transition: all 0.25s ease !important;
 }
 
 .hero .cta-section .cta-buttons .btn.btn-primary:hover {
-  background: #FAF9F6 !important;
-  border-color: #FAF9F6 !important;
-  transform: translateY(-1px);
+  background: var(--btn-gradient-hover) !important;
+  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.32) !important;
+  transform: translateY(-2px);
 }
 
 .hero .cta-section .cta-buttons .btn.btn-secondary {
-  background: transparent !important;
-  border: 1px solid rgba(223, 194, 139, 0.4) !important;
-  color: #FAF9F6 !important;
-  border-radius: 50px !important;
-  padding: 14px 26px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #0A2540 !important;
+  color: #0A2540 !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  padding: 14px 28px !important;
+  box-shadow: var(--shadow-stitch-sm) !important;
+  transition: all 0.25s ease !important;
 }
 
 .hero .cta-section .cta-buttons .btn.btn-secondary:hover {
-  background: rgba(223, 194, 139, 0.12) !important;
-  border-color: var(--accent-gold-light) !important;
+  background: #0A2540 !important;
+  border-color: #0A2540 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
 }
 
 .hero .cta-section .quick-actions .action-link {
-  color: rgba(250, 249, 246, 0.72) !important;
-  font-size: 0.875rem;
+  color: #414750 !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.hero .cta-section .quick-actions .action-link:hover {
+  border-color: #10B981;
+  color: #004B80 !important;
+  background: #EFF4FF;
 }
 
 .hero .cta-section .quick-actions .action-link i {
-  color: var(--accent-gold-light) !important;
+  color: #10B981 !important;
 }
 
-/* Page Title Banner — Deep Executive Forest & Champagne Gold */
+/* ==========================================================================
+   4. STITCH INNER PAGE TITLE BANNERS (.page-title)
+   ========================================================================== */
 .page-title .heading {
-  background: radial-gradient(90% 120% at 85% 10%, rgba(28, 68, 46, 0.45) 0%, rgba(12, 31, 22, 0) 60%),
-              linear-gradient(160deg, #0C1F16 0%, #112A1E 55%, #08150E 100%) !important;
-  padding: 132px 0 76px !important;
-  border-bottom: 1px solid rgba(158, 123, 59, 0.3);
+  background:
+    radial-gradient(circle at 12% 20%, rgba(16, 185, 129, 0.11) 0%, rgba(16, 185, 129, 0) 45%),
+    radial-gradient(circle at 88% 20%, rgba(11, 99, 165, 0.11) 0%, rgba(11, 99, 165, 0) 48%),
+    linear-gradient(180deg, #EFF4FF 0%, #F8F9FF 100%) !important;
+  padding: 132px 0 72px !important;
+  border-bottom: 1px solid #DBE4F0 !important;
 }
 
 .page-title .heading .jk-gold-badge {
-  background: rgba(223, 194, 139, 0.1) !important;
-  color: var(--accent-gold-light) !important;
-  border-color: rgba(223, 194, 139, 0.35) !important;
+  background: #E8F7F0 !important;
+  color: #006C49 !important;
+  border-color: rgba(16, 185, 129, 0.30) !important;
 }
 
 .page-title .heading .jk-gold-badge i {
-  color: var(--accent-gold-light) !important;
+  color: #10B981 !important;
 }
 
 .page-title .heading h1.heading-title {
-  color: #FAF9F6 !important;
+  color: #001C37 !important;
+  font-weight: 700 !important;
   max-width: 24ch;
   margin-bottom: 18px !important;
 }
 
 .page-title .heading p {
-  color: rgba(250, 249, 246, 0.75) !important;
+  color: #414750 !important;
   max-width: 65ch;
 }
 
 .page-title .heading p strong {
-  color: #FAF9F6;
-  font-weight: 500;
+  color: #001C37;
+  font-weight: 600;
 }
 
 .page-title .heading p a {
-  color: var(--accent-gold-light) !important;
+  color: #0B63A5 !important;
+  font-weight: 600;
 }
 
 .page-title nav.breadcrumbs {
-  background: var(--surface-secondary) !important;
-  border-bottom: var(--border-hairline) !important;
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #DBE4F0 !important;
   padding: 14px 0 !important;
+}
+
+.page-title nav.breadcrumbs ol li a {
+  color: #0B63A5 !important;
+  font-weight: 600;
+}
+
+.page-title nav.breadcrumbs ol li.current {
+  color: #001C37 !important;
+  font-weight: 600;
 }
 
 /* Hide legacy inline RankMath TOC blocks on non-article pages */
@@ -7441,39 +7175,41 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 /* ==========================================================================
-   HAIRLINE CARD ARCHITECTURE (Replaces Heavy Drop Shadows with 1px Borders)
+   5. STITCH CLINICAL CARDS, 5 PILLARS, DIET PROTOCOL, BOOKS & PRODUCTS
    ========================================================================== */
 .jk-metric-card {
-  background: var(--surface-elevated);
-  border: var(--border-hairline);
-  border-top: 2px solid var(--accent-gold);
-  border-radius: 14px;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  border-top: 3px solid #10B981;
+  border-radius: 20px;
   padding: 28px 24px;
   height: 100%;
-  box-shadow: none !important;
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  box-shadow: var(--shadow-stitch-sm) !important;
+  transition: all 0.25s ease;
 }
 
 .jk-metric-card:hover {
-  border-color: rgba(158, 123, 59, 0.55);
-  transform: translateY(-2px);
+  border-color: #10B981;
+  box-shadow: var(--shadow-stitch-md) !important;
+  transform: translateY(-3px);
 }
 
 .jk-metric-card__eyebrow {
   display: inline-block;
-  color: var(--accent-gold);
-  background: var(--surface-secondary);
-  padding: 3px 10px;
-  border-radius: 4px;
+  color: #006C49;
+  background: #E8F7F0;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 4px 12px;
+  border-radius: 9999px;
   margin-bottom: 14px;
 }
 
 .jk-metric-card__value {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 1.7rem + 1vw, 2.5rem);
-  font-weight: 500;
-  color: var(--ink-100);
+  font-size: clamp(2.1rem, 1.8rem + 1vw, 2.65rem);
+  font-weight: 700;
+  color: #001C37;
   line-height: 1.08;
   margin-bottom: 10px;
 }
@@ -7481,43 +7217,45 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .jk-metric-card__title {
   font-family: var(--font-sans) !important;
   font-size: 1rem !important;
-  font-weight: 600 !important;
-  color: var(--ink-100);
+  font-weight: 700 !important;
+  color: #001C37;
   margin-bottom: 8px;
 }
 
 .jk-metric-card__desc {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--ink-75);
+  font-size: 0.92rem;
+  line-height: 1.62;
+  color: #414750;
   margin-bottom: 0;
 }
 
+/* Stitch Deep Clinical Navy-to-Emerald Executive Banner */
 .jk-executive-banner {
-  background: var(--surface-forest);
-  border: 1px solid rgba(223, 194, 139, 0.35);
-  border-radius: 16px;
-  padding: 32px 36px;
-  color: #FAF9F6;
-  box-shadow: none !important;
+  background: linear-gradient(135deg, #0A192F 0%, #0A2540 58%, #064E3B 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 24px;
+  padding: 36px 40px;
+  color: #F8F9FF;
+  box-shadow: var(--shadow-stitch-md) !important;
 }
 
-/* Bespoke Executive Pillar Cards — 1px Hairline Editorial Bento */
+/* Stitch 5-Pillar Cards */
 .jk-pillar-card {
-  background: var(--surface-elevated);
-  border: var(--border-hairline);
-  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  border-radius: 24px;
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: none !important;
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  box-shadow: var(--shadow-stitch-sm) !important;
+  transition: all 0.28s ease;
 }
 
 .jk-pillar-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(158, 123, 59, 0.55);
+  transform: translateY(-4px);
+  border-color: #10B981;
+  box-shadow: var(--shadow-stitch-md) !important;
 }
 
 .jk-pillar-card__body {
@@ -7535,47 +7273,58 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .jk-pillar-card__icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 12px;
-  background: var(--surface-forest);
-  border: 1px solid rgba(223, 194, 139, 0.4);
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #E8F7F0;
+  border: 1px solid rgba(16, 185, 129, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-gold-light);
-  font-size: 22px;
+  color: #059669;
+  font-size: 24px;
+  transition: transform 0.25s ease;
+}
+
+.jk-pillar-card:hover .jk-pillar-card__icon {
+  transform: scale(1.08);
+  background: #10B981;
+  color: #FFFFFF;
 }
 
 .jk-pillar-card__num {
   font-family: var(--font-mono);
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--ink-50);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0B63A5;
+  background: #EFF4FF;
+  border: 1px solid #DBE4F0;
+  padding: 4px 12px;
+  border-radius: 9999px;
 }
 
 .jk-pillar-card__eyebrow {
-  color: var(--accent-gold);
+  color: #0B63A5;
   margin-bottom: 6px;
 }
 
 .jk-pillar-card__title {
   font-family: var(--font-display) !important;
-  font-size: 1.45rem !important;
-  font-weight: 500 !important;
-  color: var(--ink-100);
+  font-size: 1.55rem !important;
+  font-weight: 700 !important;
+  color: #001C37;
   margin-bottom: 8px;
 }
 
 .jk-pillar-card__bn {
   display: inline-block;
   font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--accent-emerald);
-  background: var(--surface-secondary);
-  border: var(--border-hairline);
+  font-weight: 600;
+  color: #006C49;
+  background: #E8F7F0;
+  border: 1px solid rgba(16, 185, 129, 0.25);
   padding: 3px 12px;
-  border-radius: 50px;
+  border-radius: 9999px;
   margin-bottom: 14px;
   align-self: flex-start;
 }
@@ -7583,25 +7332,25 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .jk-pillar-card__desc {
   font-size: 0.96rem;
   line-height: 1.65;
-  color: var(--ink-75);
+  color: #414750;
   margin-bottom: 0;
   flex: 1;
 }
 
 .jk-pillar-card__protocol {
-  background: var(--surface-forest);
+  background: #EFF4FF;
   padding: 18px 28px;
-  border-top: 1px solid rgba(223, 194, 139, 0.25);
-  color: #FAF9F6;
+  border-top: 1px solid #DBE4F0;
+  color: #001C37;
 }
 
 .jk-pillar-card__protocol-title {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent-gold-light);
+  color: #0B63A5;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -7617,34 +7366,245 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .jk-pillar-card__list li {
-  font-size: 0.84rem;
-  color: rgba(250, 249, 246, 0.82);
+  font-size: 0.85rem;
+  color: #001C37;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .jk-pillar-card__list li i {
-  color: var(--accent-gold-light);
-  font-size: 13px;
+  color: #10B981;
+  font-size: 14px;
 }
 
-/* Global Hairline Overrides for MediNest & Bootstrap Containers */
+/* Organic Product Cards in Stitch Palette */
+.jk-product-card {
+  background: #FFFFFF !important;
+  border-radius: 22px !important;
+  border: 1px solid #DBE4F0 !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-stitch-sm) !important;
+}
+
+.jk-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-stitch-md) !important;
+  border-color: #10B981 !important;
+}
+
+.jk-product-img {
+  background: linear-gradient(180deg, #F8F9FF 0%, #EFF4FF 100%);
+  padding: 24px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #DBE4F0;
+}
+
+.jk-product-img img {
+  max-height: 190px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.jk-product-card:hover .jk-product-img img {
+  transform: scale(1.06);
+}
+
+.jk-product-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #E8F7F0;
+  color: #006C49;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.jk-product-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.jk-product-body h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #001C37;
+}
+
+.jk-product-body p {
+  font-size: 14px;
+  color: #414750;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+/* JK Diet Chart Section in Stitch Deep Clinical Navy-to-Emerald Theme */
+.jk-diet-section {
+  background: linear-gradient(135deg, #0A192F 0%, #0A2540 55%, #064E3B 100%) !important;
+  color: #F8F9FF;
+  position: relative;
+  overflow: hidden;
+}
+
+.jk-diet-section h2,
+.jk-diet-section h3,
+.jk-diet-section h4 {
+  color: #FFFFFF !important;
+}
+
+.jk-diet-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  border-radius: 20px;
+  padding: 28px;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.jk-diet-card:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: #10B981;
+  transform: translateY(-4px);
+}
+
+.jk-diet-card .time-tag {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.18);
+  color: #6CF8BB;
+  border: 1px solid rgba(16, 185, 129, 0.40);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.jk-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.32);
+  transition: all 0.3s ease;
+}
+
+.jk-btn-gold:hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  transform: translateY(-2px);
+  color: #FFFFFF !important;
+}
+
+.jk-btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: all 0.3s ease;
+}
+
+.jk-btn-outline-light:hover {
+  background: rgba(16, 185, 129, 0.20);
+  border-color: #6CF8BB;
+  color: #6CF8BB !important;
+}
+
+/* Books & Publications in Stitch Clinical Navy */
+.jk-book-card {
+  background: linear-gradient(145deg, #0A2540 0%, #0A192F 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 20px;
+  padding: 28px;
+  color: #F8F9FF;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.jk-book-card:hover {
+  transform: translateY(-5px);
+  border-color: #10B981;
+  box-shadow: 0 16px 36px rgba(10, 37, 64, 0.25);
+}
+
+.jk-book-card .book-ribbon {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6CF8BB;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.jk-book-card h4 {
+  color: #FFFFFF !important;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Global Stitch Overrides for MediNest & Bootstrap Containers */
 .bg-white.rounded-4.shadow-sm.border,
 .featured-departments .featured-department,
 .services .service-card,
-.jk-product-card,
+.departments .department-item,
 .about .mission-section .mission-item,
 .contact .info-box,
 .appointment .process-steps .step-item,
 .appointment .appointment-form-wrapper,
 .contact .php-email-form,
 .home-about .content-wrapper .highlight-box,
-.home-about .content-wrapper .metrics-row .metric-box {
-  background: var(--surface-elevated) !important;
-  border: var(--border-hairline-strong) !important;
-  border-radius: 16px !important;
-  box-shadow: none !important;
+.home-about .content-wrapper .metrics-row .metric-box,
+.faq .faq-container .faq-item,
+.testimonials .testimonial-item {
+  background: #FFFFFF !important;
+  border: 1px solid #DBE4F0 !important;
+  border-radius: 22px !important;
+  box-shadow: var(--shadow-stitch-sm) !important;
+  transition: all 0.28s ease !important;
+}
+
+.bg-white.rounded-4.shadow-sm.border:hover,
+.services .service-card:hover,
+.departments .department-item:hover,
+.about .mission-section .mission-item:hover,
+.contact .info-box:hover {
+  border-color: #10B981 !important;
+  box-shadow: var(--shadow-stitch-md) !important;
+  transform: translateY(-3px);
 }
 
 .featured-departments .featured-department {
@@ -7657,30 +7617,60 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .contact .info-box i,
 .appointment .info-items .info-item .icon-wrapper,
 .appointment .process-steps .step-item .step-icon,
-.home-about .content-wrapper .highlight-box .highlight-icon {
-  background: var(--surface-forest) !important;
-  color: var(--accent-gold-light) !important;
-  border: 1px solid rgba(223, 194, 139, 0.4) !important;
+.home-about .content-wrapper .highlight-box .highlight-icon,
+.departments .department-item .department-icon {
+  background: #EFF4FF !important;
+  color: #0B63A5 !important;
+  border: 1px solid #DBE4F0 !important;
+  border-radius: 16px !important;
 }
 
 .services .service-icon i,
 .about .mission-section .mission-item .mission-icon i,
 .appointment .info-items .info-item .icon-wrapper i,
 .appointment .process-steps .step-item .step-icon i,
-.home-about .content-wrapper .highlight-box .highlight-icon i {
-  color: var(--accent-gold-light) !important;
+.home-about .content-wrapper .highlight-box .highlight-icon i,
+.departments .department-item .department-icon i {
+  color: #0B63A5 !important;
+}
+
+.services .service-card:hover .service-icon,
+.departments .department-item:hover .department-icon,
+.about .mission-section .mission-item:hover .mission-icon {
+  background: #E8F7F0 !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+.services .service-card:hover .service-icon i,
+.departments .department-item:hover .department-icon i,
+.about .mission-section .mission-item:hover .mission-icon i {
+  color: #059669 !important;
+}
+
+.departments .department-item .department-image {
+  height: 225px;
+  background: #EFF4FF;
+}
+
+.departments .department-item .department-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .services .service-header .service-category {
-  background: var(--surface-secondary) !important;
-  color: var(--accent-gold) !important;
-  border: var(--border-gold-hairline) !important;
+  background: #E8F7F0 !important;
+  color: #006C49 !important;
+  border: 1px solid rgba(16, 185, 129, 0.28) !important;
+  border-radius: 9999px !important;
 }
 
 .services .service-features .feature-badge {
-  background: var(--surface-secondary) !important;
-  color: var(--ink-100) !important;
-  border: var(--border-hairline);
+  background: #EFF4FF !important;
+  color: #001C37 !important;
+  border: 1px solid #DBE4F0;
+  border-radius: 9999px;
 }
 
 .services .service-btn,
@@ -7689,12 +7679,12 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .contact .php-email-form button[type=submit],
 .call-to-action .hero-content .primary-btn,
 .home-about .content-wrapper .action-buttons .btn-explore {
-  background: var(--surface-forest) !important;
-  color: #FAF9F6 !important;
-  border: 1px solid rgba(223, 194, 139, 0.45) !important;
-  border-radius: 50px !important;
-  font-weight: 500 !important;
-  box-shadow: none !important;
+  background: var(--btn-gradient) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 6px 18px rgba(11, 99, 165, 0.20) !important;
   transition: all 0.25s ease !important;
 }
 
@@ -7704,48 +7694,64 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .contact .php-email-form button[type=submit]:hover,
 .call-to-action .hero-content .primary-btn:hover,
 .home-about .content-wrapper .action-buttons .btn-explore:hover {
-  background: var(--accent-gold-light) !important;
-  color: #141413 !important;
-  border-color: var(--accent-gold-light) !important;
+  background: var(--btn-gradient-hover) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.30) !important;
+  transform: translateY(-1px);
 }
 
 .btn-outline-success {
-  border: 1px solid var(--ink-100) !important;
-  color: var(--ink-100) !important;
-  border-radius: 50px !important;
-  font-weight: 500 !important;
+  border: 1.5px solid #0A2540 !important;
+  color: #0A2540 !important;
+  background: #FFFFFF !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
 }
 
 .btn-outline-success:hover {
-  background: var(--surface-forest) !important;
-  border-color: var(--surface-forest) !important;
-  color: #FAF9F6 !important;
+  background: #0A2540 !important;
+  border-color: #0A2540 !important;
+  color: #FFFFFF !important;
 }
 
 .call-to-action .contact-banner {
-  background: var(--surface-forest) !important;
-  border: 1px solid rgba(223, 194, 139, 0.38) !important;
-  border-radius: 18px !important;
-  box-shadow: none !important;
+  background: linear-gradient(135deg, #0A192F 0%, #0A2540 58%, #064E3B 100%) !important;
+  border: 1px solid rgba(16, 185, 129, 0.38) !important;
+  border-radius: 24px !important;
+  box-shadow: var(--shadow-stitch-md) !important;
+}
+
+/* Prevent portrait head-cropping & product clipping */
+img[src*="dr-portrait.jpg"],
+img[src*="dr-hero.jpg"] {
+  object-position: center 15% !important;
+}
+
+.featured-services .service-image img[src*="images/products/"],
+.home-about .small-image img[src*="images/products/"] {
+  object-fit: contain !important;
+  background: linear-gradient(180deg, #F8F9FF 0%, #EFF4FF 100%);
+  padding: 12px;
 }
 
 /* ==========================================================================
-   3 & 4. BLOG UI/UX FOR AEO (ANSWER ENGINE OPTIMIZATION) & E-E-A-T ARCHITECTURE
+   6. STITCH BLOG UI/UX FOR AEO & E-E-A-T CLINICAL ARTICLE ARCHITECTURE
    ========================================================================== */
 
-/* E-E-A-T High-Trust Top Metadata Byline Bar */
+/* E-E-A-T High-Trust Top Metadata Byline Bar (Stitch Clinical Article Style) */
 .eeat-byline-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 16px 28px;
-  padding: 18px 24px;
-  background: var(--surface-secondary);
-  border: var(--border-hairline-strong);
-  border-radius: 12px;
+  padding: 20px 24px;
+  background: #EFF4FF;
+  border: 1px solid #DBE4F0;
+  border-radius: 16px;
   margin-bottom: 28px;
   font-size: 0.875rem;
+  box-shadow: var(--shadow-stitch-sm);
 }
 
 .eeat-byline-bar__author {
@@ -7755,23 +7761,25 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .eeat-byline-bar__avatar {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 15%;
-  border: 1px solid var(--accent-gold);
+  border: 2px solid #10B981;
+  background: #FFFFFF;
 }
 
 .eeat-byline-bar__name {
-  font-weight: 600;
-  color: var(--ink-100);
+  font-weight: 700;
+  color: #001C37;
   display: block;
 }
 
 .eeat-byline-bar__role {
   font-size: 0.8rem;
-  color: var(--ink-50);
+  color: #0B63A5;
+  font-weight: 600;
   display: block;
 }
 
@@ -7780,23 +7788,25 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   flex-wrap: wrap;
   gap: 12px 24px;
   font-size: 0.8125rem;
-  color: var(--ink-75);
+  color: #414750;
 }
 
 .eeat-byline-bar__meta time {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--ink-100);
+  font-weight: 600;
+  color: #001C37;
 }
 
-/* "Answer-First" Key Takeaways Component (Below H1/Byline) */
+/* "Answer-First" Key Takeaways Component */
 .aeo-takeaways {
-  background: var(--surface-secondary);
-  border: var(--border-hairline-strong);
-  border-left: 3px solid var(--surface-forest);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #EFF4FF 0%, #E8F7F0 100%);
+  border: 1px solid #DBE4F0;
+  border-left: 4px solid #10B981;
+  border-radius: 16px;
   padding: 28px 32px;
   margin-bottom: 40px;
+  box-shadow: var(--shadow-stitch-sm);
 }
 
 .aeo-takeaways__header {
@@ -7805,23 +7815,23 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   justify-content: space-between;
   margin-bottom: 12px;
   padding-bottom: 10px;
-  border-bottom: var(--border-hairline);
+  border-bottom: 1px solid rgba(11, 99, 165, 0.14);
 }
 
 .aeo-takeaways__label {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--accent-emerald);
+  color: #006C49;
 }
 
 .aeo-takeaways__summary {
   font-size: 1.05rem !important;
   font-weight: 500;
   line-height: 1.68 !important;
-  color: var(--ink-100) !important;
+  color: #001C37 !important;
   max-width: 65ch;
   margin-bottom: 18px;
 }
@@ -7836,20 +7846,20 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .aeo-takeaways__list li {
   font-size: 0.96rem;
   line-height: 1.65;
-  color: var(--ink-75);
+  color: #414750;
   max-width: 64ch;
 }
 
 .aeo-takeaways__list li strong {
-  color: var(--ink-100);
-  font-weight: 600;
+  color: #001C37;
+  font-weight: 700;
 }
 
-/* Desktop Asymmetric Sticky 2-Column Layout (25% Left Rail TOC + 75% 65ch Reading Column) */
+/* Desktop Asymmetric Sticky 2-Column Layout */
 .aeo-article-grid {
   display: grid;
   grid-template-columns: minmax(220px, 25%) minmax(0, 75%);
-  gap: 48px;
+  gap: 40px;
   align-items: start;
 }
 
@@ -7862,11 +7872,12 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .aeo-toc-rail {
   position: sticky;
-  top: 110px;
-  background: var(--surface-elevated);
-  border: var(--border-hairline-strong);
-  border-radius: 12px;
-  padding: 22px 20px;
+  top: 104px;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  border-radius: 18px;
+  padding: 24px 20px;
+  box-shadow: var(--shadow-stitch-sm);
 }
 
 @media (max-width: 991.98px) {
@@ -7878,13 +7889,13 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .aeo-toc-rail__title {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--ink-50);
+  color: #0B63A5;
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: var(--border-hairline);
+  border-bottom: 1px solid #DBE4F0;
 }
 
 .aeo-toc-rail__list {
@@ -7892,33 +7903,36 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .aeo-toc-rail__list li a {
   display: block;
   font-size: 0.86rem;
+  font-weight: 500;
   line-height: 1.45;
-  color: var(--ink-75);
+  color: #414750;
   text-decoration: none;
-  padding: 6px 10px;
-  border-left: 2px solid transparent;
-  border-radius: 0 6px 6px 0;
+  padding: 8px 12px;
+  border-left: 3px solid transparent;
+  border-radius: 0 8px 8px 0;
   transition: all 0.2s ease;
 }
 
 .aeo-toc-rail__list li a:hover,
 .aeo-toc-rail__list li a:focus {
-  color: var(--ink-100);
-  background: var(--surface-secondary);
-  border-left-color: var(--accent-gold);
+  color: #004B80;
+  font-weight: 600;
+  background: #EFF4FF;
+  border-left-color: #10B981;
 }
 
 .aeo-prose {
-  background: var(--surface-elevated);
-  border: var(--border-hairline-strong);
-  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  border-radius: 24px;
   padding: clamp(24px, 4vw, 52px);
+  box-shadow: var(--shadow-stitch-sm);
 }
 
 .aeo-prose > * {
@@ -7939,7 +7953,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   margin-top: 2.75rem;
   margin-bottom: 1rem;
   padding-top: 1.75rem;
-  border-top: var(--border-hairline);
+  border-top: 1px solid #DBE4F0;
 }
 
 .aeo-prose h2:first-of-type {
@@ -7948,13 +7962,15 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border-top: none;
 }
 
-/* Editorial Comparison Table (Horizontal 1px Borders Only, Zero Vertical Borders, Right-Aligned Tabular Numerals) */
+/* Editorial Comparison Table */
 .aeo-table {
   width: 100%;
   border-collapse: collapse;
   margin: 28px 0;
   font-size: 0.92rem;
-  background: transparent;
+  background: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .aeo-table caption {
@@ -7962,9 +7978,10 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   text-align: left;
   font-family: var(--font-mono);
   font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--ink-50);
+  color: #0B63A5;
   padding-bottom: 10px;
 }
 
@@ -7974,7 +7991,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-bottom: var(--border-hairline-strong) !important;
+  border-bottom: 1px solid #DBE4F0 !important;
   vertical-align: top;
   text-align: left;
 }
@@ -7982,13 +7999,13 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .aeo-table thead th {
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: var(--ink-100);
-  background: var(--surface-secondary);
-  border-top: var(--border-hairline-strong) !important;
-  border-bottom: 1.5px solid rgba(20, 20, 19, 0.2) !important;
+  color: #001C37;
+  background: #EFF4FF;
+  border-top: 1px solid #DBE4F0 !important;
+  border-bottom: 2px solid #C1C7D2 !important;
 }
 
 .aeo-table th.num,
@@ -8004,15 +8021,16 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1px;
-  background: rgba(20, 20, 19, 0.08);
-  border: var(--border-hairline-strong);
-  border-radius: 12px;
+  background: #DBE4F0;
+  border: 1px solid #DBE4F0;
+  border-radius: 16px;
   overflow: hidden;
   margin: 28px 0;
+  box-shadow: var(--shadow-stitch-sm);
 }
 
 .aeo-spec-item {
-  background: var(--surface-elevated);
+  background: #FFFFFF;
   padding: 18px 20px;
   margin: 0;
 }
@@ -8020,36 +8038,38 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .aeo-spec-item dt {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--ink-50);
+  color: #0B63A5;
   margin-bottom: 6px;
 }
 
 .aeo-spec-item dd {
   font-size: 0.98rem;
-  font-weight: 600;
-  color: var(--ink-100);
+  font-weight: 700;
+  color: #001C37;
   margin: 0;
   font-variant-numeric: tabular-nums;
 }
 
-/* Speakable Pull-Quote Component (2px Solid Left Border, Serif Italic) */
+/* Speakable Pull-Quote Component (Stitch Health Revolution Pull Quote Style) */
 blockquote.aeo-speakable {
   margin: 32px 0;
-  padding: 20px 28px;
-  border-left: 2px solid var(--ink-100) !important;
-  background: var(--surface-secondary);
-  border-radius: 0 12px 12px 0;
+  padding: 24px 28px;
+  border: 1px solid #DBE4F0;
+  border-left: 4px solid #10B981 !important;
+  background: #F8F9FF;
+  border-radius: 16px;
+  box-shadow: var(--shadow-stitch-sm);
 }
 
 blockquote.aeo-speakable p {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(1.15rem, 1.05rem + 0.35vw, 1.35rem) !important;
+  font-size: clamp(1.18rem, 1.08rem + 0.35vw, 1.4rem) !important;
   line-height: 1.55 !important;
-  color: var(--ink-100) !important;
+  color: #001C37 !important;
   margin-bottom: 10px;
 }
 
@@ -8058,8 +8078,8 @@ blockquote.aeo-speakable cite {
   font-family: var(--font-sans);
   font-style: normal;
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--ink-50);
+  font-weight: 700;
+  color: #006C49;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -8068,7 +8088,158 @@ blockquote.aeo-speakable cite {
 .eeat-author-footer {
   margin-top: 44px;
   padding: 28px 32px;
-  background: var(--surface-secondary);
-  border: var(--border-hairline-strong);
-  border-radius: 14px;
+  background: #EFF4FF;
+  border: 1px solid #DBE4F0;
+  border-radius: 18px;
+}
+
+/* SEO TOC & Compliance Note in Stitch Palette */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 10000;
+  background: #0A2540;
+  color: #FFFFFF !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 2px solid #10B981;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.wp-block-rank-math-toc-block {
+  background: #EFF4FF;
+  border: 1px solid #DBE4F0;
+  border-left: 4px solid #10B981;
+  border-radius: 16px;
+  padding: 18px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-stitch-sm);
+}
+
+.wp-block-rank-math-toc-block .toc-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #001C37;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wp-block-rank-math-toc-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.wp-block-rank-math-toc-block ul li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0B63A5;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+.wp-block-rank-math-toc-block ul li a:hover {
+  background: #10B981;
+  color: #FFFFFF;
+  border-color: #10B981;
+  transform: translateY(-1px);
+}
+
+.jk-compliance-note {
+  background: #EFF4FF;
+  border: 1px solid #DBE4F0;
+  border-left: 4px solid #0B63A5;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 13.5px;
+  color: #414750;
+}
+
+/* ==========================================================================
+   7. STITCH GLOBAL FOOTER (#footer) & SCROLL-TOP BUTTON
+   ========================================================================== */
+.footer {
+  background: #0A192F !important;
+  color: #CBD5E1 !important;
+  border-top: 1px solid #132C4A !important;
+}
+
+.footer h4,
+.footer .sitename {
+  color: #FFFFFF !important;
+  font-family: var(--font-display) !important;
+}
+
+.footer .sitename span {
+  color: #10B981 !important;
+}
+
+.footer .footer-links ul a {
+  color: #CBD5E1 !important;
+  transition: color 0.2s ease;
+}
+
+.footer .footer-links ul a:hover {
+  color: #10B981 !important;
+}
+
+.footer .social-links a {
+  color: #6CF8BB !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.footer .social-links a:hover {
+  background: #10B981 !important;
+  color: #FFFFFF !important;
+  border-color: #10B981 !important;
+}
+
+.scroll-top {
+  background-color: #10B981 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35) !important;
+}
+
+.scroll-top:hover {
+  background-color: #059669 !important;
+}
+
+/* Print stylesheet for Beginner's JK Diet Chart PDF */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #jkDietModal,
+  #jkDietModal * {
+    visibility: visible;
+  }
+  #jkDietModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
 }
