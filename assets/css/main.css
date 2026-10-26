@@ -1,18 +1,18 @@
 /**
-* Design System: Google Stitch — "Health Revolution — Clinical Wellness & Healthcare"
-* Project ID: projects/2023498464243357919
-* Applied across all 15 pages of drjahangirkabir.com while preserving 100% of present texts
+* Design System: Google Stitch — "Bio-Dynamic Clinical Precision" & "Serene Equilibrium"
+* Project ID: projects/2023498464243357919 ("Health Revolution — Clinical Wellness & Healthcare")
+* Comprehensive Redesign Across All 15 Pages Preserving 100% of Present Texts & Functionality
 */
 
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 
 /*--------------------------------------------------------------
-# 1. Google Stitch Design Tokens & Clinical Wellness Palette
+# 1. Google Stitch Design System Tokens (Bio-Dynamic Clinical Precision + Serene Equilibrium)
 --------------------------------------------------------------*/
 :root {
-  /* Stitch Font Stack: Cormorant Garamond + Plus Jakarta Sans + JetBrains Mono + Hind Siliguri */
-  --font-display: "Cormorant Garamond", "Playfair Display", "Hind Siliguri", Georgia, serif;
+  /* Stitch Editorial Serif + Clinical Geometric Sans + Tabular Mono + Bangla Script */
+  --font-display: "Playfair Display", "Cormorant Garamond", "Hind Siliguri", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", "Inter", "Hind Siliguri", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
 
@@ -20,32 +20,53 @@
   --heading-font: var(--font-display);
   --nav-font: var(--font-sans);
 
-  /* Stitch Surface & Brand Palette */
-  --surface-canvas: #F8F9FF;          /* Soft Airy Clinical Sky-White Canvas (#f8f9ff / #f4f8fb) */
-  --surface-secondary: #EFF4FF;       /* Soft Ice-Blue Container Surface (#eff4ff) */
-  --surface-mint: #E8F7F0;            /* Soft Clinical Mint Tint (#e8f7f0 / #ecfdf5) */
-  --surface-elevated: #FFFFFF;        /* Pure Crisp Elevated White Cards */
-  --surface-forest: #0A2540;          /* Brand Clinical Navy (#0A2540 / #001C37) */
-  --surface-forest-soft: #12375C;     /* Lighter Clinical Navy */
-  --surface-navy-deep: #0A192F;       /* Deep Executive Navy Footer & Banner (#0A192F / #061729) */
+  /* Stitch Tonal Hierarchy & Surface Tokens */
+  --surface-canvas: #F8F9FF;                  /* Level 0: Cool Slate / Clinical Sky Canvas */
+  --surface-container-lowest: #FFFFFF;        /* Level 1: Pure Optical White Surface Cards */
+  --surface-container-low: #EFF4FF;           /* Alternating Section & Container Wash */
+  --surface-container: #E5EEFF;               /* Arch Frame & Interactive Pill Surface */
+  --surface-container-high: #DCE9FF;          /* Elevated Accent Container */
+  --surface-mint: #E8F7F0;                    /* Vitality Tint (#E8F7F0 / #F4FBF7) */
+  --surface-elevated: #FFFFFF;
 
-  /* Stitch Ink Hierarchy (Derived from Deep Clinical Navy #001C37) */
-  --ink-rgb: 0, 28, 55;
-  --ink-100: #001C37;                 /* 100% — Primary Headings & Lead Answers */
-  --ink-75: #414750;                  /* 75%  — Editorial Body Copy (#414750 / #526478) */
-  --ink-50: #717781;                  /* 50%  — Muted Captions, Metadata, Timestamps */
+  /* Stitch Oceanic Navy & Brand Accents */
+  --brand-navy: #0A2540;                      /* Deep Oceanic Navy */
+  --brand-navy-deep: #061729;                 /* Executive Dark Navy */
+  --brand-navy-mid: #0A192F;                  /* Footer & Callout Navy */
+  --brand-blue: #0B63A5;                      /* Medical Royal Blue (Primary Container) */
+  --brand-blue-dark: #004B80;                 /* Primary Anchor Blue */
+  --brand-green: #10B981;                     /* Energetic Emerald (Secondary) */
+  --brand-green-dark: #059669;                /* Deep Clinical Emerald */
+  --brand-teal: #006C49;                      /* Secondary Text Accent */
+  --brand-lime: #84CC16;                      /* Vibrant Spring Lime (Tertiary Vitality) */
+  --brand-mint-bright: #6CF8BB;               /* Secondary Container Mint */
 
-  /* Stitch Brand Accents & Gradients */
-  --brand-navy: #0A2540;
-  --brand-navy-deep: #0A192F;
-  --brand-blue: #0B63A5;
-  --brand-blue-dark: #004B80;
-  --brand-green: #10B981;
-  --brand-green-dark: #059669;
-  --brand-teal: #006C49;
-  --brand-cyan: #06B6D4;
+  /* Stitch Ink Hierarchy (Derived from #001C37) */
+  --ink-100: #001C37;                         /* 100% — Primary Headlines & Lead Answers */
+  --ink-75: #414750;                          /* 75%  — Editorial Body Copy */
+  --ink-50: #717781;                          /* 50%  — Muted Metadata, Captions, Labels */
 
-  /* Compatibility variables */
+  /* Stitch Hairline Borders & Ambient Shadows */
+  --outline-variant: #DBE4F0;
+  --outline-strong: #C1C7D2;
+  --border-hairline: 1px solid #DBE4F0;
+  --border-hairline-strong: 1px solid #C1C7D2;
+  --border-gold-hairline: 1px solid rgba(16, 185, 129, 0.30);
+
+  --shadow-stitch-xs: 0 2px 8px -2px rgba(10, 37, 64, 0.04);
+  --shadow-stitch-sm: 0 4px 20px -2px rgba(10, 37, 64, 0.05);
+  --shadow-stitch-md: 0 12px 32px -4px rgba(10, 37, 64, 0.08);
+  --shadow-stitch-lg: 0 24px 48px -12px rgba(10, 37, 64, 0.14);
+  --shadow-vitality: 0 4px 16px rgba(16, 185, 129, 0.28);
+
+  /* Stitch Gradients */
+  --btn-gradient: linear-gradient(135deg, #059669 0%, #10B981 100%);
+  --btn-gradient-hover: linear-gradient(135deg, #047857 0%, #059669 100%);
+  --btn-blue-emerald: linear-gradient(135deg, #0B63A5 0%, #10B981 100%);
+  --stripe-vitality: linear-gradient(90deg, #0B63A5 0%, #10B981 55%, #84CC16 100%);
+  --banner-oceanic: linear-gradient(135deg, #0A192F 0%, #0A2540 52%, #0B3B60 100%);
+
+  /* Legacy compatibility variables */
   --jk-gold: #0B63A5;
   --jk-gold-soft: #10B981;
   --jk-forest: #0A2540;
@@ -55,19 +76,6 @@
   --accent-gold: #0B63A5;
   --accent-gold-light: #10B981;
 
-  --btn-gradient: linear-gradient(135deg, #0B63A5 0%, #10B981 100%);
-  --btn-gradient-hover: linear-gradient(135deg, #004B80 0%, #059669 100%);
-  --text-gradient: linear-gradient(135deg, #0B63A5 0%, #059669 55%, #10B981 100%);
-
-  --border-hairline: 1px solid #DBE4F0;
-  --border-hairline-strong: 1px solid #C1C7D2;
-  --border-gold-hairline: 1px solid rgba(16, 185, 129, 0.30);
-
-  --shadow-stitch-sm: 0 4px 20px -2px rgba(10, 37, 64, 0.05);
-  --shadow-stitch-md: 0 12px 32px -4px rgba(10, 37, 64, 0.09);
-  --shadow-stitch-lg: 0 24px 48px -12px rgba(10, 37, 64, 0.16);
-
-  /* Core Theme Variables */
   --background-color: #F8F9FF;
   --default-color: #414750;
   --heading-color: #001C37;
@@ -75,7 +83,6 @@
   --surface-color: #FFFFFF;
   --contrast-color: #FFFFFF;
 
-  /* Nav Menu Colors */
   --nav-color: #414750;
   --nav-hover-color: #0B63A5;
   --nav-mobile-background-color: #FFFFFF;
@@ -86,23 +93,55 @@
   scroll-behavior: smooth;
 }
 
+/*--------------------------------------------------------------
+# 2. Stitch 12-Column Grid Bounds (1280px Max Container) & Spatial Cadence
+--------------------------------------------------------------*/
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1280px !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
 .light-background {
   --background-color: #EFF4FF !important;
   --surface-color: #FFFFFF !important;
-  background-color: #EFF4FF !important;
+  background-color: rgba(239, 244, 255, 0.65) !important;
+  border-top: 1px solid #DBE4F0;
+  border-bottom: 1px solid #DBE4F0;
 }
 
 .dark-background {
-  --background-color: #0A192F;
-  --default-color: #CBD5E1;
+  --background-color: #0A2540;
+  --default-color: #C5DDFF;
   --heading-color: #FFFFFF;
-  --surface-color: #0A2540;
+  --surface-color: #0A192F;
   --contrast-color: #FFFFFF;
-  background-color: #0A192F;
+  background-color: #0A2540;
 }
 
 /*--------------------------------------------------------------
-# 2. Global Typography, Fluid Scale & Bilingual (:lang(bn)) Rules
+# 3. Stitch Typography Audit, Fluid Scale & Expressive Italic Accents
 --------------------------------------------------------------*/
 html {
   font-size: 16px;
@@ -114,7 +153,7 @@ body {
   background-color: var(--surface-canvas) !important;
   color: var(--ink-75) !important;
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.0625rem);
+  font-size: clamp(1rem, 0.96rem + 0.16vw, 1.0625rem);
   line-height: 1.65;
   letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
@@ -131,7 +170,7 @@ body {
 a {
   color: var(--brand-blue);
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: all 0.22s ease;
 }
 
 a:hover {
@@ -140,22 +179,16 @@ a:hover {
 }
 
 /* Bootstrap Utility Color Overrides to Match Stitch Palette */
-.text-success {
-  color: #059669 !important;
-}
-.bg-success {
-  background-color: #10B981 !important;
-}
-.border-success {
-  border-color: #10B981 !important;
-}
+.text-success { color: #059669 !important; }
+.bg-success { background-color: #10B981 !important; }
+.border-success { border-color: #10B981 !important; }
 
 /* Stitch Fluid Type Scale */
 h1, .h1, .heading-title, .hero-title {
   font-family: var(--font-display) !important;
-  font-size: clamp(2.4rem, 1.85rem + 2.4vw, 3.85rem) !important;
+  font-size: clamp(2.25rem, 1.75rem + 2.2vw, 3.6rem) !important;
   font-weight: 600 !important;
-  line-height: 1.08 !important;
+  line-height: 1.12 !important;
   letter-spacing: -0.02em !important;
   color: var(--ink-100);
   max-width: 24ch;
@@ -163,10 +196,10 @@ h1, .h1, .heading-title, .hero-title {
 
 h2, .h2, .section-heading, .section-title h2 {
   font-family: var(--font-display) !important;
-  font-size: clamp(1.9rem, 1.5rem + 1.5vw, 2.75rem) !important;
-  font-weight: 600 !important;
-  line-height: 1.12 !important;
-  letter-spacing: -0.018em !important;
+  font-size: clamp(1.85rem, 1.45rem + 1.4vw, 2.65rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.015em !important;
   color: var(--ink-100);
   max-width: 26ch;
 }
@@ -181,9 +214,9 @@ h2, .h2, .section-heading, .section-title h2 {
 
 h3, .h3 {
   font-family: var(--font-display) !important;
-  font-size: clamp(1.4rem, 1.22rem + 0.7vw, 1.85rem) !important;
+  font-size: clamp(1.35rem, 1.18rem + 0.6vw, 1.75rem) !important;
   font-weight: 600 !important;
-  line-height: 1.22 !important;
+  line-height: 1.24 !important;
   letter-spacing: -0.01em !important;
   color: var(--ink-100);
   max-width: 34ch;
@@ -191,16 +224,16 @@ h3, .h3 {
 
 h4, .h4 {
   font-family: var(--font-sans) !important;
-  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3rem) !important;
+  font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem) !important;
   font-weight: 700 !important;
-  line-height: 1.32 !important;
+  line-height: 1.35 !important;
   letter-spacing: -0.01em !important;
   color: var(--ink-100);
 }
 
 h5, .h5 {
   font-family: var(--font-sans) !important;
-  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem) !important;
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem) !important;
   font-weight: 600 !important;
   line-height: 1.4 !important;
   letter-spacing: -0.005em !important;
@@ -209,17 +242,38 @@ h5, .h5 {
 
 h6, .h6 {
   font-family: var(--font-sans) !important;
-  font-size: 0.875rem !important;
+  font-size: 0.85rem !important;
   font-weight: 700 !important;
   line-height: 1.45 !important;
-  letter-spacing: 0.04em !important;
+  letter-spacing: 0.05em !important;
   text-transform: uppercase;
   color: var(--ink-100);
 }
 
+/* Stitch Expressive Italic & Gradient Headline Accents */
+.stitch-accent,
+.hero .hero-content .hero-title span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400 !important;
+  background: linear-gradient(135deg, #0B63A5 0%, #059669 58%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #0B63A5;
+}
+
+.stitch-accent-dark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400 !important;
+  color: #6CF8BB !important;
+  -webkit-text-fill-color: #6CF8BB;
+}
+
 /* Body Copy & Editorial Line-Length Cap (60ch–65ch) */
 p, .aeo-prose p, .aeo-prose li {
-  font-size: clamp(1rem, 0.96rem + 0.16vw, 1.08rem);
+  font-size: clamp(1rem, 0.96rem + 0.14vw, 1.0625rem);
   line-height: 1.68;
   color: var(--ink-75);
   max-width: 65ch;
@@ -236,11 +290,16 @@ p, .aeo-prose p, .aeo-prose li {
 .lead,
 .lead-description,
 .aeo-lead-answer {
-  font-size: clamp(1.125rem, 1.06rem + 0.25vw, 1.22rem) !important;
+  font-size: clamp(1.1rem, 1.04rem + 0.25vw, 1.2rem) !important;
   line-height: 1.65 !important;
+  font-weight: 400 !important;
+  color: var(--ink-75) !important;
+  max-width: 64ch !important;
+}
+
+.aeo-lead-answer {
   font-weight: 500 !important;
   color: var(--ink-100) !important;
-  max-width: 64ch !important;
 }
 
 /* Eyebrows / Spec Labels (12px, uppercase, +0.10em tracking, weight 700) */
@@ -255,11 +314,10 @@ p, .aeo-prose p, .aeo-prose li {
   font-size: 0.75rem !important;
   font-weight: 700 !important;
   line-height: 1.35 !important;
-  letter-spacing: 0.10em !important;
+  letter-spacing: 0.09em !important;
   text-transform: uppercase !important;
 }
 
-/* Muted Metadata / Captions */
 .text-muted,
 small,
 .small,
@@ -296,12 +354,19 @@ table, th, td, time, dd,
 h1:lang(bn), h2:lang(bn), h3:lang(bn), h4:lang(bn),
 :lang(bn) h1, :lang(bn) h2, :lang(bn) h3, :lang(bn) h4,
 [lang="bn"] h1, [lang="bn"] h2, [lang="bn"] h3 {
-  font-family: "Hind Siliguri", serif !important;
+  font-family: "Hind Siliguri", var(--font-display) !important;
   line-height: 1.35 !important;
   letter-spacing: 0 !important;
   font-weight: 600 !important;
   padding-top: 0.06em;
   max-width: 28ch;
+}
+
+:lang(bn) .stitch-accent,
+[lang="bn"] .stitch-accent {
+  font-family: "Hind Siliguri", var(--font-display) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
 }
 
 p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
@@ -311,136 +376,29 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
 }
 
 /*--------------------------------------------------------------
-# 3. PHP Email Form Messages, Preloader, Scroll Top & Skip Link
---------------------------------------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-  border-radius: 12px;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059669;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-  border-radius: 12px;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  border-radius: 12px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-#preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background-color: var(--background-color);
-  transition: all 0.6s ease-out;
-  width: 100%;
-  height: 100vh;
-}
-
-.scroll-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 18px;
-  bottom: -15px;
-  z-index: 99999;
-  background-color: #10B981 !important;
-  width: 46px;
-  height: 46px;
-  border-radius: 14px !important;
-  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35) !important;
-  transition: all 0.35s ease;
-}
-
-.scroll-top i {
-  font-size: 24px;
-  color: #FFFFFF;
-  line-height: 0;
-}
-
-.scroll-top:hover {
-  background-color: #059669 !important;
-  color: #FFFFFF;
-  transform: translateY(-2px);
-}
-
-.scroll-top.active {
-  visibility: visible;
-  opacity: 1;
-  bottom: 18px;
-}
-
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 16px;
-  z-index: 10000;
-  background: #0A2540;
-  color: #FFFFFF !important;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 700;
-  border: 2px solid #10B981;
-  transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-  top: 12px;
-}
-
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
-
-/*--------------------------------------------------------------
-# 4. Stitch Global Header & Navigation (#header, .navmenu)
+# 4. Stitch Global Sticky Header & Navigation (#header, .navmenu)
 --------------------------------------------------------------*/
 .header {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(248, 249, 255, 0.94) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid #DBE4F0 !important;
-  box-shadow: 0 2px 14px rgba(0, 28, 55, 0.05) !important;
-  padding: 14px 0 !important;
-  transition: all 0.3s ease;
+  box-shadow: 0 1px 10px rgba(0, 28, 55, 0.04) !important;
+  min-height: 80px;
+  padding: 12px 0 !important;
+  transition: all 0.25s ease;
   z-index: 997;
+}
+
+/* Article pages get a subtle top reading indicator bar on header */
+body.article-page .header::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 38%;
+  height: 2px;
+  background: var(--stripe-vitality);
 }
 
 .header .logo {
@@ -463,7 +421,7 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
   font-size: 16px;
   letter-spacing: 0.5px;
   margin-right: 12px;
-  box-shadow: 0 4px 12px rgba(11, 99, 165, 0.20) !important;
+  box-shadow: 0 4px 12px rgba(11, 99, 165, 0.18) !important;
   transition: transform 0.25s ease;
 }
 
@@ -473,7 +431,7 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
 
 .header .logo .sitename {
   font-family: var(--font-sans) !important;
-  font-size: 20px !important;
+  font-size: 19px !important;
   font-weight: 800 !important;
   color: #0A2540 !important;
   letter-spacing: -0.02em;
@@ -488,17 +446,17 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
 .header .logo .logo-sub {
   display: block;
   font-family: var(--font-sans) !important;
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.11em;
   color: #0B63A5 !important;
   margin-top: 2px;
 }
 
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
-  background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+  background: var(--btn-gradient) !important;
   color: #FFFFFF !important;
   font-family: var(--font-sans) !important;
   font-size: 14px !important;
@@ -507,13 +465,13 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
   padding: 10px 24px !important;
   margin: 0;
   border: none !important;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.28) !important;
+  box-shadow: var(--shadow-vitality) !important;
   transition: all 0.25s ease !important;
 }
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+  background: var(--btn-gradient-hover) !important;
   color: #FFFFFF !important;
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.38) !important;
   transform: translateY(-1px);
@@ -523,14 +481,14 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
   .header .logo { order: 1; }
   .header .btn-getstarted {
     order: 2;
-    margin: 0 15px 0 0;
+    margin: 0 14px 0 0;
     padding: 8px 18px !important;
     font-size: 13px !important;
   }
   .header .navmenu { order: 3; }
 }
 
-/* Desktop Navigation */
+/* Desktop Navigation — Stitch Underline Indicator & Floating Dropdown */
 @media (min-width: 1200px) {
   .navmenu { padding: 0; }
   .navmenu ul {
@@ -539,7 +497,7 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 2px;
+    gap: 6px;
   }
   .navmenu li { position: relative; }
   .navmenu a,
@@ -548,27 +506,44 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
     font-size: 14.5px !important;
     font-weight: 500 !important;
     color: #414750 !important;
-    padding: 10px 14px !important;
-    border-radius: 9999px;
+    padding: 8px 12px !important;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
+    position: relative;
     transition: all 0.2s ease;
   }
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 0;
     margin-left: 5px;
-    transition: 0.3s;
+    transition: transform 0.25s ease;
   }
-  .navmenu li:hover > a,
-  .navmenu .active,
-  .navmenu .active:focus {
+  .navmenu .dropdown:hover > a i {
+    transform: rotate(180deg);
+  }
+  .navmenu li:hover > a {
+    color: #0B63A5 !important;
+    background: rgba(239, 244, 255, 0.7);
+  }
+  .navmenu > ul > li > a.active,
+  .navmenu > ul > li > a.active:focus {
     color: #004B80 !important;
     font-weight: 600 !important;
-    background: #EFF4FF;
+    background: transparent;
+  }
+  .navmenu > ul > li > a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    border-radius: 9999px;
+    background: #10B981;
   }
   .navmenu .dropdown ul {
     margin: 0;
@@ -578,23 +553,23 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
     position: absolute;
     visibility: hidden;
     left: 0;
-    top: 120%;
+    top: 115%;
     opacity: 0;
-    transition: all 0.22s ease;
+    transition: all 0.2s ease;
     border-radius: 16px !important;
     border: 1px solid #DBE4F0 !important;
     z-index: 99;
-    min-width: 280px !important;
+    min-width: 288px !important;
     box-shadow: 0 16px 36px -4px rgba(10, 37, 64, 0.12) !important;
   }
-  .navmenu .dropdown ul li { min-width: 240px; }
+  .navmenu .dropdown ul li { min-width: 260px; }
   .navmenu .dropdown ul a {
     padding: 10px 14px !important;
-    font-size: 13.5px !important;
+    font-size: 13px !important;
     font-weight: 500 !important;
-    text-transform: none;
     color: #001C37 !important;
     border-radius: 10px !important;
+    justify-content: flex-start;
   }
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
@@ -711,15 +686,16 @@ p:lang(bn), li:lang(bn), dd:lang(bn), td:lang(bn), blockquote:lang(bn),
 }
 
 /*--------------------------------------------------------------
-# 5. Global Sections, Section Titles & Inner Page Title Banners
+# 5. Stitch Sections, Pulsing Status Pills & Editorial Page Heroes
 --------------------------------------------------------------*/
 section,
 .section {
   color: var(--default-color);
   background-color: var(--surface-canvas);
-  padding: clamp(64px, 7vw, 108px) 0 !important;
+  padding: clamp(68px, 7.5vw, 108px) 0 !important;
   scroll-margin-top: 90px;
   overflow: clip;
+  position: relative;
 }
 
 @media (max-width: 1199px) {
@@ -731,7 +707,7 @@ section,
 
 .section-title {
   text-align: center;
-  padding-bottom: 52px !important;
+  padding-bottom: 56px !important;
   position: relative;
 }
 
@@ -753,7 +729,7 @@ section,
   width: 56px !important;
   height: 3px !important;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #0B63A5 0%, #10B981 100%) !important;
+  background: var(--stripe-vitality) !important;
   left: 0;
   right: 0;
   bottom: 0;
@@ -764,7 +740,18 @@ section,
   margin-bottom: 0;
 }
 
-/* Stitch Emerald Clinical Verification Pill (.jk-gold-badge) */
+/* Stitch Emerald Clinical Verification Pill (.jk-gold-badge) with Pulsing Vitality Dot */
+@keyframes stitchPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 5px rgba(16, 185, 129, 0);
+  }
+}
+
 .jk-gold-badge {
   display: inline-flex;
   align-items: center;
@@ -775,38 +762,54 @@ section,
   border-radius: 9999px !important;
   padding: 6px 16px !important;
   box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08) !important;
+  position: relative;
+}
+
+.jk-gold-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: #10B981;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: stitchPulse 2.4s infinite ease-in-out;
 }
 
 .jk-gold-badge i {
-  color: #10B981 !important;
+  color: #059669 !important;
 }
 
-/* Inner Page Title Banners (.page-title) */
+/* Stitch Inner Page Editorial Hero Banners (.page-title) */
 .page-title {
   color: var(--default-color);
   background-color: var(--surface-canvas);
   position: relative;
   padding-top: 0;
+  overflow: hidden;
 }
 
 .page-title .heading {
+  position: relative;
   background:
-    radial-gradient(circle at 12% 20%, rgba(16, 185, 129, 0.11) 0%, rgba(16, 185, 129, 0) 45%),
-    radial-gradient(circle at 88% 20%, rgba(11, 99, 165, 0.11) 0%, rgba(11, 99, 165, 0) 48%),
-    linear-gradient(180deg, #EFF4FF 0%, #F8F9FF 100%) !important;
-  padding: 132px 0 72px !important;
+    radial-gradient(circle at 14% 22%, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0) 44%),
+    radial-gradient(circle at 86% 24%, rgba(11, 99, 165, 0.13) 0%, rgba(11, 99, 165, 0) 46%),
+    linear-gradient(180deg, #EFF4FF 0%, #F8F9FF 75%, #F8F9FF 100%) !important;
+  padding: 136px 0 68px !important;
   border-bottom: 1px solid #DBE4F0 !important;
 }
 
 .page-title .heading h1.heading-title {
   color: #001C37 !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   max-width: 24ch;
   margin-bottom: 18px !important;
 }
 
 .page-title .heading p {
   color: #414750 !important;
+  font-size: clamp(1.02rem, 0.98rem + 0.22vw, 1.15rem);
+  line-height: 1.68;
   max-width: 65ch;
 }
 
@@ -818,23 +821,27 @@ section,
 .page-title .heading p a {
   color: #0B63A5 !important;
   font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .page-title nav,
 .page-title nav.breadcrumbs {
-  background: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid #DBE4F0 !important;
-  padding: 14px 0 !important;
+  padding: 12px 0 !important;
 }
 
 .page-title nav ol {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .page-title nav ol li + li {
@@ -842,20 +849,29 @@ section,
 }
 
 .page-title nav ol li + li::before {
-  content: "/";
+  content: "›";
   display: inline-block;
   padding-right: 10px;
-  color: #94A3B8;
+  color: #717781;
+  font-weight: 700;
 }
 
 .page-title nav.breadcrumbs ol li a {
-  color: #0B63A5 !important;
+  color: #414750 !important;
   font-weight: 600;
 }
 
+.page-title nav.breadcrumbs ol li a:hover {
+  color: #0B63A5 !important;
+}
+
 .page-title nav.breadcrumbs ol li.current {
-  color: #001C37 !important;
-  font-weight: 600;
+  color: #0B63A5 !important;
+  font-weight: 700;
+  background: #EFF4FF;
+  border: 1px solid #DBE4F0;
+  padding: 3px 12px;
+  border-radius: 9999px;
 }
 
 /* Hide legacy inline RankMath TOC blocks on non-article pages */
@@ -864,15 +880,15 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 /*--------------------------------------------------------------
-# 6. Stitch Luminous Clinical Hero Section (#hero) & Arched Portrait
+# 6. Stitch Flagship Landing Page Hero (#hero) & Organic Arched Portrait
 --------------------------------------------------------------*/
 .hero {
   background:
-    radial-gradient(circle at 8% 18%, rgba(16, 185, 129, 0.13) 0%, rgba(16, 185, 129, 0) 42%),
-    radial-gradient(circle at 92% 24%, rgba(6, 182, 212, 0.13) 0%, rgba(6, 182, 212, 0) 45%),
+    radial-gradient(circle at 8% 18%, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0) 42%),
+    radial-gradient(circle at 92% 24%, rgba(11, 99, 165, 0.13) 0%, rgba(11, 99, 165, 0) 45%),
     linear-gradient(180deg, #EFF4FF 0%, #F8F9FF 68%, #FFFFFF 100%) !important;
-  padding-top: 132px !important;
-  padding-bottom: 92px !important;
+  padding-top: 134px !important;
+  padding-bottom: 96px !important;
   border-bottom: 1px solid #DBE4F0 !important;
   position: relative;
   overflow: hidden;
@@ -884,33 +900,22 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: none !important;
 }
 
-/* Hero Copy Column (Left on Desktop in Stitch Layout) */
 .hero .hero-content {
-  padding-right: 1rem;
+  padding-right: 1.25rem;
   padding-left: 0 !important;
 }
 
 .hero .hero-content .hero-title {
   color: #0A2540 !important;
   max-width: 20ch;
-  margin-top: 0.75rem;
+  margin-top: 0.85rem;
   margin-bottom: 1.25rem !important;
-  font-weight: 700 !important;
-}
-
-.hero .hero-content .hero-title span {
-  background: linear-gradient(135deg, #0B63A5 0%, #059669 55%, #10B981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: #0B63A5 !important;
-  font-style: italic;
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .hero .hero-content .hero-description {
   color: #414750 !important;
-  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem) !important;
+  font-size: clamp(1.02rem, 0.96rem + 0.2vw, 1.125rem) !important;
   line-height: 1.7 !important;
   max-width: 62ch;
   margin-bottom: 1.75rem !important;
@@ -928,20 +933,20 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   text-underline-offset: 3px;
 }
 
-/* Hero Stats Bar in Stitch Crisp White Container */
+/* Stitch Divided Counter Metrics Bar inside Hero */
 .hero .hero-stats {
   margin-bottom: 2rem;
 }
 
 .hero .hero-stats .stat-group {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   background: #FFFFFF !important;
   border: 1px solid #DBE4F0 !important;
-  border-radius: 20px !important;
-  padding: 18px 24px !important;
-  gap: 1.75rem !important;
+  border-radius: 24px !important;
+  padding: 20px 24px !important;
+  gap: 0 !important;
   box-shadow: var(--shadow-stitch-sm) !important;
 }
 
@@ -949,12 +954,41 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: flex;
   align-items: center;
   gap: 14px;
+  padding: 4px 18px;
+  border-right: 1px solid #DBE4F0;
+}
+
+.hero .hero-stats .stat-group .stat:first-child {
+  padding-left: 4px;
+}
+
+.hero .hero-stats .stat-group .stat:last-child {
+  border-right: none;
+  padding-right: 4px;
+}
+
+@media (max-width: 767.98px) {
+  .hero .hero-stats .stat-group {
+    grid-template-columns: 1fr;
+    gap: 14px !important;
+  }
+  .hero .hero-stats .stat-group .stat {
+    border-right: none;
+    border-bottom: 1px solid #DBE4F0;
+    padding: 0 0 12px 0;
+  }
+  .hero .hero-stats .stat-group .stat:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 
 .hero .hero-stats .stat-group .stat i {
-  font-size: 1.4rem !important;
+  font-size: 1.35rem !important;
   color: #0B63A5 !important;
-  padding: 12px !important;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
   background: #EFF4FF !important;
   border: 1px solid #DBE4F0 !important;
   border-radius: 14px !important;
@@ -970,25 +1004,27 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .hero .hero-stats .stat-group .stat .stat-text .number {
   font-family: var(--font-display) !important;
-  font-size: 1.75rem !important;
-  font-weight: 700 !important;
+  font-size: 1.85rem !important;
+  font-weight: 600 !important;
   line-height: 1.05;
   color: #001C37 !important;
 }
 
 .hero .hero-stats .stat-group .stat .stat-text .label {
-  font-size: 0.78rem !important;
-  font-weight: 600;
-  color: #526478 !important;
-  margin-top: 2px;
+  font-size: 0.74rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #059669 !important;
+  margin-top: 3px;
 }
 
-/* Hero CTA Buttons (Stitch .btn-gradient & Outline Pill) */
+/* Hero CTA Buttons (Stitch Emerald Vitality Pill & Navy Outline Pill) */
 .hero .cta-section .cta-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.35rem;
 }
 
 .hero .cta-section .cta-buttons .btn {
@@ -996,41 +1032,41 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
 }
 
 .hero .cta-section .cta-buttons .btn.btn-primary {
-  background: var(--btn-gradient) !important;
+  background: var(--btn-blue-emerald) !important;
   color: #FFFFFF !important;
   font-weight: 600 !important;
   border-radius: 9999px !important;
   padding: 14px 32px !important;
   border: none !important;
-  box-shadow: 0 8px 22px rgba(11, 99, 165, 0.22) !important;
+  box-shadow: var(--shadow-vitality) !important;
   transition: all 0.25s ease !important;
 }
 
 .hero .cta-section .cta-buttons .btn.btn-primary:hover {
   background: var(--btn-gradient-hover) !important;
-  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.32) !important;
+  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.34) !important;
   transform: translateY(-2px);
 }
 
 .hero .cta-section .cta-buttons .btn.btn-secondary {
   background: #FFFFFF !important;
-  border: 1.5px solid #0A2540 !important;
-  color: #0A2540 !important;
+  border: 1.5px solid #0B63A5 !important;
+  color: #004B80 !important;
   font-weight: 600 !important;
   border-radius: 9999px !important;
   padding: 14px 28px !important;
-  box-shadow: var(--shadow-stitch-sm) !important;
+  box-shadow: var(--shadow-stitch-xs) !important;
   transition: all 0.25s ease !important;
 }
 
 .hero .cta-section .cta-buttons .btn.btn-secondary:hover {
-  background: #0A2540 !important;
-  border-color: #0A2540 !important;
-  color: #FFFFFF !important;
+  background: #EFF4FF !important;
+  border-color: #004B80 !important;
+  color: #001C37 !important;
   transform: translateY(-2px);
 }
 
@@ -1043,14 +1079,15 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .hero .cta-section .quick-actions .action-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   color: #414750 !important;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
   background: #FFFFFF;
   border: 1px solid #DBE4F0;
-  padding: 6px 14px;
+  padding: 7px 15px;
   border-radius: 9999px;
+  box-shadow: var(--shadow-stitch-xs);
   transition: all 0.2s ease;
 }
 
@@ -1058,6 +1095,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border-color: #10B981;
   color: #004B80 !important;
   background: #EFF4FF;
+  transform: translateY(-1px);
 }
 
 .hero .cta-section .quick-actions .action-link i {
@@ -1068,21 +1106,21 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .hero .hero-image {
   position: relative;
   padding: 16px;
-  max-width: 490px;
+  max-width: 480px;
   margin-inline: auto;
 }
 
 .hero .hero-image::before {
   content: "";
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 2px;
+  right: 2px;
   bottom: 12px;
   left: 12px;
-  background: #E5EEFF;
+  background: linear-gradient(145deg, #E5EEFF 0%, rgba(16, 185, 129, 0.16) 100%);
   border: 1px solid #DBE4F0;
-  border-radius: 104px 104px 36px 36px;
-  transform: rotate(-2.8deg);
+  border-radius: 120px 120px 36px 36px;
+  transform: rotate(-3deg);
   z-index: 0;
   pointer-events: none;
 }
@@ -1091,7 +1129,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   position: relative;
   z-index: 1;
   transform: none !important;
-  border-radius: 96px 96px 32px 32px !important;
+  border-radius: 112px 112px 32px 32px !important;
   border: 5px solid #FFFFFF !important;
   box-shadow: 0 25px 50px -12px rgba(10, 37, 64, 0.20) !important;
   max-height: 550px !important;
@@ -1129,7 +1167,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   font-size: 1.2rem !important;
   color: #10B981 !important;
   background: #E8F7F0 !important;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(16, 185, 129, 0.28);
   padding: 10px !important;
   border-radius: 12px !important;
   display: inline-flex;
@@ -1171,18 +1209,18 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .hero .hero-image .floating-card.stats-card .stat-item .number {
   font-family: var(--font-display) !important;
-  font-size: 1.6rem !important;
-  font-weight: 700 !important;
+  font-size: 1.65rem !important;
+  font-weight: 600 !important;
   line-height: 1.05;
   color: #0B63A5 !important;
 }
 
 .hero .hero-image .floating-card.stats-card .stat-item .label {
-  font-size: 0.72rem !important;
+  font-size: 0.7rem !important;
   color: #526478 !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @media (max-width: 991.98px) {
@@ -1205,7 +1243,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 /*--------------------------------------------------------------
-# 7. Stitch Home About (#home-about) & About Page (.about)
+# 7. Stitch Founder Spotlight (#home-about) & About Page (.about)
 --------------------------------------------------------------*/
 .home-about .image-grid {
   display: grid;
@@ -1215,7 +1253,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .home-about .image-grid .primary-image {
   position: relative;
-  border-radius: 28px;
+  border-radius: 36px 36px 24px 24px;
   overflow: hidden;
   border: 4px solid #FFFFFF;
   box-shadow: var(--shadow-stitch-md);
@@ -1265,17 +1303,17 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .home-about .image-grid .secondary-images .small-image {
-  border-radius: 22px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid #DBE4F0;
   box-shadow: var(--shadow-stitch-sm);
-  min-height: 190px;
+  min-height: 195px;
 }
 
 .home-about .image-grid .secondary-images .small-image img {
   width: 100%;
   height: 100%;
-  min-height: 190px;
+  min-height: 195px;
   object-fit: cover;
   display: block;
 }
@@ -1283,9 +1321,10 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .home-about .content-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 20px;
 }
 
+/* Stitch Founder Pull-Quote Box */
 .home-about .content-wrapper .highlight-box {
   display: flex;
   align-items: flex-start;
@@ -1294,13 +1333,13 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border: 1px solid #DBE4F0 !important;
   border-left: 4px solid #10B981 !important;
   border-radius: 22px !important;
-  padding: 24px !important;
+  padding: 24px 26px !important;
   box-shadow: var(--shadow-stitch-sm) !important;
 }
 
 .home-about .content-wrapper .highlight-box .highlight-icon {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -1308,25 +1347,27 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   background: #E8F7F0 !important;
   color: #059669 !important;
   border: 1px solid rgba(16, 185, 129, 0.28) !important;
-  border-radius: 16px !important;
-  font-size: 1.4rem;
+  border-radius: 14px !important;
+  font-size: 1.35rem;
 }
 
 .home-about .content-wrapper .highlight-box .highlight-content h3 {
-  font-size: 1.35rem !important;
+  font-size: 1.3rem !important;
   margin-bottom: 6px;
 }
 
 .home-about .content-wrapper .highlight-box .highlight-content p {
-  font-size: 0.94rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-style: italic;
   margin-bottom: 0;
-  color: #414750;
+  color: #001C37;
+  line-height: 1.55;
 }
 
 .home-about .content-wrapper .feature-list {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .home-about .content-wrapper .feature-list .feature-item {
@@ -1335,8 +1376,13 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   gap: 12px;
   background: #FFFFFF;
   border: 1px solid #DBE4F0;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 12px 16px;
+  transition: border-color 0.2s ease;
+}
+
+.home-about .content-wrapper .feature-list .feature-item:hover {
+  border-color: #10B981;
 }
 
 .home-about .content-wrapper .feature-list .feature-icon {
@@ -1357,33 +1403,42 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .home-about .content-wrapper .metrics-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  border-radius: 22px;
+  padding: 18px 12px;
+  box-shadow: var(--shadow-stitch-sm);
 }
 
 .home-about .content-wrapper .metrics-row .metric-box {
-  background: #FFFFFF !important;
-  border: 1px solid #DBE4F0 !important;
-  border-radius: 18px !important;
-  padding: 18px 20px !important;
+  background: transparent !important;
+  border: none !important;
+  border-right: 1px solid #DBE4F0 !important;
+  border-radius: 0 !important;
+  padding: 6px 16px !important;
   text-align: center;
-  box-shadow: var(--shadow-stitch-sm) !important;
+  box-shadow: none !important;
+}
+
+.home-about .content-wrapper .metrics-row .metric-box:last-child {
+  border-right: none !important;
 }
 
 .home-about .content-wrapper .metrics-row .metric-number {
   font-family: var(--font-display) !important;
-  font-size: 2.2rem !important;
-  font-weight: 700 !important;
+  font-size: 2.35rem !important;
+  font-weight: 600 !important;
   line-height: 1.05;
-  color: #0B63A5 !important;
+  color: #001C37 !important;
   margin-bottom: 4px;
 }
 
 .home-about .content-wrapper .metrics-row .metric-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #526478;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #059669;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 .home-about .content-wrapper .action-buttons {
@@ -1402,7 +1457,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   color: #FFFFFF !important;
   border-radius: 9999px !important;
   font-weight: 600 !important;
-  box-shadow: 0 6px 18px rgba(11, 99, 165, 0.20) !important;
+  box-shadow: var(--shadow-vitality) !important;
 }
 
 .home-about .content-wrapper .action-buttons .btn-contact {
@@ -1412,8 +1467,8 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   gap: 8px;
   padding: 13px 26px;
   background: #FFFFFF !important;
-  border: 1.5px solid #0A2540 !important;
-  color: #0A2540 !important;
+  border: 1.5px solid #0B63A5 !important;
+  color: #004B80 !important;
   border-radius: 9999px !important;
   font-weight: 600 !important;
   transition: all 0.25s ease;
@@ -1421,6 +1476,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .home-about .content-wrapper .action-buttons .btn-contact:hover {
   background: #0A2540 !important;
+  border-color: #0A2540 !important;
   color: #FFFFFF !important;
 }
 
@@ -1440,7 +1496,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .about .image-gallery .main-image-container {
   position: relative;
-  border-radius: 40px 40px 24px 24px;
+  border-radius: 48px 48px 24px 24px;
   overflow: hidden;
   border: 4px solid #FFFFFF;
   box-shadow: var(--shadow-stitch-md);
@@ -1448,7 +1504,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .about .image-gallery .main-image {
   width: 100%;
-  max-height: 400px;
+  max-height: 410px;
   object-fit: cover;
   object-position: center 15%;
   display: block;
@@ -1462,10 +1518,10 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .about .image-gallery .secondary-image {
   width: 100%;
-  height: 220px;
+  height: 225px;
   object-fit: cover;
   object-position: center 15%;
-  border-radius: 22px;
+  border-radius: 24px;
   border: 3px solid #FFFFFF;
   box-shadow: var(--shadow-stitch-sm);
 }
@@ -1480,7 +1536,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .about .stats-list {
   display: grid;
-  gap: 18px;
+  gap: 16px;
   margin-top: 24px;
 }
 
@@ -1488,18 +1544,29 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #EFF4FF;
+  background: #F8F9FF;
   border: 1px solid #DBE4F0;
+  border-left: 4px solid #0B63A5;
   border-radius: 18px;
   padding: 16px 20px;
+  transition: all 0.25s ease;
+}
+
+.about .stat-row:nth-child(2) {
+  border-left-color: #10B981;
+}
+
+.about .stat-row:hover {
+  background: #EFF4FF;
+  transform: translateX(3px);
 }
 
 .about .stat-row .stat-number {
   font-family: var(--font-display) !important;
-  font-size: 2.3rem !important;
-  font-weight: 700 !important;
+  font-size: 2.35rem !important;
+  font-weight: 600 !important;
   line-height: 1;
-  color: #0B63A5 !important;
+  color: #001C37 !important;
   min-width: 92px;
   text-align: center;
 }
@@ -1520,7 +1587,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   background: #FFFFFF !important;
   border: 1px solid #DBE4F0 !important;
   border-radius: 24px !important;
-  padding: 32px 28px !important;
+  padding: 34px 28px !important;
   box-shadow: var(--shadow-stitch-sm) !important;
   transition: all 0.28s ease !important;
 }
@@ -1543,6 +1610,13 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border-radius: 16px !important;
   font-size: 1.5rem;
   margin-bottom: 20px;
+  transition: transform 0.25s ease;
+}
+
+.about .mission-section .mission-item:hover .mission-icon {
+  transform: scale(1.06);
+  background: #10B981 !important;
+  color: #FFFFFF !important;
 }
 
 /*--------------------------------------------------------------
@@ -1555,6 +1629,18 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   padding: clamp(28px, 4vw, 48px) !important;
   margin-bottom: 48px !important;
   box-shadow: var(--shadow-stitch-sm) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-departments .featured-department::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--stripe-vitality);
 }
 
 .featured-departments .department-content .department-category {
@@ -1607,7 +1693,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   font-size: 0.94rem;
   padding: 12px 26px;
   border-radius: 9999px;
-  box-shadow: 0 6px 18px rgba(11, 99, 165, 0.20);
+  box-shadow: var(--shadow-vitality);
   transition: all 0.25s ease;
 }
 
@@ -1658,6 +1744,17 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   flex-direction: column;
   box-shadow: var(--shadow-stitch-sm) !important;
   transition: all 0.28s ease !important;
+  position: relative;
+}
+
+.departments .department-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--stripe-vitality);
 }
 
 .departments .department-item:hover {
@@ -1667,7 +1764,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .departments .department-item .department-content {
-  padding: 28px 26px 20px;
+  padding: 30px 26px 22px;
   flex: 1;
 }
 
@@ -1690,11 +1787,13 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border: 1px solid rgba(16, 185, 129, 0.28) !important;
   border-radius: 16px !important;
   font-size: 1.35rem;
+  transition: all 0.25s ease;
 }
 
 .departments .department-item:hover .department-icon {
   background: #10B981 !important;
   color: #FFFFFF !important;
+  transform: scale(1.06);
 }
 
 .departments .department-item:hover .department-icon i {
@@ -1718,7 +1817,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .departments .department-item .feature-badge {
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 600;
   background: #EFF4FF;
   color: #001C37;
@@ -1756,11 +1855,11 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(11, 99, 165, 0.28);
+  box-shadow: var(--shadow-vitality);
 }
 
 /*--------------------------------------------------------------
-# 9. Stitch Ecosystem & Services Cards (.services)
+# 9. Stitch Ecosystem & Services Bento Cards (.services)
 --------------------------------------------------------------*/
 .services .service-card {
   background: #FFFFFF !important;
@@ -1806,6 +1905,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   background: #E8F7F0 !important;
   border-color: rgba(16, 185, 129, 0.35) !important;
   color: #059669 !important;
+  transform: scale(1.06);
 }
 
 .services .service-header .service-category {
@@ -1821,12 +1921,12 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .services .service-body h3 {
-  font-size: 1.5rem !important;
+  font-size: 1.45rem !important;
   margin-bottom: 10px;
 }
 
 .services .service-body p {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   margin-bottom: 18px;
 }
 
@@ -1834,11 +1934,11 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .services .service-features .feature-badge {
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 600;
   background: #EFF4FF !important;
   color: #001C37 !important;
@@ -1849,44 +1949,65 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .services .service-footer {
   margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid #DBE4F0;
 }
 
 .services .service-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 8px;
   width: 100%;
-  padding: 12px 22px;
-  background: var(--btn-gradient) !important;
-  color: #FFFFFF !important;
+  padding: 11px 22px;
+  background: #EFF4FF !important;
+  color: #0A2540 !important;
+  border: 1px solid #DBE4F0 !important;
   border-radius: 9999px !important;
   font-weight: 600 !important;
-  font-size: 0.92rem;
-  box-shadow: 0 6px 18px rgba(11, 99, 165, 0.18) !important;
+  font-size: 0.9rem;
+  transition: all 0.25s ease !important;
 }
 
+.services .service-card:hover .service-btn,
 .services .service-btn:hover {
-  background: var(--btn-gradient-hover) !important;
+  background: var(--btn-gradient) !important;
+  border-color: transparent !important;
   color: #FFFFFF !important;
+  box-shadow: var(--shadow-vitality) !important;
 }
 
 /*--------------------------------------------------------------
-# 10. Stitch Call To Action (#call-to-action) — Big Navy-to-Emerald Card
+# 10. Stitch Oceanic Navy Guidance Banner (#call-to-action)
 --------------------------------------------------------------*/
 .call-to-action .hero-content {
-  background: linear-gradient(135deg, #0A192F 0%, #0A2540 58%, #064E3B 100%) !important;
-  border: 1px solid rgba(16, 185, 129, 0.35) !important;
-  border-radius: 28px !important;
+  position: relative;
+  overflow: hidden;
+  background: var(--banner-oceanic) !important;
+  border: 1px solid rgba(16, 185, 129, 0.32) !important;
+  border-radius: 36px !important;
   padding: clamp(32px, 5vw, 56px) !important;
   color: #FFFFFF !important;
   box-shadow: var(--shadow-stitch-lg) !important;
 }
 
+.call-to-action .hero-content::before {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 320px;
+  height: 320px;
+  background: rgba(16, 185, 129, 0.18);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
 .call-to-action .hero-content .jk-gold-badge {
-  background: rgba(16, 185, 129, 0.18) !important;
+  background: rgba(255, 255, 255, 0.10) !important;
   color: #6CF8BB !important;
-  border-color: rgba(16, 185, 129, 0.40) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
 }
 
 .call-to-action .hero-content .jk-gold-badge i {
@@ -1899,7 +2020,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .call-to-action .hero-content p {
-  color: #CBD5E1 !important;
+  color: #C5DDFF !important;
   margin-bottom: 28px;
 }
 
@@ -1919,11 +2040,11 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   align-items: center;
   justify-content: center;
   padding: 14px 30px;
-  background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+  background: var(--btn-gradient) !important;
   color: #FFFFFF !important;
   border-radius: 9999px !important;
   font-weight: 700 !important;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.32) !important;
+  box-shadow: var(--shadow-vitality) !important;
 }
 
 .call-to-action .hero-content .secondary-link {
@@ -1932,7 +2053,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   gap: 8px;
   padding: 13px 26px;
   background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #FFFFFF !important;
   border-radius: 9999px;
   font-weight: 600;
@@ -1945,8 +2066,8 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .call-to-action .hero-content .hero-image img {
-  border-radius: 22px !important;
-  border: 3px solid rgba(255, 255, 255, 0.20);
+  border-radius: 24px !important;
+  border: 3px solid rgba(255, 255, 255, 0.18);
   width: 100%;
   max-height: 340px;
   object-fit: cover;
@@ -2013,13 +2134,13 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--btn-gradient);
+  background: var(--btn-blue-emerald);
   color: #FFFFFF !important;
   font-family: var(--font-mono);
   font-weight: 700;
   padding: 12px 24px;
   border-radius: 9999px;
-  box-shadow: 0 6px 18px rgba(11, 99, 165, 0.20);
+  box-shadow: var(--shadow-vitality);
 }
 
 .call-to-action .contact-banner .contact-link {
@@ -2052,6 +2173,11 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border: 1px solid #DBE4F0;
   border-radius: 16px;
   padding: 16px 18px;
+  transition: border-color 0.2s ease;
+}
+
+.appointment .info-items .info-item:hover {
+  border-color: #10B981;
 }
 
 .appointment .info-items .info-item .icon-wrapper,
@@ -2087,17 +2213,24 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   box-shadow: var(--shadow-stitch-sm) !important;
 }
 
+/* Stitch Form Field Standards (48px height, 10px radius, 2px #0B63A5 focus ring) */
 .appointment .form-control,
 .appointment .form-select,
 .contact .php-email-form .form-control,
 .contact .php-email-form .form-select {
-  background-color: #F8F9FF;
-  border: 1px solid #DBE4F0;
-  border-radius: 12px;
+  min-height: 48px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(10, 37, 64, 0.16);
+  border-radius: 10px;
   padding: 12px 16px;
   font-size: 0.95rem;
   color: #001C37;
   transition: all 0.2s ease;
+}
+
+.appointment textarea.form-control,
+.contact .php-email-form textarea.form-control {
+  min-height: 120px;
 }
 
 .appointment .form-control:focus,
@@ -2105,8 +2238,8 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .contact .php-email-form .form-control:focus,
 .contact .php-email-form .form-select:focus {
   background-color: #FFFFFF;
-  border-color: #10B981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.16);
+  border: 2px solid #0B63A5;
+  box-shadow: 0 0 0 3px rgba(11, 99, 165, 0.15);
   outline: none;
 }
 
@@ -2122,7 +2255,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border-radius: 9999px !important;
   font-weight: 600 !important;
   font-size: 1rem;
-  box-shadow: 0 8px 20px rgba(11, 99, 165, 0.22) !important;
+  box-shadow: var(--shadow-vitality) !important;
   cursor: pointer;
 }
 
@@ -2140,21 +2273,22 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .appointment .process-steps .step-item:hover {
   border-color: #10B981 !important;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-stitch-md) !important;
 }
 
 .appointment .process-steps .step-item .step-number {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 30px;
-  height: 30px;
-  border-radius: 9999px;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
   background: #EFF4FF;
   border: 1px solid #DBE4F0;
   color: #0B63A5;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -2179,7 +2313,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .contact .info-box {
   background: #FFFFFF !important;
   border: 1px solid #DBE4F0 !important;
-  border-radius: 22px !important;
+  border-radius: 24px !important;
   padding: 32px 24px !important;
   text-align: center;
   box-shadow: var(--shadow-stitch-sm) !important;
@@ -2188,7 +2322,8 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .contact .info-box:hover {
   border-color: #10B981 !important;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-stitch-md) !important;
 }
 
 .contact .info-box i {
@@ -2248,23 +2383,35 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 /*--------------------------------------------------------------
-# 12. Stitch Clinical Cards, 5 Pillars, Diet Protocol, Books & Products
+# 12. Stitch Bio-Dynamic Metric Modules, 5 Pillars, Diet Protocol & Books
 --------------------------------------------------------------*/
 .jk-metric-card {
+  position: relative;
+  overflow: hidden;
   background: #FFFFFF;
   border: 1px solid #DBE4F0;
-  border-top: 3px solid #10B981;
-  border-radius: 20px;
-  padding: 28px 24px;
+  border-radius: 22px;
+  padding: 30px 24px 26px;
   height: 100%;
   box-shadow: var(--shadow-stitch-sm) !important;
-  transition: all 0.25s ease;
+  transition: all 0.28s ease;
+}
+
+/* Stitch Bio-Dynamic Orbital Top Stripe (Medical Blue -> Emerald -> Spring Lime) */
+.jk-metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: var(--stripe-vitality);
 }
 
 .jk-metric-card:hover {
   border-color: #10B981;
   box-shadow: var(--shadow-stitch-md) !important;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 .jk-metric-card__eyebrow {
@@ -2281,7 +2428,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: block;
   font-family: var(--font-display);
   font-size: clamp(2.1rem, 1.8rem + 1vw, 2.65rem);
-  font-weight: 700;
+  font-weight: 600;
   color: #001C37;
   line-height: 1.08;
   margin-bottom: 10px;
@@ -2302,11 +2449,11 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   margin-bottom: 0;
 }
 
-/* Stitch Deep Clinical Navy-to-Emerald Executive Banner */
+/* Stitch Oceanic Navy Executive Guidance Banner */
 .jk-executive-banner {
-  background: linear-gradient(135deg, #0A192F 0%, #0A2540 58%, #064E3B 100%);
+  background: var(--banner-oceanic);
   border: 1px solid rgba(16, 185, 129, 0.35);
-  border-radius: 24px;
+  border-radius: 28px;
   padding: 36px 40px;
   color: #F8F9FF;
   box-shadow: var(--shadow-stitch-md) !important;
@@ -2356,7 +2503,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   justify-content: center;
   color: #059669;
   font-size: 24px;
-  transition: transform 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .jk-pillar-card:hover .jk-pillar-card__icon {
@@ -2366,13 +2513,13 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .jk-pillar-card__num {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
   font-weight: 700;
   color: #0B63A5;
   background: #EFF4FF;
   border: 1px solid #DBE4F0;
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: 9999px;
 }
 
@@ -2383,8 +2530,8 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .jk-pillar-card__title {
   font-family: var(--font-display) !important;
-  font-size: 1.55rem !important;
-  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
   color: #001C37;
   margin-bottom: 8px;
 }
@@ -2403,7 +2550,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .jk-pillar-card__desc {
-  font-size: 0.96rem;
+  font-size: 0.95rem;
   line-height: 1.65;
   color: #414750;
   margin-bottom: 0;
@@ -2411,18 +2558,18 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .jk-pillar-card__protocol {
-  background: #EFF4FF;
+  background: #F8F9FF;
   padding: 18px 28px;
   border-top: 1px solid #DBE4F0;
   color: #001C37;
 }
 
 .jk-pillar-card__protocol-title {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: #0B63A5;
   margin-bottom: 0;
   display: flex;
@@ -2432,22 +2579,22 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 
 .jk-pillar-card__protocol a,
 .jk-pillar-card__protocol a.text-warning {
-  color: #006C49 !important;
+  color: #059669 !important;
   font-weight: 700;
 }
 
 .jk-pillar-card__protocol a:hover,
 .jk-pillar-card__protocol a.text-warning:hover {
-  color: #10B981 !important;
+  color: #0B63A5 !important;
 }
 
 /* Organic Product Cards in Stitch Palette */
 .jk-product-card {
   background: #FFFFFF !important;
-  border-radius: 22px !important;
+  border-radius: 24px !important;
   border: 1px solid #DBE4F0 !important;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.28s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -2455,7 +2602,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .jk-product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-stitch-md) !important;
   border-color: #10B981 !important;
 }
@@ -2518,9 +2665,9 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   flex: 1;
 }
 
-/* JK Diet Chart Section in Stitch Deep Clinical Navy-to-Emerald Theme */
+/* JK Diet Chart Section in Stitch Oceanic Navy-to-Royal Blue Theme */
 .jk-diet-section {
-  background: linear-gradient(135deg, #0A192F 0%, #0A2540 55%, #064E3B 100%) !important;
+  background: var(--banner-oceanic) !important;
   color: #F8F9FF;
   position: relative;
   overflow: hidden;
@@ -2533,26 +2680,26 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 }
 
 .jk-diet-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(16, 185, 129, 0.32);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
   padding: 28px;
   height: 100%;
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: all 0.28s ease;
 }
 
 .jk-diet-card:hover {
-  background: rgba(255, 255, 255, 0.10);
-  border-color: #10B981;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #6CF8BB;
   transform: translateY(-4px);
 }
 
 .jk-diet-card .time-tag {
   display: inline-block;
-  background: rgba(16, 185, 129, 0.18);
+  background: rgba(16, 185, 129, 0.20);
   color: #6CF8BB;
-  border: 1px solid rgba(16, 185, 129, 0.40);
+  border: 1px solid rgba(108, 248, 187, 0.35);
   font-size: 12px;
   font-weight: 700;
   padding: 4px 12px;
@@ -2564,18 +2711,18 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+  background: var(--btn-gradient);
   color: #FFFFFF !important;
   font-weight: 700;
   padding: 13px 28px;
   border-radius: 9999px;
   border: none;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.32);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-vitality);
+  transition: all 0.25s ease;
 }
 
 .jk-btn-gold:hover {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  background: var(--btn-gradient-hover);
   transform: translateY(-2px);
   color: #FFFFFF !important;
 }
@@ -2584,38 +2731,38 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.10);
   color: #FFFFFF !important;
   font-weight: 600;
   padding: 13px 26px;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  transition: all 0.25s ease;
 }
 
 .jk-btn-outline-light:hover {
-  background: rgba(16, 185, 129, 0.20);
+  background: rgba(16, 185, 129, 0.22);
   border-color: #6CF8BB;
   color: #6CF8BB !important;
 }
 
-/* Books & Publications in Stitch Clinical Navy */
+/* Books & Publications in Stitch Oceanic Navy */
 .jk-book-card {
   background: linear-gradient(145deg, #0A2540 0%, #0A192F 100%);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  border-radius: 20px;
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  border-radius: 22px;
   padding: 28px;
   color: #F8F9FF;
   height: 100%;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.28s ease;
 }
 
 .jk-book-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: #10B981;
-  box-shadow: 0 16px 36px rgba(10, 37, 64, 0.25);
+  box-shadow: 0 16px 36px rgba(10, 37, 64, 0.24);
 }
 
 .jk-book-card .book-ribbon {
@@ -2642,7 +2789,7 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
 .bg-white.rounded-4.shadow-sm.border {
   background: #FFFFFF !important;
   border: 1px solid #DBE4F0 !important;
-  border-radius: 22px !important;
+  border-radius: 24px !important;
   box-shadow: var(--shadow-stitch-sm) !important;
   transition: all 0.28s ease !important;
 }
@@ -2659,24 +2806,25 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   border: none !important;
   border-radius: 9999px !important;
   font-weight: 600 !important;
-  box-shadow: 0 6px 18px rgba(11, 99, 165, 0.20) !important;
+  box-shadow: var(--shadow-vitality) !important;
   transition: all 0.25s ease !important;
 }
 
 .btn-success:hover {
   background: var(--btn-gradient-hover) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.30) !important;
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.32) !important;
   transform: translateY(-1px);
 }
 
 .btn-outline-success,
 .btn-outline-dark {
-  border: 1.5px solid #0A2540 !important;
-  color: #0A2540 !important;
+  border: 1.5px solid #0B63A5 !important;
+  color: #004B80 !important;
   background: #FFFFFF !important;
   border-radius: 9999px !important;
   font-weight: 600 !important;
+  transition: all 0.22s ease !important;
 }
 
 .btn-outline-success:hover,
@@ -2686,7 +2834,6 @@ body:not(.article-page) .wp-block-rank-math-toc-block {
   color: #FFFFFF !important;
 }
 
-/* Prevent portrait head-cropping & product clipping */
 img[src*="dr-portrait.jpg"],
 img[src*="dr-hero.jpg"] {
   object-position: center 15% !important;
@@ -2700,7 +2847,7 @@ img[src*="dr-hero.jpg"] {
 }
 
 /*--------------------------------------------------------------
-# 13. Stitch Blog UI/UX for AEO, FAQ (<details>) & E-E-A-T Article Architecture
+# 13. Stitch Clinical Article, AEO Architecture & FAQ Accordions
 --------------------------------------------------------------*/
 .eeat-byline-bar {
   display: flex;
@@ -2711,10 +2858,10 @@ img[src*="dr-hero.jpg"] {
   padding: 20px 24px;
   background: #EFF4FF;
   border: 1px solid #DBE4F0;
-  border-radius: 16px;
+  border-radius: 18px;
   margin-bottom: 28px;
   font-size: 0.875rem;
-  box-shadow: var(--shadow-stitch-sm);
+  box-shadow: var(--shadow-stitch-xs);
 }
 
 .eeat-byline-bar__author {
@@ -2724,8 +2871,8 @@ img[src*="dr-hero.jpg"] {
 }
 
 .eeat-byline-bar__avatar {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 15%;
@@ -2766,10 +2913,10 @@ img[src*="dr-hero.jpg"] {
   background: linear-gradient(135deg, #EFF4FF 0%, #E8F7F0 100%);
   border: 1px solid #DBE4F0;
   border-left: 4px solid #10B981;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 28px 32px;
   margin-bottom: 40px;
-  box-shadow: var(--shadow-stitch-sm);
+  box-shadow: var(--shadow-stitch-xs);
 }
 
 .aeo-takeaways__header {
@@ -2838,7 +2985,7 @@ img[src*="dr-hero.jpg"] {
   top: 104px;
   background: #FFFFFF;
   border: 1px solid #DBE4F0;
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 24px 20px;
   box-shadow: var(--shadow-stitch-sm);
 }
@@ -2893,7 +3040,7 @@ img[src*="dr-hero.jpg"] {
 .aeo-prose {
   background: #FFFFFF;
   border: 1px solid #DBE4F0;
-  border-radius: 24px;
+  border-radius: 28px;
   padding: clamp(24px, 4vw, 52px);
   box-shadow: var(--shadow-stitch-sm);
 }
@@ -2926,26 +3073,62 @@ img[src*="dr-hero.jpg"] {
   border-top: none;
 }
 
-/* Stitch Accordion / <details> FAQ Cards */
-.aeo-prose details {
+/* Stitch Accordion / <details> FAQ Module */
+details {
   background: #F8F9FF !important;
   border: 1px solid #DBE4F0 !important;
   border-radius: 16px !important;
-  padding: 18px 22px !important;
+  padding: 18px 24px !important;
   margin-bottom: 14px !important;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
 }
 
-.aeo-prose details[open] {
+details:hover {
+  border-color: #0B63A5 !important;
+}
+
+details[open] {
   background: #FFFFFF !important;
   border-color: #10B981 !important;
   box-shadow: var(--shadow-stitch-sm);
 }
 
-.aeo-prose details summary {
+details summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   font-weight: 700;
   color: #001C37;
   cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "+";
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #EFF4FF;
+  color: #0B63A5;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+details[open] summary::after {
+  content: "−";
+  background: #10B981;
+  color: #FFFFFF;
 }
 
 /* Editorial Comparison Table */
@@ -2955,7 +3138,7 @@ img[src*="dr-hero.jpg"] {
   margin: 28px 0;
   font-size: 0.92rem;
   background: #FFFFFF;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
 }
 
@@ -3012,7 +3195,7 @@ img[src*="dr-hero.jpg"] {
   border-radius: 16px;
   overflow: hidden;
   margin: 28px 0;
-  box-shadow: var(--shadow-stitch-sm);
+  box-shadow: var(--shadow-stitch-xs);
 }
 
 .aeo-spec-item {
@@ -3046,8 +3229,8 @@ blockquote.aeo-speakable {
   border: 1px solid #DBE4F0;
   border-left: 4px solid #10B981 !important;
   background: #F8F9FF;
-  border-radius: 16px;
-  box-shadow: var(--shadow-stitch-sm);
+  border-radius: 18px;
+  box-shadow: var(--shadow-stitch-xs);
 }
 
 blockquote.aeo-speakable p {
@@ -3076,7 +3259,7 @@ blockquote.aeo-speakable cite {
   padding: 28px 32px;
   background: #EFF4FF;
   border: 1px solid #DBE4F0;
-  border-radius: 18px;
+  border-radius: 20px;
 }
 
 .wp-block-rank-math-toc-block {
@@ -3086,7 +3269,7 @@ blockquote.aeo-speakable cite {
   border-radius: 16px;
   padding: 18px 24px;
   margin-bottom: 28px;
-  box-shadow: var(--shadow-stitch-sm);
+  box-shadow: var(--shadow-stitch-xs);
 }
 
 .wp-block-rank-math-toc-block .toc-title {
@@ -3119,7 +3302,7 @@ blockquote.aeo-speakable cite {
   border: 1px solid #DBE4F0;
   padding: 5px 14px;
   border-radius: 9999px;
-  transition: all 0.25s ease;
+  transition: all 0.22s ease;
 }
 
 .wp-block-rank-math-toc-block ul li a:hover {
@@ -3133,40 +3316,125 @@ blockquote.aeo-speakable cite {
   background: #EFF4FF;
   border: 1px solid #DBE4F0;
   border-left: 4px solid #0B63A5;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 18px 22px;
   font-size: 13.5px;
   color: #414750;
 }
 
 /*--------------------------------------------------------------
-# 14. Stitch Global Footer (#footer)
+# 14. PHP Email Form Messages, Preloader, Scroll Top & Skip Link
+--------------------------------------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059669;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+}
+
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 18px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: #10B981 !important;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35) !important;
+  transition: all 0.35s ease;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: #FFFFFF;
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: #059669 !important;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 18px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 10000;
+  background: #0A2540;
+  color: #FFFFFF !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 2px solid #10B981;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/*--------------------------------------------------------------
+# 15. Stitch Oceanic Navy Global Footer (#footer)
 --------------------------------------------------------------*/
 .footer {
-  background: #0A192F !important;
-  color: #CBD5E1 !important;
+  background: #0A2540 !important;
+  color: #C1C7D2 !important;
   font-size: 14px;
   position: relative;
-  border-top: 1px solid #132C4A !important;
+  border-top: 1px solid #0B3B60 !important;
 }
 
 .footer .footer-top {
-  padding-top: 56px;
-  padding-bottom: 24px;
+  padding-top: 64px;
+  padding-bottom: 32px;
 }
 
 .footer .footer-about .logo {
   line-height: 1.2;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .footer .footer-about .logo span,
 .footer .sitename {
   color: #FFFFFF !important;
   font-family: var(--font-display) !important;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 .footer .sitename span {
@@ -3174,18 +3442,20 @@ blockquote.aeo-speakable cite {
 }
 
 .footer .footer-about p {
-  font-size: 14px;
+  font-size: 13.5px;
   font-family: var(--font-sans);
-  color: #94A3B8;
+  color: #C1C7D2 !important;
+  line-height: 1.65;
 }
 
 .footer .footer-contact p {
   margin-bottom: 6px;
-  color: #CBD5E1;
+  color: #C1C7D2 !important;
+  font-size: 13px;
 }
 
 .footer .text-warning {
-  color: #10B981 !important;
+  color: #6CF8BB !important;
 }
 
 .footer .social-links a {
@@ -3195,8 +3465,8 @@ blockquote.aeo-speakable cite {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(16, 185, 129, 0.35) !important;
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(108, 248, 187, 0.30) !important;
+  background: rgba(255, 255, 255, 0.06);
   font-size: 16px;
   color: #6CF8BB !important;
   margin-right: 10px;
@@ -3213,11 +3483,11 @@ blockquote.aeo-speakable cite {
 .footer h4 {
   color: #FFFFFF !important;
   font-family: var(--font-display) !important;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 600;
   position: relative;
   padding-bottom: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .footer h4::after {
@@ -3242,7 +3512,7 @@ blockquote.aeo-speakable cite {
 }
 
 .footer .footer-links ul li {
-  padding: 7px 0;
+  padding: 6px 0;
   display: flex;
   align-items: center;
 }
@@ -3252,24 +3522,26 @@ blockquote.aeo-speakable cite {
 }
 
 .footer .footer-links ul a {
-  color: #CBD5E1 !important;
+  color: #C1C7D2 !important;
+  font-size: 13px;
   display: inline-block;
-  line-height: 1.35;
+  line-height: 1.4;
   transition: color 0.2s ease;
 }
 
 .footer .footer-links ul a:hover {
-  color: #10B981 !important;
+  color: #6CF8BB !important;
 }
 
 .footer .copyright {
-  padding: 25px 0 32px;
-  border-top: 1px solid #132C4A;
+  padding: 28px 0 34px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .footer .copyright p {
   margin-bottom: 0;
   margin-inline: auto;
+  color: #C1C7D2 !important;
 }
 
 /* Print stylesheet for Beginner's JK Diet Chart PDF */
