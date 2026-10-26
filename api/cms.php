@@ -65,9 +65,16 @@ function verifyToken($token, $secretSalt) {
 function getAuthToken() {
     $headers = function_exists('getallheaders') ? getallheaders() : [];
     foreach ($headers as $k => $v) {
-        if (strtolower($k) === 'authorization' && preg_match('/Bearer\s+(.+)/i', $v, $m)) {
+        $lk = strtolower($k);
+        if ($lk === 'x-cms-token' && !empty($v)) {
+            return trim($v);
+        }
+        if ($lk === 'authorization' && preg_match('/Bearer\s+(.+)/i', $v, $m)) {
             return trim($m[1]);
         }
+    }
+    if (!empty($_SERVER['HTTP_X_CMS_TOKEN'])) {
+        return trim($_SERVER['HTTP_X_CMS_TOKEN']);
     }
     if (!empty($_SERVER['HTTP_AUTHORIZATION']) && preg_match('/Bearer\s+(.+)/i', $_SERVER['HTTP_AUTHORIZATION'], $m)) {
         return trim($m[1]);
@@ -88,7 +95,7 @@ function writePublicState($rootDir, $db) {
         'menus' => $db['menus'],
         'updatedAt' => date('c')
     ];
-    $jsContent = "window.__JK_CMS_PUBLIC__ = " . json_encode($publicState, JSON_UNESCAPED_UNICODE) . ";\n";
+    $jsContent = "window.JK_CMS_PUBLIC = " . json_encode($publicState, JSON_UNESCAPED_UNICODE) . ";\n";
     @file_put_contents($rootDir . '/assets/js/cms-state-public.js', $jsContent);
 
     // Also generate assets/css/cms-overrides.css from design tokens
@@ -302,7 +309,7 @@ if ($action === 'save_page') {
     array_unshift($p['revisions'], $rev);
     $p['revisions'] = array_slice($p['revisions'], 0, 20);
 
-    if (!empty($body['publish']) && $p['status'] === 'published') {
+    if ($p['status'] === 'published') {
         updateHtmlFileOnDisk($rootDir, $p);
         $db['meta']['lastPublishedAt'] = date('c');
     }
@@ -471,7 +478,7 @@ if ($action === 'upload_media') {
     if (!hasPermission($db, $role, 'media.write')) {
         respond(['ok' => false, 'error' => 'Permission denied to upload media.'], 403);
     }
-    $name = preg_replace('/[^a-zA-Z0-9._-]/', '-', basename($body['name'] ?? 'upload.png'));
+    $name = preg_replace('/[^a-zA-Z0-9._-]/', '-', basename($body['fileName'] ?? $body['name'] ?? 'upload.png'));
     if (!preg_match('/\.(png|jpe?g|webp|svg|gif)$/i', $name)) {
         respond(['ok' => false, 'error' => 'Only image files (PNG, JPG, WEBP, SVG, GIF) are allowed.'], 400);
     }
