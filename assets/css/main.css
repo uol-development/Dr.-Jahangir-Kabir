@@ -3557,6 +3557,402 @@ blockquote.aeo-speakable cite {
   color: #C1C7D2 !important;
 }
 
+/*--------------------------------------------------------------
+# 11. Google Stitch About Us & Visionary Founder Layout Components
+--------------------------------------------------------------*/
+.stitch-about-hero {
+  padding: 8.75rem 0 4.5rem !important;
+  background: radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 15% 30%, rgba(11, 99, 165, 0.08) 0%, transparent 45%),
+              #F8F9FF;
+}
+
+.stitch-counter-bar {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #DBE4F0;
+  box-shadow: var(--shadow-stitch-sm);
+  padding: 2.25rem 1.75rem;
+}
+
+.stitch-counter-item {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-right: 1px solid #DBE4F0;
+}
+
+.stitch-counter-bar .col-lg-3:last-child .stitch-counter-item {
+  border-right: none;
+}
+
+@media (max-width: 991.98px) {
+  .stitch-counter-bar .col-6:nth-child(2n) .stitch-counter-item {
+    border-right: none;
+  }
+  .stitch-counter-bar .col-6:nth-child(-n+2) .stitch-counter-item {
+    border-bottom: 1px solid #DBE4F0;
+    padding-bottom: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.stitch-counter-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.5rem + 1.5vw, 2.85rem);
+  font-weight: 700;
+  color: #001C37;
+  line-height: 1.1;
+  display: block;
+}
+
+.stitch-counter-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10B981;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.stitch-counter-eyebrow.blue {
+  color: #0B63A5;
+}
+
+.stitch-counter-desc {
+  font-size: 0.875rem;
+  color: #414750;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Founder Spotlight Portrait & Rotated Aura */
+.stitch-founder-portrait-wrap {
+  position: relative;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.stitch-founder-aura {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 100%;
+  height: 100%;
+  border-radius: 48px;
+  background: rgba(16, 185, 129, 0.14);
+  transform: rotate(-3deg);
+  z-index: 0;
+}
+
+.stitch-founder-portrait-box {
+  position: relative;
+  z-index: 1;
+  border-radius: 44px;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  box-shadow: var(--shadow-stitch-lg);
+}
+
+.stitch-founder-portrait-box img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.stitch-founder-floating-card {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  padding: 1.15rem 1.35rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #DBE4F0;
+  box-shadow: var(--shadow-stitch-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stitch-verified-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #E8F7F0;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.stitch-pullquote-card {
+  padding: 1.65rem 1.85rem;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  border-left: 4px solid #10B981;
+  box-shadow: var(--shadow-stitch-xs);
+}
+
+.stitch-milestone-card {
+  padding: 1.15rem 1.25rem;
+  border-radius: 18px;
+  background: #FFFFFF;
+  border: 1px solid #DBE4F0;
+  box-shadow: var(--shadow-stitch-xs);
+  height: 100%;
+  transition: all 0.25s ease;
+}
+
+.stitch-milestone-card:hover {
+  border-color: #10B981;
+  transform: translateY(-3px);
+}
+
+.stitch-milestone-year {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #0B63A5;
+  display: block;
+}
+
+.stitch-milestone-year.emerald {
+  color: #10B981;
+}
+
+/* Mission, Vision & Core Philosophy Cards */
+.stitch-mv-card,
+.stitch-distinction-card,
+.stitch-bento-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #DBE4F0;
+  box-shadow: var(--shadow-stitch-sm);
+  padding: 2.15rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stitch-mv-card::before,
+.stitch-distinction-card::before,
+.stitch-bento-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--stripe-vitality);
+}
+
+.stitch-mv-card:hover,
+.stitch-distinction-card:hover,
+.stitch-bento-card:hover {
+  border-color: #0B63A5;
+  box-shadow: var(--shadow-stitch-md);
+  transform: translateY(-4px);
+}
+
+.stitch-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #E8F7F0;
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.35rem;
+}
+
+.stitch-icon-box.blue {
+  background: #EFF4FF;
+  border-color: rgba(11, 99, 165, 0.22);
+  color: #0B63A5;
+}
+
+.stitch-num-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #EFF4FF;
+  color: #0B63A5;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+}
+
+.stitch-num-box.emerald {
+  background: #E8F7F0;
+  color: #006C49;
+}
+
+.stitch-card-footer {
+  margin-top: 1.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid #DBE4F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #006C49;
+}
+
+.stitch-card-footer.blue {
+  color: #0B63A5;
+}
+
+.stitch-check-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.stitch-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: #414750;
+  margin-bottom: 0.55rem;
+}
+
+.stitch-check-list li i {
+  color: #10B981;
+  margin-top: 2px;
+}
+
+.stitch-feature-mini-pill {
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  background: #EFF4FF;
+  border: 1px solid #DBE4F0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #001C37;
+}
+
+/* Medical Board & Clinical Leadership Cards */
+.stitch-team-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #DBE4F0;
+  box-shadow: var(--shadow-stitch-sm);
+  height: 100%;
+  transition: all 0.25s ease;
+}
+
+.stitch-team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-stitch-md);
+  border-color: #0B63A5;
+}
+
+.stitch-team-visual {
+  height: 240px;
+  background: linear-gradient(135deg, #DCE9FF 0%, #E8F7F0 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stitch-team-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.stitch-team-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #004B80;
+  border: 1px solid #DBE4F0;
+}
+
+.stitch-team-body {
+  padding: 1.5rem;
+}
+
+/* Full-Width Oceanic Navy CTA Banner */
+.stitch-oceanic-cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: 36px;
+  background: var(--banner-oceanic);
+  color: #FFFFFF;
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-stitch-lg);
+  border: 1px solid rgba(108, 248, 187, 0.22);
+}
+
+.stitch-oceanic-cta::before {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 320px;
+  height: 320px;
+  background: rgba(16, 185, 129, 0.22);
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.stitch-oceanic-cta::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: -80px;
+  width: 280px;
+  height: 280px;
+  background: rgba(11, 99, 165, 0.28);
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+  .stitch-oceanic-cta {
+    padding: 2.25rem 1.5rem;
+    border-radius: 24px;
+  }
+}
+
 /* Print stylesheet for Beginner's JK Diet Chart PDF */
 @media print {
   body * {
