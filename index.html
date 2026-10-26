@@ -240,72 +240,21 @@
         </div>
       </a>
 
-      <!-- Primary Desktop Navigation (Google Stitch Spec — Single Line, Spacious) -->
-      <nav class="hidden xl:flex items-center gap-1.5 whitespace-nowrap" aria-label="প্রধান নেভিগেশন মেনু">
+      <!-- Primary Desktop Navigation (Clean, Spacious & Conversion-Focused) -->
+      <nav class="hidden xl:flex items-center gap-2 whitespace-nowrap" aria-label="প্রধান নেভিগেশন মেনু">
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-bold text-[#006c49] bg-[#eff4ff] rounded-lg relative after:content-[''] after:absolute after:bottom-0.5 after:left-3 after:right-3 after:h-0.5 after:bg-[#10b981] after:rounded-full transition-colors" href="index.html">হোম</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="about.html">ডা. কবির সম্পর্কে</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="5-pillars.html">৫টি স্তম্ভ</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="programs.html">প্রোগ্রামসমূহ</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="ecosystem.html">ইকোসিস্টেম</a>
-
-        <!-- Hover Dropdown: রিসোর্স ও নির্দেশিকা -->
-        <div class="relative group">
-          <button type="button" class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg inline-flex items-center gap-1 transition-colors" aria-expanded="false">
-            <span>রিসোর্স ও নির্দেশিকা</span>
-            <span class="material-symbols-outlined text-base transition-transform group-hover:rotate-180">expand_more</span>
-          </button>
-          <div class="absolute left-0 mt-1 w-80 rounded-2xl bg-white shadow-xl border border-[#dbe4f0] py-2.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0 z-50 whitespace-normal">
-            <div class="px-4 py-1.5 border-b border-slate-100 mb-1 flex items-center justify-between">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-[#006c49]">বিজ্ঞানভিত্তিক বাংলা স্বাস্থ্য নির্দেশিকা</span>
-              <button type="button" onclick="openDietModal()" class="text-[11px] font-extrabold text-[#004b80] hover:underline">ফ্রি চার্ট পপ-আপ</button>
-            </div>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="diet-chart.html">
-              <span class="material-symbols-outlined text-lg text-[#006c49]">restaurant_menu</span>
-              <span>নতুনদের ৭ দিনের জেকে ডায়েট চার্ট</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="lifestyle-disease.html">
-              <span class="material-symbols-outlined text-lg text-[#004b80]">monitor_heart</span>
-              <span>লাইফস্টাইল ডিজিজ ও ইনসুলিন রেজিস্ট্যান্স</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="dr-jahangir-kabir-biography.html">
-              <span class="material-symbols-outlined text-lg text-[#006c49]">badge</span>
-              <span>ডা. জাহাঙ্গীর কবির: পূর্ণাঙ্গ জীবনী ও ৮ উদ্যোগ</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="diabetes-reversal.html">
-              <span class="material-symbols-outlined text-lg text-[#004b80]">bloodtype</span>
-              <span>ডায়াবেটিস রিভার্সাল ও নিরাপদ ওষুধ বিধি</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="hypertension-cholesterol.html">
-              <span class="material-symbols-outlined text-lg text-[#006c49]">cardiology</span>
-              <span>উচ্চ রক্তচাপ, কোলেস্টেরল ও হৃদরোগ প্রতিরোধ</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="autophagy-fasting.html">
-              <span class="material-symbols-outlined text-lg text-[#004b80]">schedule</span>
-              <span>অটোফেজি ও ১৬:৮ ইন্টারমিটেন্ট ফাস্টিং</span>
-            </a>
-            <div class="my-1.5 border-t border-slate-100"></div>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="success-stories.html">
-              <span class="material-symbols-outlined text-lg text-[#10b981]">play_circle</span>
-              <span>রোগীদের সুস্থতার ভিডিও প্রমাণ</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="faq.html">
-              <span class="material-symbols-outlined text-lg text-[#004b80]">quiz</span>
-              <span>সচরাচর জিজ্ঞাসিত প্রশ্নোত্তর (FAQ)</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-2 text-sm text-[#001c37] hover:bg-[#eff4ff] hover:text-[#004b80] transition-colors" href="medical-disclaimer.html">
-              <span class="material-symbols-outlined text-lg text-[#ba1a1a]">gpp_maybe</span>
-              <span>চিকিৎসা সতর্কবার্তা ও রোগী নিরাপত্তা সনদ</span>
-            </a>
-          </div>
-        </div>
-
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="success-stories.html">সুস্থতার গল্প</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="blog.html">ব্লগ</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="contact.html">যোগাযোগ</a>
       </nav>
 
-      <!-- Action Button & Mobile Menu Trigger (Single Pill CTA matching Stitch Reference) -->
+      <!-- Primary Appointment Conversion CTA & Mobile Menu Trigger -->
       <div class="flex items-center gap-3 shrink-0">
-        <a class="whitespace-nowrap inline-flex items-center gap-2 bg-[#10b981] hover:bg-[#00714d] text-white text-sm font-semibold px-6 py-2.5 rounded-full shadow-[0_4px_14px_rgba(16,185,129,0.28)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.38)] transition-all duration-200 active:scale-95" href="https://jklifestyleltd.com/appointment/">
+        <a class="whitespace-nowrap inline-flex items-center gap-2 bg-[#10b981] hover:bg-[#00714d] text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-[0_4px_14px_rgba(16,185,129,0.28)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.38)] transition-all duration-200 active:scale-95" href="https://jklifestyleltd.com/appointment/">
           <span>অ্যাপয়েন্টমেন্ট নিন</span>
           <span class="material-symbols-outlined text-base">calendar_month</span>
         </a>
@@ -319,27 +268,15 @@
     <!-- Responsive Mobile & Tablet Drawer Menu -->
     <div id="mobileNavDrawer" class="hidden xl:hidden bg-white border-t border-[#dbe4f0] shadow-2xl max-h-[82vh] overflow-y-auto">
       <div class="max-w-7xl mx-auto px-4 py-5 space-y-4">
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
           <a href="index.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold bg-[#eff4ff] text-[#006c49]">হোম</a>
           <a href="about.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ডা. কবির সম্পর্কে</a>
           <a href="5-pillars.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">৫টি স্তম্ভ</a>
-          <a href="programs.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ক্লিনিক্যাল প্রোগ্রাম</a>
+          <a href="programs.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">প্রোগ্রামসমূহ</a>
           <a href="ecosystem.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ইকোসিস্টেম</a>
-          <a href="blog.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ব্লগ ও প্রকাশনা</a>
           <a href="success-stories.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">সুস্থতার গল্প</a>
-          <a href="faq.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">প্রশ্নোত্তর (FAQ)</a>
-          <a href="contact.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">যোগাযোগ ও চেম্বার</a>
-        </div>
-        <div class="pt-3 border-t border-slate-100">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-[#006c49] mb-2 px-1">বিশেষ বাংলা ক্লিনিক্যাল নির্দেশিকা</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-            <a href="diet-chart.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#001c37] bg-[#f8f9ff] hover:bg-[#eff4ff]"><span class="material-symbols-outlined text-base text-[#006c49]">restaurant_menu</span> নতুনদের ৭ দিনের জেকে ডায়েট চার্ট</a>
-            <a href="lifestyle-disease.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#001c37] bg-[#f8f9ff] hover:bg-[#eff4ff]"><span class="material-symbols-outlined text-base text-[#004b80]">monitor_heart</span> লাইফস্টাইল ডিজিজ ও ইনসুলিন রেজিস্ট্যান্স</a>
-            <a href="dr-jahangir-kabir-biography.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#001c37] bg-[#f8f9ff] hover:bg-[#eff4ff]"><span class="material-symbols-outlined text-base text-[#006c49]">badge</span> ডা. জাহাঙ্গীর কবির: পূর্ণাঙ্গ জীবনী ও ৮ উদ্যোগ</a>
-            <a href="diabetes-reversal.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#001c37] bg-[#f8f9ff] hover:bg-[#eff4ff]"><span class="material-symbols-outlined text-base text-[#004b80]">bloodtype</span> ডায়াবেটিস রিভার্সাল ও নিরাপদ ওষুধ বিধি</a>
-            <a href="hypertension-cholesterol.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#001c37] bg-[#f8f9ff] hover:bg-[#eff4ff]"><span class="material-symbols-outlined text-base text-[#006c49]">cardiology</span> উচ্চ রক্তচাপ, কোলেস্টেরল ও হৃদরোগ প্রতিরোধ</a>
-            <a href="autophagy-fasting.html" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#001c37] bg-[#f8f9ff] hover:bg-[#eff4ff]"><span class="material-symbols-outlined text-base text-[#004b80]">schedule</span> অটোফেজি ও ১৬:৮ ইন্টারমিটেন্ট ফাস্টিং</a>
-          </div>
+          <a href="blog.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ব্লগ</a>
+          <a href="contact.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">যোগাযোগ</a>
         </div>
         <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
           <a href="tel:+8809678242404" class="inline-flex items-center gap-2 text-xs font-bold text-[#004b80]"><span class="material-symbols-outlined text-base text-[#10b981]">call</span> হটলাইন: +880 9678 242404</a>
@@ -372,16 +309,16 @@
               সুষম ও অর্গানিক খাদ্যাভ্যাস, নোবেলজয়ী অটোফেজি (১৬:৮ ইন্টারমিটেন্ট ফাস্টিং), নিয়মিত ব্যায়াম, পর্যাপ্ত গভীর ঘুম এবং মানসিক প্রশান্তি—<strong>জেকে লাইফস্টাইলের ৫টি মূল স্তম্ভের</strong> মাধ্যমে ডায়াবেটিস, উচ্চ রক্তচাপ, স্থূলতা ও ফ্যাটি লিভারের মূল কারণ ইনসুলিন রেজিস্ট্যান্সকে প্রাকৃতিকভাবে জয় করুন।
             </p>
 
-            <!-- Dual CTA Buttons -->
+            <!-- Dual CTA Buttons (100% Appointment Conversion Focus) -->
             <div class="flex flex-wrap items-center gap-4 mb-10">
-              <a href="https://jklifestyleltd.com/appointment/" class="bg-brand-green hover:bg-brand-greenDark text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+              <a href="https://jklifestyleltd.com/appointment/" class="bg-brand-green hover:bg-brand-greenDark text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg flex items-center gap-2">
                 <span>ফ্রি ডাক্তার অ্যাপয়েন্টমেন্ট নিন</span>
-                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                <span class="material-symbols-outlined text-lg">calendar_month</span>
               </a>
-              <button type="button" onclick="openDietModal()" class="bg-[#E5EEFF] hover:bg-[#D5E3FF] text-brand-navy px-7 py-3.5 rounded-full font-semibold text-sm transition-all flex items-center gap-2">
-                <span class="material-symbols-outlined text-lg text-brand-green">restaurant_menu</span>
-                <span>নতুনদের ৭ দিনের ডায়েট চার্ট</span>
-              </button>
+              <a href="tel:+8809678242404" class="bg-[#E5EEFF] hover:bg-[#D5E3FF] text-brand-navy px-7 py-3.5 rounded-full font-bold text-sm transition-all flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg text-brand-green">call</span>
+                <span>হটলাইন: +880 9678 242404</span>
+              </a>
             </div>
 
             <!-- Feature Tags -->
@@ -510,8 +447,8 @@
               <p class="text-brand-muted text-sm sm:text-base leading-relaxed mb-6">
                 টাইপ-২ ডায়াবেটিস মানে শরীরে ইনসুলিনের অভাব নয়; বরং অতিরিক্ত শর্করা ও ক্ষতিকর সয়াবিন তেল খাওয়ার ফলে কোষে অতিরিক্ত ইনসুলিন জমে তৈরি হওয়া <strong>ইনসুলিন রেজিস্ট্যান্স</strong>। আমরা HOMA-IR, Fasting Insulin, HbA1c ও Lipid Profile বিশ্লেষণ করে ব্যক্তিভেদে সুনির্দিষ্ট লো-কার্ব ও অর্গানিক পুষ্টি পরিকল্পনা প্রদান করি।
               </p>
-              <a class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors" href="lifestyle-disease.html">
-                <span>ইনসুলিন রেজিস্ট্যান্স নির্দেশিকা পড়ুন</span>
+              <a class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors" href="https://jklifestyleltd.com/appointment/">
+                <span>ফ্রি ডাক্তার পরামর্শ ও অ্যাপয়েন্টমেন্ট নিন</span>
                 <span class="material-symbols-outlined text-base">arrow_forward</span>
               </a>
             </div>
@@ -527,8 +464,8 @@
               <p class="text-brand-muted text-sm sm:text-base leading-relaxed mb-6">
                 ২০১৬ সালে জাপানি বিজ্ঞানী ড. ইউশিনোরি ওসুমির নোবেলজয়ী গবেষণা প্রমাণ করেছে যে, নির্দিষ্ট সময় খাবার বিরতি (Intermittent Fasting) দিলে শরীরে ইনসুলিন কমে যায় এবং গ্লুকাগন ও গ্রোথ হরমোন সক্রিয় হয়ে কোষের ভেতরের বর্জ্য ও ক্ষতিগ্রস্ত প্রোটিন পরিষ্কার করে। ফ্যাট অ্যাডাপ্টেশনের পর ১৬ ঘণ্টা ফাস্টিং করা হয়ে ওঠে সহজ ও আনন্দময়।
               </p>
-              <a class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors" href="autophagy-fasting.html">
-                <span>অটোফেজি ও ফাস্টিং বিজ্ঞান জানুন</span>
+              <a class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors" href="https://jklifestyleltd.com/appointment/">
+                <span>ব্যক্তিগতকৃত রুটিনের জন্য অ্যাপয়েন্টমেন্ট নিন</span>
                 <span class="material-symbols-outlined text-base">arrow_forward</span>
               </a>
             </div>
@@ -563,8 +500,8 @@
               <p class="text-brand-muted text-sm sm:text-base leading-relaxed mb-6">
                 সাধারণ মানুষ যেন কেবল পরামর্শ পেয়েই থেমে না যান, বরং বাস্তবেই সুস্থ জীবনযাপন করতে পারেন—সেজন্য ডা. জাহাঙ্গীর কবির গড়ে তুলেছেন <strong>হেলথ রেভলিউশন ডায়াগনস্টিক ল্যাব, জেকে ফিটনেস এরিনা, আলটিমেট অর্গানিক লাইফ, জেকে ফুড এরিনা, জেকে প্রাকৃতিক কৃষি এবং সিন্দাবাদ রিসোর্ট</strong>।
               </p>
-              <a class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors" href="ecosystem.html">
-                <span>৮টি উদ্যোগের পূর্ণাঙ্গ ইকোসিস্টেম দেখুন</span>
+              <a class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors" href="https://jklifestyleltd.com/appointment/">
+                <span>চেম্বার অ্যাপয়েন্টমেন্ট বুক করুন</span>
                 <span class="material-symbols-outlined text-base">arrow_forward</span>
               </a>
             </div>
@@ -596,7 +533,7 @@
             </div>
             <h3 class="text-lg font-bold text-brand-navy mb-2">ডায়াবেটিস রিভার্সাল</h3>
             <p class="text-brand-muted text-xs leading-relaxed mb-4">টাইপ-২ ডায়াবেটিস ও প্রি-ডায়াবেটিস রোগীদের ইনসুলিন সেন্সিটিভিটি পুনরুদ্ধার এবং নিরাপদ ওষুধ ট্যাপারিং প্রোটোকল।</p>
-            <a href="diabetes-reversal.html" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">বিস্তারিত পড়ুন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+            <a href="https://jklifestyleltd.com/appointment/" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">অ্যাপয়েন্টমেন্ট নিন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
           </div>
 
           <!-- Card 2 -->
@@ -606,7 +543,7 @@
             </div>
             <h3 class="text-lg font-bold text-brand-navy mb-2">স্থূলতা ও ভিসেরাল ফ্যাট হ্রাস</h3>
             <p class="text-brand-muted text-xs leading-relaxed mb-4">দুর্বলতা বা পেশি ক্ষয় ছাড়াই ফ্যাট অ্যাডাপ্টেশনের মাধ্যমে পেটের ক্ষতিকর চর্বি ও অতিরিক্ত ওজন কমানোর বৈজ্ঞানিক পদ্ধতি।</p>
-            <a href="diet-chart.html" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">ডায়েট চার্ট দেখুন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+            <a href="https://jklifestyleltd.com/appointment/" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">অ্যাপয়েন্টমেন্ট নিন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
           </div>
 
           <!-- Card 3 -->
@@ -616,7 +553,7 @@
             </div>
             <h3 class="text-lg font-bold text-brand-navy mb-2">উচ্চ রক্তচাপ ও হৃদরোগ প্রতিরোধ</h3>
             <p class="text-brand-muted text-xs leading-relaxed mb-4">ট্রাইগ্লিসারাইড কমানো, এইচডিএল (HDL) বৃদ্ধি এবং রক্তনালীর এন্ডোথেলিয়াল প্রদাহ দূর করে হৃদযন্ত্র সুরক্ষা।</p>
-            <a href="hypertension-cholesterol.html" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">বিস্তারিত পড়ুন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+            <a href="https://jklifestyleltd.com/appointment/" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">অ্যাপয়েন্টমেন্ট নিন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
           </div>
 
           <!-- Card 4 -->
@@ -626,7 +563,7 @@
             </div>
             <h3 class="text-lg font-bold text-brand-navy mb-2">ফ্যাটি লিভার (NAFLD) নিরাময়</h3>
             <p class="text-brand-muted text-xs leading-relaxed mb-4">ফ্রুক্টোজ, চিনি ও রিফাইন্ড কার্বোহাইড্রেট বর্জন এবং ইন্টারমিটেন্ট ফাস্টিংয়ের মাধ্যমে গ্রেড ১–২ ফ্যাটি লিভার রিভার্সাল।</p>
-            <a href="programs.html" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">প্রোগ্রাম দেখুন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+            <a href="https://jklifestyleltd.com/appointment/" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">অ্যাপয়েন্টমেন্ট নিন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
           </div>
 
           <!-- Card 5 -->
@@ -636,7 +573,7 @@
             </div>
             <h3 class="text-lg font-bold text-brand-navy mb-2">পিসিওএস (PCOS) ও হরমোন ব্যালেন্স</h3>
             <p class="text-brand-muted text-xs leading-relaxed mb-4">নারীদের পিসিওএস, অনিয়মিত মাসিক, হরমোনাল ভারসাম্যহীনতা ও বন্ধ্যাত্ব সমস্যায় ইনসুলিন ও স্ট্রেস নিয়ন্ত্রণ প্রোটোকল।</p>
-            <a href="programs.html" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">প্রোগ্রাম দেখুন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+            <a href="https://jklifestyleltd.com/appointment/" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">অ্যাপয়েন্টমেন্ট নিন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
           </div>
 
           <!-- Card 6 -->
@@ -646,7 +583,7 @@
             </div>
             <h3 class="text-lg font-bold text-brand-navy mb-2">অ্যাজমা, COPD ও শ্বাসতন্ত্রের যত্ন</h3>
             <p class="text-brand-muted text-xs leading-relaxed mb-4">যুক্তরাজ্যের ডিপ্লোমা ও যুক্তরাষ্ট্রের স্পাইরো ৩৬০ প্রশিক্ষণের আলোকে হাঁপানি, অ্যালার্জি ও শ্বাসকষ্টের আধুনিক ব্যবস্থাপনা।</p>
-            <a href="about.html" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">ডা. কবিরের যোগ্যতা <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+            <a href="https://jklifestyleltd.com/appointment/" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">অ্যাপয়েন্টমেন্ট নিন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
           </div>
 
           <!-- Card 7 -->
@@ -656,7 +593,7 @@
             </div>
             <h3 class="text-lg font-bold text-brand-navy mb-2">অটোফেজি ও ১৬:৮ ফাস্টিং</h3>
             <p class="text-brand-muted text-xs leading-relaxed mb-4">কোষীয় ডিটক্সিফিকেশন, রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি ও বার্ধক্য রোধে বিজ্ঞানসম্মত টাইম-রেস্ট্রিক্টেড ইটিং পরিকল্পনা।</p>
-            <a href="autophagy-fasting.html" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">নির্দেশিকা পড়ুন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+            <a href="https://jklifestyleltd.com/appointment/" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">অ্যাপয়েন্টমেন্ট নিন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
           </div>
 
           <!-- Card 8 -->
@@ -666,7 +603,7 @@
             </div>
             <h3 class="text-lg font-bold text-brand-navy mb-2">গভীর ঘুম ও স্ট্রেস রিলিফ</h3>
             <p class="text-brand-muted text-xs leading-relaxed mb-4">সার্কাডিয়ান রিদম ও মেলাটোনিন হরমোন ঠিক রাখতে রাত ১০টার মধ্যে ঘুম এবং দম চর্চার মাধ্যমে কর্টিসল নিয়ন্ত্রণ।</p>
-            <a href="5-pillars.html" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">৫টি স্তম্ভ জানুন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+            <a href="https://jklifestyleltd.com/appointment/" class="text-xs font-bold text-brand-green hover:underline inline-flex items-center gap-1">অ্যাপয়েন্টমেন্ট নিন <span class="material-symbols-outlined text-sm">chevron_right</span></a>
           </div>
         </div>
 
