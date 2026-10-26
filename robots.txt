@@ -30,4 +30,6 @@ Allow: /
 
 # LLM Knowledge Base & XML Sitemap
 # LLMs-Txt: https://drjahangirkabir.com/llms.txt
+# LLMs-Full-Txt: https://drjahangirkabir.com/llms-full.txt
+# LLMs-Page: https://drjahangirkabir.com/llms.html
 Sitemap: https://drjahangirkabir.com/sitemap.xml
