@@ -50,6 +50,11 @@ RewriteRule ^(.+?)/?$ $1.html [L]
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Content-Security-Policy "default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data: blob:; media-src 'self' https:; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https:; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://jklifestyleltd.com;"
   Header always unset X-Powered-By
+  <FilesMatch "\.(html|htm|json|xml|txt)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
 </IfModule>
 
 # Gzip / Deflate Compression for Fast Page Delivery

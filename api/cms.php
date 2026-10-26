@@ -853,4 +853,26 @@ if ($action === 'save_users') {
     respond(['ok' => true]);
 }
 
+if ($action === 'clear_cache') {
+    if (function_exists('opcache_reset')) {
+        @opcache_reset();
+    }
+    clearstatcache(true);
+    if (file_exists($rateLimitPath)) {
+        @unlink($rateLimitPath);
+    }
+    $db['meta']['cacheClearedAt'] = date('c');
+    writePublicState($rootDir, $db);
+    array_unshift($db['auditLog'], [
+        'id' => 'log-' . uniqid(),
+        'timestamp' => date('c'),
+        'actor' => $actor,
+        'action' => 'CACHE_CLEARED',
+        'details' => 'Cleared server OPcache, stat cache, rate-limit lockouts, and refreshed public state'
+    ]);
+    $db['auditLog'] = array_slice($db['auditLog'], 0, 150);
+    saveDb($dbPath, $db);
+    respond(['ok' => true, 'clearedAt' => $db['meta']['cacheClearedAt']]);
+}
+
 respond(['ok' => false, 'error' => 'Unknown API action.'], 400);

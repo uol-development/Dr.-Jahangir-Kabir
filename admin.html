@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Admin Panel &amp; CMS — Dr. Muhammad Jahangir Kabir · JK Lifestyle</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0A2540">
@@ -332,6 +335,12 @@
             </select>
           </div>
 
+          <!-- Clear Cache Button -->
+          <button type="button" onclick="clearAllSystemCache()" class="admin-btn-secondary !py-1.5 !px-3 !text-xs" title="Purge Browser, LocalStorage, and Server Cache">
+            <span class="material-symbols-outlined text-base text-amber-600">cleaning_services</span>
+            <span>Clear Cache</span>
+          </button>
+
           <!-- Open Admin Customizer Shortcut -->
           <button type="button" onclick="switchAdminModule('customizer')" class="admin-btn-secondary !py-1.5 !px-3 !text-xs" title="Customize Admin Panel">
             <span class="material-symbols-outlined text-base text-[#004b80]">tune</span>
@@ -372,8 +381,8 @@
   </div>
 
   <!-- Embedded Full Seed Database & Admin Panel Controller -->
-  <script src="assets/js/cms-seed-db.js"></script>
-  <script src="assets/js/cms-admin-app.js"></script>
+  <script src="assets/js/cms-seed-db.js?v=20261026-v4"></script>
+  <script src="assets/js/cms-admin-app.js?v=20261026-v4"></script>
 </body>
 
 </html>

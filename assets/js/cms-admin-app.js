@@ -3,8 +3,8 @@
  * 100% English Interface · Connected to api/cms.php + cms-data/cms.db.json
  * ============================================================================ */
 
-const CMS_STORAGE_KEY = 'jk_cms_live_db_v3';
-const CMS_SESSION_KEY = 'jk_cms_auth_session_v3';
+const CMS_STORAGE_KEY = 'jk_cms_live_db_v4';
+const CMS_SESSION_KEY = 'jk_cms_auth_session_v4';
 
 const DEFAULT_ENGLISH_NAV_ITEMS = [
   { id: 'dashboard', label: 'Dashboard', icon: 'space_dashboard', visible: true },
@@ -258,6 +258,7 @@ async function initCmsDatabase() {
   let loadedDb = null;
 
   try {
+    ['jk_cms_live_db', 'jk_cms_live_db_v1', 'jk_cms_live_db_v2', 'jk_cms_live_db_v3', 'jk_cms_auth_session_v1', 'jk_cms_auth_session_v2', 'jk_cms_auth_session_v3'].forEach(k => localStorage.removeItem(k));
     const raw = localStorage.getItem(CMS_STORAGE_KEY);
     if (raw) loadedDb = JSON.parse(raw);
   } catch (e) {}
@@ -268,7 +269,7 @@ async function initCmsDatabase() {
 
   if (window.location.protocol !== 'file:') {
     try {
-      const pingRes = await fetch('api/cms.php?action=ping', { credentials: 'same-origin' });
+      const pingRes = await fetch('api/cms.php?action=ping', { credentials: 'same-origin', cache: 'no-store' });
       if (pingRes.ok) {
         const pingData = await pingRes.json();
         if (pingData && pingData.ok) {
@@ -286,6 +287,32 @@ async function initCmsDatabase() {
   normalizeAdminEnglishNav(loadedDb);
   cmsState.db = loadedDb;
   persistLocalDb();
+}
+
+async function clearAllSystemCache() {
+  try {
+    ['jk_cms_live_db', 'jk_cms_live_db_v1', 'jk_cms_live_db_v2', 'jk_cms_live_db_v3', 'jk_cms_live_db_v4', 'jk_cms_cache_ver'].forEach(k => localStorage.removeItem(k));
+    sessionStorage.removeItem('jk_cms_login_lockout');
+    sessionStorage.removeItem('jk_cms_login_attempts');
+    if (window.caches && typeof window.caches.keys === 'function') {
+      const names = await window.caches.keys();
+      await Promise.all(names.map(n => window.caches.delete(n)));
+    }
+    if (navigator.serviceWorker && typeof navigator.serviceWorker.getRegistrations === 'function') {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(r => r.unregister()));
+    }
+  } catch (e) {}
+
+  if (window.JK_CMS_SEED_DB) {
+    cmsState.db = JSON.parse(JSON.stringify(window.JK_CMS_SEED_DB));
+    normalizeAdminEnglishNav(cmsState.db);
+  }
+  await callCmsApi('clear_cache', { timestamp: new Date().toISOString() });
+  addAuditEntry('CACHE_CLEARED', 'Purged browser CacheStorage, LocalStorage, ServiceWorkers, and PHP OPcache');
+  persistLocalDb();
+  switchAdminModule(cmsState.activeModule || 'dashboard');
+  showToast('All browser, LocalStorage, CDN, and server caches cleared!', 'success');
 }
 
 // ==================== AUTHENTICATION & SESSION ====================

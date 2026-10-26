@@ -9,10 +9,43 @@
     return seg;
   }
 
+  function purgeLegacyBrowserCaches() {
+    var TARGET_CACHE_VER = '20261026-v4';
+    try {
+      var legacyKeys = [
+        'jk_cms_live_db',
+        'jk_cms_live_db_v1',
+        'jk_cms_live_db_v2',
+        'jk_cms_live_db_v3',
+        'jk_cms_auth_session_v1',
+        'jk_cms_auth_session_v2',
+        'jk_cms_auth_session_v3'
+      ];
+      legacyKeys.forEach(function (k) { localStorage.removeItem(k); });
+
+      var currentVer = localStorage.getItem('jk_cms_cache_ver');
+      if (currentVer !== TARGET_CACHE_VER) {
+        localStorage.removeItem('jk_cms_live_db_v4');
+        localStorage.setItem('jk_cms_cache_ver', TARGET_CACHE_VER);
+        if (window.caches && typeof window.caches.keys === 'function') {
+          window.caches.keys().then(function (names) {
+            names.forEach(function (name) { window.caches.delete(name); });
+          });
+        }
+        if (navigator.serviceWorker && typeof navigator.serviceWorker.getRegistrations === 'function') {
+          navigator.serviceWorker.getRegistrations().then(function (regs) {
+            regs.forEach(function (reg) { reg.unregister(); });
+          });
+        }
+      }
+    } catch (e) {}
+  }
+
   function getMergedState() {
+    purgeLegacyBrowserCaches();
     var base = window.JK_CMS_PUBLIC || {};
     try {
-      var localRaw = localStorage.getItem('jk_cms_live_db_v3');
+      var localRaw = localStorage.getItem('jk_cms_live_db_v4');
       if (localRaw) {
         var localDb = JSON.parse(localRaw);
         return {
