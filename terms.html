@@ -17,6 +17,11 @@
   <link rel="alternate" type="text/plain" href="https://drjahangirkabir.com/llms.txt" title="LLMs.txt Knowledge Base">
   <link rel="alternate" type="text/plain" href="https://drjahangirkabir.com/llms-full.txt" title="LLMs-Full.txt Complete Context">
   <meta name="theme-color" content="#0A2540">
+  <script>
+    if (window.location.protocol !== 'file:' && //index.html$/i.test(window.location.pathname)) {
+      window.history.replaceState(null, '', window.location.pathname.replace(/index.html$/i, '') + window.location.search + window.location.hash);
+    }
+  </script>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -232,7 +237,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
 
       <!-- Brand Identity -->
-      <a class="flex items-center gap-3.5 group shrink-0 whitespace-nowrap" href="index.html" aria-label="ডা. জাহাঙ্গীর কবির অফিশিয়াল হোমপেজ">
+      <a class="flex items-center gap-3.5 group shrink-0 whitespace-nowrap" href="/" aria-label="ডা. জাহাঙ্গীর কবির অফিশিয়াল হোমপেজ">
         <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#004b80] to-[#006c49] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform shrink-0">
           <span class="material-symbols-outlined text-white text-2xl">health_and_safety</span>
         </div>
@@ -244,7 +249,7 @@
 
       <!-- Primary Desktop Navigation (Clean, Spacious & Conversion-Focused) -->
       <nav class="hidden xl:flex items-center gap-2 whitespace-nowrap" aria-label="প্রধান নেভিগেশন মেনু">
-        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="index.html">হোম</a>
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="/">হোম</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="about.html">ডা. কবির সম্পর্কে</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="5-pillars.html">৫টি স্তম্ভ</a>
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="programs.html">প্রোগ্রামসমূহ</a>
@@ -271,7 +276,7 @@
     <div id="mobileNavDrawer" class="hidden xl:hidden bg-white border-t border-[#dbe4f0] shadow-2xl max-h-[82vh] overflow-y-auto">
       <div class="max-w-7xl mx-auto px-4 py-5 space-y-4">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-          <a href="index.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">হোম</a>
+          <a href="/" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">হোম</a>
           <a href="about.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ডা. কবির সম্পর্কে</a>
           <a href="5-pillars.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">৫টি স্তম্ভ</a>
           <a href="programs.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">প্রোগ্রামসমূহ</a>
@@ -291,7 +296,7 @@
   <main id="main" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
     <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-10 border-b border-outline-variant/50">
       <nav aria-label="ব্রেডক্রাম্ব" class="flex items-center gap-2 text-xs text-on-surface-variant">
-        <a class="hover:text-primary" href="index.html">হোম</a>
+        <a class="hover:text-primary" href="/">হোম</a>
         <span class="material-symbols-outlined text-xs">chevron_right</span>
         <span class="text-primary font-bold">ব্যবহারের শর্তাবলি (Terms &amp; Conditions)</span>
       </nav>
