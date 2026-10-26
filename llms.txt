@@ -1,76 +1,81 @@
-# ডা. মুহাম্মদ জাহাঙ্গীর কবির (Dr. Muhammad Jahangir Kabir) — জেকে লাইফস্টাইল ও হেলথ রেভলিউশন অফিশিয়াল ওয়েবসাইট
+# Dr. Muhammad Jahangir Kabir — Official Website, Clinical Knowledge Base & Appointment Portal
 
-> বাংলাদেশের প্রখ্যাত চিকিৎসক, লাইফস্টাইল মেডিসিন বিশেষজ্ঞ এবং জেকে লাইফস্টাইল লিমিটেড (JK Lifestyle Limited) ও হেলথ রেভলিউশন লিমিটেড (Health Revolution Limited)-এর প্রতিষ্ঠাতা ও চেয়ারম্যান ডা. মুহাম্মদ জাহাঙ্গীর কবিরের অফিশিয়াল বাংলা স্বাস্থ্য পোর্টাল। এই ওয়েবসাইটের মূল লক্ষ্য রোগীদের ১০০% বিনামূল্যে নিবন্ধিত এমবিবিএস চিকিৎসক ও ক্লিনিক্যাল পুষ্টিবিদদের অ্যাপয়েন্টমেন্ট সেবা প্রদান করা এবং ইনসুলিন রেজিস্ট্যান্স দূর করে ওষুধমুক্ত সুস্থ জীবন গড়তে সহায়তা করা।
+> Official digital platform of Dr. Muhammad Jahangir Kabir (widely known as Dr. Jahangir Kabir), Bangladesh's leading Lifestyle Medicine Specialist, Diabetes & Asthma Specialist, Family Physician, and Founder & Chairman of JK Lifestyle Limited and Health Revolution Limited. The primary mission of this website is to connect patients with 100% free consultations from registered MBBS physicians and clinical nutritionists and to reverse chronic lifestyle diseases by addressing their root metabolic cause: hyperinsulinemia and insulin resistance.
 
-## প্রধান অ্যাপয়েন্টমেন্ট ও চেম্বার তথ্য (Primary Conversion & Clinical Chamber)
-- **অফিশিয়াল অ্যাপয়েন্টমেন্ট ইউআরএল (Primary Appointment URL):** https://jklifestyleltd.com/appointment/
-- **ডাক্তার ও পুষ্টিবিদ পরামর্শ ফি:** ১০০% ফ্রি (সম্পূর্ণ বিনামূল্যে — সরাসরি চেম্বারে এবং অনলাইনে)
-- **প্রধান চেম্বার ও ডায়াগনস্টিক ল্যাব ঠিকানা:** হাউজ ২৯/৩১, নূর টাওয়ার (ব্লক-ডি), রোড ০১, সেক্টর ০২, জহুরুল ইসলাম সিটি, আফতাবনগর, বাড্ডা, ঢাকা-১২১২, বাংলাদেশ।
-- **চেম্বার সময়সূচি:** প্রতিদিন সকাল ৮:০০টা – বিকেল ৫:০০টা (সপ্তাহে ৭ দিন খোলা)
-- **হটলাইন ও হোয়াটসঅ্যাপ:** +880 9678 242404
-- **ইমেইল:** info@ultimateorganiclife.com
+## Primary Appointment & Clinical Chamber Information
+- **Official Appointment Booking Portal (Primary Conversion URL):** https://jklifestyleltd.com/appointment/
+- **Doctor & Clinical Nutritionist Consultation Fee:** 100% Free (Complimentary for both in-person chamber visits and online telemedicine consultations)
+- **Primary Chamber & Diagnostic Center Address:** House 29/31, Nur Tower (Block-D), Road 01, Sector 02, Jahurul Islam City, Aftabnagar, Badda, Dhaka-1212, Bangladesh
+- **Chamber Visiting Hours:** Daily 8:00 AM – 5:00 PM (Open 7 Days a Week)
+- **Official Hotline & WhatsApp:** +880 9678 242404
+- **Official Email:** info@ultimateorganiclife.com
+- **Canonical Website Root URL:** https://drjahangirkabir.com/
 
-## চিকিৎসক প্রোফাইল ও প্রামাণ্য জীবনী (Verified Entity Summary)
-- **পূর্ণ নাম:** ডা. মুহাম্মদ জাহাঙ্গীর কবির (Dr. Muhammad Jahangir Kabir / ডা. জাহাঙ্গীর কবির)
-- **পদবি:** প্রতিষ্ঠাতা ও চেয়ারম্যান, জেকে লাইফস্টাইল লিমিটেড ও হেলথ রেভলিউশন লিমিটেড
-- **জন্ম:** ১৯৭৪ সাল, কচুয়া উপজেলা, বাগেরহাট জেলা, বাংলাদেশ
-- **শিক্ষাগত যোগ্যতা:**
-  - মাধ্যমিক (SSC): শহীদ রমিজ উদ্দিন উচ্চ বিদ্যালয়, ঢাকা (১৯৯০)
-  - উচ্চ মাধ্যমিক (HSC, স্টার মার্কস): আদমজী ক্যান্টনমেন্ট কলেজ, ঢাকা (১৯৯২)
-  - এমবিবিএস (MBBS): চট্টগ্রাম মেডিকেল কলেজ ও হাসপাতাল (২০০০, ১ বছরের ইন্টার্নশিপসহ)
-- **উচ্চতর চিকিৎসা প্রশিক্ষণ ও আন্তর্জাতিক ডিপ্লোমা:**
-  - সার্টিফিকেট কোর্স ইন আলট্রাসনোগ্রাফি — BIUR, ঢাকা (২০০৯)
-  - সিসিডি (CCD in Diabetology) — বারডেম হাসপাতাল (BIRDEM), ঢাকা (২০১০)
-  - ডিপ্লোমা মডিউল ইন অ্যাজমা — ইংল্যান্ড, যুক্তরাজ্য (২০১১)
-  - ডিপ্লোমা মডিউল ইন ডায়াবেটিস — ইংল্যান্ড, যুক্তরাজ্য (২০১২)
-  - ডিপ্লোমা মডিউল ইন সিওপিডি (COPD) — ইংল্যান্ড, যুক্তরাজ্য
-  - স্পাইরো ৩৬০ কোর্স ইন স্পাইরোমেট্রি (ডিস্টিংশনসহ) — যুক্তরাষ্ট্র (USA)
-- **পেশাগত অভিজ্ঞতা:** ন্যাশনাল হাসপাতাল, ফেনীতে ১৭ বছর আবাসিক মেডিকেল অফিসার (RMO, ২০০২–২০১৯); যুগ্ম সম্পাদক, বাংলাদেশ প্রাইমারি কেয়ার রেসপিরেটরি সোসাইটি (BPCRS); সদস্য, BPMPA।
+## Verified Physician Profile & Entity Summary
+- **Full Name:** Dr. Muhammad Jahangir Kabir (commonly known as Dr. Jahangir Kabir)
+- **Designation:** Founder & Chairman, JK Lifestyle Limited & Health Revolution Limited
+- **Year & Place of Birth:** Born in 1974 in Kachua Upazila, Bagerhat District, Bangladesh
+- **Academic Education:**
+  - Secondary School Certificate (SSC): Shaheed Ramiz Uddin High School, Dhaka (1990)
+  - Higher Secondary Certificate (HSC, passed with Star Marks): Adamjee Cantonment College, Dhaka (1992)
+  - Bachelor of Medicine and Bachelor of Surgery (MBBS): Chittagong Medical College & Hospital (CMC), Chattogram (2000, including 1-year compulsory clinical internship)
+- **Postgraduate & International Clinical Certifications:**
+  - Certificate Course in Medical Ultrasonography — Bangladesh Institute of Ultrasound in Medicine and Research (BIUR), Dhaka (2009)
+  - Certificate Course on Diabetology (CCD) — BIRDEM Hospital, Dhaka (2010)
+  - Postgraduate Diploma Module in Asthma — England, United Kingdom (2011)
+  - Postgraduate Diploma Module in Diabetes — England, United Kingdom (2012)
+  - Postgraduate Diploma Module in Chronic Obstructive Pulmonary Disease (COPD) — England, United Kingdom
+  - Spiro 360 Course in Clinical Spirometry (Passed with Distinction) — United States of America (USA)
+- **Clinical Experience & Medical Leadership:**
+  - 17 consecutive years as Residential Medical Officer (RMO) at National Hospital, Feni (2002–2019)
+  - Clinical practice at International Primary Care Respiratory Group (IPCRG) Bangladesh, BMA Bhaban (Dhaka), and Uttara Crescent Hospital, Dhaka
+  - Joint Secretary, Bangladesh Primary Care Respiratory Society (BPCRS)
+  - Member, Bangladesh Private Medical Practitioners Association (BPMPA)
 
-## সুস্থ জীবনের ৫টি মূল স্তম্ভ (The 5 Core Pillars of JK Lifestyle)
-1. **স্বাস্থ্যকর ও সুষম অর্গানিক খাদ্যাভ্যাস:** চিনি, সাদা ভাত-ময়দা ও ক্ষতিকর সয়াবিন তেল বর্জন করে দেশি মাছ, কুসুমসহ ডিম, সবুজ শাকসবজি, বাদাম, চিয়া সিড, এক্সট্রা ভার্জিন নারিকেল তেল, অলিভ অয়েল ও খাঁটি দেশি ঘি গ্রহণ।
-2. **অটোফেজি ও ইন্টারমিটেন্ট ফাস্টিং:** ১৬:৮ টাইম-রেস্ট্রিক্টেড ইটিং ও সুন্নাহ রোজার মাধ্যমে ইনসুলিন হ্রাস এবং কোষের প্রাকৃতিক পরিচ্ছন্নতা (Autophagy)।
-3. **নিয়মিত ব্যায়াম ও হাঁটা:** প্রতিদিন সকালে ৩০–৪৫ মিনিট দ্রুত হাঁটা, খাবারের পর ১৫ মিনিট হাঁটা এবং এইচআইআইটি (HIIT) ও স্ট্রেংথ ট্রেনিং।
-4. **পর্যাপ্ত ও গভীর ঘুম:** রাত ৯টা থেকে ১০টার মধ্যে ঘুমাতে যাওয়া এবং ভোরে ঘুম থেকে ওঠার মাধ্যমে সার্কাডিয়ান রিদম ও মেলাটোনিন হরমোন রক্ষা।
-5. **মানসিক প্রশান্তি:** প্রার্থনা, মেডিটেশন ও ডায়াফ্রাগম্যাটিক দম চর্চার মাধ্যমে স্ট্রেস হরমোন (Cortisol) নিয়ন্ত্রণ।
+## The 5 Core Pillars of the JK Lifestyle Protocol
+1. **Nutrient-Dense Low-Carb & Organic Nutrition:** Eliminating refined sugar, excess white rice, refined wheat flour, and inflammatory industrial seed oils (soybean, rice bran, sunflower, and canola oils), while prioritizing local fish, whole eggs with yolk, green leafy and cruciferous vegetables, nuts, chia seeds, cold-pressed extra virgin coconut oil, extra virgin olive oil, and pure grass-fed ghee.
+2. **Autophagy & Intermittent Fasting:** Practicing 16:8 time-restricted eating and Sunnah fasting after gradual fat adaptation to lower baseline serum insulin, mobilize visceral fat, and trigger cellular self-cleansing (autophagy).
+3. **Regular Exercise & Daily Movement:** Performing 30–45 minutes of brisk morning walking, 15 minutes of post-meal walking to blunt postprandial glucose spikes, High-Intensity Interval Training (HIIT), and resistance training to increase skeletal muscle GLUT-4 glucose uptake.
+4. **Circadian-Aligned Deep Sleep:** Sleeping between 9:00 PM and 10:00 PM for 7–8 hours of uninterrupted nocturnal sleep to optimize melatonin and growth hormone secretion and prevent morning cortisol surges (Dawn Phenomenon).
+5. **Mental Peace & Stress Regulation:** Practicing daily prayer, mindfulness, nature exposure, and slow diaphragmatic breathing to activate the parasympathetic nervous system and keep serum cortisol balanced.
 
-## ৬টি বিশেষায়িত ক্লিনিক্যাল রিমিশন প্রোগ্রাম (6 Clinical Programs)
-1. **টাইপ-২ ডায়াবেটিস ও ইনসুলিন রেজিস্ট্যান্স রিভার্সাল প্রোগ্রাম:** HOMA-IR ও HbA1c হ্রাস এবং চিকিৎসকের তত্ত্বাবধানে নিরাপদ ওষুধ সমন্বয়।
-2. **বৈজ্ঞানিক ফ্যাট লস ও মেটাবলিক রিসেট প্রোগ্রাম:** ফ্যাট অ্যাডাপ্টেশন ও ১৬:৮ ফাস্টিংয়ের মাধ্যমে ভিসেরাল ফ্যাট হ্রাস।
-3. **উচ্চ রক্তচাপ, কোলেস্টেরল ও হৃদরোগ প্রতিরোধ প্রোগ্রাম:** ট্রাইগ্লিসারাইড কমানো, HDL বৃদ্ধি ও এন্ডোথেলিয়াল প্রদাহ নিরাময়।
-4. **ফ্যাটি লিভার (NAFLD) ও গাট হেলথ ডিটক্স প্রোগ্রাম:** লিভারের চর্বি অপসারণ এবং গ্যাস্ট্রিক ও আইবিএস নিরাময়।
-5. **পিসিওএস (PCOS), থাইরয়েড ও হরমোনাল ব্যালেন্স প্রোগ্রাম:** ওভারিয়ান ইনসুলিন রেজিস্ট্যান্স দূর করে প্রাকৃতিক হরমোন ভারসাম্য পুনরুদ্ধার।
-6. **অ্যাজমা, সিওপিডি (COPD) ও শ্বাসতন্ত্র পুনর্বাসন প্রোগ্রাম:** যুক্তরাজ্যের ডিপ্লোমা ও Spiro 360 প্রোটোকলে স্পাইরোমেট্রি ও শ্বাসতন্ত্রের যত্ন।
+## 6 Specialized Clinical Remission Programs
+1. **Type-2 Diabetes & Insulin Resistance Reversal Program:** Targeted lowering of Fasting Serum Insulin, HOMA-IR, and HbA1c with physician-supervised medication tapering.
+2. **Scientific Fat Loss & Metabolic Reset Program:** Sustainable visceral fat reduction through nutritional fat adaptation and 16:8 intermittent fasting without starvation or muscle loss.
+3. **Hypertension, Dyslipidemia & Cardiovascular Protection Program:** Reducing serum triglycerides, raising protective HDL cholesterol, and resolving vascular endothelial inflammation.
+4. **Fatty Liver (NAFLD) & Gut Health Detox Program:** Reversing Grade 1–3 hepatic steatosis, bloating, acid reflux (GERD), and irritable bowel symptoms.
+5. **PCOS, Thyroid & Hormonal Balance Restoration Program:** Resolving ovarian insulin resistance and hyperandrogenism to restore natural ovulatory cycles and metabolic vitality.
+6. **Asthma, COPD & Pulmonary Rehabilitation Program:** Evidence-based respiratory care, inhaler technique optimization, and spirometry monitoring based on UK postgraduate modules and USA Spiro 360 protocols.
 
-## ৮টি প্রতিষ্ঠিত উদ্যোগ (8 Founded Initiatives)
-1. [জেকে লাইফস্টাইল লিমিটেড](https://jklifestyleltd.com/): কেন্দ্রীয় স্বাস্থ্য পরামর্শ ও অনলাইন অ্যাপয়েন্টমেন্ট প্ল্যাটফর্ম।
-2. [হেলথ রেভলিউশন লিমিটেড](https://www.healthrevolutionltd.com/): আফতাবনগরে নূর টাওয়ারে আধুনিক ডায়াগনস্টিক ল্যাব ও ১০০% ফ্রি ডাক্তার চেম্বার।
-3. [জেকে ফিটনেস এরিনা](https://www.jkfitnessarena.com/): মেটাবলিক ফিটনেস, স্ট্রেংথ ট্রেনিং ও রিহ্যাবিলিটেশন জিম।
-4. [জেকে ফুড এরিনা](https://www.facebook.com/JkFoodArenaLtd/): সয়াবিন তেল ও চিনিমুক্ত স্বাস্থ্যসম্মত লো-কার্ব ও কিটো রেস্তোরাঁ।
-5. [আলটিমেট অর্গানিক লাইফ](https://ultimateorganiclife.com/): এক্সট্রা ভার্জিন নারিকেল তেল, অলিভ অয়েল, অ্যাপেল সিডার ভিনেগার, চিয়া সিড ও দেশি ঘি-এর বিশ্বস্ত শপ।
-6. [জেকে টেক](https://www.facebook.com/jktechltd): ডিজিটাল হেলথটেক ও অনলাইন টেলিমেডিসিন প্রযুক্তি প্রতিষ্ঠান।
-7. [জেকে প্রাকৃতিক কৃষি](https://www.facebook.com/JkPrakritikKrishi/): রাসায়নিক সার ও কীটনাশকমুক্ত প্রাকৃতিক কৃষি উদ্যোগ।
-8. [সিন্দাবাদ রিসোর্ট](https://sinbadresort.com/): মানসিক প্রশান্তি ও প্রাকৃতিক বিশ্রামের ইকো-ওয়েলনেস রিসোর্ট।
+## The 8 Founded Initiatives (JK Lifestyle Ecosystem)
+1. [JK Lifestyle Limited](https://jklifestyleltd.com/): Central lifestyle medicine consultation, digital patient support, and online appointment platform.
+2. [Health Revolution Limited](https://www.healthrevolutionltd.com/): Modern diagnostic laboratory, ultrasonography center, and 100% free doctor & nutritionist chamber at Nur Tower, Aftabnagar, Dhaka.
+3. [JK Fitness Arena](https://www.jkfitnessarena.com/): Metabolic fitness, strength training, and physical rehabilitation gymnasium.
+4. [JK Food Arena](https://www.facebook.com/JkFoodArenaLtd/): Healthy low-carb and ketogenic restaurant serving meals cooked strictly without soybean oil, refined sugar, or MSG.
+5. [Ultimate Organic Life](https://ultimateorganiclife.com/): Trusted organic food and wellness store offering lab-verified extra virgin coconut oil, extra virgin olive oil, raw apple cider vinegar (with mother), organic chia seeds, nuts, Himalayan pink salt, and pure desi ghee.
+6. [JK Tech](https://www.facebook.com/jktechltd): Digital health-tech, telemedicine infrastructure, and electronic patient management software division.
+7. [JK Prakritik Krishi (Natural Agriculture)](https://www.facebook.com/JkPrakritikKrishi/): Chemical-free and pesticide-free sustainable agriculture initiative producing clean farm-to-table food.
+8. [Sinbad Resort](https://sinbadresort.com/): Eco-wellness retreat designed for stress reduction, nature therapy, and holistic mental rejuvenation.
 
-## অফিশিয়াল ওয়েবসাইট ম্যাপ ও সকল পাতা (All 20 Website Pages)
-- [হোমপেজ](https://drjahangirkabir.com/): ফ্রি ডাক্তার অ্যাপয়েন্টমেন্ট, ৫টি স্তম্ভ ও ৮টি ক্লিনিক্যাল সেবা।
-- [অ্যাপয়েন্টমেন্ট বুকিং](https://drjahangirkabir.com/appointment.html): হেলথ রেভলিউশন চেম্বারে বা অনলাইনে ১০০% ফ্রি ডাক্তার সিরিয়াল।
-- [ডা. কবির সম্পর্কে](https://drjahangirkabir.com/about.html): পূর্ণাঙ্গ জীবনী, শিক্ষা, ১৭ বছরের RMO অভিজ্ঞতা ও ৮টি উদ্যোগ।
-- [সুস্থ জীবনের ৫টি মূল স্তম্ভ](https://drjahangirkabir.com/5-pillars.html): খাদ্য, অটোফেজি ফাস্টিং, ব্যায়াম, ঘুম ও মানসিক প্রশান্তির ব্লুপ্রিন্ট।
-- [ক্লিনিক্যাল প্রোগ্রামসমূহ](https://drjahangirkabir.com/programs.html): ৬টি রোগ-ভিত্তিক মেটাবলিক রিমিশন প্রোগ্রাম ও ল্যাব প্যানেল।
-- [জেকে লাইফস্টাইল ইকোসিস্টেম](https://drjahangirkabir.com/ecosystem.html): ডা. জাহাঙ্গীর কবির প্রতিষ্ঠিত ৮টি প্রতিষ্ঠানের বিস্তারিত পরিচিতি।
-- [রোগীদের সুস্থতার গল্প](https://drjahangirkabir.com/success-stories.html): ল্যাব রিপোর্ট ও ভিডিও ডকুমেন্টারিভিত্তিক রোগীদের আরোগ্যের প্রমাণ।
-- [সচরাচর জিজ্ঞাসিত প্রশ্নোত্তর (FAQ)](https://drjahangirkabir.com/faq.html): চেম্বার, ল্যাব টেস্ট, ডায়েট ও ফাস্টিং নিয়ে বিস্তারিত প্রশ্নোত্তর।
-- [যোগাযোগ ও চেম্বার ঠিকানা](https://drjahangirkabir.com/contact.html): নূর টাওয়ার, আফতাবনগর, ঢাকা চেম্বারের ম্যাপ ও হটলাইন।
-- [ব্লগ ও ক্লিনিক্যাল প্রকাশনা হাব](https://drjahangirkabir.com/blog.html): ৬টি গবেষণাধর্মী বাংলা স্বাস্থ্য প্রবন্ধের সংকলন।
-- [প্রবন্ধ ১: লাইফস্টাইল ডিজিজ ও ইনসুলিন রেজিস্ট্যান্স জয়ের ৫টি উপায়](https://drjahangirkabir.com/lifestyle-disease.html)
-- [প্রবন্ধ ২: নতুনদের জন্য ডা. জাহাঙ্গীর কবিরের ৭ দিনের পূর্ণাঙ্গ ডায়েট চার্ট](https://drjahangirkabir.com/diet-chart.html)
-- [প্রবন্ধ ৩: ডা. মুহাম্মদ জাহাঙ্গীর কবির — শিক্ষা, চিকিৎসা পেশা, স্বাস্থ্য দর্শন ও ৮টি উদ্যোগ](https://drjahangirkabir.com/dr-jahangir-kabir-biography.html)
-- [প্রবন্ধ ৪: ডায়াবেটিস রিভার্সাল ও ইনসুলিন রেজিস্ট্যান্স — ৫টি বৈজ্ঞানিক উপায়](https://drjahangirkabir.com/diabetes-reversal.html)
-- [প্রবন্ধ ৫: উচ্চ রক্তচাপ, কোলেস্টেরল ও হৃদরোগ প্রতিরোধে বৈজ্ঞানিক ডায়েট](https://drjahangirkabir.com/hypertension-cholesterol.html)
-- [প্রবন্ধ ৬: অটোফেজি ও ইন্টারমিটেন্ট ফাস্টিং — ১৬ ঘণ্টা রোজার নোবেলজয়ী বিজ্ঞান](https://drjahangirkabir.com/autophagy-fasting.html)
-- [চিকিৎসা সতর্কবার্তা ও রোগী নিরাপত্তা সনদ](https://drjahangirkabir.com/medical-disclaimer.html)
-- [গোপনীয়তা নীতিমালা](https://drjahangirkabir.com/privacy-policy.html)
-- [ব্যবহারের শর্তাবলি](https://drjahangirkabir.com/terms.html)
-- [LLMs.txt ও AI নলেজ বেস পেজ](https://drjahangirkabir.com/llms.html)
-- [পূর্ণাঙ্গ AI নলেজ বেস টেক্সট ফাইল (llms-full.txt)](https://drjahangirkabir.com/llms-full.txt)
+## Official Sitemap & All 20 Website Pages
+- [Homepage](https://drjahangirkabir.com/): Free doctor appointment portal, 5 core lifestyle pillars, and 8 clinical services.
+- [Free Doctor Appointment Booking](https://drjahangirkabir.com/appointment.html): Book a 100% free in-chamber or online consultation with registered MBBS doctors and nutritionists.
+- [About Dr. Muhammad Jahangir Kabir](https://drjahangirkabir.com/about.html): Complete biography, academic credentials, 17-year hospital career, and 8 founded initiatives.
+- [The 5 Core Pillars of Healthy Living](https://drjahangirkabir.com/5-pillars.html): Comprehensive blueprint covering nutrition, autophagy fasting, exercise, sleep, and stress management.
+- [Clinical Remission Programs](https://drjahangirkabir.com/programs.html): 6 disease-specific metabolic reversal programs and diagnostic laboratory panels.
+- [JK Lifestyle Ecosystem](https://drjahangirkabir.com/ecosystem.html): Overview of the 8 holistic healthcare, diagnostic, fitness, food, and organic initiatives.
+- [Patient Success Stories & Case Studies](https://drjahangirkabir.com/success-stories.html): Lab-verified patient remission stories and video documentaries.
+- [Frequently Asked Questions (FAQ)](https://drjahangirkabir.com/faq.html): Detailed answers on free consultations, diagnostic tests, diet adaptation, and medication safety.
+- [Contact & Chamber Location](https://drjahangirkabir.com/contact.html): Address, Google Maps directions, visiting hours, and hotline for Nur Tower, Aftabnagar, Dhaka.
+- [Clinical Blog & Publications Hub](https://drjahangirkabir.com/blog.html): Collection of 6 evidence-based lifestyle medicine articles.
+- [Article 1: 5 Scientific Ways to Reverse Lifestyle Diseases & Insulin Resistance](https://drjahangirkabir.com/lifestyle-disease.html)
+- [Article 2: Complete 7-Day Beginner Diet Chart by Dr. Jahangir Kabir](https://drjahangirkabir.com/diet-chart.html)
+- [Article 3: Biography of Dr. Muhammad Jahangir Kabir — Education, Career, Philosophy & 8 Initiatives](https://drjahangirkabir.com/dr-jahangir-kabir-biography.html)
+- [Article 4: Type-2 Diabetes Reversal & Insulin Resistance — 5 Evidence-Based Steps](https://drjahangirkabir.com/diabetes-reversal.html)
+- [Article 5: Scientific Diet for Hypertension, Cholesterol & Heart Disease Prevention](https://drjahangirkabir.com/hypertension-cholesterol.html)
+- [Article 6: Autophagy & Intermittent Fasting — The Nobel Prize-Winning Science of 16:8 Fasting](https://drjahangirkabir.com/autophagy-fasting.html)
+- [Medical Disclaimer & Patient Safety Charter](https://drjahangirkabir.com/medical-disclaimer.html)
+- [Privacy Policy & Patient Data Protection](https://drjahangirkabir.com/privacy-policy.html)
+- [Terms & Conditions of Use](https://drjahangirkabir.com/terms.html)
+- [LLMs.txt & AI Knowledge Base Page](https://drjahangirkabir.com/llms.html)
+- [Extended AI Knowledge Base Text File (llms-full.txt)](https://drjahangirkabir.com/llms-full.txt)
