@@ -18,8 +18,13 @@
   <link rel="alternate" type="text/plain" href="https://drjahangirkabir.com/llms-full.txt" title="LLMs-Full.txt Complete Context">
   <meta name="theme-color" content="#0A2540">
   <script>
-    if (window.location.protocol !== 'file:' && //index.html$/i.test(window.location.pathname)) {
-      window.history.replaceState(null, '', window.location.pathname.replace(/index.html$/i, '') + window.location.search + window.location.hash);
+    if (window.location.protocol !== 'file:') {
+      var p = window.location.pathname;
+      if (//index.html$/i.test(p)) {
+        window.history.replaceState(null, '', p.replace(/index.html$/i, '') + window.location.search + window.location.hash);
+      } else if (/.html$/i.test(p)) {
+        window.history.replaceState(null, '', p.replace(/.html$/i, '') + window.location.search + window.location.hash);
+      }
     }
   </script>
 
@@ -45,7 +50,7 @@
 
   <!-- Schema.org @graph JSON-LD -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://drjahangirkabir.com/#organization","name":"জেকে লাইফস্টাইল লিমিটেড (JK Lifestyle Limited)","alternateName":["JK Lifestyle","জেকে লাইফস্টাইল","Health Revolution Limited","হেলথ রেভলিউশন লিমিটেড"],"url":"https://drjahangirkabir.com/","logo":{"@type":"ImageObject","url":"https://drjahangirkabir.com/images/dr-portrait.jpg","width":800,"height":1000},"founder":{"@id":"https://drjahangirkabir.com/#person"},"telephone":"+8809678242404","email":"info@ultimateorganiclife.com","sameAs":["https://jklifestyleltd.com/","https://www.healthrevolutionltd.com/","https://ultimateorganiclife.com/","https://www.jkfitnessarena.com/","https://sinbadresort.com/","https://www.youtube.com/@DrJahangirKabir","https://www.facebook.com/DrJahangirkabircmc/","https://www.facebook.com/JkFoodArenaLtd/","https://www.facebook.com/JkPrakritikKrishi/"],"address":{"@type":"PostalAddress","streetAddress":"হাউজ ২৯/৩১, নূর টাওয়ার (ব্লক-ডি), রোড ০১, সেক্টর ০২, জহুরুল ইসলাম সিটি, আফতাবনগর, বাড্ডা","addressLocality":"ঢাকা","postalCode":"1212","addressCountry":"BD"}},{"@type":"Person","@id":"https://drjahangirkabir.com/#person","name":"ডা. মুহাম্মদ জাহাঙ্গীর কবির (Dr. Muhammad Jahangir Kabir)","alternateName":["ডা. জাহাঙ্গীর কবির","Dr. Jahangir Kabir","Muhammad Jahangir Kabir"],"jobTitle":"চিকিৎসক, লাইফস্টাইল মেডিসিন বিশেষজ্ঞ এবং প্রতিষ্ঠাতা ও চেয়ারম্যান, জেকে লাইফস্টাইল","url":"https://drjahangirkabir.com/about.html","image":"https://drjahangirkabir.com/images/dr-portrait.jpg","birthDate":"1974","birthPlace":{"@type":"Place","name":"কচুয়া উপজেলা, বাগেরহাট জেলা, বাংলাদেশ"},"nationality":"Bangladeshi","alumniOf":[{"@type":"CollegeOrUniversity","name":"চট্টগ্রাম মেডিকেল কলেজ (MBBS, ২০০০)"},{"@type":"EducationalOrganization","name":"বারডেম হাসপাতাল, ঢাকা (CCD in Diabetology, ২০১০)"},{"@type":"EducationalOrganization","name":"আদমজী ক্যান্টনমেন্ট কলেজ, ঢাকা (HSC, ১৯৯২)"},{"@type":"EducationalOrganization","name":"শহীদ রমিজ উদ্দিন উচ্চ বিদ্যালয়, ঢাকা (SSC, ১৯৯০)"}],"knowsAbout":["লাইফস্টাইল মেডিসিন (Lifestyle Medicine)","ডায়াবেটিস রিভার্সাল ও ইনসুলিন রেজিস্ট্যান্স (Diabetes Reversal & Insulin Resistance)","অটোফেজি ও ইন্টারমিটেন্ট ফাস্টিং (Autophagy & Intermittent Fasting)","অ্যাজমা, সিওপিডি ও স্পাইরোমেট্রি (Asthma, COPD & Spirometry)","মেটাবলিক স্বাস্থ্য ও অর্গানিক পুষ্টি (Metabolic Health & Organic Nutrition)"],"worksFor":{"@id":"https://drjahangirkabir.com/#organization"}},{"@type":"WebSite","@id":"https://drjahangirkabir.com/#website","url":"https://drjahangirkabir.com/","name":"ডা. জাহাঙ্গীর কবির (Dr. Jahangir Kabir) — অফিশিয়াল ওয়েবসাইট ও স্বাস্থ্য পোর্টাল","publisher":{"@id":"https://drjahangirkabir.com/#organization"},"inLanguage":"bn-BD"},{"@type":["MedicalBusiness","LocalBusiness"],"@id":"https://drjahangirkabir.com/#localbusiness","name":"জেকে লাইফস্টাইল ও হেলথ রেভলিউশন — ডা. জাহাঙ্গীর কবির চেম্বার","url":"https://drjahangirkabir.com/appointment.html","image":"https://drjahangirkabir.com/images/dr-hero.jpg","telephone":"+8809678242404","email":"info@ultimateorganiclife.com","priceRange":"ফ্রি ডাক্তার পরামর্শ ও সাশ্রয়ী ল্যাব টেস্ট","address":{"@type":"PostalAddress","streetAddress":"হাউজ ২৯/৩১, নূর টাওয়ার (ব্লক-ডি), রোড ০১, সেক্টর ০২, জহুরুল ইসলাম সিটি, আফতাবনগর, বাড্ডা","addressLocality":"ঢাকা","postalCode":"1212","addressCountry":"BD"},"geo":{"@type":"GeoCoordinates","latitude":23.7654,"longitude":90.4382},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"17:00"}]},{"@type":"WebPage","@id":"https://drjahangirkabir.com/#webpage","url":"https://drjahangirkabir.com/","name":"ডা. জাহাঙ্গীর কবির (Dr. Jahangir Kabir) — জেকে লাইফস্টাইল ও হেলথ রেভলিউশন অফিশিয়াল ওয়েবসাইট","headline":"ডা. জাহাঙ্গীর কবির (Dr. Jahangir Kabir) — জেকে লাইফস্টাইল ও হেলথ রেভলিউশন অফিশিয়াল ওয়েবসাইট","description":"ডা. মুহাম্মদ জাহাঙ্গীর কবির (Dr. Jahangir Kabir)-এর অফিশিয়াল বাংলা ওয়েবসাইট। জেকে লাইফস্টাইলের ৫টি বৈজ্ঞানিক স্তম্ভ, নতুনদের ৭ দিনের ডায়েট চার্ট, ডায়াবেটিস রিভার্সাল, অটোফেজি এবং ফ্রি ডাক্তার পরামর্শ ও অ্যাপয়েন্টমেন্ট।","isPartOf":{"@id":"https://drjahangirkabir.com/#website"},"about":{"@id":"https://drjahangirkabir.com/#person"},"author":{"@id":"https://drjahangirkabir.com/#person"},"reviewedBy":{"@id":"https://drjahangirkabir.com/#person"},"publisher":{"@id":"https://drjahangirkabir.com/#organization"},"datePublished":"2026-01-15T08:00:00+06:00","dateModified":"2026-10-26T12:00:00+06:00","inLanguage":"bn-BD","speakable":{"@type":"SpeakableSpecification","cssSelector":[".aeo-key-takeaways",".aeo-lead-answer",".aeo-speakable-quote"]}},{"@type":"BreadcrumbList","@id":"https://drjahangirkabir.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"হোম (ডা. জাহাঙ্গীর কবির)","item":"https://drjahangirkabir.com/"}]},{"@type":"FAQPage","@id":"https://drjahangirkabir.com/#faq","mainEntity":[{"@type":"Question","name":"ডা. মুহাম্মদ জাহাঙ্গীর কবির কে এবং তাঁর জেকে লাইফস্টাইল পদ্ধতি কীভাবে কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"ডা. মুহাম্মদ জাহাঙ্গীর কবির বাংলাদেশের একজন প্রখ্যাত চিকিৎসক, লাইফস্টাইল মেডিসিন বিশেষজ্ঞ এবং জেকে লাইফস্টাইল ও হেলথ রেভলিউশন লিমিটেডের প্রতিষ্ঠাতা ও চেয়ারম্যান। তিনি চট্টগ্রাম মেডিকেল কলেজ থেকে ২০০০ সালে এমবিবিএস, বারডেম থেকে সিসিডি এবং যুক্তরাজ্য থেকে ডায়াবেটিস, অ্যাজমা ও সিওপিডিতে উচ্চতর ডিপ্লোমা অর্জন করেছেন। তাঁর প্রবর্তিত জেকে লাইফস্টাইল পদ্ধতি সুষম অর্গানিক খাদ্য, অটোফেজি বা ইন্টারমিটেন্ট ফাস্টিং, নিয়মিত ব্যায়াম, পর্যাপ্ত গভীর ঘুম এবং মানসিক প্রশান্তির মাধ্যমে ডায়াবেটিস, উচ্চ রক্তচাপ, স্থূলতা ও ফ্যাটি লিভারের মূল কারণ ইনসুলিন রেজিস্ট্যান্স দূর করতে সহায়তা করে।"}},{"@type":"Question","name":"হেলথ রেভলিউশনে ডাক্তার ও পুষ্টিবিদ পরামর্শের ফি কত?","acceptedAnswer":{"@type":"Answer","text":"ঢাকার আফতাবনগরে অবস্থিত হেলথ রেভলিউশন চেম্বারে (হাউজ ২৯/৩১, নূর টাওয়ার, ব্লক-ডি, রোড ০১, সেক্টর ০২) নিবন্ধিত চিকিৎসক ও ক্লিনিক্যাল পুষ্টিবিদদের পরামর্শ সম্পূর্ণ ফ্রি (১০০% বিনামূল্যে)। রোগীদের কেবল প্রয়োজনীয় ডায়াগনস্টিক ল্যাব টেস্টের খরচ বহন করতে হয়।"}},{"@type":"Question","name":"জেকে লাইফস্টাইল ডায়েটে কোন খাবারগুলো খাওয়া যায় এবং কোনগুলো বর্জনীয়?","acceptedAnswer":{"@type":"Answer","text":"জেকে লাইফস্টাইল ডায়েটে সাদা ভাত, রুটি, চিনি, মিষ্টি এবং সয়াবিন ও রাইস ব্র্যান তেলের মতো ইন্ডাস্ট্রিয়াল সিড অয়েল সম্পূর্ণ বর্জনীয়। এর পরিবর্তে সবুজ শাকসবজি, দেশি মাছ, কুসুমসহ ডিম, দেশি মুরগি, এক্সট্রা ভার্জিন নারিকেল তেল, অলিভ অয়েল, খাঁটি দেশি ঘি, কাঠবাদাম ও চিয়া সিড খাওয়ার পরামর্শ দেওয়া হয়।"}},{"@type":"Question","name":"ডায়াবেটিস বা প্রেশারের ওষুধ খাওয়া অবস্থায় কি ইন্টারমিটেন্ট ফাস্টিং করা নিরাপদ?","acceptedAnswer":{"@type":"Answer","text":"যাঁরা ডায়াবেটিসের ইনসুলিন বা ব্লাড সুগার কমানোর ওষুধ কিংবা উচ্চ রক্তচাপের ওষুধ সেবন করছেন, তাঁরা কখনোই চিকিৎসকের পরামর্শ ছাড়া হঠাৎ দীর্ঘ ফাস্টিং শুরু করবেন না বা ওষুধ বন্ধ করবেন না। হেলথ রেভলিউশনের চিকিৎসকের তত্ত্বাবধানে ব্লাড সুগার ও প্রেশার পরিমাপ করে ধাপে ধাপে নিরাপদে ওষুধের মাত্রা কমানো হয়।"}},{"@type":"Question","name":"জেকে লাইফস্টাইলে কীভাবে অ্যাপয়েন্টমেন্ট বুক করব?","acceptedAnswer":{"@type":"Answer","text":"আপনি সরাসরি অফিশিয়াল অ্যাপয়েন্টমেন্ট পোর্টাল https://jklifestyleltd.com/appointment/ এ গিয়ে অনলাইনে অ্যাপয়েন্টমেন্ট বুক করতে পারেন অথবা সকাল ৮:০০টা থেকে বিকেল ৫:০০টার মধ্যে +880 9678 242404 নম্বরে কল করে চেম্বার বা টেলিমেডিসিন পরামর্শের সময় নিতে পারেন।"}}]}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://drjahangirkabir.com/#organization","name":"জেকে লাইফস্টাইল লিমিটেড (JK Lifestyle Limited)","alternateName":["JK Lifestyle","জেকে লাইফস্টাইল","Health Revolution Limited","হেলথ রেভলিউশন লিমিটেড"],"url":"https://drjahangirkabir.com/","logo":{"@type":"ImageObject","url":"https://drjahangirkabir.com/images/dr-portrait.jpg","width":800,"height":1000},"founder":{"@id":"https://drjahangirkabir.com/#person"},"telephone":"+8809678242404","email":"info@ultimateorganiclife.com","sameAs":["https://jklifestyleltd.com/","https://www.healthrevolutionltd.com/","https://ultimateorganiclife.com/","https://www.jkfitnessarena.com/","https://sinbadresort.com/","https://www.youtube.com/@DrJahangirKabir","https://www.facebook.com/DrJahangirkabircmc/","https://www.facebook.com/JkFoodArenaLtd/","https://www.facebook.com/JkPrakritikKrishi/"],"address":{"@type":"PostalAddress","streetAddress":"হাউজ ২৯/৩১, নূর টাওয়ার (ব্লক-ডি), রোড ০১, সেক্টর ০২, জহুরুল ইসলাম সিটি, আফতাবনগর, বাড্ডা","addressLocality":"ঢাকা","postalCode":"1212","addressCountry":"BD"}},{"@type":"Person","@id":"https://drjahangirkabir.com/#person","name":"ডা. মুহাম্মদ জাহাঙ্গীর কবির (Dr. Muhammad Jahangir Kabir)","alternateName":["ডা. জাহাঙ্গীর কবির","Dr. Jahangir Kabir","Muhammad Jahangir Kabir"],"jobTitle":"চিকিৎসক, লাইফস্টাইল মেডিসিন বিশেষজ্ঞ এবং প্রতিষ্ঠাতা ও চেয়ারম্যান, জেকে লাইফস্টাইল","url":"https://drjahangirkabir.com/about","image":"https://drjahangirkabir.com/images/dr-portrait.jpg","birthDate":"1974","birthPlace":{"@type":"Place","name":"কচুয়া উপজেলা, বাগেরহাট জেলা, বাংলাদেশ"},"nationality":"Bangladeshi","alumniOf":[{"@type":"CollegeOrUniversity","name":"চট্টগ্রাম মেডিকেল কলেজ (MBBS, ২০০০)"},{"@type":"EducationalOrganization","name":"বারডেম হাসপাতাল, ঢাকা (CCD in Diabetology, ২০১০)"},{"@type":"EducationalOrganization","name":"আদমজী ক্যান্টনমেন্ট কলেজ, ঢাকা (HSC, ১৯৯২)"},{"@type":"EducationalOrganization","name":"শহীদ রমিজ উদ্দিন উচ্চ বিদ্যালয়, ঢাকা (SSC, ১৯৯০)"}],"knowsAbout":["লাইফস্টাইল মেডিসিন (Lifestyle Medicine)","ডায়াবেটিস রিভার্সাল ও ইনসুলিন রেজিস্ট্যান্স (Diabetes Reversal & Insulin Resistance)","অটোফেজি ও ইন্টারমিটেন্ট ফাস্টিং (Autophagy & Intermittent Fasting)","অ্যাজমা, সিওপিডি ও স্পাইরোমেট্রি (Asthma, COPD & Spirometry)","মেটাবলিক স্বাস্থ্য ও অর্গানিক পুষ্টি (Metabolic Health & Organic Nutrition)"],"worksFor":{"@id":"https://drjahangirkabir.com/#organization"}},{"@type":"WebSite","@id":"https://drjahangirkabir.com/#website","url":"https://drjahangirkabir.com/","name":"ডা. জাহাঙ্গীর কবির (Dr. Jahangir Kabir) — অফিশিয়াল ওয়েবসাইট ও স্বাস্থ্য পোর্টাল","publisher":{"@id":"https://drjahangirkabir.com/#organization"},"inLanguage":"bn-BD"},{"@type":["MedicalBusiness","LocalBusiness"],"@id":"https://drjahangirkabir.com/#localbusiness","name":"জেকে লাইফস্টাইল ও হেলথ রেভলিউশন — ডা. জাহাঙ্গীর কবির চেম্বার","url":"https://drjahangirkabir.com/appointment","image":"https://drjahangirkabir.com/images/dr-hero.jpg","telephone":"+8809678242404","email":"info@ultimateorganiclife.com","priceRange":"ফ্রি ডাক্তার পরামর্শ ও সাশ্রয়ী ল্যাব টেস্ট","address":{"@type":"PostalAddress","streetAddress":"হাউজ ২৯/৩১, নূর টাওয়ার (ব্লক-ডি), রোড ০১, সেক্টর ০২, জহুরুল ইসলাম সিটি, আফতাবনগর, বাড্ডা","addressLocality":"ঢাকা","postalCode":"1212","addressCountry":"BD"},"geo":{"@type":"GeoCoordinates","latitude":23.7654,"longitude":90.4382},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"17:00"}]},{"@type":"WebPage","@id":"https://drjahangirkabir.com/#webpage","url":"https://drjahangirkabir.com/","name":"ডা. জাহাঙ্গীর কবির (Dr. Jahangir Kabir) — জেকে লাইফস্টাইল ও হেলথ রেভলিউশন অফিশিয়াল ওয়েবসাইট","headline":"ডা. জাহাঙ্গীর কবির (Dr. Jahangir Kabir) — জেকে লাইফস্টাইল ও হেলথ রেভলিউশন অফিশিয়াল ওয়েবসাইট","description":"ডা. মুহাম্মদ জাহাঙ্গীর কবির (Dr. Jahangir Kabir)-এর অফিশিয়াল বাংলা ওয়েবসাইট। জেকে লাইফস্টাইলের ৫টি বৈজ্ঞানিক স্তম্ভ, নতুনদের ৭ দিনের ডায়েট চার্ট, ডায়াবেটিস রিভার্সাল, অটোফেজি এবং ফ্রি ডাক্তার পরামর্শ ও অ্যাপয়েন্টমেন্ট।","isPartOf":{"@id":"https://drjahangirkabir.com/#website"},"about":{"@id":"https://drjahangirkabir.com/#person"},"author":{"@id":"https://drjahangirkabir.com/#person"},"reviewedBy":{"@id":"https://drjahangirkabir.com/#person"},"publisher":{"@id":"https://drjahangirkabir.com/#organization"},"datePublished":"2026-01-15T08:00:00+06:00","dateModified":"2026-10-26T12:00:00+06:00","inLanguage":"bn-BD","speakable":{"@type":"SpeakableSpecification","cssSelector":[".aeo-key-takeaways",".aeo-lead-answer",".aeo-speakable-quote"]}},{"@type":"BreadcrumbList","@id":"https://drjahangirkabir.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"হোম (ডা. জাহাঙ্গীর কবির)","item":"https://drjahangirkabir.com/"}]},{"@type":"FAQPage","@id":"https://drjahangirkabir.com/#faq","mainEntity":[{"@type":"Question","name":"ডা. মুহাম্মদ জাহাঙ্গীর কবির কে এবং তাঁর জেকে লাইফস্টাইল পদ্ধতি কীভাবে কাজ করে?","acceptedAnswer":{"@type":"Answer","text":"ডা. মুহাম্মদ জাহাঙ্গীর কবির বাংলাদেশের একজন প্রখ্যাত চিকিৎসক, লাইফস্টাইল মেডিসিন বিশেষজ্ঞ এবং জেকে লাইফস্টাইল ও হেলথ রেভলিউশন লিমিটেডের প্রতিষ্ঠাতা ও চেয়ারম্যান। তিনি চট্টগ্রাম মেডিকেল কলেজ থেকে ২০০০ সালে এমবিবিএস, বারডেম থেকে সিসিডি এবং যুক্তরাজ্য থেকে ডায়াবেটিস, অ্যাজমা ও সিওপিডিতে উচ্চতর ডিপ্লোমা অর্জন করেছেন। তাঁর প্রবর্তিত জেকে লাইফস্টাইল পদ্ধতি সুষম অর্গানিক খাদ্য, অটোফেজি বা ইন্টারমিটেন্ট ফাস্টিং, নিয়মিত ব্যায়াম, পর্যাপ্ত গভীর ঘুম এবং মানসিক প্রশান্তির মাধ্যমে ডায়াবেটিস, উচ্চ রক্তচাপ, স্থূলতা ও ফ্যাটি লিভারের মূল কারণ ইনসুলিন রেজিস্ট্যান্স দূর করতে সহায়তা করে।"}},{"@type":"Question","name":"হেলথ রেভলিউশনে ডাক্তার ও পুষ্টিবিদ পরামর্শের ফি কত?","acceptedAnswer":{"@type":"Answer","text":"ঢাকার আফতাবনগরে অবস্থিত হেলথ রেভলিউশন চেম্বারে (হাউজ ২৯/৩১, নূর টাওয়ার, ব্লক-ডি, রোড ০১, সেক্টর ০২) নিবন্ধিত চিকিৎসক ও ক্লিনিক্যাল পুষ্টিবিদদের পরামর্শ সম্পূর্ণ ফ্রি (১০০% বিনামূল্যে)। রোগীদের কেবল প্রয়োজনীয় ডায়াগনস্টিক ল্যাব টেস্টের খরচ বহন করতে হয়।"}},{"@type":"Question","name":"জেকে লাইফস্টাইল ডায়েটে কোন খাবারগুলো খাওয়া যায় এবং কোনগুলো বর্জনীয়?","acceptedAnswer":{"@type":"Answer","text":"জেকে লাইফস্টাইল ডায়েটে সাদা ভাত, রুটি, চিনি, মিষ্টি এবং সয়াবিন ও রাইস ব্র্যান তেলের মতো ইন্ডাস্ট্রিয়াল সিড অয়েল সম্পূর্ণ বর্জনীয়। এর পরিবর্তে সবুজ শাকসবজি, দেশি মাছ, কুসুমসহ ডিম, দেশি মুরগি, এক্সট্রা ভার্জিন নারিকেল তেল, অলিভ অয়েল, খাঁটি দেশি ঘি, কাঠবাদাম ও চিয়া সিড খাওয়ার পরামর্শ দেওয়া হয়।"}},{"@type":"Question","name":"ডায়াবেটিস বা প্রেশারের ওষুধ খাওয়া অবস্থায় কি ইন্টারমিটেন্ট ফাস্টিং করা নিরাপদ?","acceptedAnswer":{"@type":"Answer","text":"যাঁরা ডায়াবেটিসের ইনসুলিন বা ব্লাড সুগার কমানোর ওষুধ কিংবা উচ্চ রক্তচাপের ওষুধ সেবন করছেন, তাঁরা কখনোই চিকিৎসকের পরামর্শ ছাড়া হঠাৎ দীর্ঘ ফাস্টিং শুরু করবেন না বা ওষুধ বন্ধ করবেন না। হেলথ রেভলিউশনের চিকিৎসকের তত্ত্বাবধানে ব্লাড সুগার ও প্রেশার পরিমাপ করে ধাপে ধাপে নিরাপদে ওষুধের মাত্রা কমানো হয়।"}},{"@type":"Question","name":"জেকে লাইফস্টাইলে কীভাবে অ্যাপয়েন্টমেন্ট বুক করব?","acceptedAnswer":{"@type":"Answer","text":"আপনি সরাসরি অফিশিয়াল অ্যাপয়েন্টমেন্ট পোর্টাল https://jklifestyleltd.com/appointment/ এ গিয়ে অনলাইনে অ্যাপয়েন্টমেন্ট বুক করতে পারেন অথবা সকাল ৮:০০টা থেকে বিকেল ৫:০০টার মধ্যে +880 9678 242404 নম্বরে কল করে চেম্বার বা টেলিমেডিসিন পরামর্শের সময় নিতে পারেন।"}}]}]}
   </script>
 
   <!-- Google Fonts & Material Symbols Outlined (Exact Google Stitch Spec) -->
@@ -250,13 +255,13 @@
       <!-- Primary Desktop Navigation (Clean, Spacious & Conversion-Focused) -->
       <nav class="hidden xl:flex items-center gap-2 whitespace-nowrap" aria-label="প্রধান নেভিগেশন মেনু">
         <a class="whitespace-nowrap px-3.5 py-2 text-sm font-bold text-[#006c49] bg-[#eff4ff] rounded-lg relative after:content-[''] after:absolute after:bottom-0.5 after:left-3 after:right-3 after:h-0.5 after:bg-[#10b981] after:rounded-full transition-colors" href="/">হোম</a>
-        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="about.html">ডা. কবির সম্পর্কে</a>
-        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="5-pillars.html">৫টি স্তম্ভ</a>
-        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="programs.html">প্রোগ্রামসমূহ</a>
-        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="ecosystem.html">ইকোসিস্টেম</a>
-        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="success-stories.html">সুস্থতার গল্প</a>
-        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="blog.html">ব্লগ</a>
-        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="contact.html">যোগাযোগ</a>
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="/about">ডা. কবির সম্পর্কে</a>
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="/5-pillars">৫টি স্তম্ভ</a>
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="/programs">প্রোগ্রামসমূহ</a>
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="/ecosystem">ইকোসিস্টেম</a>
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="/success-stories">সুস্থতার গল্প</a>
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="/blog">ব্লগ</a>
+        <a class="whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors" href="/contact">যোগাযোগ</a>
       </nav>
 
       <!-- Primary Appointment Conversion CTA & Mobile Menu Trigger -->
@@ -277,13 +282,13 @@
       <div class="max-w-7xl mx-auto px-4 py-5 space-y-4">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
           <a href="/" class="px-3.5 py-2.5 rounded-xl text-sm font-bold bg-[#eff4ff] text-[#006c49]">হোম</a>
-          <a href="about.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ডা. কবির সম্পর্কে</a>
-          <a href="5-pillars.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">৫টি স্তম্ভ</a>
-          <a href="programs.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">প্রোগ্রামসমূহ</a>
-          <a href="ecosystem.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ইকোসিস্টেম</a>
-          <a href="success-stories.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">সুস্থতার গল্প</a>
-          <a href="blog.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ব্লগ</a>
-          <a href="contact.html" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">যোগাযোগ</a>
+          <a href="/about" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ডা. কবির সম্পর্কে</a>
+          <a href="/5-pillars" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">৫টি স্তম্ভ</a>
+          <a href="/programs" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">প্রোগ্রামসমূহ</a>
+          <a href="/ecosystem" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ইকোসিস্টেম</a>
+          <a href="/success-stories" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">সুস্থতার গল্প</a>
+          <a href="/blog" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">ব্লগ</a>
+          <a href="/contact" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">যোগাযোগ</a>
         </div>
         <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
           <a href="tel:+8809678242404" class="inline-flex items-center gap-2 text-xs font-bold text-[#004b80]"><span class="material-symbols-outlined text-base text-[#10b981]">call</span> হটলাইন: +880 9678 242404</a>
@@ -615,7 +620,7 @@
         </div>
 
         <div class="mt-12 text-center flex flex-wrap justify-center gap-4">
-          <a href="5-pillars.html" class="bg-brand-navy hover:bg-brand-navyLight text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all shadow-md inline-flex items-center gap-2">
+          <a href="/5-pillars" class="bg-brand-navy hover:bg-brand-navyLight text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-all shadow-md inline-flex items-center gap-2">
             <span>সুস্থ জীবনের ৫টি মূল স্তম্ভ বিস্তারিত দেখুন</span>
             <span class="material-symbols-outlined text-base">arrow_forward</span>
           </a>
@@ -733,7 +738,7 @@
             <span class="w-2 h-2 rounded-full bg-brand-border"></span>
             <span class="w-2 h-2 rounded-full bg-brand-border"></span>
           </div>
-          <a href="success-stories.html" class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors">
+          <a href="/success-stories" class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors">
             <span>রোগীদের সুস্থতার ভিডিও ডকুমেন্টারি দেখুন</span>
             <span class="material-symbols-outlined text-base">play_circle</span>
           </a>
@@ -813,7 +818,7 @@
               ডা. জাহাঙ্গীর কবিরের <span class="font-serif italic font-normal text-brand-green">নির্বাচিত স্বাস্থ্য প্রবন্ধ</span>
             </h2>
           </div>
-          <a href="blog.html" class="bg-brand-green hover:bg-brand-greenDark text-white px-6 py-2.5 rounded-full font-semibold text-xs transition-all self-start sm:self-auto inline-flex items-center gap-1.5">
+          <a href="/blog" class="bg-brand-green hover:bg-brand-greenDark text-white px-6 py-2.5 rounded-full font-semibold text-xs transition-all self-start sm:self-auto inline-flex items-center gap-1.5">
             <span>সবগুলো প্রবন্ধ দেখুন</span>
             <span class="material-symbols-outlined text-sm">arrow_forward</span>
           </a>
@@ -831,13 +836,13 @@
               <div>
                 <p class="text-[11px] text-brand-muted mb-2">ডা. মুহাম্মদ জাহাঙ্গীর কবির · ১২ মিনিট পঠন</p>
                 <h3 class="text-lg font-bold text-brand-navy mb-3 group-hover:text-brand-green transition-colors leading-snug">
-                  <a href="lifestyle-disease.html">লাইফস্টাইল ডিজিজ ও অসংক্রামক ব্যাধি: ইনসুলিন রেজিস্ট্যান্স জয়ের ৫টি বৈজ্ঞানিক উপায়</a>
+                  <a href="/lifestyle-disease">লাইফস্টাইল ডিজিজ ও অসংক্রামক ব্যাধি: ইনসুলিন রেজিস্ট্যান্স জয়ের ৫টি বৈজ্ঞানিক উপায়</a>
                 </h3>
                 <p class="text-brand-muted text-xs leading-relaxed mb-4">
                   বিশ্বজুড়ে ৭৪% মৃত্যুর জন্য দায়ী ডায়াবেটিস, উচ্চ রক্তচাপ ও হৃদরোগের মূল কারণ ইনসুলিন রেজিস্ট্যান্স কীভাবে প্রাকৃতিকভাবে দূর করবেন তার পূর্ণাঙ্গ ক্লিনিক্যাল বিশ্লেষণ।
                 </p>
               </div>
-              <a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy group-hover:text-brand-green transition-colors" href="lifestyle-disease.html">
+              <a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy group-hover:text-brand-green transition-colors" href="/lifestyle-disease">
                 <span>পূর্ণাঙ্গ প্রবন্ধ পড়ুন</span>
                 <span class="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
@@ -854,13 +859,13 @@
               <div>
                 <p class="text-[11px] text-brand-muted mb-2">ডা. মুহাম্মদ জাহাঙ্গীর কবির · ১৪ মিনিট পঠন</p>
                 <h3 class="text-lg font-bold text-brand-navy mb-3 group-hover:text-brand-green transition-colors leading-snug">
-                  <a href="diet-chart.html">নতুনদের জন্য ডা. জাহাঙ্গীর কবিরের ৭ দিনের পূর্ণাঙ্গ ডায়েট চার্ট ও ফ্যাট অ্যাডাপ্টেশন</a>
+                  <a href="/diet-chart">নতুনদের জন্য ডা. জাহাঙ্গীর কবিরের ৭ দিনের পূর্ণাঙ্গ ডায়েট চার্ট ও ফ্যাট অ্যাডাপ্টেশন</a>
                 </h3>
                 <p class="text-brand-muted text-xs leading-relaxed mb-4">
                   সকাল থেকে রাত পর্যন্ত কী খাবেন, কোন খাবারগুলো বর্জন করবেন এবং কীভাবে ক্ষুধা ও দুর্বলতা ছাড়াই ফ্যাট বার্নিং শুরু করবেন তার ৭ দিনের পূর্ণাঙ্গ তালিকা।
                 </p>
               </div>
-              <a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy group-hover:text-brand-green transition-colors" href="diet-chart.html">
+              <a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy group-hover:text-brand-green transition-colors" href="/diet-chart">
                 <span>পূর্ণাঙ্গ প্রবন্ধ পড়ুন</span>
                 <span class="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
@@ -877,13 +882,13 @@
               <div>
                 <p class="text-[11px] text-brand-muted mb-2">ডা. মুহাম্মদ জাহাঙ্গীর কবির · ১১ মিনিট পঠন</p>
                 <h3 class="text-lg font-bold text-brand-navy mb-3 group-hover:text-brand-green transition-colors leading-snug">
-                  <a href="dr-jahangir-kabir-biography.html">ডা. মুহাম্মদ জাহাঙ্গীর কবির: শিক্ষা, চিকিৎসা পেশা, স্বাস্থ্য দর্শন ও ৮টি উদ্যোগ</a>
+                  <a href="/dr-jahangir-kabir-biography">ডা. মুহাম্মদ জাহাঙ্গীর কবির: শিক্ষা, চিকিৎসা পেশা, স্বাস্থ্য দর্শন ও ৮টি উদ্যোগ</a>
                 </h3>
                 <p class="text-brand-muted text-xs leading-relaxed mb-4">
                   বাগেরহাটে জন্ম থেকে চট্টগ্রাম মেডিকেল কলেজ, বারডেম ও যুক্তরাজ্যের উচ্চতর ডিপ্লোমা এবং হেলথ রেভলিউশন প্রতিষ্ঠার প্রামাণ্য জীবনকথা।
                 </p>
               </div>
-              <a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy group-hover:text-brand-green transition-colors" href="dr-jahangir-kabir-biography.html">
+              <a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy group-hover:text-brand-green transition-colors" href="/dr-jahangir-kabir-biography">
                 <span>পূর্ণাঙ্গ প্রবন্ধ পড়ুন</span>
                 <span class="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
@@ -920,7 +925,7 @@
                     <span>ফ্রি পরামর্শ নিন</span>
                     <span class="material-symbols-outlined text-sm">arrow_forward</span>
                   </a>
-                  <a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy bg-white border border-brand-border px-4 py-2 rounded-full hover:bg-slate-50 transition-colors" href="faq.html">
+                  <a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy bg-white border border-brand-border px-4 py-2 rounded-full hover:bg-slate-50 transition-colors" href="/faq">
                     <span>সব FAQ দেখুন</span>
                   </a>
                 </div>
@@ -1087,7 +1092,7 @@
 
       <!-- Modal Footer -->
       <div class="bg-[#eff4ff] px-6 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#dbe4f0] shrink-0">
-        <a href="diet-chart.html" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#004b80] hover:text-[#006c49] transition-colors">
+        <a href="/diet-chart" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#004b80] hover:text-[#006c49] transition-colors">
           <span>পূর্ণাঙ্গ ডায়েট চার্ট পাতা দেখুন</span>
           <span class="material-symbols-outlined text-base">arrow_forward</span>
         </a>
@@ -1143,12 +1148,12 @@
         <div class="lg:col-span-3">
           <h4 class="text-xs font-bold uppercase tracking-widest text-[#6ffbbe] mb-6">বিজ্ঞানভিত্তিক বাংলা স্বাস্থ্য প্রবন্ধ</h4>
           <ul class="space-y-3 text-sm text-slate-300">
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="dr-jahangir-kabir-biography.html"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> ডা. জাহাঙ্গীর কবির: জীবনী ও ৮ উদ্যোগ</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="lifestyle-disease.html"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> লাইফস্টাইল ডিজিজ ও ইনসুলিন রেজিস্ট্যান্স</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="diet-chart.html"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> নতুনদের ৭ দিনের জেকে ডায়েট চার্ট</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="diabetes-reversal.html"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> ডায়াবেটিস রিভার্সাল ৫টি বৈজ্ঞানিক উপায়</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="hypertension-cholesterol.html"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> উচ্চ রক্তচাপ ও কোলেস্টেরল নিয়ন্ত্রণ</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="autophagy-fasting.html"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> অটোফেজি ও ১৬:৮ ফাস্টিং নির্দেশিকা</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/dr-jahangir-kabir-biography"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> ডা. জাহাঙ্গীর কবির: জীবনী ও ৮ উদ্যোগ</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/lifestyle-disease"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> লাইফস্টাইল ডিজিজ ও ইনসুলিন রেজিস্ট্যান্স</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/diet-chart"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> নতুনদের ৭ দিনের জেকে ডায়েট চার্ট</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/diabetes-reversal"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> ডায়াবেটিস রিভার্সাল ৫টি বৈজ্ঞানিক উপায়</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/hypertension-cholesterol"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> উচ্চ রক্তচাপ ও কোলেস্টেরল নিয়ন্ত্রণ</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/autophagy-fasting"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> অটোফেজি ও ১৬:৮ ফাস্টিং নির্দেশিকা</a></li>
           </ul>
         </div>
 
@@ -1156,14 +1161,14 @@
         <div class="lg:col-span-2">
           <h4 class="text-xs font-bold uppercase tracking-widest text-[#6ffbbe] mb-6">গুরুত্বপূর্ণ পাতা</h4>
           <ul class="space-y-3 text-sm text-slate-300">
-            <li><a class="hover:text-[#6ffbbe] transition-colors" href="about.html">ডা. কবির সম্পর্কে</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors" href="5-pillars.html">৫টি মূল স্তম্ভ</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors" href="programs.html">ক্লিনিক্যাল প্রোগ্রাম</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors" href="ecosystem.html">জেকে ইকোসিস্টেম</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors" href="success-stories.html">রোগীদের সুস্থতার গল্প</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors" href="blog.html">ব্লগ ও প্রকাশনা</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors" href="faq.html">প্রশ্নোত্তর (FAQ)</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors" href="contact.html">যোগাযোগ ও চেম্বার</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors" href="/about">ডা. কবির সম্পর্কে</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors" href="/5-pillars">৫টি মূল স্তম্ভ</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors" href="/programs">ক্লিনিক্যাল প্রোগ্রাম</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors" href="/ecosystem">জেকে ইকোসিস্টেম</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors" href="/success-stories">রোগীদের সুস্থতার গল্প</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors" href="/blog">ব্লগ ও প্রকাশনা</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors" href="/faq">প্রশ্নোত্তর (FAQ)</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors" href="/contact">যোগাযোগ ও চেম্বার</a></li>
           </ul>
         </div>
 
@@ -1206,9 +1211,9 @@
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 pt-6 border-t border-white/5">
           <p>© ২০২৬ ডা. মুহাম্মদ জাহাঙ্গীর কবির · হেলথ রেভলিউশন ও জেকে লাইফস্টাইল লিমিটেড। সর্বস্বত্ব সংরক্ষিত।</p>
           <div class="flex flex-wrap items-center gap-6">
-            <a class="hover:text-white transition-colors" href="medical-disclaimer.html">চিকিৎসা সতর্কবার্তা</a>
-            <a class="hover:text-white transition-colors" href="privacy-policy.html">গোপনীয়তা নীতিমালা</a>
-            <a class="hover:text-white transition-colors" href="terms.html">ব্যবহারের শর্তাবলি</a>
+            <a class="hover:text-white transition-colors" href="/medical-disclaimer">চিকিৎসা সতর্কবার্তা</a>
+            <a class="hover:text-white transition-colors" href="/privacy-policy">গোপনীয়তা নীতিমালা</a>
+            <a class="hover:text-white transition-colors" href="/terms">ব্যবহারের শর্তাবলি</a>
             <a class="hover:text-white transition-colors" href="llms.txt">LLMs.txt (AI)</a>
             <a class="hover:text-white transition-colors" href="sitemap.xml">সাইটম্যাপ</a>
           </div>
