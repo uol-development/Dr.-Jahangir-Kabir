@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="bn">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>অ্যাডমিন প্যানেল ও সিএমএস (Admin Panel &amp; CMS) — ডা. জাহাঙ্গীর কবির · জেকে লাইফস্টাইল</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A2540">
+  <script>
+    if (window.location.protocol !== 'file:') {
+      var p = window.location.pathname;
+      if (/\/admin\.html$/i.test(p)) {
+        window.history.replaceState(null, '', p.replace(/\.html$/i, '') + window.location.search + window.location.hash);
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Material Symbols Outlined (Exact Google Stitch Spec) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Google Stitch Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e5eeff",
+            "surface-card": "#ffffff",
+            "on-surface": "#001c37",
+            "on-surface-variant": "#414750",
+            "outline-variant": "#c1c7d2",
+            "primary": "#004b80",
+            "secondary": "#006c49",
+            "emerald": "#10b981",
+            "navy-dark": "#0a2540"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans Bengali"', '"Hind Siliguri"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', '"Noto Sans Bengali"', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --admin-accent: #006c49;
+      --admin-accent-light: #e8f7f0;
+      --admin-bg: #f8f9ff;
+      --admin-card: #ffffff;
+      --admin-text: #001c37;
+      --admin-muted: #414750;
+      --admin-border: #dbe4f0;
+      --admin-sidebar-bg: #0a2540;
+      --admin-sidebar-text: #eaf1ff;
+    }
+
+    body[data-admin-theme="oceanic-dark"] {
+      --admin-bg: #061322;
+      --admin-card: #0c1f36;
+      --admin-text: #f0f6ff;
+      --admin-muted: #94a9c4;
+      --admin-border: #1b3554;
+      --admin-sidebar-bg: #040d18;
+      --admin-sidebar-text: #eaf1ff;
+    }
+
+    body[data-admin-theme="emerald-clinical"] {
+      --admin-bg: #f2fbf7;
+      --admin-card: #ffffff;
+      --admin-text: #002113;
+      --admin-muted: #2d5342;
+      --admin-border: #c5e8d8;
+      --admin-sidebar-bg: #003824;
+      --admin-sidebar-text: #e8f7f0;
+    }
+
+    body[data-font-scale="small"] { font-size: 13.5px; }
+    body[data-font-scale="default"] { font-size: 15px; }
+    body[data-font-scale="large"] { font-size: 16.5px; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+      background-color: var(--admin-bg);
+      color: var(--admin-text);
+      overflow-x: hidden;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .admin-card {
+      background-color: var(--admin-card);
+      border: 1px solid var(--admin-border);
+      border-radius: 1rem;
+      box-shadow: 0 10px 28px -6px rgba(0, 28, 55, 0.05);
+    }
+
+    .admin-input {
+      background-color: var(--admin-card);
+      color: var(--admin-text);
+      border: 1px solid var(--admin-border);
+      border-radius: 0.75rem;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.875rem;
+      width: 100%;
+      transition: all 0.18s ease;
+    }
+    .admin-input:focus {
+      outline: none;
+      border-color: var(--admin-accent);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+    }
+
+    .admin-btn-primary {
+      background-color: var(--admin-accent);
+      color: #ffffff;
+      font-weight: 700;
+      border-radius: 0.75rem;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.18s ease;
+      box-shadow: 0 4px 14px rgba(0, 108, 73, 0.24);
+    }
+    .admin-btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+    .admin-btn-secondary {
+      background-color: var(--admin-card);
+      color: var(--admin-text);
+      border: 1px solid var(--admin-border);
+      font-weight: 600;
+      border-radius: 0.75rem;
+      padding: 0.52rem 1rem;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.18s ease;
+    }
+    .admin-btn-secondary:hover {
+      border-color: var(--admin-accent);
+      color: var(--admin-accent);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0, 75, 128, 0.05); border-radius: 9999px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(0, 75, 128, 0.25); border-radius: 9999px; }
+  </style>
+</head>
+
+<body data-admin-theme="stitch-light" data-font-scale="default" class="min-h-screen flex flex-col">
+
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="cmsToastContainer" class="fixed top-4 right-4 z-[200] flex flex-col gap-2.5 max-w-md w-full pointer-events-none px-4 sm:px-0"></div>
+
+  <!-- ==================== AUTHENTICATION / LOGIN SCREEN OVERLAY ==================== -->
+  <div id="cmsAuthOverlay" class="fixed inset-0 z-[150] bg-[#061729]/95 backdrop-blur-xl flex items-center justify-center p-4 overflow-y-auto">
+    <div class="w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-[#dbe4f0] overflow-hidden my-8">
+      <!-- Top Brand Banner -->
+      <div class="bg-gradient-to-br from-[#0a2540] via-[#004b80] to-[#006c49] p-6 sm:p-8 text-white relative overflow-hidden">
+        <div class="absolute -right-12 -bottom-12 w-44 h-44 rounded-full bg-[#6ffbbe]/15 blur-2xl pointer-events-none"></div>
+        <div class="flex items-center gap-3.5 mb-4">
+          <div class="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center border border-white/25 shadow-lg">
+            <span class="material-symbols-outlined text-[#6ffbbe] text-3xl">admin_panel_settings</span>
+          </div>
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-[#6ffbbe] block">Google Stitch Clinical Sanctuary</span>
+            <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">হেলথ রেভলিউশন · অ্যাডমিন প্যানেল</h1>
+          </div>
+        </div>
+        <p class="text-xs sm:text-sm text-blue-100 leading-relaxed">
+          ডা. মুহাম্মদ জাহাঙ্গীর কবিরের অফিশিয়াল ওয়েবসাইট (<span class="font-mono text-[#6ffbbe]">drjahangirkabir.com</span>) এর সম্পূর্ণ পেজ, ব্লগ, মিডিয়া, মেনু, কালার, ফন্ট ও এসইও নিয়ন্ত্রণ কেন্দ্র।
+        </p>
+      </div>
+
+      <!-- Login Form -->
+      <form id="cmsLoginForm" class="p-6 sm:p-8 space-y-5 text-[#001c37]">
+        <div id="cmsLoginError" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-center gap-2">
+          <span class="material-symbols-outlined text-base">error</span>
+          <span id="cmsLoginErrorText">ইউজারনেম বা পাসওয়ার্ড সঠিক নয়।</span>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-[#414750] mb-1.5" for="loginUsername">ইউজারনেম বা ইমেইল (Username / Email)</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-[#717781] text-lg">person</span>
+            <input id="loginUsername" type="text" required value="admin" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="admin">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-[#414750] mb-1.5" for="loginPassword">পাসওয়ার্ড (Password)</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-[#717781] text-lg">lock</span>
+            <input id="loginPassword" type="password" required value="JKAdmin@2026" class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="••••••••••••">
+            <button type="button" onclick="toggleLoginPassword()" class="absolute right-3 top-2.5 text-[#717781] hover:text-[#004b80]">
+              <span class="material-symbols-outlined text-lg" id="loginPwdToggleIcon">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Role Credential Selector -->
+        <div class="p-3.5 rounded-2xl bg-[#eff4ff] border border-[#c4dcff] space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#004b80] flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">verified_user</span>
+              <span>রোল-ভিত্তিক দ্রুত অ্যাক্সেস (Quick Role Fill)</span>
+            </span>
+            <span class="text-[11px] text-[#006c49] font-bold">SHA-256 RBAC</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" onclick="fillDemoCredentials('admin', 'JKAdmin@2026')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#006c49] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+              <div class="text-xs font-extrabold">Super Admin</div>
+              <div class="text-[10px] opacity-75 font-mono">admin</div>
+            </button>
+            <button type="button" onclick="fillDemoCredentials('editor', 'JKEditor@2026')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+              <div class="text-xs font-extrabold">Content Editor</div>
+              <div class="text-[10px] opacity-75 font-mono">editor</div>
+            </button>
+            <button type="button" onclick="fillDemoCredentials('seo', 'JKSeo@2026')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+              <div class="text-xs font-extrabold">SEO Manager</div>
+              <div class="text-[10px] opacity-75 font-mono">seo</div>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#00714d] text-white font-extrabold text-sm shadow-lg flex items-center justify-center gap-2 transition-all">
+          <span class="material-symbols-outlined text-lg">login</span>
+          <span>অ্যাডমিন প্যানেলে প্রবেশ করুন (Sign In to CMS)</span>
+        </button>
+
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-[#414750]">
+          <a href="/" class="inline-flex items-center gap-1 font-bold text-[#004b80] hover:underline">
+            <span class="material-symbols-outlined text-sm">arrow_back</span> লাইভ ওয়েবসাইটে ফিরে যান
+          </a>
+          <span>v2.4 · Google Stitch CMS</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN ADMIN APPLICATION SHELL ==================== -->
+  <div id="cmsAppShell" class="flex-1 flex flex-col lg:flex-row min-h-screen">
+
+    <!-- SIDEBAR / TOPBAR NAVIGATION -->
+    <aside id="cmsSidebar" class="w-full lg:w-72 shrink-0 bg-[#0a2540] text-white flex flex-col justify-between border-r border-white/10 transition-all z-40">
+      <div>
+        <!-- Brand Header -->
+        <div class="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#10b981] to-[#006c49] flex items-center justify-center shadow-md shrink-0">
+              <span class="material-symbols-outlined text-white text-xl">health_and_safety</span>
+            </div>
+            <div class="min-w-0 cms-sidebar-text">
+              <div id="cmsBrandTitle" class="text-sm font-extrabold text-white truncate">JK Lifestyle CMS</div>
+              <div id="cmsBrandSubtitle" class="text-[11px] text-[#6ffbbe] font-semibold truncate">ডা. জাহাঙ্গীর কবির · Admin</div>
+            </div>
+          </div>
+          <button type="button" onclick="toggleMobileAdminMenu()" class="lg:hidden p-2 rounded-lg bg-white/10 text-white">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+
+        <!-- Navigation Menu Items -->
+        <nav id="cmsNavContainer" class="hidden lg:flex flex-col p-3 gap-1 overflow-y-auto max-h-[calc(100vh-180px)] custom-scrollbar" aria-label="অ্যাডমিন নেভিগেশন"></nav>
+      </div>
+
+      <!-- Sidebar Footer: Logged-in User & Connection Badge -->
+      <div class="hidden lg:block p-4 border-t border-white/10 bg-black/20 space-y-3 cms-sidebar-text">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <div class="w-8 h-8 rounded-full bg-[#10b981]/20 border border-[#10b981] text-[#6ffbbe] flex items-center justify-center font-extrabold text-xs shrink-0" id="cmsUserAvatar">A</div>
+            <div class="min-w-0">
+              <div id="cmsCurrentUserName" class="text-xs font-bold text-white truncate">Dr. Jahangir Kabir</div>
+              <div id="cmsCurrentUserRole" class="text-[10px] font-semibold text-[#6ffbbe] uppercase tracking-wider truncate">SUPER ADMIN</div>
+            </div>
+          </div>
+          <button type="button" onclick="cmsLogout()" title="লগআউট (Sign Out)" class="p-1.5 rounded-lg bg-white/10 hover:bg-red-500/80 text-white transition-colors">
+            <span class="material-symbols-outlined text-base">logout</span>
+          </button>
+        </div>
+        <div class="flex items-center justify-between text-[11px] text-slate-300 pt-2 border-t border-white/10">
+          <span class="flex items-center gap-1.5">
+            <span id="cmsServerStatusDot" class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
+            <span id="cmsServerStatusText">Live Sync Ready</span>
+          </span>
+          <a href="/" target="_blank" class="text-[#6ffbbe] hover:underline font-bold flex items-center gap-0.5">
+            <span>View Site</span>
+            <span class="material-symbols-outlined text-xs">open_in_new</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT WORKSPACE -->
+    <div class="flex-1 flex flex-col min-w-0">
+
+      <!-- Top Action Header Bar -->
+      <header class="sticky top-0 z-30 bg-white/95 dark:bg-[#0c1f36]/95 backdrop-blur-md border-b border-[#dbe4f0] px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <h2 id="cmsActiveModuleTitle" class="text-base sm:text-lg font-extrabold tracking-tight flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#006c49]" id="cmsActiveModuleIcon">space_dashboard</span>
+            <span>ড্যাশবোর্ড ও ওভারভিউ (Dashboard)</span>
+          </h2>
+          <span id="cmsUnsavedBadge" class="hidden px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-[11px] font-bold">অসংরক্ষিত পরিবর্তন (Unsaved)</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Quick Page Jump -->
+          <div class="hidden md:flex items-center gap-1.5 bg-[#eff4ff] px-3 py-1.5 rounded-xl border border-[#c4dcff]">
+            <span class="material-symbols-outlined text-sm text-[#004b80]">edit_document</span>
+            <select id="cmsQuickPageJump" onchange="quickJumpToPageEditor(this.value)" class="bg-transparent border-0 text-xs font-bold text-[#001c37] focus:ring-0 p-0 pr-6 cursor-pointer">
+              <option value="">দ্রুত পেজ এডিট করুন (Quick Edit Page)...</option>
+            </select>
+          </div>
+
+          <!-- Open Admin Customizer Shortcut -->
+          <button type="button" onclick="switchAdminModule('customizer')" class="admin-btn-secondary !py-1.5 !px-3 !text-xs" title="অ্যাডমিন প্যানেল কাস্টমাইজ করুন">
+            <span class="material-symbols-outlined text-base text-[#004b80]">tune</span>
+            <span class="hidden sm:inline">প্যানেল কাস্টমাইজার</span>
+          </button>
+
+          <!-- Live Website Preview Link -->
+          <a href="/" target="_blank" id="cmsTopPreviewLink" class="admin-btn-secondary !py-1.5 !px-3 !text-xs">
+            <span class="material-symbols-outlined text-base text-[#006c49]">visibility</span>
+            <span>লাইভ ওয়েবসাইট দেখুন</span>
+          </a>
+
+          <!-- Global Publish / Sync Button -->
+          <button type="button" onclick="publishAllChangesLive()" class="admin-btn-primary !py-1.5 !px-3.5 !text-xs">
+            <span class="material-symbols-outlined text-base">cloud_upload</span>
+            <span>সকল পরিবর্তন লাইভ করুন (Publish Live)</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Module Viewport -->
+      <main id="cmsModuleViewport" class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-6"></main>
+
+    </div>
+  </div>
+
+  <!-- ==================== UNIVERSAL MODAL DIALOG (CREATE PAGE / MEDIA PICKER / REVISIONS) ==================== -->
+  <div id="cmsModalBackdrop" class="fixed inset-0 z-[160] hidden bg-[#001c37]/75 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto">
+    <div class="w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-[#dbe4f0] overflow-hidden my-8">
+      <div class="bg-[#0a2540] text-white px-6 py-4 flex items-center justify-between border-b border-white/10">
+        <h3 id="cmsModalTitle" class="text-base sm:text-lg font-extrabold flex items-center gap-2">মডাল</h3>
+        <button type="button" onclick="closeCmsModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
+          <span class="material-symbols-outlined text-lg">close</span>
+        </button>
+      </div>
+      <div id="cmsModalBody" class="p-6 max-h-[80vh] overflow-y-auto custom-scrollbar text-[#001c37]"></div>
+    </div>
+  </div>
+
+  <!-- Embedded Full Seed Database & Admin Panel Controller -->
+  <script src="assets/js/cms-seed-db.js"></script>
+  <script src="assets/js/cms-admin-app.js"></script>
+</body>
+
+</html>

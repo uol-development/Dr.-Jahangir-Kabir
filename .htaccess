@@ -2,10 +2,12 @@ Options -MultiViews
 RewriteEngine On
 
 # 1. Redirect /index.html to /
+RewriteCond %{QUERY_STRING} !cms_visual_editor=1 [NC]
 RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
 RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
 
 # 2. Redirect any /page.html to /page (remove .html extension from URL)
+RewriteCond %{QUERY_STRING} !cms_visual_editor=1 [NC]
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 

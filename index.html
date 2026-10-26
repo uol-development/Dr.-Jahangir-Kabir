@@ -18,7 +18,7 @@
   <link rel="alternate" type="text/plain" href="https://drjahangirkabir.com/llms-full.txt" title="LLMs-Full.txt Complete Context">
   <meta name="theme-color" content="#0A2540">
   <script>
-    if (window.location.protocol !== 'file:') {
+    if (window.location.protocol !== 'file:' && window.location.search.indexOf('cms_visual_editor=1') === -1) {
       var p = window.location.pathname;
       if (//index.html$/i.test(p)) {
         window.history.replaceState(null, '', p.replace(/index.html$/i, '') + window.location.search + window.location.hash);
@@ -232,6 +232,7 @@
       body { background: #ffffff !important; color: #000000 !important; }
     }
   </style>
+  <link rel="stylesheet" href="assets/css/cms-overrides.css">
 </head>
 
 <body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
@@ -1271,6 +1272,8 @@
       });
     });
   </script>
+  <script src="assets/js/cms-state-public.js"></script>
+  <script src="assets/js/cms-runtime.js"></script>
 </body>
 
 </html>
