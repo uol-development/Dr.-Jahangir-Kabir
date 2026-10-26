@@ -213,70 +213,70 @@
   },
   "adminPrefs": {
     "panelTitle": "JK Lifestyle & Health Revolution CMS",
-    "panelSubtitle": "Google Stitch Clinical Sanctuary Admin v2.4",
+    "panelSubtitle": "Dr. Jahangir Kabir · Official Admin v2.5",
     "layoutMode": "sidebar-left",
     "themeMode": "stitch-light",
     "accentColor": "#006c49",
     "fontScale": "default",
-    "uiLanguage": "bilingual",
+    "uiLanguage": "en",
     "navItems": [
       {
         "id": "dashboard",
-        "label": "ড্যাশবোর্ড (Dashboard)",
+        "label": "Dashboard",
         "icon": "space_dashboard",
         "visible": true
       },
       {
         "id": "pages",
-        "label": "পেজ ও ভিজ্যুয়াল এডিটর (Pages)",
+        "label": "Pages & Visual Editor",
         "icon": "web",
         "visible": true
       },
       {
         "id": "blogs",
-        "label": "ব্লগ ও প্রবন্ধ (Blog CMS)",
+        "label": "Blog & Articles",
         "icon": "article",
         "visible": true
       },
       {
         "id": "media",
-        "label": "মিডিয়া লাইব্রেরি (Media)",
+        "label": "Media Library",
         "icon": "photo_library",
         "visible": true
       },
       {
         "id": "menus",
-        "label": "মেনু, হেডার ও বাটন (Menus)",
+        "label": "Menus, Header & Buttons",
         "icon": "menu_book",
         "visible": true
       },
       {
         "id": "design",
-        "label": "ডিজাইন, কালার ও ফন্ট (Design)",
+        "label": "Design, Colors & Fonts",
         "icon": "palette",
         "visible": true
       },
       {
         "id": "seo",
-        "label": "SEO, AEO ও LLMs.txt",
+        "label": "SEO, AEO & LLMs.txt",
         "icon": "travel_explore",
         "visible": true
       },
       {
         "id": "users",
-        "label": "ইউজার ও রোল পারমিশন (RBAC)",
+        "label": "Users & Permissions (RBAC)",
         "icon": "admin_panel_settings",
         "visible": true
       },
       {
         "id": "customizer",
-        "label": "অ্যাডমিন প্যানেল কাস্টমাইজার",
+        "label": "Admin Panel Customizer",
         "icon": "tune",
         "visible": true
       },
       {
         "id": "settings",
-        "label": "সাইট সেটিংস ও ব্যাকআপ",
+        "label": "Site Settings & Backup",
         "icon": "settings",
         "visible": true
       }

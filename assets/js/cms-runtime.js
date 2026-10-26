@@ -12,7 +12,7 @@
   function getMergedState() {
     var base = window.JK_CMS_PUBLIC || {};
     try {
-      var localRaw = localStorage.getItem('jk_cms_live_db_v2');
+      var localRaw = localStorage.getItem('jk_cms_live_db_v3');
       if (localRaw) {
         var localDb = JSON.parse(localRaw);
         return {
