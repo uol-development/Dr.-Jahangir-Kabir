@@ -10,7 +10,7 @@
   }
 
   function purgeLegacyBrowserCaches() {
-    var TARGET_CACHE_VER = '20261027-v10';
+    var TARGET_CACHE_VER = '20261027-v11';
     try {
       var legacyKeys = [
         'jk_cms_live_db',
@@ -158,7 +158,7 @@
   }
 
   function applyMenusAndHeader(menus, meta) {
-    var logoSrc = (meta && meta.logoUrl ? meta.logoUrl : 'images/dr-jahangir-kabir-logo.png') + '?v=20261027-v10';
+    var logoSrc = (meta && meta.logoUrl ? meta.logoUrl : 'images/dr-jahangir-kabir-logo.png') + '?v=20261027-v11';
     var header = document.querySelector('header');
     if (header) {
       // Enforce official horizontal signature logo in header (replacing any legacy square icon + text)
@@ -168,7 +168,7 @@
       }
 
       // Desktop Nav Items
-      var desktopNav = header.querySelector('nav.hidden.xl\:flex');
+      var desktopNav = header.querySelector('nav.hidden.xl\\:flex') || header.querySelector('nav[aria-label="Primary Navigation Menu"]');
       var currentFile = getCurrentPageFile();
       if (desktopNav && menus && Array.isArray(menus.headerItems) && menus.headerItems.length > 0) {
         var isFileProto = window.location.protocol === 'file:';
@@ -202,7 +202,7 @@
     }
 
     // Enforce official horizontal signature logo in footer (replacing any legacy square icon + Bengali brand title)
-    var footerCol = document.querySelector('footer .lg\:col-span-4');
+    var footerCol = document.querySelector('footer .lg\\:col-span-4');
     if (footerCol && footerCol.firstElementChild) {
       var firstBlock = footerCol.firstElementChild;
       if (firstBlock.querySelector('img') || firstBlock.textContent.indexOf('হেলথ রেভলিউশন') !== -1) {
