@@ -10,22 +10,24 @@
   }
 
   function purgeLegacyBrowserCaches() {
-    var TARGET_CACHE_VER = '20261026-v4';
+    var TARGET_CACHE_VER = '20261027-v5';
     try {
       var legacyKeys = [
         'jk_cms_live_db',
         'jk_cms_live_db_v1',
         'jk_cms_live_db_v2',
         'jk_cms_live_db_v3',
+        'jk_cms_live_db_v4',
         'jk_cms_auth_session_v1',
         'jk_cms_auth_session_v2',
-        'jk_cms_auth_session_v3'
+        'jk_cms_auth_session_v3',
+        'jk_cms_auth_session_v4'
       ];
       legacyKeys.forEach(function (k) { localStorage.removeItem(k); });
 
       var currentVer = localStorage.getItem('jk_cms_cache_ver');
       if (currentVer !== TARGET_CACHE_VER) {
-        localStorage.removeItem('jk_cms_live_db_v4');
+        localStorage.removeItem('jk_cms_live_db_v5');
         localStorage.setItem('jk_cms_cache_ver', TARGET_CACHE_VER);
         if (window.caches && typeof window.caches.keys === 'function') {
           window.caches.keys().then(function (names) {
@@ -45,7 +47,7 @@
     purgeLegacyBrowserCaches();
     var base = window.JK_CMS_PUBLIC || {};
     try {
-      var localRaw = localStorage.getItem('jk_cms_live_db_v4');
+      var localRaw = localStorage.getItem('jk_cms_live_db_v5');
       if (localRaw) {
         var localDb = JSON.parse(localRaw);
         return {
@@ -130,7 +132,7 @@
     }
 
     // Scroll-to-top button visibility
-    var scrollBtn = document.querySelector('button[aria-label="উপরে যান"]');
+    var scrollBtn = document.querySelector('button.fixed.bottom-6.right-6');
     if (scrollBtn && typeof l.showScrollTopButton === 'boolean') {
       scrollBtn.style.display = l.showScrollTopButton ? '' : 'none';
     }
@@ -158,16 +160,16 @@
   function applyMenusAndHeader(menus, meta) {
     if (!menus) return;
     var header = document.querySelector('header');
-    if (header) {
+    if (header && menus._clientModified) {
       // Brand title & subtitle
-      var brandSpans = header.querySelectorAll('a[aria-label*="ডা. জাহাঙ্গীর কবির"] div.flex-col span');
+      var brandSpans = header.querySelectorAll('a.group div.flex-col span');
       if (brandSpans.length >= 2) {
         if (menus.headerBrandTitle) brandSpans[0].textContent = menus.headerBrandTitle;
         if (menus.headerBrandSubtitle) brandSpans[1].textContent = menus.headerBrandSubtitle;
       }
 
       // Desktop Nav Items
-      var desktopNav = header.querySelector('nav[aria-label="প্রধান নেভিগেশন মেনু"]');
+      var desktopNav = header.querySelector('nav.hidden.xl\:flex');
       var currentFile = getCurrentPageFile();
       if (desktopNav && Array.isArray(menus.headerItems) && menus.headerItems.length > 0) {
         var isFileProto = window.location.protocol === 'file:';
@@ -208,7 +210,7 @@
     if (!pages) return;
     var currentFile = getCurrentPageFile();
     var pageObj = pages[currentFile];
-    if (!pageObj) return;
+    if (!pageObj || !pageObj._clientModified) return;
 
     if (pageObj.title) document.title = pageObj.title;
     if (pageObj.description) {
@@ -217,7 +219,7 @@
     }
 
     // If mainHtml was overridden in localStorage or live DB, update <main>
-    if (pageObj.mainHtml && pageObj._clientModified) {
+    if (pageObj.mainHtml) {
       var mainEl = document.querySelector('main');
       if (mainEl) {
         mainEl.innerHTML = pageObj.mainHtml;

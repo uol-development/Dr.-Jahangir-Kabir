@@ -3,8 +3,8 @@
  * 100% English Interface · Connected to api/cms.php + cms-data/cms.db.json
  * ============================================================================ */
 
-const CMS_STORAGE_KEY = 'jk_cms_live_db_v4';
-const CMS_SESSION_KEY = 'jk_cms_auth_session_v4';
+const CMS_STORAGE_KEY = 'jk_cms_live_db_v5';
+const CMS_SESSION_KEY = 'jk_cms_auth_session_v5';
 
 const DEFAULT_ENGLISH_NAV_ITEMS = [
   { id: 'dashboard', label: 'Dashboard', icon: 'space_dashboard', visible: true },
@@ -181,19 +181,83 @@ function addAuditEntry(action, details) {
 }
 
 function normalizeAdminEnglishNav(db) {
-  if (!db || !db.adminPrefs) return;
-  db.adminPrefs.uiLanguage = 'en';
-  if (!Array.isArray(db.adminPrefs.navItems) || db.adminPrefs.navItems.length === 0) {
-    db.adminPrefs.navItems = JSON.parse(JSON.stringify(DEFAULT_ENGLISH_NAV_ITEMS));
-    return;
-  }
-  const engMap = {};
-  DEFAULT_ENGLISH_NAV_ITEMS.forEach(item => { engMap[item.id] = item.label; });
-  db.adminPrefs.navItems.forEach(item => {
-    if (/[^\x00-\x7F]/.test(item.label || '') && engMap[item.id]) {
-      item.label = engMap[item.id];
+  if (!db) return;
+  const seed = window.JK_CMS_SEED_DB || {};
+  const hasBn = (s) => /[\u0980-\u09FF]/.test(String(s || ''));
+
+  if (db.adminPrefs) {
+    db.adminPrefs.uiLanguage = 'en';
+    if (!Array.isArray(db.adminPrefs.navItems) || db.adminPrefs.navItems.length === 0) {
+      db.adminPrefs.navItems = JSON.parse(JSON.stringify(DEFAULT_ENGLISH_NAV_ITEMS));
+    } else {
+      const engMap = {};
+      DEFAULT_ENGLISH_NAV_ITEMS.forEach(item => { engMap[item.id] = item.label; });
+      db.adminPrefs.navItems.forEach(item => {
+        if (/[^\x00-\x7F]/.test(item.label || '') && engMap[item.id]) {
+          item.label = engMap[item.id];
+        }
+      });
     }
-  });
+  }
+
+  // Normalize global meta fields to English
+  if (db.meta && seed.meta) {
+    ['siteName', 'address', 'visitingHours'].forEach(k => {
+      if (hasBn(db.meta[k]) && seed.meta[k]) db.meta[k] = seed.meta[k];
+    });
+  }
+
+  // Normalize announcement bar text to English
+  if (db.design && db.design.layout && seed.design && seed.design.layout) {
+    if (hasBn(db.design.layout.announcementText)) db.design.layout.announcementText = seed.design.layout.announcementText;
+    if (hasBn(db.design.layout.announcementCtaText)) db.design.layout.announcementCtaText = seed.design.layout.announcementCtaText;
+  }
+
+  // Normalize menus to English
+  if (db.menus && seed.menus) {
+    if (hasBn(db.menus.headerBrandTitle)) db.menus.headerBrandTitle = seed.menus.headerBrandTitle;
+    if (hasBn(db.menus.headerBrandSubtitle)) db.menus.headerBrandSubtitle = seed.menus.headerBrandSubtitle;
+    if (db.menus.headerCta && seed.menus.headerCta && hasBn(db.menus.headerCta.label)) {
+      db.menus.headerCta.label = seed.menus.headerCta.label;
+    }
+    if (Array.isArray(db.menus.headerItems) && Array.isArray(seed.menus.headerItems)) {
+      db.menus.headerItems.forEach((item, idx) => {
+        if (hasBn(item.label) && seed.menus.headerItems[idx]) {
+          item.label = seed.menus.headerItems[idx].label;
+        }
+      });
+    }
+  }
+
+  // Normalize media alt text to English
+  if (Array.isArray(db.media)) {
+    db.media.forEach(m => {
+      if (hasBn(m.alt)) {
+        m.alt = 'Dr. Muhammad Jahangir Kabir — JK Lifestyle & Health Revolution (' + (m.name || 'image') + ')';
+      }
+    });
+  }
+
+  // Normalize page titles, H1s, descriptions, focus keywords, and AEO leads in Admin Panel to English
+  if (db.pages && seed.pages) {
+    Object.keys(db.pages).forEach(file => {
+      const p = db.pages[file];
+      const sp = seed.pages[file];
+      if (!p || !sp) return;
+      ['title', 'h1', 'description', 'keywords', 'focusKw', 'aeoLead'].forEach(field => {
+        if (hasBn(p[field]) && sp[field]) {
+          p[field] = sp[field];
+        }
+      });
+      if (Array.isArray(p.revisions)) {
+        p.revisions.forEach(r => {
+          if (hasBn(r.title) && sp.title) r.title = sp.title;
+          if (hasBn(r.description) && sp.description) r.description = sp.description;
+          if (hasBn(r.h1) && sp.h1) r.h1 = sp.h1;
+        });
+      }
+    });
+  }
 }
 
 function persistLocalDb() {
@@ -258,7 +322,7 @@ async function initCmsDatabase() {
   let loadedDb = null;
 
   try {
-    ['jk_cms_live_db', 'jk_cms_live_db_v1', 'jk_cms_live_db_v2', 'jk_cms_live_db_v3', 'jk_cms_auth_session_v1', 'jk_cms_auth_session_v2', 'jk_cms_auth_session_v3'].forEach(k => localStorage.removeItem(k));
+    ['jk_cms_live_db', 'jk_cms_live_db_v1', 'jk_cms_live_db_v2', 'jk_cms_live_db_v3', 'jk_cms_live_db_v4', 'jk_cms_auth_session_v1', 'jk_cms_auth_session_v2', 'jk_cms_auth_session_v3', 'jk_cms_auth_session_v4'].forEach(k => localStorage.removeItem(k));
     const raw = localStorage.getItem(CMS_STORAGE_KEY);
     if (raw) loadedDb = JSON.parse(raw);
   } catch (e) {}
@@ -291,7 +355,7 @@ async function initCmsDatabase() {
 
 async function clearAllSystemCache() {
   try {
-    ['jk_cms_live_db', 'jk_cms_live_db_v1', 'jk_cms_live_db_v2', 'jk_cms_live_db_v3', 'jk_cms_live_db_v4', 'jk_cms_cache_ver'].forEach(k => localStorage.removeItem(k));
+    ['jk_cms_live_db', 'jk_cms_live_db_v1', 'jk_cms_live_db_v2', 'jk_cms_live_db_v3', 'jk_cms_live_db_v4', 'jk_cms_live_db_v5', 'jk_cms_cache_ver'].forEach(k => localStorage.removeItem(k));
     sessionStorage.removeItem('jk_cms_login_lockout');
     sessionStorage.removeItem('jk_cms_login_attempts');
     if (window.caches && typeof window.caches.keys === 'function') {
@@ -1909,11 +1973,11 @@ function renderMenusModule(container) {
           </h4>
           <div>
             <label class="block text-xs font-bold text-[#414750] mb-1">Primary Brand Title</label>
-            <input id="menuBrandTitle" type="text" value="${escapeHtml(menus.headerBrandTitle || 'হেলথ রেভলিউশন')}" class="admin-input">
+            <input id="menuBrandTitle" type="text" value="${escapeHtml(menus.headerBrandTitle || 'Health Revolution')}" class="admin-input">
           </div>
           <div>
             <label class="block text-xs font-bold text-[#414750] mb-1">Brand Subtitle</label>
-            <input id="menuBrandSubtitle" type="text" value="${escapeHtml(menus.headerBrandSubtitle || 'ডা. জাহাঙ্গীর কবির · জেকে লাইফস্টাইল')}" class="admin-input">
+            <input id="menuBrandSubtitle" type="text" value="${escapeHtml(menus.headerBrandSubtitle || 'Dr. Jahangir Kabir · JK Lifestyle')}" class="admin-input">
           </div>
         </div>
 
@@ -1924,7 +1988,7 @@ function renderMenusModule(container) {
           </h4>
           <div>
             <label class="block text-xs font-bold text-[#414750] mb-1">Button Label</label>
-            <input id="menuCtaLabel" type="text" value="${escapeHtml(cta.label || 'অ্যাপয়েন্টমেন্ট নিন')}" class="admin-input">
+            <input id="menuCtaLabel" type="text" value="${escapeHtml(cta.label || 'Book Appointment')}" class="admin-input">
           </div>
           <div>
             <label class="block text-xs font-bold text-[#414750] mb-1">Target URL</label>
@@ -2027,11 +2091,12 @@ async function saveMenusConfiguration() {
   menus.headerBrandTitle = document.getElementById('menuBrandTitle')?.value || menus.headerBrandTitle;
   menus.headerBrandSubtitle = document.getElementById('menuBrandSubtitle')?.value || menus.headerBrandSubtitle;
   menus.headerCta = {
-    label: document.getElementById('menuCtaLabel')?.value || 'অ্যাপয়েন্টমেন্ট নিন',
+    label: document.getElementById('menuCtaLabel')?.value || 'Book Appointment',
     url: document.getElementById('menuCtaUrl')?.value || 'https://jklifestyleltd.com/appointment/',
     icon: document.getElementById('menuCtaIcon')?.value || 'calendar_month',
     style: 'emerald'
   };
+  menus._clientModified = true;
 
   addAuditEntry('MENUS_UPDATED', 'Updated Header Navigation & Primary CTA Button');
   await callCmsApi('save_menus', { menus });
