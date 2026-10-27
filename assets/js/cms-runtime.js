@@ -10,7 +10,7 @@
   }
 
   function purgeLegacyBrowserCaches() {
-    var TARGET_CACHE_VER = '20261027-v9';
+    var TARGET_CACHE_VER = '20261027-v10';
     try {
       var legacyKeys = [
         'jk_cms_live_db',
@@ -158,13 +158,13 @@
   }
 
   function applyMenusAndHeader(menus, meta) {
-    var logoSrc = (meta && meta.logoUrl ? meta.logoUrl : 'images/dr-jahangir-kabir-logo.png') + '?v=20261027-v9';
+    var logoSrc = (meta && meta.logoUrl ? meta.logoUrl : 'images/dr-jahangir-kabir-logo.png') + '?v=20261027-v10';
     var header = document.querySelector('header');
     if (header) {
       // Enforce official horizontal signature logo in header (replacing any legacy square icon + text)
       var brandLink = header.querySelector('a.group') || header.querySelector('a[href="/"]');
       if (brandLink) {
-        brandLink.innerHTML = '<img src="' + logoSrc + '" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-11 sm:h-12 w-auto object-contain group-hover:scale-[1.02] transition-transform shrink-0" width="213" height="48">';
+        brandLink.innerHTML = '<img src="' + logoSrc + '" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-7 sm:h-10 xl:h-9 2xl:h-11 w-auto max-w-[122px] sm:max-w-none object-contain group-hover:scale-[1.02] transition-transform shrink-0" width="195" height="44">';
       }
 
       // Desktop Nav Items
@@ -177,8 +177,8 @@
           .map(function (item) {
             var isActive = item.file === currentFile || (item.url === '/' && currentFile === 'index.html');
             var cls = isActive
-              ? 'whitespace-nowrap px-3.5 py-2 text-sm font-bold text-[#006c49] bg-[#eff4ff] rounded-lg relative after:content-[\'\'] after:absolute after:bottom-0.5 after:left-3 after:right-3 after:h-0.5 after:bg-[#10b981] after:rounded-full transition-colors'
-              : 'whitespace-nowrap px-3.5 py-2 text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors';
+              ? 'whitespace-nowrap px-2.5 2xl:px-3.5 py-2 text-[13px] 2xl:text-sm font-bold text-[#006c49] bg-[#eff4ff] rounded-lg relative after:content-[\'\'] after:absolute after:bottom-0.5 after:left-2.5 after:right-2.5 after:h-0.5 after:bg-[#10b981] after:rounded-full transition-colors'
+              : 'whitespace-nowrap px-2.5 2xl:px-3.5 py-2 text-[13px] 2xl:text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors';
             var href = isFileProto && item.file ? item.file : item.url;
             return '<a class="' + cls + '" href="' + href + '" target="' + (item.target || '_self') + '">' + item.label + '</a>';
           })
@@ -190,9 +190,13 @@
         var ctaBtn = header.querySelector('div.shrink-0 > a.rounded-full');
         if (ctaBtn) {
           if (menus.headerCta.url) ctaBtn.setAttribute('href', menus.headerCta.url);
-          var spans = ctaBtn.querySelectorAll('span');
-          if (spans.length >= 1 && menus.headerCta.label) spans[0].textContent = menus.headerCta.label;
-          if (spans.length >= 2 && menus.headerCta.icon) spans[1].textContent = menus.headerCta.icon;
+          var labelText = menus.headerCta.label || 'Book Appointment';
+          var iconText = menus.headerCta.icon || 'calendar_month';
+          if (labelText === 'Book Appointment') {
+            ctaBtn.innerHTML = '<span class="hidden sm:inline">Book Appointment</span><span class="sm:hidden">Appointment</span><span class="material-symbols-outlined text-xs sm:text-base">' + iconText + '</span>';
+          } else {
+            ctaBtn.innerHTML = '<span>' + labelText + '</span><span class="material-symbols-outlined text-xs sm:text-base">' + iconText + '</span>';
+          }
         }
       }
     }

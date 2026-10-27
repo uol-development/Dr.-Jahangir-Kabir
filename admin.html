@@ -9,8 +9,8 @@
   <meta http-equiv="Expires" content="0">
   <title>Admin Panel &amp; CMS — Dr. Muhammad Jahangir Kabir · JK Lifestyle</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" type="image/png" href="images/dr-jahangir-kabir-logo.png?v=20261027-v9">
-  <link rel="apple-touch-icon" href="images/dr-jahangir-kabir-logo.png?v=20261027-v9">
+  <link rel="icon" type="image/png" href="images/dr-jahangir-kabir-logo.png?v=20261027-v10">
+  <link rel="apple-touch-icon" href="images/dr-jahangir-kabir-logo.png?v=20261027-v10">
   <meta name="theme-color" content="#0A2540">
   <script>
     if (window.location.protocol !== 'file:') {
@@ -94,16 +94,25 @@
     body[data-font-scale="default"] { font-size: 15px; }
     body[data-font-scale="large"] { font-size: 16.5px; }
 
+    html, body {
+      overflow-x: clip;
+      max-width: 100%;
+    }
     body {
       font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
       background-color: var(--admin-bg);
       color: var(--admin-text);
-      overflow-x: hidden;
     }
 
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
       vertical-align: middle;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1;
+      overflow: hidden;
+      white-space: nowrap;
     }
 
     .admin-card {
@@ -184,7 +193,7 @@
         <div class="absolute -right-12 -bottom-12 w-44 h-44 rounded-full bg-[#6ffbbe]/15 blur-2xl pointer-events-none"></div>
         <div class="flex flex-wrap items-center gap-3.5 mb-4">
           <div class="bg-white px-3.5 py-2 rounded-2xl border border-white/25 shadow-lg shrink-0">
-            <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v9" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-8 sm:h-9 w-auto object-contain">
+            <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v10" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-8 sm:h-9 w-auto object-contain">
           </div>
           <div>
             <span class="text-[11px] font-bold uppercase tracking-widest text-[#6ffbbe] block">Google Stitch Clinical Sanctuary</span>
@@ -231,7 +240,7 @@
             </span>
             <span class="text-[11px] text-[#006c49] font-bold">WAF + CSRF + Rate-Limited</span>
           </div>
-          <div class="grid grid-cols-3 gap-2">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
             <button type="button" onclick="fillDemoCredentials('admin')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#006c49] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
               <div class="text-xs font-extrabold">Super Admin</div>
               <div class="text-[10px] opacity-75 font-mono">admin</div>
@@ -272,7 +281,7 @@
         <div class="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between gap-3">
           <div class="flex items-center gap-3 min-w-0">
             <div class="bg-white px-2.5 py-1.5 rounded-xl shadow-md shrink-0">
-              <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v9" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-6 w-auto object-contain">
+              <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v10" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-6 w-auto object-contain">
             </div>
             <div class="min-w-0 cms-sidebar-text">
               <div id="cmsBrandTitle" class="text-xs font-extrabold text-white truncate">Admin Panel &amp; CMS</div>
@@ -383,8 +392,8 @@
   </div>
 
   <!-- Embedded Full Seed Database & Admin Panel Controller -->
-  <script src="assets/js/cms-seed-db.js?v=20261027-v9"></script>
-  <script src="assets/js/cms-admin-app.js?v=20261027-v9"></script>
+  <script src="assets/js/cms-seed-db.js?v=20261027-v10"></script>
+  <script src="assets/js/cms-admin-app.js?v=20261027-v10"></script>
 </body>
 
 </html>
