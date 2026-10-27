@@ -10,7 +10,7 @@
   }
 
   function purgeLegacyBrowserCaches() {
-    var TARGET_CACHE_VER = '20261027-v6';
+    var TARGET_CACHE_VER = '20261027-v9';
     try {
       var legacyKeys = [
         'jk_cms_live_db',
@@ -158,20 +158,19 @@
   }
 
   function applyMenusAndHeader(menus, meta) {
-    if (!menus) return;
+    var logoSrc = (meta && meta.logoUrl ? meta.logoUrl : 'images/dr-jahangir-kabir-logo.png') + '?v=20261027-v9';
     var header = document.querySelector('header');
     if (header) {
-      // Brand title & subtitle
-      var brandSpans = header.querySelectorAll('a.group div.flex-col span');
-      if (brandSpans.length >= 2) {
-        if (menus.headerBrandTitle) brandSpans[0].textContent = menus.headerBrandTitle;
-        if (menus.headerBrandSubtitle) brandSpans[1].textContent = menus.headerBrandSubtitle;
+      // Enforce official horizontal signature logo in header (replacing any legacy square icon + text)
+      var brandLink = header.querySelector('a.group') || header.querySelector('a[href="/"]');
+      if (brandLink) {
+        brandLink.innerHTML = '<img src="' + logoSrc + '" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-11 sm:h-12 w-auto object-contain group-hover:scale-[1.02] transition-transform shrink-0" width="213" height="48">';
       }
 
       // Desktop Nav Items
       var desktopNav = header.querySelector('nav.hidden.xl\:flex');
       var currentFile = getCurrentPageFile();
-      if (desktopNav && Array.isArray(menus.headerItems) && menus.headerItems.length > 0) {
+      if (desktopNav && menus && Array.isArray(menus.headerItems) && menus.headerItems.length > 0) {
         var isFileProto = window.location.protocol === 'file:';
         desktopNav.innerHTML = menus.headerItems
           .filter(function (item) { return item.visible !== false; })
@@ -187,7 +186,7 @@
       }
 
       // Header Primary CTA button
-      if (menus.headerCta) {
+      if (menus && menus.headerCta) {
         var ctaBtn = header.querySelector('div.shrink-0 > a.rounded-full');
         if (ctaBtn) {
           if (menus.headerCta.url) ctaBtn.setAttribute('href', menus.headerCta.url);
@@ -197,6 +196,21 @@
         }
       }
     }
+
+    // Enforce official horizontal signature logo in footer (replacing any legacy square icon + Bengali brand title)
+    var footerCol = document.querySelector('footer .lg\:col-span-4');
+    if (footerCol && footerCol.firstElementChild) {
+      var firstBlock = footerCol.firstElementChild;
+      if (firstBlock.querySelector('img') || firstBlock.textContent.indexOf('হেলথ রেভলিউশন') !== -1) {
+        firstBlock.className = 'mb-5';
+        firstBlock.innerHTML = '<a href="/" class="inline-flex items-center bg-white px-5 py-3 rounded-2xl shadow-lg border border-white/20 hover:scale-[1.02] transition-transform" aria-label="Dr. Jahangir Kabir Official Homepage"><img src="' + logoSrc + '" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-10 sm:h-11 w-auto object-contain" width="195" height="44"></a>';
+      }
+    }
+
+    // Upgrade any remaining jk-logo.png image elements to dr-jahangir-kabir-logo.png
+    document.querySelectorAll('img[src*="jk-logo.png"]').forEach(function (img) {
+      img.setAttribute('src', logoSrc);
+    });
 
     // Update global appointment URLs or hotline if changed in meta
     if (meta && meta.primaryAppointmentUrl && meta.primaryAppointmentUrl !== 'https://jklifestyleltd.com/appointment/') {
