@@ -10,7 +10,7 @@
   }
 
   function purgeLegacyBrowserCaches() {
-    var TARGET_CACHE_VER = '20261027-v5';
+    var TARGET_CACHE_VER = '20261027-v6';
     try {
       var legacyKeys = [
         'jk_cms_live_db',
@@ -160,7 +160,7 @@
   function applyMenusAndHeader(menus, meta) {
     if (!menus) return;
     var header = document.querySelector('header');
-    if (header && menus._clientModified) {
+    if (header) {
       // Brand title & subtitle
       var brandSpans = header.querySelectorAll('a.group div.flex-col span');
       if (brandSpans.length >= 2) {
