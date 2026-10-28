@@ -20,9 +20,9 @@
   <link rel="alternate" hreflang="x-default" href="https://drjahangirkabir.com/faq">
   <link rel="alternate" type="text/plain" href="https://drjahangirkabir.com/llms.txt" title="LLMs.txt Knowledge Base">
   <link rel="alternate" type="text/plain" href="https://drjahangirkabir.com/llms-full.txt" title="LLMs-Full.txt Complete Context">
-  <link rel="icon" type="image/png" href="images/dr-jahangir-kabir-logo.png?v=20261027-v11">
-  <link rel="apple-touch-icon" href="images/dr-jahangir-kabir-logo.png?v=20261027-v11">
-  <link rel="manifest" href="images/manifest.json?v=20261027-v11">
+  <link rel="icon" type="image/png" href="images/dr-jahangir-kabir-logo.png?v=20261027-v12">
+  <link rel="apple-touch-icon" href="images/dr-jahangir-kabir-logo.png?v=20261027-v12">
+  <link rel="manifest" href="images/manifest.json?v=20261027-v12">
   <meta name="theme-color" content="#0A2540">
   <script>
     if (window.location.protocol !== 'file:' && window.location.search.indexOf('cms_visual_editor=1') === -1) {
@@ -247,24 +247,240 @@
       left: 0;
       top: 0;
     }
+
+    /* ==================== 3D SPATIAL VISUALS, INTERACTIVE TILT & MOTION ENGINE ==================== */
+    :root {
+      --jk-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --jk-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Top Scroll Reading Progress Bar */
+    #jkScrollProgress {
+      transform-origin: 0% 50%;
+      transform: scaleX(0);
+      will-change: transform;
+    }
+
+    /* 3D Hero Spatial Stage & Perspective Containers */
+    .jk-3d-stage {
+      perspective: 1200px;
+      transform-style: preserve-3d;
+    }
+    .jk-3d-layer-base {
+      transform-style: preserve-3d;
+      transition: transform 0.45s var(--jk-ease-spring), box-shadow 0.45s var(--jk-ease-spring);
+    }
+    .jk-3d-depth-1 {
+      transform: translateZ(24px);
+    }
+    .jk-3d-depth-2 {
+      transform: translateZ(42px);
+    }
+    .jk-3d-depth-3 {
+      transform: translateZ(60px);
+    }
+
+    /* 3D Orbital Cellular / Metabolic Rings */
+    @keyframes jkOrbitSpinCW {
+      0% { transform: rotateX(64deg) rotateY(-14deg) rotateZ(0deg); }
+      100% { transform: rotateX(64deg) rotateY(-14deg) rotateZ(360deg); }
+    }
+    @keyframes jkOrbitSpinCCW {
+      0% { transform: rotateX(58deg) rotateY(18deg) rotateZ(360deg); }
+      100% { transform: rotateX(58deg) rotateY(18deg) rotateZ(0deg); }
+    }
+    @keyframes jkFloat3D {
+      0%, 100% { transform: translate3d(0, 0px, 46px); }
+      50% { transform: translate3d(0, -9px, 54px); }
+    }
+    @keyframes jkFloat3DDelayed {
+      0%, 100% { transform: translate3d(0, 0px, 38px); }
+      50% { transform: translate3d(0, -7px, 46px); }
+    }
+    @keyframes jkAuroraDrift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(18px, -14px, 0) scale(1.06); }
+    }
+    @keyframes jkPulseRing {
+      0% { transform: scale(0.92); opacity: 0.75; }
+      70% { transform: scale(1.45); opacity: 0; }
+      100% { transform: scale(1.45); opacity: 0; }
+    }
+
+    .jk-orbit-ring-1 {
+      animation: jkOrbitSpinCW 26s linear infinite;
+      transform-style: preserve-3d;
+    }
+    .jk-orbit-ring-2 {
+      animation: jkOrbitSpinCCW 34s linear infinite;
+      transform-style: preserve-3d;
+    }
+    .jk-float-badge {
+      animation: jkFloat3D 5.5s ease-in-out infinite;
+    }
+    .jk-float-badge-delayed {
+      animation: jkFloat3DDelayed 6.4s ease-in-out 1.4s infinite;
+    }
+    .jk-aurora-orb {
+      animation: jkAuroraDrift 11s ease-in-out infinite;
+    }
+    .jk-pulse-halo::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      border: 2px solid #10b981;
+      animation: jkPulseRing 2.4s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+      pointer-events: none;
+    }
+
+    /* Interactive 3D Card Tilt & Radial Specular Glare */
+    .jk-tilt-card {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.42s var(--jk-ease-spring), box-shadow 0.42s var(--jk-ease-spring), border-color 0.3s ease;
+      --jk-spot-x: 50%;
+      --jk-spot-y: 50%;
+      --jk-spot-opacity: 0;
+    }
+    .jk-tilt-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        420px circle at var(--jk-spot-x) var(--jk-spot-y),
+        rgba(16, 185, 129, 0.11),
+        rgba(11, 99, 165, 0.05) 45%,
+        transparent 80%
+      );
+      opacity: var(--jk-spot-opacity);
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .jk-tilt-card > * {
+      position: relative;
+      z-index: 2;
+    }
+    .jk-tilt-card:hover {
+      box-shadow: 0 22px 46px -12px rgba(0, 28, 55, 0.13), 0 8px 20px -6px rgba(16, 185, 129, 0.10);
+      border-color: rgba(16, 185, 129, 0.38);
+    }
+
+    /* 3D Icon Cube Lift inside Cards */
+    .jk-3d-icon {
+      transition: transform 0.4s var(--jk-ease-spring), box-shadow 0.4s var(--jk-ease-spring), background-color 0.3s ease, color 0.3s ease;
+    }
+    .group:hover .jk-3d-icon,
+    .jk-tilt-card:hover .jk-3d-icon {
+      transform: translate3d(0, -3px, 16px) scale(1.08) rotate(-3deg);
+      box-shadow: 0 10px 22px -5px rgba(16, 185, 129, 0.32);
+    }
+
+    /* Primary CTA Button 3D Light-Sweep Sheen */
+    .jk-btn-3d {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s var(--jk-ease-spring), box-shadow 0.3s var(--jk-ease-spring);
+    }
+    .jk-btn-3d::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 45%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+      transform: rotate(25deg);
+      transition: left 0.65s var(--jk-ease-out-expo);
+      pointer-events: none;
+    }
+    .jk-btn-3d:hover {
+      transform: translateY(-2px);
+    }
+    .jk-btn-3d:hover::after {
+      left: 125%;
+    }
+
+    /* Scroll-Reveal Animation Classes (Progressive Enhancement — Visible by default without JS) */
+    .jk-motion-ready .jk-reveal {
+      opacity: 0;
+      transform: translate3d(0, 26px, 0) scale(0.985);
+      transition: opacity 0.72s var(--jk-ease-out-expo), transform 0.72s var(--jk-ease-out-expo);
+      transition-delay: var(--jk-stagger, 0ms);
+      will-change: opacity, transform;
+    }
+    .jk-motion-ready .jk-reveal.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    /* Smooth FAQ Accordion Highlight */
+    details[open] {
+      border-color: rgba(16, 185, 129, 0.45) !important;
+      box-shadow: 0 14px 32px -8px rgba(0, 28, 55, 0.07);
+    }
+
+    /* Interactive Hero Bioluminescent Canvas */
+    .jk-hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.75;
+    }
+
+    /* Accessibility: Respect Reduced Motion Preferences */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .jk-motion-ready .jk-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .jk-float-badge,
+      .jk-float-badge-delayed,
+      .jk-orbit-ring-1,
+      .jk-orbit-ring-2,
+      .jk-aurora-orb {
+        animation: none !important;
+        transform: none !important;
+      }
+      .jk-hero-canvas {
+        display: none !important;
+      }
+    }
+
     @media print {
       .no-print { display: none !important; }
       body { background: #ffffff !important; color: #000000 !important; }
+      .jk-motion-ready .jk-reveal { opacity: 1 !important; transform: none !important; }
     }
   </style>
-  <link rel="stylesheet" href="assets/css/cms-overrides.css?v=20261027-v11">
+  <link rel="stylesheet" href="assets/css/cms-overrides.css?v=20261027-v12">
 </head>
 
 <body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
   <a class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-[#0a2540] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg" href="#main">Skip to main content</a>
 
   <!-- ==================== GOOGLE STITCH STICKY GLASSMORPHIC HEADER ==================== -->
-  <header class="sticky top-0 z-50 w-full bg-surface-container-lowest/95 backdrop-blur-xl border-b border-[#dbe4f0] shadow-[0_1px_8px_rgba(0,28,55,0.05)] transition-all no-print">
+  <header id="jkStickyHeader" class="sticky top-0 z-50 w-full bg-surface-container-lowest/95 backdrop-blur-xl border-b border-[#dbe4f0] shadow-[0_1px_8px_rgba(0,28,55,0.05)] transition-all duration-300 no-print">
+    <!-- Interactive Scroll Reading Progress Bar -->
+    <div class="w-full h-[2.5px] bg-transparent overflow-hidden pointer-events-none">
+      <div id="jkScrollProgress" class="h-full w-full bg-gradient-to-r from-[#10b981] via-[#0b63a5] to-[#6ffbbe]"></div>
+    </div>
     <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4">
 
       <!-- Brand Identity (Official Dr. Jahangir Kabir Signature Logo) -->
       <a class="flex items-center gap-2 group shrink-0 whitespace-nowrap" href="/" aria-label="Dr. Jahangir Kabir Official Homepage">
-        <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v11" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-7 sm:h-10 xl:h-9 2xl:h-11 w-auto max-w-[122px] sm:max-w-none object-contain group-hover:scale-[1.02] transition-transform shrink-0" width="195" height="44">
+        <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-7 sm:h-10 xl:h-9 2xl:h-11 w-auto max-w-[122px] sm:max-w-none object-contain group-hover:scale-[1.03] transition-transform duration-300 shrink-0" width="195" height="44">
       </a>
 
       <!-- Primary Desktop Navigation (Clean, Spacious & Conversion-Focused) -->
@@ -282,7 +498,7 @@
 
       <!-- Primary Appointment Conversion CTA & Mobile Menu Trigger -->
       <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-        <a class="whitespace-nowrap inline-flex items-center gap-1 sm:gap-2 bg-[#10b981] hover:bg-[#00714d] text-white text-[11px] sm:text-[13px] 2xl:text-sm font-bold px-2.5 sm:px-5 2xl:px-6 py-1.5 sm:py-2.5 rounded-full shadow-[0_4px_14px_rgba(16,185,129,0.28)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.38)] transition-all duration-200 active:scale-95" href="https://jklifestyleltd.com/appointment/">
+        <a class="jk-btn-3d whitespace-nowrap inline-flex items-center gap-1 sm:gap-2 bg-[#10b981] hover:bg-[#00714d] text-white text-[11px] sm:text-[13px] 2xl:text-sm font-bold px-2.5 sm:px-5 2xl:px-6 py-1.5 sm:py-2.5 rounded-full shadow-[0_4px_14px_rgba(16,185,129,0.28)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.38)] transition-all duration-200 active:scale-95" href="https://jklifestyleltd.com/appointment/">
           <span class="hidden sm:inline">Book Appointment</span>
           <span class="sm:hidden">Appointment</span>
           <span class="material-symbols-outlined text-xs sm:text-base">calendar_month</span>
@@ -298,8 +514,8 @@
     <div id="mobileNavDrawer" class="hidden xl:hidden bg-white border-t border-[#dbe4f0] shadow-2xl max-h-[82vh] overflow-y-auto">
       <div class="max-w-7xl mx-auto px-4 py-5 space-y-4">
         <div class="flex items-center justify-between gap-3 pb-3 border-b border-slate-100">
-          <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v11" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-9 w-auto object-contain" width="160" height="36">
-          <img src="images/dr-portrait.jpg?v=20261027-v11" alt="Dr. Muhammad Jahangir Kabir" class="w-10 h-10 rounded-full object-cover border-2 border-[#10b981]" width="40" height="40">
+          <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-9 w-auto object-contain" width="160" height="36">
+          <img src="images/dr-portrait.jpg?v=20261027-v12" alt="Dr. Muhammad Jahangir Kabir" class="w-10 h-10 rounded-full object-cover border-2 border-[#10b981]" width="40" height="40">
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
           <a href="/" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">Home</a>
@@ -357,9 +573,9 @@
           <div class="lg:col-span-5 space-y-4">
             <div class="bg-white p-3 rounded-3xl border border-outline-variant/50 shadow-clinical relative overflow-hidden">
               <div class="relative rounded-2xl overflow-hidden h-52">
-                <img src="images/DSC09916.png?v=20261027-v11" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির — প্রতিষ্ঠাতা ও চেয়ারম্যান, জেকে লাইফস্টাইল লিমিটেড" class="w-full h-full object-cover object-top"/>
+                <img src="images/DSC09916.png?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির — প্রতিষ্ঠাতা ও চেয়ারম্যান, জেকে লাইফস্টাইল লিমিটেড" class="w-full h-full object-cover object-top"/>
                 <div class="absolute top-3 right-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-xl shadow-md border border-[#dbe4f0]">
-                  <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v11" alt="Dr. Jahangir Kabir Official Logo" class="h-5 w-auto object-contain" width="88" height="20"/>
+                  <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir Official Logo" class="h-5 w-auto object-contain" width="88" height="20"/>
                 </div>
               </div>
               <div class="pt-3 px-2 flex items-center justify-between gap-2">
@@ -603,7 +819,7 @@
       <div class="bg-[#0a2540] text-white px-6 sm:px-8 py-5 flex items-center justify-between gap-4 border-b border-white/10 shrink-0">
         <div class="flex flex-wrap items-center gap-3.5">
           <div class="bg-white px-3 py-1.5 rounded-xl shadow-sm shrink-0">
-            <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v11" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-7 sm:h-8 w-auto object-contain" width="142" height="32">
+            <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-7 sm:h-8 w-auto object-contain" width="142" height="32">
           </div>
           <div>
             <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#10b981]/20 text-[#6ffbbe] text-[11px] font-bold uppercase tracking-wider mb-1">
@@ -724,11 +940,11 @@
         <div class="lg:col-span-4">
           <div class="mb-5">
             <a href="/" class="inline-flex items-center bg-white px-5 py-3 rounded-2xl shadow-lg border border-white/20 hover:scale-[1.02] transition-transform" aria-label="Dr. Jahangir Kabir Official Homepage">
-              <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v11" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-10 sm:h-11 w-auto object-contain" width="195" height="44">
+              <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-10 sm:h-11 w-auto object-contain" width="195" height="44">
             </a>
           </div>
           <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10 mb-5">
-            <img src="images/dr-portrait.jpg?v=20261027-v11" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-[#10b981] shrink-0" loading="lazy">
+            <img src="images/dr-portrait.jpg?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-[#10b981] shrink-0" loading="lazy">
             <div>
               <div class="text-xs font-extrabold text-white">ডা. মুহাম্মদ জাহাঙ্গীর কবির</div>
               <div class="text-[11px] text-[#6ffbbe] font-semibold">MBBS (CMC) · CCD (BIRDEM) · UK Diploma</div>
@@ -837,17 +1053,8 @@
     <span class="material-symbols-outlined text-xl">keyboard_arrow_up</span>
   </button>
 
-  <!-- Global Google Stitch Interactive Scripts -->
+  <!-- Global Google Stitch Interactive & 3D Motion Scripts -->
   <script>
-    window.addEventListener('scroll', function () {
-      var sb = document.getElementById('scrollTopBtn');
-      if (!sb) return;
-      if (window.scrollY > 300) {
-        sb.classList.remove('opacity-0', 'pointer-events-none');
-      } else {
-        sb.classList.add('opacity-0', 'pointer-events-none');
-      }
-    }, { passive: true });
     function toggleMobileMenu() {
       var drawer = document.getElementById('mobileNavDrawer');
       var icon = document.getElementById('mobileMenuIcon');
@@ -882,7 +1089,45 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      // Support any button with data-bs-target="#jkDietModal"
+      // 1. Unified rAF Scroll Listener (Scroll-To-Top + Reading Progress Bar + Header Elevation)
+      var sb = document.getElementById('scrollTopBtn');
+      var prog = document.getElementById('jkScrollProgress');
+      var hdr = document.getElementById('jkStickyHeader');
+      var scrollTicking = false;
+
+      function updateOnScroll() {
+        var sy = window.scrollY || window.pageYOffset || 0;
+        if (sb) {
+          if (sy > 300) {
+            sb.classList.remove('opacity-0', 'pointer-events-none');
+          } else {
+            sb.classList.add('opacity-0', 'pointer-events-none');
+          }
+        }
+        if (prog) {
+          var docH = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+          var ratio = Math.min(Math.max(sy / docH, 0), 1);
+          prog.style.transform = 'scaleX(' + ratio.toFixed(4) + ')';
+        }
+        if (hdr) {
+          if (sy > 24) {
+            hdr.classList.add('shadow-[0_10px_30px_rgba(0,28,55,0.08)]');
+          } else {
+            hdr.classList.remove('shadow-[0_10px_30px_rgba(0,28,55,0.08)]');
+          }
+        }
+        scrollTicking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(updateOnScroll);
+          scrollTicking = true;
+        }
+      }, { passive: true });
+      updateOnScroll();
+
+      // 2. Diet Modal Triggers & Keyboard Accessibility
       var modalTriggers = document.querySelectorAll('[data-bs-target="#jkDietModal"]');
       modalTriggers.forEach(function (el) {
         el.addEventListener('click', function (e) {
@@ -891,7 +1136,6 @@
         });
       });
 
-      // Close diet modal on backdrop click or Escape key
       var modal = document.getElementById('jkDietModal');
       if (modal) {
         modal.addEventListener('click', function (e) {
@@ -902,7 +1146,7 @@
         if (e.key === 'Escape') closeDietModal();
       });
 
-      // Appointment form submission redirect to https://jklifestyleltd.com/appointment/
+      // 3. Appointment Form Submission Redirect
       var forms = document.querySelectorAll('.jk-appointment-form');
       forms.forEach(function (form) {
         form.addEventListener('submit', function (e) {
@@ -916,10 +1160,328 @@
           }, 700);
         });
       });
+
+      // 4. Check Reduced Motion & CMS Editor Mode
+      var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var isCmsEditor = window.location.search.indexOf('cms_visual_editor=1') !== -1;
+      if (prefersReducedMotion || isCmsEditor) return;
+
+      var hasFinePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+      // 5. Auto-Enhance Primary CTA Buttons with 3D Light-Sweep Sheen
+      var ctaBtns = document.querySelectorAll('main a.rounded-full, main button.rounded-full, footer a.rounded-xl');
+      ctaBtns.forEach(function (btn) {
+        if (!btn.classList.contains('jk-btn-3d')) {
+          btn.classList.add('jk-btn-3d');
+        }
+      });
+
+      // 6. Interactive 3D Card Tilt & Specular Spotlight Engine (Desktop Fine Pointer)
+      var autoCards = document.querySelectorAll(
+        '.jk-tilt-card, main article, main .grid > div.bg-white, main .grid > div.bg-surface-container-lowest, main .grid > a.group'
+      );
+      autoCards.forEach(function (card) {
+        if (card.querySelector('iframe, form, table')) return;
+        if (!card.classList.contains('jk-tilt-card')) {
+          card.classList.add('jk-tilt-card');
+        }
+        var iconBox = card.querySelector('.w-12.h-12, .w-14.h-14, .w-11.h-11, .w-10.h-10');
+        if (iconBox && !iconBox.classList.contains('jk-3d-icon')) {
+          iconBox.classList.add('jk-3d-icon');
+        }
+        if (!hasFinePointer) return;
+
+        var rafId = null;
+        card.addEventListener('mousemove', function (e) {
+          var rect = card.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          var relX = e.clientX - rect.left;
+          var relY = e.clientY - rect.top;
+          var normX = (relX / rect.width) - 0.5;
+          var normY = (relY / rect.height) - 0.5;
+          var maxTilt = card.hasAttribute('data-jk-tilt-max') ? parseFloat(card.getAttribute('data-jk-tilt-max')) : 5.5;
+          var rotX = (-normY * maxTilt).toFixed(2);
+          var rotY = (normX * maxTilt).toFixed(2);
+
+          if (rafId) cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(function () {
+            card.style.transform = 'perspective(1050px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translate3d(0, -4px, 0) scale3d(1.01, 1.01, 1.01)';
+            card.style.setProperty('--jk-spot-x', relX.toFixed(0) + 'px');
+            card.style.setProperty('--jk-spot-y', relY.toFixed(0) + 'px');
+            card.style.setProperty('--jk-spot-opacity', '1');
+          });
+        }, { passive: true });
+
+        card.addEventListener('mouseleave', function () {
+          if (rafId) cancelAnimationFrame(rafId);
+          card.style.transform = '';
+          card.style.setProperty('--jk-spot-opacity', '0');
+        }, { passive: true });
+      });
+
+      // 7. Interactive 3D Hero Spatial Stage Parallax (Arched Portrait & Floating Depth Badges)
+      if (hasFinePointer) {
+        var stages = document.querySelectorAll('.jk-3d-stage-interactive');
+        stages.forEach(function (stage) {
+          var stageRaf = null;
+          var portrait = stage.querySelector('[data-jk-stage-core]');
+          var depthItems = stage.querySelectorAll('[data-jk-depth]');
+
+          stage.addEventListener('mousemove', function (e) {
+            var rect = stage.getBoundingClientRect();
+            if (!rect.width || !rect.height) return;
+            var nx = ((e.clientX - rect.left) / rect.width) - 0.5;
+            var ny = ((e.clientY - rect.top) / rect.height) - 0.5;
+            if (stageRaf) cancelAnimationFrame(stageRaf);
+            stageRaf = requestAnimationFrame(function () {
+              if (portrait) {
+                portrait.style.transform = 'perspective(1200px) rotateX(' + (-ny * 7).toFixed(2) + 'deg) rotateY(' + (nx * 7).toFixed(2) + 'deg) translateZ(12px)';
+              }
+              depthItems.forEach(function (item) {
+                var d = parseFloat(item.getAttribute('data-jk-depth') || '22');
+                item.style.transform = 'translate3d(' + (nx * d).toFixed(1) + 'px, ' + (ny * d).toFixed(1) + 'px, 45px)';
+              });
+            });
+          }, { passive: true });
+
+          stage.addEventListener('mouseleave', function () {
+            if (stageRaf) cancelAnimationFrame(stageRaf);
+            if (portrait) portrait.style.transform = '';
+            depthItems.forEach(function (item) {
+              item.style.transform = '';
+            });
+          }, { passive: true });
+        });
+      }
+
+      // 8. Interactive Bioluminescent 3D Cellular & Particle Hero Canvas
+      var heroSection = document.querySelector('main > section:first-of-type');
+      if (heroSection && window.IntersectionObserver) {
+        heroSection.classList.add('relative', 'overflow-hidden');
+        var heroInner = heroSection.querySelector(':scope > div.max-w-7xl, :scope > div.max-w-6xl, :scope > div.max-w-5xl');
+        if (heroInner && !heroInner.classList.contains('relative')) {
+          heroInner.classList.add('relative', 'z-10');
+        }
+        var canvas = document.createElement('canvas');
+        canvas.className = 'jk-hero-canvas';
+        canvas.setAttribute('aria-hidden', 'true');
+        heroSection.insertBefore(canvas, heroSection.firstChild);
+
+        var ctx = canvas.getContext('2d');
+        var width = 0, height = 0;
+        var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        var isHeroVisible = true;
+        var mouse = { x: -9999, y: -9999 };
+        var particleCount = window.innerWidth < 768 ? 14 : 26;
+        var particles = [];
+
+        function resizeCanvas() {
+          var rect = heroSection.getBoundingClientRect();
+          width = rect.width;
+          height = rect.height;
+          canvas.width = width * dpr;
+          canvas.height = height * dpr;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas, { passive: true });
+
+        for (var i = 0; i < particleCount; i++) {
+          var z = 0.35 + Math.random() * 0.65;
+          particles.push({
+            x: Math.random() * (width || 1200),
+            y: Math.random() * (height || 600),
+            z: z,
+            r: (2.2 + Math.random() * 3.8) * z,
+            vx: (Math.random() - 0.5) * 0.38 * z,
+            vy: (Math.random() - 0.5) * 0.38 * z,
+            hue: i % 2 === 0 ? '16, 185, 129' : '11, 99, 165'
+          });
+        }
+
+        if (hasFinePointer) {
+          heroSection.addEventListener('mousemove', function (e) {
+            var r = heroSection.getBoundingClientRect();
+            mouse.x = e.clientX - r.left;
+            mouse.y = e.clientY - r.top;
+          }, { passive: true });
+          heroSection.addEventListener('mouseleave', function () {
+            mouse.x = -9999;
+            mouse.y = -9999;
+          }, { passive: true });
+        }
+
+        function renderParticles() {
+          if (!isHeroVisible || document.hidden) return;
+          ctx.clearRect(0, 0, width, height);
+
+          for (var i = 0; i < particles.length; i++) {
+            var p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < -20) p.x = width + 20;
+            if (p.x > width + 20) p.x = -20;
+            if (p.y < -20) p.y = height + 20;
+            if (p.y > height + 20) p.y = -20;
+
+            if (mouse.x > 0) {
+              var dxm = mouse.x - p.x;
+              var dym = mouse.y - p.y;
+              var distM = Math.sqrt(dxm * dxm + dym * dym);
+              if (distM < 160 && distM > 1) {
+                p.x -= (dxm / distM) * 0.35 * p.z;
+                p.y -= (dym / distM) * 0.35 * p.z;
+              }
+            }
+
+            // Draw 3D cellular sphere with inner specular highlight
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(' + p.hue + ', ' + (0.18 * p.z).toFixed(2) + ')';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(p.x - p.r * 0.28, p.y - p.r * 0.28, p.r * 0.35, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255, 255, 255, ' + (0.35 * p.z).toFixed(2) + ')';
+            ctx.fill();
+
+            // Connect nearby cellular nodes
+            for (var j = i + 1; j < particles.length; j++) {
+              var p2 = particles[j];
+              var dx = p.x - p2.x;
+              var dy = p.y - p2.y;
+              var dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < 135) {
+                var alpha = (1 - dist / 135) * 0.11 * p.z;
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.strokeStyle = 'rgba(16, 185, 129, ' + alpha.toFixed(3) + ')';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(renderParticles);
+        }
+
+        var heroObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            var wasVisible = isHeroVisible;
+            isHeroVisible = entry.isIntersecting;
+            if (isHeroVisible && !wasVisible) {
+              requestAnimationFrame(renderParticles);
+            }
+          });
+        }, { threshold: 0.02 });
+        heroObs.observe(heroSection);
+        requestAnimationFrame(renderParticles);
+      }
+
+      // 9. Scroll-Based 3D Reveal & Staggered Grid Cascade Engine
+      if (window.IntersectionObserver) {
+        var revealSelectors = [
+          'main section:not(:first-of-type) h2',
+          'main section:not(:first-of-type) .jk-tilt-card',
+          'main section:not(:first-of-type) article',
+          'main section:not(:first-of-type) details',
+          'main section:not(:first-of-type) blockquote',
+          'main section:not(:first-of-type) .grid > div'
+        ];
+        var candidates = document.querySelectorAll(revealSelectors.join(', '));
+        var viewportH = window.innerHeight || 800;
+
+        candidates.forEach(function (el) {
+          if (el.closest('#jkDietModal')) return;
+          el.classList.add('jk-reveal');
+          var parent = el.parentElement;
+          if (parent && parent.classList.contains('grid')) {
+            var siblings = Array.prototype.slice.call(parent.children);
+            var idx = siblings.indexOf(el);
+            if (idx > 0) {
+              el.style.setProperty('--jk-stagger', ((idx % 4) * 65) + 'ms');
+            }
+          }
+          var rect = el.getBoundingClientRect();
+          if (rect.top < viewportH * 0.92) {
+            el.classList.add('is-visible');
+          }
+        });
+
+        document.documentElement.classList.add('jk-motion-ready');
+
+        var revealObs = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+
+        candidates.forEach(function (el) {
+          if (!el.classList.contains('is-visible')) {
+            revealObs.observe(el);
+          }
+        });
+      }
+
+      // 10. Bengali & English Animated Numeric Counters on Scroll
+      var bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+      function toBnNumber(n) {
+        return String(Math.round(n)).replace(/[0-9]/g, function (d) { return bnDigits[parseInt(d, 10)]; });
+      }
+      function parseBnToInt(str) {
+        var ascii = str.replace(/[০-৯]/g, function (d) { return String(bnDigits.indexOf(d)); });
+        return parseInt(ascii, 10);
+      }
+
+      if (window.IntersectionObserver) {
+        var counterEls = document.querySelectorAll('main .tabular-nums');
+        var counterObs = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            obs.unobserve(el);
+            if (el.children.length > 0) return;
+            var raw = (el.textContent || '').trim();
+            // Match leading Bengali or English integer (skip ratios like ১৬:৮ or ranges like ৮–৫টা)
+            var m = raw.match(/^([০-৯0-9]{1,4})(+|%|টি|s+বছর|s+দিন)?(.*)$/);
+            if (!m) return;
+            var numStr = m[1];
+            var suffix1 = m[2] || '';
+            var suffix2 = m[3] || '';
+            if (/^[:–-]/.test(suffix2)) return;
+            var targetVal = parseBnToInt(numStr);
+            if (isNaN(targetVal) || targetVal <= 1 || targetVal > 1900) return;
+            var isBengali = /[০-৯]/.test(numStr);
+            var duration = 1250;
+            var startTime = null;
+
+            function stepCounter(ts) {
+              if (!startTime) startTime = ts;
+              var progress = Math.min((ts - startTime) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              var current = Math.round(targetVal * eased);
+              el.textContent = (isBengali ? toBnNumber(current) : String(current)) + suffix1 + suffix2;
+              if (progress < 1) {
+                requestAnimationFrame(stepCounter);
+              } else {
+                el.textContent = raw;
+              }
+            }
+            requestAnimationFrame(stepCounter);
+          });
+        }, { threshold: 0.35 });
+
+        counterEls.forEach(function (el) {
+          counterObs.observe(el);
+        });
+      }
     });
   </script>
-  <script src="assets/js/cms-state-public.js?v=20261027-v11"></script>
-  <script src="assets/js/cms-runtime.js?v=20261027-v11"></script>
+  <script src="assets/js/cms-state-public.js?v=20261027-v12"></script>
+  <script src="assets/js/cms-runtime.js?v=20261027-v12"></script>
 </body>
 
 </html>
