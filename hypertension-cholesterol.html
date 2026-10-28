@@ -20,9 +20,9 @@
   <link rel="alternate" hreflang="x-default" href="https://drjahangirkabir.com/hypertension-cholesterol">
   <link rel="alternate" type="text/plain" href="https://drjahangirkabir.com/llms.txt" title="LLMs.txt Knowledge Base">
   <link rel="alternate" type="text/plain" href="https://drjahangirkabir.com/llms-full.txt" title="LLMs-Full.txt Complete Context">
-  <link rel="icon" type="image/png" href="images/dr-jahangir-kabir-logo.png?v=20261027-v12">
-  <link rel="apple-touch-icon" href="images/dr-jahangir-kabir-logo.png?v=20261027-v12">
-  <link rel="manifest" href="images/manifest.json?v=20261027-v12">
+  <link rel="icon" type="image/png" href="images/dr-jahangir-kabir-logo.png?v=20261028-v13">
+  <link rel="apple-touch-icon" href="images/dr-jahangir-kabir-logo.png?v=20261028-v13">
+  <link rel="manifest" href="images/manifest.json?v=20261028-v13">
   <meta name="theme-color" content="#0A2540">
   <script>
     if (window.location.protocol !== 'file:' && window.location.search.indexOf('cms_visual_editor=1') === -1) {
@@ -254,91 +254,126 @@
       --jk-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    /* Top Scroll Reading Progress Bar */
+    /* Top Scroll Reading Progress Bar (High Visibility Glowing Emerald-Cyan) */
     #jkScrollProgress {
       transform-origin: 0% 50%;
       transform: scaleX(0);
       will-change: transform;
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.85), 0 0 6px rgba(11, 99, 165, 0.65);
     }
 
     /* 3D Hero Spatial Stage & Perspective Containers */
     .jk-3d-stage {
-      perspective: 1200px;
+      perspective: 1100px;
       transform-style: preserve-3d;
+    }
+    @keyframes jkStageBreathe3D {
+      0%, 100% { transform: perspective(1100px) rotateY(-4.5deg) rotateX(2.5deg) translateY(0px); }
+      50% { transform: perspective(1100px) rotateY(4.5deg) rotateX(-2.5deg) translateY(-8px); }
     }
     .jk-3d-layer-base {
       transform-style: preserve-3d;
-      transition: transform 0.45s var(--jk-ease-spring), box-shadow 0.45s var(--jk-ease-spring);
+      animation: jkStageBreathe3D 7s ease-in-out infinite;
+      transition: transform 0.35s var(--jk-ease-spring), box-shadow 0.35s var(--jk-ease-spring);
+      box-shadow: 0 30px 65px -12px rgba(0, 28, 55, 0.24), 0 0 32px rgba(16, 185, 129, 0.18);
     }
     .jk-3d-depth-1 {
-      transform: translateZ(24px);
+      transform: translateZ(28px);
     }
     .jk-3d-depth-2 {
-      transform: translateZ(42px);
+      transform: translateZ(48px);
     }
     .jk-3d-depth-3 {
-      transform: translateZ(60px);
+      transform: translateZ(68px);
     }
 
-    /* 3D Orbital Cellular / Metabolic Rings */
+    /* Real 3D Shaded Lit Spheres */
+    .jk-3d-sphere-emerald {
+      background: radial-gradient(circle at 30% 30%, #ffffff 0%, #6ffbbe 22%, #10b981 58%, #004d34 100%);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.65), 0 0 18px rgba(111, 251, 190, 0.8);
+    }
+    .jk-3d-sphere-blue {
+      background: radial-gradient(circle at 30% 30%, #ffffff 0%, #9fcaff 24%, #0b63a5 60%, #001d36 100%);
+      box-shadow: 0 8px 24px rgba(11, 99, 165, 0.65), 0 0 18px rgba(159, 202, 255, 0.75);
+    }
+    .jk-3d-sphere-mint {
+      background: radial-gradient(circle at 30% 30%, #ffffff 0%, #d1fae5 28%, #10b981 68%, #065f46 100%);
+      box-shadow: 0 10px 28px rgba(16, 185, 129, 0.55), inset -3px -3px 8px rgba(0, 28, 55, 0.25);
+    }
+
+    /* 3D Orbital Cellular / Metabolic Rings (High Visibility) */
     @keyframes jkOrbitSpinCW {
-      0% { transform: rotateX(64deg) rotateY(-14deg) rotateZ(0deg); }
-      100% { transform: rotateX(64deg) rotateY(-14deg) rotateZ(360deg); }
+      0% { transform: rotateX(62deg) rotateY(-16deg) rotateZ(0deg); }
+      100% { transform: rotateX(62deg) rotateY(-16deg) rotateZ(360deg); }
     }
     @keyframes jkOrbitSpinCCW {
-      0% { transform: rotateX(58deg) rotateY(18deg) rotateZ(360deg); }
-      100% { transform: rotateX(58deg) rotateY(18deg) rotateZ(0deg); }
+      0% { transform: rotateX(54deg) rotateY(20deg) rotateZ(360deg); }
+      100% { transform: rotateX(54deg) rotateY(20deg) rotateZ(0deg); }
     }
     @keyframes jkFloat3D {
-      0%, 100% { transform: translate3d(0, 0px, 46px); }
-      50% { transform: translate3d(0, -9px, 54px); }
+      0%, 100% { transform: translate3d(0, 0px, 52px) rotateX(0deg); }
+      50% { transform: translate3d(0, -14px, 64px) rotateX(3deg); }
     }
     @keyframes jkFloat3DDelayed {
-      0%, 100% { transform: translate3d(0, 0px, 38px); }
-      50% { transform: translate3d(0, -7px, 46px); }
+      0%, 100% { transform: translate3d(0, 0px, 44px) rotateY(0deg); }
+      50% { transform: translate3d(0, -12px, 56px) rotateY(-4deg); }
     }
     @keyframes jkAuroraDrift {
       0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(18px, -14px, 0) scale(1.06); }
+      50% { transform: translate3d(26px, -22px, 0) scale(1.12); }
     }
     @keyframes jkPulseRing {
-      0% { transform: scale(0.92); opacity: 0.75; }
-      70% { transform: scale(1.45); opacity: 0; }
-      100% { transform: scale(1.45); opacity: 0; }
+      0% { transform: scale(0.9); opacity: 0.9; }
+      75% { transform: scale(1.75); opacity: 0; }
+      100% { transform: scale(1.75); opacity: 0; }
+    }
+    @keyframes jkHeroCascadeIn {
+      0% {
+        opacity: 0;
+        transform: perspective(1000px) translate3d(0, 34px, -25px) rotateX(10deg);
+      }
+      100% {
+        opacity: 1;
+        transform: perspective(1000px) translate3d(0, 0, 0) rotateX(0deg);
+      }
     }
 
     .jk-orbit-ring-1 {
-      animation: jkOrbitSpinCW 26s linear infinite;
+      animation: jkOrbitSpinCW 18s linear infinite;
       transform-style: preserve-3d;
+      box-shadow: 0 0 28px rgba(16, 185, 129, 0.22), inset 0 0 22px rgba(16, 185, 129, 0.14);
     }
     .jk-orbit-ring-2 {
-      animation: jkOrbitSpinCCW 34s linear infinite;
+      animation: jkOrbitSpinCCW 24s linear infinite;
       transform-style: preserve-3d;
+      box-shadow: 0 0 28px rgba(11, 99, 165, 0.20), inset 0 0 20px rgba(11, 99, 165, 0.12);
     }
     .jk-float-badge {
-      animation: jkFloat3D 5.5s ease-in-out infinite;
+      animation: jkFloat3D 4.2s ease-in-out infinite;
+      box-shadow: 0 22px 45px -10px rgba(0, 28, 55, 0.22), 0 0 20px rgba(16, 185, 129, 0.18) !important;
     }
     .jk-float-badge-delayed {
-      animation: jkFloat3DDelayed 6.4s ease-in-out 1.4s infinite;
+      animation: jkFloat3DDelayed 4.8s ease-in-out 1.1s infinite;
+      box-shadow: 0 22px 45px -10px rgba(0, 28, 55, 0.22), 0 0 20px rgba(11, 99, 165, 0.18) !important;
     }
     .jk-aurora-orb {
-      animation: jkAuroraDrift 11s ease-in-out infinite;
+      animation: jkAuroraDrift 9s ease-in-out infinite;
     }
     .jk-pulse-halo::after {
       content: '';
       position: absolute;
-      inset: -4px;
+      inset: -5px;
       border-radius: 9999px;
-      border: 2px solid #10b981;
-      animation: jkPulseRing 2.4s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+      border: 2.5px solid #10b981;
+      animation: jkPulseRing 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
       pointer-events: none;
     }
 
-    /* Interactive 3D Card Tilt & Radial Specular Glare */
+    /* Interactive 3D Card Tilt, Specular Spotlight & Prism Reflection */
     .jk-tilt-card {
       position: relative;
       transform-style: preserve-3d;
-      transition: transform 0.42s var(--jk-ease-spring), box-shadow 0.42s var(--jk-ease-spring), border-color 0.3s ease;
+      transition: transform 0.36s var(--jk-ease-spring), box-shadow 0.36s var(--jk-ease-spring), border-color 0.3s ease;
       --jk-spot-x: 50%;
       --jk-spot-y: 50%;
       --jk-spot-opacity: 0;
@@ -349,12 +384,23 @@
       inset: 0;
       border-radius: inherit;
       background: radial-gradient(
-        420px circle at var(--jk-spot-x) var(--jk-spot-y),
-        rgba(16, 185, 129, 0.11),
-        rgba(11, 99, 165, 0.05) 45%,
-        transparent 80%
+        380px circle at var(--jk-spot-x) var(--jk-spot-y),
+        rgba(16, 185, 129, 0.24),
+        rgba(11, 99, 165, 0.14) 45%,
+        transparent 78%
       );
       opacity: var(--jk-spot-opacity);
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .jk-tilt-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(125deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.45) 48%, rgba(111,251,190,0.22) 54%, rgba(255,255,255,0) 80%);
+      opacity: 0;
       transition: opacity 0.35s ease;
       pointer-events: none;
       z-index: 1;
@@ -362,23 +408,36 @@
     .jk-tilt-card > * {
       position: relative;
       z-index: 2;
+      transition: transform 0.36s var(--jk-ease-spring);
     }
     .jk-tilt-card:hover {
-      box-shadow: 0 22px 46px -12px rgba(0, 28, 55, 0.13), 0 8px 20px -6px rgba(16, 185, 129, 0.10);
-      border-color: rgba(16, 185, 129, 0.38);
+      box-shadow: 0 28px 56px -12px rgba(0, 28, 55, 0.20), 0 0 26px -2px rgba(16, 185, 129, 0.24) !important;
+      border-color: rgba(16, 185, 129, 0.65) !important;
+    }
+    .jk-tilt-card:hover::after {
+      opacity: 1;
+    }
+    .jk-tilt-card:hover h3,
+    .jk-tilt-card:hover h4 {
+      transform: translateZ(20px);
     }
 
     /* 3D Icon Cube Lift inside Cards */
     .jk-3d-icon {
-      transition: transform 0.4s var(--jk-ease-spring), box-shadow 0.4s var(--jk-ease-spring), background-color 0.3s ease, color 0.3s ease;
+      transition: transform 0.38s var(--jk-ease-spring), box-shadow 0.38s var(--jk-ease-spring), background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 6px 16px -3px rgba(0, 28, 55, 0.10);
     }
     .group:hover .jk-3d-icon,
     .jk-tilt-card:hover .jk-3d-icon {
-      transform: translate3d(0, -3px, 16px) scale(1.08) rotate(-3deg);
-      box-shadow: 0 10px 22px -5px rgba(16, 185, 129, 0.32);
+      transform: translate3d(0, -6px, 28px) scale(1.16) rotate(-6deg);
+      box-shadow: 0 14px 28px -4px rgba(16, 185, 129, 0.45);
     }
 
-    /* Primary CTA Button 3D Light-Sweep Sheen */
+    /* Primary CTA Button 3D Light-Sweep Sheen (Auto + Hover) */
+    @keyframes jkBtnAutoSheen {
+      0%, 72% { left: -65%; }
+      100% { left: 135%; }
+    }
     .jk-btn-3d {
       position: relative;
       overflow: hidden;
@@ -388,41 +447,39 @@
       content: '';
       position: absolute;
       top: -50%;
-      left: -60%;
-      width: 45%;
+      left: -65%;
+      width: 48%;
       height: 200%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
       transform: rotate(25deg);
-      transition: left 0.65s var(--jk-ease-out-expo);
+      animation: jkBtnAutoSheen 4.2s var(--jk-ease-out-expo) infinite;
       pointer-events: none;
     }
     .jk-btn-3d:hover {
-      transform: translateY(-2px);
-    }
-    .jk-btn-3d:hover::after {
-      left: 125%;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 30px -6px rgba(16, 185, 129, 0.48);
     }
 
-    /* Scroll-Reveal Animation Classes (Progressive Enhancement — Visible by default without JS) */
+    /* Bold 3D Scroll-Reveal Animation Classes */
     .jk-motion-ready .jk-reveal {
       opacity: 0;
-      transform: translate3d(0, 26px, 0) scale(0.985);
-      transition: opacity 0.72s var(--jk-ease-out-expo), transform 0.72s var(--jk-ease-out-expo);
+      transform: perspective(1000px) translate3d(0, 52px, -30px) rotateX(12deg) scale(0.94);
+      transition: opacity 0.85s var(--jk-ease-out-expo), transform 0.85s var(--jk-ease-out-expo);
       transition-delay: var(--jk-stagger, 0ms);
       will-change: opacity, transform;
     }
     .jk-motion-ready .jk-reveal.is-visible {
       opacity: 1;
-      transform: translate3d(0, 0, 0) scale(1);
+      transform: perspective(1000px) translate3d(0, 0, 0) rotateX(0deg) scale(1);
     }
 
     /* Smooth FAQ Accordion Highlight */
     details[open] {
-      border-color: rgba(16, 185, 129, 0.45) !important;
-      box-shadow: 0 14px 32px -8px rgba(0, 28, 55, 0.07);
+      border-color: rgba(16, 185, 129, 0.65) !important;
+      box-shadow: 0 16px 36px -8px rgba(16, 185, 129, 0.14);
     }
 
-    /* Interactive Hero Bioluminescent Canvas */
+    /* Interactive Hero Bioluminescent 3D Canvas */
     .jk-hero-canvas {
       position: absolute;
       inset: 0;
@@ -430,7 +487,7 @@
       height: 100%;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.75;
+      opacity: 0.95;
     }
 
     /* Accessibility: Respect Reduced Motion Preferences */
@@ -445,6 +502,7 @@
         opacity: 1 !important;
         transform: none !important;
       }
+      .jk-3d-layer-base,
       .jk-float-badge,
       .jk-float-badge-delayed,
       .jk-orbit-ring-1,
@@ -464,7 +522,7 @@
       .jk-motion-ready .jk-reveal { opacity: 1 !important; transform: none !important; }
     }
   </style>
-  <link rel="stylesheet" href="assets/css/cms-overrides.css?v=20261027-v12">
+  <link rel="stylesheet" href="assets/css/cms-overrides.css?v=20261028-v13">
 </head>
 
 <body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
@@ -473,14 +531,14 @@
   <!-- ==================== GOOGLE STITCH STICKY GLASSMORPHIC HEADER ==================== -->
   <header id="jkStickyHeader" class="sticky top-0 z-50 w-full bg-surface-container-lowest/95 backdrop-blur-xl border-b border-[#dbe4f0] shadow-[0_1px_8px_rgba(0,28,55,0.05)] transition-all duration-300 no-print">
     <!-- Interactive Scroll Reading Progress Bar -->
-    <div class="w-full h-[2.5px] bg-transparent overflow-hidden pointer-events-none">
+    <div class="w-full h-[3.5px] bg-slate-100/60 overflow-hidden pointer-events-none">
       <div id="jkScrollProgress" class="h-full w-full bg-gradient-to-r from-[#10b981] via-[#0b63a5] to-[#6ffbbe]"></div>
     </div>
     <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4">
 
       <!-- Brand Identity (Official Dr. Jahangir Kabir Signature Logo) -->
       <a class="flex items-center gap-2 group shrink-0 whitespace-nowrap" href="/" aria-label="Dr. Jahangir Kabir Official Homepage">
-        <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-7 sm:h-10 xl:h-9 2xl:h-11 w-auto max-w-[122px] sm:max-w-none object-contain group-hover:scale-[1.03] transition-transform duration-300 shrink-0" width="195" height="44">
+        <img src="images/dr-jahangir-kabir-logo.png?v=20261028-v13" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-7 sm:h-10 xl:h-9 2xl:h-11 w-auto max-w-[122px] sm:max-w-none object-contain group-hover:scale-[1.03] transition-transform duration-300 shrink-0" width="195" height="44">
       </a>
 
       <!-- Primary Desktop Navigation (Clean, Spacious & Conversion-Focused) -->
@@ -514,8 +572,8 @@
     <div id="mobileNavDrawer" class="hidden xl:hidden bg-white border-t border-[#dbe4f0] shadow-2xl max-h-[82vh] overflow-y-auto">
       <div class="max-w-7xl mx-auto px-4 py-5 space-y-4">
         <div class="flex items-center justify-between gap-3 pb-3 border-b border-slate-100">
-          <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-9 w-auto object-contain" width="160" height="36">
-          <img src="images/dr-portrait.jpg?v=20261027-v12" alt="Dr. Muhammad Jahangir Kabir" class="w-10 h-10 rounded-full object-cover border-2 border-[#10b981]" width="40" height="40">
+          <img src="images/dr-jahangir-kabir-logo.png?v=20261028-v13" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-9 w-auto object-contain" width="160" height="36">
+          <img src="images/dr-portrait.jpg?v=20261028-v13" alt="Dr. Muhammad Jahangir Kabir" class="w-10 h-10 rounded-full object-cover border-2 border-[#10b981]" width="40" height="40">
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
           <a href="/" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">Home</a>
@@ -674,7 +732,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-8">
         <div class="lg:col-span-7">
           <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe4f0] text-xs font-bold text-[#004b80] mb-4">
-            <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir Official Logo" class="h-4 w-auto object-contain" width="72" height="16"/>
+            <img src="images/dr-jahangir-kabir-logo.png?v=20261028-v13" alt="Dr. Jahangir Kabir Official Logo" class="h-4 w-auto object-contain" width="72" height="16"/>
             <span>· ক্লিনিক্যাল গবেষণা প্রবন্ধ</span>
           </div>
           <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-on-surface tracking-tight leading-[1.2] mb-5">
@@ -687,14 +745,14 @@
         <div class="lg:col-span-5">
           <div class="bg-white rounded-3xl p-3 border border-[#dbe4f0] shadow-clinical relative overflow-hidden">
             <div class="relative rounded-2xl overflow-hidden h-64 sm:h-72">
-              <img src="images/425515836_914545420120852_7039766667814511555_n.jpg?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির — উচ্চ রক্তচাপ ও কোলেস্টেরল গাইড" class="w-full h-full object-cover object-top"/>
+              <img src="images/425515836_914545420120852_7039766667814511555_n.jpg?v=20261028-v13" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির — উচ্চ রক্তচাপ ও কোলেস্টেরল গাইড" class="w-full h-full object-cover object-top"/>
               <div class="absolute top-3 right-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-xl shadow-md border border-[#dbe4f0]">
-                <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir Official Logo" class="h-5 w-auto object-contain" width="88" height="20"/>
+                <img src="images/dr-jahangir-kabir-logo.png?v=20261028-v13" alt="Dr. Jahangir Kabir Official Logo" class="h-5 w-auto object-contain" width="88" height="20"/>
               </div>
             </div>
             <div class="pt-3 px-2 flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <img src="images/dr-portrait.jpg?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-9 h-9 rounded-full object-cover border border-[#10b981]"/>
+                <img src="images/dr-portrait.jpg?v=20261028-v13" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-9 h-9 rounded-full object-cover border border-[#10b981]"/>
                 <div>
                   <div class="text-xs font-extrabold text-[#001c37]">ডা. মুহাম্মদ জাহাঙ্গীর কবির</div>
                   <div class="text-[11px] font-semibold text-[#006c49]">MBBS (CMC) · CCD (BIRDEM) · UK Diploma</div>
@@ -710,7 +768,7 @@
         <!-- Primary Above-the-Fold Appointment Collection Bar -->
         <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#001e40] to-[#003366] text-white shadow-clinical flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div class="flex items-center gap-3.5">
-            <img src="images/dr-portrait.jpg?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-[#6ffbbe] shrink-0"/>
+            <img src="images/dr-portrait.jpg?v=20261028-v13" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-[#6ffbbe] shrink-0"/>
             <div>
               <span class="text-[11px] font-bold uppercase tracking-wider text-[#6ffbbe] block">হেলথ রেভলিউশন · ১০০% ফ্রি ডাক্তার পরামর্শ</span>
               <p class="text-sm sm:text-base font-extrabold text-white">আপনার স্বাস্থ্য সমস্যার জন্য সরাসরি বা অনলাইনে বিশেষজ্ঞ ডাক্তারের অ্যাপয়েন্টমেন্ট নিন</p>
@@ -732,7 +790,7 @@
   <div class="flex flex-col sm:flex-row sm:items-center gap-6">
     <div class="flex items-center gap-3.5">
       <div class="relative shrink-0">
-        <img src="images/dr-portrait.jpg?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-14 h-14 rounded-full object-cover border-2 border-primary" loading="lazy">
+        <img src="images/dr-portrait.jpg?v=20261028-v13" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-14 h-14 rounded-full object-cover border-2 border-primary" loading="lazy">
         <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-secondary text-white flex items-center justify-center shadow" title="বিএমডিসি নিবন্ধিত চিকিৎসক">
           <span class="material-symbols-outlined text-[13px]">verified</span>
         </span>
@@ -921,7 +979,7 @@
         <div class="sr-only">
           <div class="mt-10 p-6 sm:p-8 rounded-2xl bg-surface-container-low border border-outline-variant/40" aria-label="লেখক পরিচিতি ও বৈজ্ঞানিক তথ্যসূত্র">
   <div class="flex flex-col sm:flex-row gap-6 items-start">
-    <img src="images/dr-portrait.jpg?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির — প্রতিষ্ঠাতা ও চেয়ারম্যান, জেকে লাইফস্টাইল" class="w-20 h-20 rounded-2xl object-cover border-2 border-primary shrink-0" loading="lazy">
+    <img src="images/dr-portrait.jpg?v=20261028-v13" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির — প্রতিষ্ঠাতা ও চেয়ারম্যান, জেকে লাইফস্টাইল" class="w-20 h-20 rounded-2xl object-cover border-2 border-primary shrink-0" loading="lazy">
     <div class="flex-1">
       <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
         <div>
@@ -935,7 +993,7 @@
         ডা. মুহাম্মদ জাহাঙ্গীর কবির বাংলাদেশের অন্যতম শীর্ষস্থানীয় লাইফস্টাইল মেডিসিন বিশেষজ্ঞ, স্বাস্থ্য শিক্ষাবিদ এবং জেকে লাইফস্টাইল লিমিটেড ও হেলথ রেভলিউশন লিমিটেডের প্রতিষ্ঠাতা ও চেয়ারম্যান। ফেনীর ন্যাশনাল হাসপাতালে দীর্ঘ ১৭ বছর আবাসিক মেডিকেল অফিসার (RMO) হিসেবে দায়িত্ব পালন এবং ২৫ বছরেরও বেশি ক্লিনিক্যাল অভিজ্ঞতার আলোকে তিনি সুষম অর্গানিক খাদ্য, অটোফেজি, নিয়মিত ব্যায়াম, পর্যাপ্ত ঘুম ও মানসিক প্রশান্তির মাধ্যমে কোটি মানুষকে ওষুধমুক্ত ও সুস্থ জীবন গড়তে দিকনির্দেশনা দিচ্ছেন।
       </p>
       <div class="mb-4">
-        <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-8 w-auto object-contain" width="142" height="32" loading="lazy">
+        <img src="images/dr-jahangir-kabir-logo.png?v=20261028-v13" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-8 w-auto object-contain" width="142" height="32" loading="lazy">
       </div>
       <div class="pt-4 border-t border-outline-variant/40">
         <div class="text-xs font-bold text-on-surface mb-2 flex items-center gap-1.5">
@@ -963,7 +1021,7 @@
         <!-- 1. Free Doctor Consultation Card (Primary Sidebar Focus) -->
         <div class="bg-navy-dark text-white rounded-3xl p-6 shadow-clinical relative overflow-hidden">
           <div class="flex items-center gap-3 mb-4">
-            <img src="images/dr-portrait.jpg?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-brand-emerald"/>
+            <img src="images/dr-portrait.jpg?v=20261028-v13" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-brand-emerald"/>
             <div>
               <span class="text-[11px] font-bold uppercase tracking-wider text-[#6ffbbe] block">১০০% ফ্রি ডাক্তার পরামর্শ</span>
               <h3 class="text-base font-extrabold text-white">হেলথ রেভলিউশন চেম্বার</h3>
@@ -1085,7 +1143,7 @@
       <div class="bg-[#0a2540] text-white px-6 sm:px-8 py-5 flex items-center justify-between gap-4 border-b border-white/10 shrink-0">
         <div class="flex flex-wrap items-center gap-3.5">
           <div class="bg-white px-3 py-1.5 rounded-xl shadow-sm shrink-0">
-            <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-7 sm:h-8 w-auto object-contain" width="142" height="32">
+            <img src="images/dr-jahangir-kabir-logo.png?v=20261028-v13" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-7 sm:h-8 w-auto object-contain" width="142" height="32">
           </div>
           <div>
             <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#10b981]/20 text-[#6ffbbe] text-[11px] font-bold uppercase tracking-wider mb-1">
@@ -1206,11 +1264,11 @@
         <div class="lg:col-span-4">
           <div class="mb-5">
             <a href="/" class="inline-flex items-center bg-white px-5 py-3 rounded-2xl shadow-lg border border-white/20 hover:scale-[1.02] transition-transform" aria-label="Dr. Jahangir Kabir Official Homepage">
-              <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v12" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-10 sm:h-11 w-auto object-contain" width="195" height="44">
+              <img src="images/dr-jahangir-kabir-logo.png?v=20261028-v13" alt="Dr. Jahangir Kabir — Official Signature Logo" class="h-10 sm:h-11 w-auto object-contain" width="195" height="44">
             </a>
           </div>
           <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10 mb-5">
-            <img src="images/dr-portrait.jpg?v=20261027-v12" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-[#10b981] shrink-0" loading="lazy">
+            <img src="images/dr-portrait.jpg?v=20261028-v13" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-[#10b981] shrink-0" loading="lazy">
             <div>
               <div class="text-xs font-extrabold text-white">ডা. মুহাম্মদ জাহাঙ্গীর কবির</div>
               <div class="text-[11px] text-[#6ffbbe] font-semibold">MBBS (CMC) · CCD (BIRDEM) · UK Diploma</div>
@@ -1444,7 +1502,7 @@
 
       // 6. Interactive 3D Card Tilt & Specular Spotlight Engine (Desktop Fine Pointer)
       var autoCards = document.querySelectorAll(
-        '.jk-tilt-card, main article, main .grid > div.bg-white, main .grid > div.bg-surface-container-lowest, main .grid > a.group'
+        '.jk-tilt-card, main article, main .grid > div.bg-white, main .grid > div.bg-surface-container-lowest, main .grid > a.group, main .grid > a.rounded-xl'
       );
       autoCards.forEach(function (card) {
         if (card.querySelector('iframe, form, table')) return;
@@ -1465,13 +1523,13 @@
           var relY = e.clientY - rect.top;
           var normX = (relX / rect.width) - 0.5;
           var normY = (relY / rect.height) - 0.5;
-          var maxTilt = card.hasAttribute('data-jk-tilt-max') ? parseFloat(card.getAttribute('data-jk-tilt-max')) : 5.5;
+          var maxTilt = card.hasAttribute('data-jk-tilt-max') ? parseFloat(card.getAttribute('data-jk-tilt-max')) : 11;
           var rotX = (-normY * maxTilt).toFixed(2);
           var rotY = (normX * maxTilt).toFixed(2);
 
           if (rafId) cancelAnimationFrame(rafId);
           rafId = requestAnimationFrame(function () {
-            card.style.transform = 'perspective(1050px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translate3d(0, -4px, 0) scale3d(1.01, 1.01, 1.01)';
+            card.style.transform = 'perspective(950px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translate3d(0, -8px, 18px) scale3d(1.025, 1.025, 1.025)';
             card.style.setProperty('--jk-spot-x', relX.toFixed(0) + 'px');
             card.style.setProperty('--jk-spot-y', relY.toFixed(0) + 'px');
             card.style.setProperty('--jk-spot-opacity', '1');
@@ -1485,42 +1543,49 @@
         }, { passive: true });
       });
 
-      // 7. Interactive 3D Hero Spatial Stage Parallax (Arched Portrait & Floating Depth Badges)
+      // 7. Interactive 3D Hero Spatial Stage Parallax (Tracks Mouse Across Entire Section)
       if (hasFinePointer) {
         var stages = document.querySelectorAll('.jk-3d-stage-interactive');
         stages.forEach(function (stage) {
           var stageRaf = null;
           var portrait = stage.querySelector('[data-jk-stage-core]');
           var depthItems = stage.querySelectorAll('[data-jk-depth]');
+          var trackZone = stage.closest('section') || stage;
 
-          stage.addEventListener('mousemove', function (e) {
-            var rect = stage.getBoundingClientRect();
+          trackZone.addEventListener('mousemove', function (e) {
+            var rect = trackZone.getBoundingClientRect();
             if (!rect.width || !rect.height) return;
             var nx = ((e.clientX - rect.left) / rect.width) - 0.5;
             var ny = ((e.clientY - rect.top) / rect.height) - 0.5;
             if (stageRaf) cancelAnimationFrame(stageRaf);
             stageRaf = requestAnimationFrame(function () {
               if (portrait) {
-                portrait.style.transform = 'perspective(1200px) rotateX(' + (-ny * 7).toFixed(2) + 'deg) rotateY(' + (nx * 7).toFixed(2) + 'deg) translateZ(12px)';
+                portrait.style.animation = 'none';
+                portrait.style.transform = 'perspective(1100px) rotateX(' + (-ny * 13).toFixed(2) + 'deg) rotateY(' + (nx * 13).toFixed(2) + 'deg) translate3d(' + (nx * 10).toFixed(1) + 'px, ' + (ny * 10).toFixed(1) + 'px, 24px)';
               }
               depthItems.forEach(function (item) {
-                var d = parseFloat(item.getAttribute('data-jk-depth') || '22');
-                item.style.transform = 'translate3d(' + (nx * d).toFixed(1) + 'px, ' + (ny * d).toFixed(1) + 'px, 45px)';
+                var d = parseFloat(item.getAttribute('data-jk-depth') || '28');
+                item.style.animation = 'none';
+                item.style.transform = 'translate3d(' + (nx * d).toFixed(1) + 'px, ' + (ny * d).toFixed(1) + 'px, 60px)';
               });
             });
           }, { passive: true });
 
-          stage.addEventListener('mouseleave', function () {
+          trackZone.addEventListener('mouseleave', function () {
             if (stageRaf) cancelAnimationFrame(stageRaf);
-            if (portrait) portrait.style.transform = '';
+            if (portrait) {
+              portrait.style.transform = '';
+              portrait.style.animation = '';
+            }
             depthItems.forEach(function (item) {
               item.style.transform = '';
+              item.style.animation = '';
             });
           }, { passive: true });
         });
       }
 
-      // 8. Interactive Bioluminescent 3D Cellular & Particle Hero Canvas
+      // 8. High-Visibility Bioluminescent 3D Cellular & Molecular Hero Canvas
       var heroSection = document.querySelector('main > section:first-of-type');
       if (heroSection && window.IntersectionObserver) {
         heroSection.classList.add('relative', 'overflow-hidden');
@@ -1538,7 +1603,7 @@
         var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
         var isHeroVisible = true;
         var mouse = { x: -9999, y: -9999 };
-        var particleCount = window.innerWidth < 768 ? 14 : 26;
+        var particleCount = window.innerWidth < 768 ? 18 : 34;
         var particles = [];
 
         function resizeCanvas() {
@@ -1553,15 +1618,15 @@
         window.addEventListener('resize', resizeCanvas, { passive: true });
 
         for (var i = 0; i < particleCount; i++) {
-          var z = 0.35 + Math.random() * 0.65;
+          var z = 0.4 + Math.random() * 0.6;
           particles.push({
             x: Math.random() * (width || 1200),
             y: Math.random() * (height || 600),
             z: z,
-            r: (2.2 + Math.random() * 3.8) * z,
-            vx: (Math.random() - 0.5) * 0.38 * z,
-            vy: (Math.random() - 0.5) * 0.38 * z,
-            hue: i % 2 === 0 ? '16, 185, 129' : '11, 99, 165'
+            r: (3.8 + Math.random() * 6.2) * z,
+            vx: (Math.random() - 0.5) * 0.62 * z,
+            vy: (Math.random() - 0.5) * 0.62 * z,
+            isEmerald: i % 2 === 0
           });
         }
 
@@ -1581,52 +1646,80 @@
           if (!isHeroVisible || document.hidden) return;
           ctx.clearRect(0, 0, width, height);
 
+          // Draw subtle glowing cursor halo when mouse is inside hero
+          if (mouse.x > 0 && mouse.y > 0) {
+            var mGrad = ctx.createRadialGradient(mouse.x, mouse.y, 4, mouse.x, mouse.y, 140);
+            mGrad.addColorStop(0, 'rgba(16, 185, 129, 0.16)');
+            mGrad.addColorStop(0.5, 'rgba(11, 99, 165, 0.07)');
+            mGrad.addColorStop(1, 'rgba(16, 185, 129, 0)');
+            ctx.beginPath();
+            ctx.arc(mouse.x, mouse.y, 140, 0, Math.PI * 2);
+            ctx.fillStyle = mGrad;
+            ctx.fill();
+          }
+
           for (var i = 0; i < particles.length; i++) {
             var p = particles[i];
             p.x += p.vx;
             p.y += p.vy;
-            if (p.x < -20) p.x = width + 20;
-            if (p.x > width + 20) p.x = -20;
-            if (p.y < -20) p.y = height + 20;
-            if (p.y > height + 20) p.y = -20;
+            if (p.x < -25) p.x = width + 25;
+            if (p.x > width + 25) p.x = -25;
+            if (p.y < -25) p.y = height + 25;
+            if (p.y > height + 25) p.y = -25;
 
             if (mouse.x > 0) {
               var dxm = mouse.x - p.x;
               var dym = mouse.y - p.y;
               var distM = Math.sqrt(dxm * dxm + dym * dym);
-              if (distM < 160 && distM > 1) {
-                p.x -= (dxm / distM) * 0.35 * p.z;
-                p.y -= (dym / distM) * 0.35 * p.z;
+              if (distM < 180 && distM > 1) {
+                p.x -= (dxm / distM) * 0.55 * p.z;
+                p.y -= (dym / distM) * 0.55 * p.z;
               }
             }
 
-            // Draw 3D cellular sphere with inner specular highlight
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(' + p.hue + ', ' + (0.18 * p.z).toFixed(2) + ')';
-            ctx.fill();
-
-            ctx.beginPath();
-            ctx.arc(p.x - p.r * 0.28, p.y - p.r * 0.28, p.r * 0.35, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(255, 255, 255, ' + (0.35 * p.z).toFixed(2) + ')';
-            ctx.fill();
-
-            // Connect nearby cellular nodes
+            // Connect nearby cellular nodes with visible molecular filaments
             for (var j = i + 1; j < particles.length; j++) {
               var p2 = particles[j];
               var dx = p.x - p2.x;
               var dy = p.y - p2.y;
               var dist = Math.sqrt(dx * dx + dy * dy);
-              if (dist < 135) {
-                var alpha = (1 - dist / 135) * 0.11 * p.z;
+              if (dist < 165) {
+                var alpha = (1 - dist / 165) * 0.30 * p.z;
                 ctx.beginPath();
                 ctx.moveTo(p.x, p.y);
                 ctx.lineTo(p2.x, p2.y);
-                ctx.strokeStyle = 'rgba(16, 185, 129, ' + alpha.toFixed(3) + ')';
-                ctx.lineWidth = 1;
+                ctx.strokeStyle = p.isEmerald
+                  ? 'rgba(16, 185, 129, ' + alpha.toFixed(3) + ')'
+                  : 'rgba(11, 99, 165, ' + alpha.toFixed(3) + ')';
+                ctx.lineWidth = 1.4;
                 ctx.stroke();
               }
             }
+
+            // Draw real 3D-shaded sphere with specular highlight & outer halo
+            var grad = ctx.createRadialGradient(
+              p.x - p.r * 0.32,
+              p.y - p.r * 0.32,
+              p.r * 0.1,
+              p.x,
+              p.y,
+              p.r * 1.35
+            );
+            if (p.isEmerald) {
+              grad.addColorStop(0, 'rgba(255, 255, 255, ' + (0.92 * p.z).toFixed(2) + ')');
+              grad.addColorStop(0.35, 'rgba(111, 251, 190, ' + (0.68 * p.z).toFixed(2) + ')');
+              grad.addColorStop(0.75, 'rgba(16, 185, 129, ' + (0.48 * p.z).toFixed(2) + ')');
+              grad.addColorStop(1, 'rgba(16, 185, 129, 0)');
+            } else {
+              grad.addColorStop(0, 'rgba(255, 255, 255, ' + (0.90 * p.z).toFixed(2) + ')');
+              grad.addColorStop(0.35, 'rgba(159, 202, 255, ' + (0.64 * p.z).toFixed(2) + ')');
+              grad.addColorStop(0.75, 'rgba(11, 99, 165, ' + (0.44 * p.z).toFixed(2) + ')');
+              grad.addColorStop(1, 'rgba(11, 99, 165, 0)');
+            }
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r * 1.35, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
           }
           requestAnimationFrame(renderParticles);
         }
@@ -1644,7 +1737,7 @@
         requestAnimationFrame(renderParticles);
       }
 
-      // 9. Scroll-Based 3D Reveal & Staggered Grid Cascade Engine
+      // 9. Bold Scroll-Based 3D Reveal & Staggered Grid Cascade Engine
       if (window.IntersectionObserver) {
         var revealSelectors = [
           'main section:not(:first-of-type) h2',
@@ -1665,11 +1758,11 @@
             var siblings = Array.prototype.slice.call(parent.children);
             var idx = siblings.indexOf(el);
             if (idx > 0) {
-              el.style.setProperty('--jk-stagger', ((idx % 4) * 65) + 'ms');
+              el.style.setProperty('--jk-stagger', ((idx % 4) * 85) + 'ms');
             }
           }
           var rect = el.getBoundingClientRect();
-          if (rect.top < viewportH * 0.92) {
+          if (rect.top < viewportH * 0.78) {
             el.classList.add('is-visible');
           }
         });
@@ -1683,7 +1776,7 @@
               obs.unobserve(entry.target);
             }
           });
-        }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+        }, { rootMargin: '0px 0px -30px 0px', threshold: 0.06 });
 
         candidates.forEach(function (el) {
           if (!el.classList.contains('is-visible')) {
@@ -1746,8 +1839,8 @@
       }
     });
   </script>
-  <script src="assets/js/cms-state-public.js?v=20261027-v12"></script>
-  <script src="assets/js/cms-runtime.js?v=20261027-v12"></script>
+  <script src="assets/js/cms-state-public.js?v=20261028-v13"></script>
+  <script src="assets/js/cms-runtime.js?v=20261028-v13"></script>
 </body>
 
 </html>
