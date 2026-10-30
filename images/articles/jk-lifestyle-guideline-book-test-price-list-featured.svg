@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="জেকে লাইফস্টাইল নির্দেশিকা বই ও ল্যাব টেস্ট গাইড — JK Lifestyle Guideline Book, Planner &amp; Test Price List">
+  <defs>
+    <linearGradient id="bgGrad_ART-05" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a2540"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <radialGradient id="glow_ART-05" cx="82%" cy="45%" r="48%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0a2540" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid_ART-05" width="48" height="48" patternUnits="userSpaceOnUse" patternTransform="rotate(68)">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="630" fill="url(#bgGrad_ART-05)"/>
+  <rect width="1200" height="630" fill="url(#grid_ART-05)"/>
+  <rect width="1200" height="630" fill="url(#glow_ART-05)"/>
+
+  <!-- Top Decorative Accent Bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="#2dd4bf"/>
+
+  <!-- Left Content Frame -->
+  <g transform="translate(64, 58)">
+    <!-- Brand & Cluster Header Pill -->
+    <rect x="0" y="0" width="430" height="44" rx="22" fill="#103152" stroke="#2dd4bf" stroke-width="1.5"/>
+    <circle cx="24" cy="22" r="8" fill="#2dd4bf"/>
+    <text x="44" y="28" fill="#ffffff" font-family="'Noto Sans Bengali', 'Inter', sans-serif" font-size="15" font-weight="800">Dr. Jahangir Kabir · JK Lifestyle</text>
+    <text x="295" y="28" fill="#99f6e4" font-family="'Noto Sans Bengali', 'Inter', sans-serif" font-size="13" font-weight="700">| ART-05</text>
+
+    <!-- Format & Content Type Badges -->
+    <rect x="0" y="64" width="235" height="34" rx="8" fill="#2dd4bf"/>
+    <text x="117" y="86" text-anchor="middle" fill="#021810" font-family="'Inter', sans-serif" font-size="13" font-weight="900">SUPPORTING · 1,500 WORDS</text>
+
+    <rect x="248" y="64" width="275" height="34" rx="8" fill="#ffffff" fill-opacity="0.12" stroke="#99f6e4" stroke-width="1"/>
+    <text x="385" y="86" text-anchor="middle" fill="#99f6e4" font-family="'Inter', sans-serif" font-size="13" font-weight="800">Topic-Specific Resource Guide</text>
+
+    <!-- Cluster Eyebrow -->
+    <text x="0" y="142" fill="#99f6e4" font-family="'Noto Sans Bengali', sans-serif" font-size="18" font-weight="700">ক্লাস্টার ১ · জীবনী ও চেম্বার</text>
+
+    <!-- Main Bengali Title Overlay -->
+    <text x="0" y="205" fill="#ffffff" font-family="'Noto Sans Bengali', sans-serif" font-size="36" font-weight="900">জেকে লাইফস্টাইল নির্দেশিকা বই ও ল্যাব টেস্ট গাইড</text>
+
+    <!-- Subtitle Overlay -->
+    <rect x="0" y="235" width="740" height="58" rx="14" fill="#ffffff" fill-opacity="0.09" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
+    <text x="22" y="271" fill="#99f6e4" font-family="'Noto Sans Bengali', sans-serif" font-size="21" font-weight="700">অফিশিয়াল গাইডলাইন বই · প্ল্যানার · হেলথ রেভলিউশন টেস্ট প্যাকেজ</text>
+
+    <!-- English Focus Keyword Bar -->
+    <text x="0" y="340" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="17" font-weight="600">Focus Topic: JK Lifestyle Guideline Book, Planner &amp; Test Price List</text>
+
+    <!-- Author & Clinical Verification Card -->
+    <rect x="0" y="380" width="740" height="96" rx="18" fill="#103152" stroke="#2dd4bf" stroke-width="1.5"/>
+    <circle cx="48" cy="428" r="28" fill="#2dd4bf" opacity="0.25" stroke="#99f6e4" stroke-width="2"/>
+    <text x="48" y="435" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="900">JK</text>
+    <text x="92" y="418" fill="#ffffff" font-family="'Noto Sans Bengali', sans-serif" font-size="20" font-weight="800">ডা. মুহাম্মদ জাহাঙ্গীর কবির (Dr. Muhammad Jahangir Kabir)</text>
+    <text x="92" y="446" fill="#99f6e4" font-family="'Noto Sans Bengali', 'Inter', sans-serif" font-size="14" font-weight="700">MBBS (CMC) · CCD (BIRDEM) · UK Diploma (Diabetes, Asthma &amp; COPD) · ১০০% ফ্রি ডাক্তার পরামর্শ</text>
+    <text x="92" y="466" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Official Clinical Knowledge Library · https://drjahangirkabir.com/jk-lifestyle-guideline-book-test-price-list</text>
+  </g>
+
+  <!-- Right Topic-Specific Vector Illustration -->
+  
+        <g transform="translate(860, 145)">
+          <rect x="20" y="25" width="220" height="245" rx="22" fill="#103152" stroke="#2dd4bf" stroke-width="3"/>
+          <path d="M55 65 H125 V185 H55 Z" fill="#2dd4bf" opacity="0.25" stroke="#99f6e4" stroke-width="2"/>
+          <path d="M125 65 H195 V185 H125 Z" fill="#2dd4bf" opacity="0.15" stroke="#99f6e4" stroke-width="2"/>
+          <text x="90" y="115" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="800">JK GUIDELINE</text>
+          <text x="90" y="135" text-anchor="middle" fill="#99f6e4" font-family="sans-serif" font-size="11" font-weight="700">BOOK &amp; PDF</text>
+          <text x="160" y="115" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="800">LAB PANEL</text>
+          <text x="160" y="135" text-anchor="middle" fill="#99f6e4" font-family="sans-serif" font-size="11" font-weight="700">HOMA-IR · HbA1c</text>
+          <rect x="45" y="210" width="170" height="34" rx="8" fill="#2dd4bf"/>
+          <text x="130" y="232" text-anchor="middle" fill="#042f2e" font-family="sans-serif" font-size="13" font-weight="900">COMPLETE RESOURCE HUB</text>
+        </g>
+
+  <!-- Bottom E-E-A-T Footer Strip -->
+  <rect x="0" y="582" width="1200" height="48" fill="#020b16" fill-opacity="0.85"/>
+  <text x="64" y="611" fill="#e2e8f0" font-family="'Noto Sans Bengali', 'Inter', sans-serif" font-size="14" font-weight="700">✓ বিএমডিসি নিবন্ধিত মেডিকেল বোর্ড কর্তৃক পর্যালোচিত (YMYL &amp; E-E-A-T Verified)</text>
+  <text x="1136" y="611" text-anchor="end" fill="#99f6e4" font-family="'Inter', sans-serif" font-size="14" font-weight="800">drjahangirkabir.com · +880 9678 242404</text>
+</svg>
