@@ -12,6 +12,9 @@ RewriteEngine On
 # 0. Block direct HTTP access to protected directories & dot-directories
 RewriteRule ^(cms-data|\.git|\.github|\.vscode)(/|$) - [F,L]
 
+# 0b. Redirect any legacy article .svg featured image requests to .jpg
+RewriteRule ^images/articles/(.+)-featured\.svg$ /images/articles/$1-featured.jpg [R=301,L]
+
 # 1. Redirect /index.html to /
 RewriteCond %{QUERY_STRING} !cms_visual_editor=1 [NC]
 RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]

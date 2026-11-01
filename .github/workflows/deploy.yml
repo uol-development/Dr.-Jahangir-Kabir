@@ -33,6 +33,8 @@ jobs:
           set ftp:passive-mode true;
           set net:timeout 25; set net:max-retries 2; set net:reconnect-interval-base 5;
           open -u '$FTP_USERNAME','$FTP_PASSWORD' 'ftp://$FTP_SERVER';
-          mirror -R --no-perms --ignore-time --parallel=5 --verbose -x '^\.git' -x '^\.github' -x '^\.vscode' -x '\.log$' -x 'README\.md' -x 'website-concept\.md' ./ '$FTP_SERVER_DIR';
+          mirror -R --no-perms --parallel=5 --verbose -x '^\.git' -x '^\.github' -x '^\.vscode' -x '\.log$' -x 'README\.md' -x 'website-concept\.md' -x '^images/' ./ '$FTP_SERVER_DIR';
+          mirror -R --no-perms --ignore-time --parallel=5 --verbose ./images '$FTP_SERVER_DIR/images';
+          put -O '$FTP_SERVER_DIR/images' images/.htaccess;
           bye
           "
