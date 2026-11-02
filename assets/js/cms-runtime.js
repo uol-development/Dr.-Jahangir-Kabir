@@ -10,7 +10,7 @@
   }
 
   function purgeLegacyBrowserCaches() {
-    var TARGET_CACHE_VER = '20261101-v16-jpg';
+    var TARGET_CACHE_VER = '20261027-v11';
     try {
       var legacyKeys = [
         'jk_cms_live_db',
@@ -214,12 +214,6 @@
     // Upgrade any remaining jk-logo.png image elements to dr-jahangir-kabir-logo.png
     document.querySelectorAll('img[src*="jk-logo.png"]').forEach(function (img) {
       img.setAttribute('src', logoSrc);
-    });
-
-    // Upgrade any legacy article .svg featured image references to .jpg
-    document.querySelectorAll('img[src*="-featured.svg"]').forEach(function (img) {
-      var curSrc = img.getAttribute('src') || '';
-      img.setAttribute('src', curSrc.replace('-featured.svg', '-featured.jpg'));
     });
 
     // Update global appointment URLs or hotline if changed in meta
