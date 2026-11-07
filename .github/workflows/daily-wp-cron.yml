@@ -1,0 +1,22 @@
+name: Daily WordPress Scheduled Article Publisher (JK Lifestyle & Health Revolution)
+
+on:
+  schedule:
+    # Runs at 03:02 UTC (9:02 AM BST), 04:02 UTC (10:02 AM BST), and every 2 hours as a safety net
+    - cron: '2 3,4 * * *'
+    - cron: '15 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  trigger-wp-cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger JK Lifestyle & Health Revolution Auto-Publisher & WP-Cron
+        run: |
+          echo "=== 1. Triggering JK Lifestyle Auto-Publisher Heartbeat & WP-Cron ==="
+          curl -sS -X POST "https://jklifestyleltd.com/wp-json/jk-careers/v1/cron-heartbeat" || true
+          echo ""
+          curl -sS "https://jklifestyleltd.com/wp-cron.php?doing_wp_cron" || true
+
+          echo "=== 2. Triggering Health Revolution WP-Cron ==="
+          curl -sS "https://healthrevolutionltd.com/wp-cron.php?doing_wp_cron" || true
