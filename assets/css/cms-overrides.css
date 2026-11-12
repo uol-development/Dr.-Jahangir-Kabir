@@ -141,8 +141,8 @@ button[onclick^="setFontSize"]:not(.hidden) {
   }
 }
 
-/* Standalone action links inside main content (excluding inline prose/list/heading links) */
-main a:not(p a):not(li a):not(td a):not(th a):not(h1 a):not(h2 a):not(h3 a):not(h4 a):not(.sr-only):not(.hidden):not(.block):not(.grid) {
+/* Standalone action links inside main content (excluding inline prose/list/heading links and flex-col cards) */
+main a:not(p a):not(li a):not(td a):not(th a):not(h1 a):not(h2 a):not(h3 a):not(h4 a):not(strong a):not(em a):not(b a):not(i a):not(.sr-only):not(.hidden):not(.block):not(.grid):not(.flex-col) {
   min-height: 44px !important;
   min-width: 44px !important;
   display: inline-flex !important;
