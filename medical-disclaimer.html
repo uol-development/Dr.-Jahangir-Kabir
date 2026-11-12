@@ -496,7 +496,7 @@
       .jk-motion-ready .jk-reveal { opacity: 1 !important; transform: none !important; }
     }
   </style>
-  <link rel="stylesheet" href="assets/css/cms-overrides.css?v=20261028-v14">
+  <link rel="stylesheet" href="assets/css/cms-overrides.css?v=20261112-uiux">
 </head>
 
 <body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
@@ -533,10 +533,10 @@
         <a class="jk-btn-3d whitespace-nowrap inline-flex items-center gap-1 sm:gap-2 bg-[#10b981] hover:bg-[#00714d] text-white text-[11px] sm:text-[13px] 2xl:text-sm font-bold px-2.5 sm:px-5 2xl:px-6 py-1.5 sm:py-2.5 rounded-full shadow-[0_4px_14px_rgba(16,185,129,0.28)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.38)] transition-all duration-200 active:scale-95" href="https://jklifestyleltd.com/appointment/">
           <span class="hidden sm:inline">Book Appointment</span>
           <span class="sm:hidden">Appointment</span>
-          <span class="material-symbols-outlined text-xs sm:text-base">calendar_month</span>
+          <span class="material-symbols-outlined text-xs sm:text-base" aria-hidden="true">calendar_month</span>
         </a>
         <button type="button" id="mobileMenuBtn" onclick="toggleMobileMenu()" class="xl:hidden p-2 sm:p-2.5 rounded-xl text-[#001c37] hover:bg-[#eff4ff] border border-[#dbe4f0] transition-colors shrink-0" aria-label="Open Mobile Menu" aria-expanded="false">
-          <span class="material-symbols-outlined text-xl sm:text-2xl leading-none block" id="mobileMenuIcon">menu</span>
+          <span class="material-symbols-outlined text-xl sm:text-2xl leading-none block" id="mobileMenuIcon" aria-hidden="true">menu</span>
         </button>
       </div>
 
@@ -561,7 +561,7 @@
           <a href="/contact" class="px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#001c37] hover:bg-slate-50">Contact</a>
         </div>
         <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-          <a href="tel:+8809678242404" class="inline-flex items-center gap-2 text-xs font-bold text-[#004b80]"><span class="material-symbols-outlined text-base text-[#10b981]">call</span> Hotline: +880 9678 242404</a>
+          <a href="tel:+8809678242404" class="inline-flex items-center gap-2 text-xs font-bold text-[#004b80]"><span class="material-symbols-outlined text-base text-[#10b981]" aria-hidden="true">call</span> Hotline: +880 9678 242404</a>
           <a href="https://jklifestyleltd.com/appointment/" class="inline-flex items-center gap-2 bg-[#10b981] text-white text-xs font-bold px-5 py-2.5 rounded-full">Book Free Doctor Appointment</a>
         </div>
       </div>
@@ -572,16 +572,16 @@
     <!-- Top Authority Metadata Bar (Exact Stitch Spec) -->
     <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-outline-variant/60">
       <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-primary">
-        <span class="material-symbols-outlined text-base text-secondary">verified_user</span>
+        <span class="material-symbols-outlined text-base text-secondary" aria-hidden="true">verified_user</span>
         <span>ক্লিনিক্যাল গভর্ন্যান্স ও YMYL রোগী নিরাপত্তা সনদ</span>
       </div>
       <div class="flex flex-wrap items-center gap-4 text-xs text-on-surface-variant">
         <span class="inline-flex items-center gap-1.5 bg-surface-container-low px-3 py-1 rounded-full font-medium">
-          <span class="material-symbols-outlined text-sm text-primary">history</span>
+          <span class="material-symbols-outlined text-sm text-primary" aria-hidden="true">history</span>
           সর্বশেষ ক্লিনিক্যাল রিভিউ: ২৬ অক্টোবর ২০২৬
         </span>
         <span class="inline-flex items-center gap-1.5 bg-secondary-container/40 text-on-secondary-fixed-variant px-3 py-1 rounded-full font-semibold">
-          <span class="material-symbols-outlined text-sm">badge</span>
+          <span class="material-symbols-outlined text-sm" aria-hidden="true">badge</span>
           অনুমোদনকারী: হেলথ রেভলিউশন মেডিকেল বোর্ড
         </span>
       </div>
@@ -591,7 +591,7 @@
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
       <div class="lg:col-span-8">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold uppercase tracking-wider mb-4">
-          <span class="material-symbols-outlined text-sm">gavel</span>
+          <span class="material-symbols-outlined text-sm" aria-hidden="true">gavel</span>
           বাধ্যতামূলক রোগী নিরাপত্তা প্রোটোকল
         </div>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tight leading-[1.15] mb-4">
@@ -605,7 +605,7 @@
       <!-- Quick Verification Card -->
       <div class="lg:col-span-4 bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/60 clinical-shadow">
         <div class="flex items-start gap-4 mb-4">
-          <img src="images/dr-portrait.jpg?v=20261030-v15" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-14 h-14 rounded-xl object-cover border-2 border-primary shrink-0"/>
+          <img src="images/dr-portrait.jpg?v=20261030-v15" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-14 h-14 rounded-xl object-cover border-2 border-primary shrink-0" width="250" height="277" decoding="async"/>
           <div>
             <img src="images/dr-jahangir-kabir-logo.png?v=20261030-v15" alt="Dr. Jahangir Kabir Official Logo" class="h-5 w-auto object-contain mb-1" width="88" height="20"/>
             <h2 class="text-sm font-bold text-on-surface uppercase tracking-wider">চিকিৎসক তত্ত্বাবধান সনদ</h2>
@@ -634,7 +634,7 @@
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
         <div class="flex items-start gap-4">
           <div class="w-12 h-12 rounded-2xl bg-error text-on-error flex items-center justify-center shrink-0 shadow-md">
-            <span class="material-symbols-outlined text-2xl">emergency</span>
+            <span class="material-symbols-outlined text-2xl" aria-hidden="true">emergency</span>
           </div>
           <div>
             <span class="inline-block text-[11px] font-extrabold uppercase tracking-widest text-error bg-white/80 px-2.5 py-0.5 rounded-md mb-1.5">
@@ -650,7 +650,7 @@
         </div>
         <div class="shrink-0">
           <a class="inline-flex items-center gap-2 bg-error hover:bg-[#93000a] text-white text-xs font-bold px-5 py-3 rounded-xl shadow-sm transition-all" href="tel:999">
-            <span class="material-symbols-outlined text-base">call</span>
+            <span class="material-symbols-outlined text-base" aria-hidden="true">call</span>
             <span>জরুরি হেল্পলাইন: ৯৯৯</span>
           </a>
         </div>
@@ -674,7 +674,7 @@
           <div>
             <div class="flex items-center justify-between mb-5">
               <span class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center">
-                <span class="material-symbols-outlined">menu_book</span>
+                <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
               </span>
               <span class="text-xs font-extrabold text-outline uppercase tracking-widest">ধারা ০১</span>
             </div>
@@ -684,7 +684,7 @@
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-semibold text-primary">
-            <span class="material-symbols-outlined text-sm">info</span>
+            <span class="material-symbols-outlined text-sm" aria-hidden="true">info</span>
             <span>ব্যক্তিগত চিকিৎসার জন্য চেম্বার পরামর্শ আবশ্যক</span>
           </div>
         </article>
@@ -695,7 +695,7 @@
             <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
               <div class="flex items-center gap-3">
                 <span class="w-11 h-11 rounded-xl bg-primary text-white flex items-center justify-center">
-                  <span class="material-symbols-outlined">medication_liquid</span>
+                  <span class="material-symbols-outlined" aria-hidden="true">medication_liquid</span>
                 </span>
                 <span class="px-3 py-1 rounded-full bg-error-container text-on-error-container text-xs font-bold uppercase tracking-wider">
                   সর্বোচ্চ গুরুত্ব · ওষুধ নিরাপত্তা প্রোটোকল
@@ -711,13 +711,13 @@
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
               <div class="p-3.5 rounded-xl bg-white border border-outline-variant/50 flex items-start gap-2.5">
-                <span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+                <span class="material-symbols-outlined text-secondary text-lg mt-0.5" aria-hidden="true">check_circle</span>
                 <div class="text-xs text-on-surface">
                   <strong>নিরাপদ করণীয়:</strong> ডায়েট শুরুর পূর্বে হেলথ রেভলিউশনে ফ্রি ডাক্তার পরামর্শ নিয়ে ওষুধের মাত্রা ধাপে ধাপে সমন্বয় করুন।
                 </div>
               </div>
               <div class="p-3.5 rounded-xl bg-white border border-outline-variant/50 flex items-start gap-2.5">
-                <span class="material-symbols-outlined text-error text-lg mt-0.5">cancel</span>
+                <span class="material-symbols-outlined text-error text-lg mt-0.5" aria-hidden="true">cancel</span>
                 <div class="text-xs text-on-surface">
                   <strong>কঠোরভাবে বর্জনীয়:</strong> ইউটিউব ভিডিও দেখে নিজের ইচ্ছায় ইনসুলিন, প্রেশার বা থাইরয়েডের ওষুধ বন্ধ করা।
                 </div>
@@ -731,7 +731,7 @@
           <div>
             <div class="flex items-center justify-between mb-5">
               <span class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center">
-                <span class="material-symbols-outlined">pregnant_woman</span>
+                <span class="material-symbols-outlined" aria-hidden="true">pregnant_woman</span>
               </span>
               <span class="text-xs font-extrabold text-outline uppercase tracking-widest">ধারা ০৩</span>
             </div>
@@ -750,7 +750,7 @@
           <div>
             <div class="flex items-center justify-between mb-5">
               <span class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center">
-                <span class="material-symbols-outlined">biotech</span>
+                <span class="material-symbols-outlined" aria-hidden="true">biotech</span>
               </span>
               <span class="text-xs font-extrabold text-outline uppercase tracking-widest">ধারা ০৪</span>
             </div>
@@ -769,7 +769,7 @@
           <div>
             <div class="flex items-center justify-between mb-5">
               <span class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center">
-                <span class="material-symbols-outlined">fact_check</span>
+                <span class="material-symbols-outlined" aria-hidden="true">fact_check</span>
               </span>
               <span class="text-xs font-extrabold text-outline uppercase tracking-widest">ধারা ০৫</span>
             </div>
@@ -793,7 +793,7 @@
       </div>
       <a href="https://jklifestyleltd.com/appointment/" class="bg-brand-emerald hover:bg-secondary text-white font-bold px-8 py-4 rounded-full text-xs sm:text-sm shrink-0 transition-all inline-flex items-center gap-2">
         <span>ফ্রি ডাক্তার পরামর্শ বুক করুন</span>
-        <span class="material-symbols-outlined text-base">calendar_month</span>
+        <span class="material-symbols-outlined text-base" aria-hidden="true">calendar_month</span>
       </a>
     </section>
   </main>
@@ -812,13 +812,13 @@
               নতুনদের ৭–১৪ দিনের ফ্যাট অ্যাডাপ্টেশন নির্দেশিকা · জেকে লাইফস্টাইল
             </span>
             <h3 class="text-lg sm:text-xl font-extrabold text-white flex items-center gap-2" id="jkDietModalLabel">
-              <span class="material-symbols-outlined text-[#6ffbbe]">restaurant_menu</span>
+              <span class="material-symbols-outlined text-[#6ffbbe]" aria-hidden="true">restaurant_menu</span>
               <span>নতুনদের জন্য ডা. জাহাঙ্গীর কবিরের পূর্ণাঙ্গ ডায়েট চার্ট</span>
             </h3>
           </div>
         </div>
         <button type="button" onclick="closeDietModal()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="বন্ধ করুন">
-          <span class="material-symbols-outlined">close</span>
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
         </button>
       </div>
 
@@ -832,7 +832,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="p-6 rounded-2xl bg-[#f8f9ff] border border-[#10b981]/30">
             <h4 class="text-base font-extrabold text-[#006c49] mb-3 flex items-center gap-2">
-              <span class="material-symbols-outlined">check_circle</span>
+              <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
               <span>অনুমোদিত স্বাস্থ্যকর খাবার (যা খেতে পারবেন)</span>
             </h4>
             <ul class="space-y-2.5 text-sm text-[#001c37] leading-relaxed">
@@ -845,7 +845,7 @@
           </div>
           <div class="p-6 rounded-2xl bg-[#fff8f7] border border-[#ba1a1a]/25">
             <h4 class="text-base font-extrabold text-[#ba1a1a] mb-3 flex items-center gap-2">
-              <span class="material-symbols-outlined">cancel</span>
+              <span class="material-symbols-outlined" aria-hidden="true">cancel</span>
               <span>বর্জনীয় খাবার (যা সম্পূর্ণ পরিহার করবেন)</span>
             </h4>
             <ul class="space-y-2.5 text-sm text-[#001c37] leading-relaxed">
@@ -902,15 +902,15 @@
       <div class="bg-[#eff4ff] px-6 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#dbe4f0] shrink-0">
         <a href="/diet-chart" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#004b80] hover:text-[#006c49] transition-colors">
           <span>পূর্ণাঙ্গ ডায়েট চার্ট পাতা দেখুন</span>
-          <span class="material-symbols-outlined text-base">arrow_forward</span>
+          <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
         </a>
         <div class="flex flex-wrap items-center gap-2.5">
           <button type="button" onclick="window.print()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#001c37] text-xs font-bold border border-[#dbe4f0] hover:bg-slate-50 transition-colors">
-            <span class="material-symbols-outlined text-base">print</span>
+            <span class="material-symbols-outlined text-base" aria-hidden="true">print</span>
             <span>প্রিন্ট / PDF সেভ করুন</span>
           </button>
           <a href="https://jklifestyleltd.com/appointment/" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#10b981] hover:bg-[#00714d] text-white text-xs sm:text-sm font-bold shadow-md transition-all">
-            <span class="material-symbols-outlined text-base">calendar_month</span>
+            <span class="material-symbols-outlined text-base" aria-hidden="true">calendar_month</span>
             <span>ফ্রি ডাক্তার পরামর্শ নিন</span>
           </a>
         </div>
@@ -930,7 +930,7 @@
             </a>
           </div>
           <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10 mb-5">
-            <img src="images/dr-portrait.jpg?v=20261030-v15" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-[#10b981] shrink-0" loading="lazy">
+            <img src="images/dr-portrait.jpg?v=20261030-v15" alt="ডা. মুহাম্মদ জাহাঙ্গীর কবির" class="w-12 h-12 rounded-xl object-cover border-2 border-[#10b981] shrink-0" loading="lazy" width="250" height="277" decoding="async">
             <div>
               <div class="text-xs font-extrabold text-white">ডা. মুহাম্মদ জাহাঙ্গীর কবির</div>
               <div class="text-[11px] text-[#6ffbbe] font-semibold">MBBS (CMC) · CCD (BIRDEM) · UK Diploma</div>
@@ -942,16 +942,16 @@
           </p>
           <div class="flex items-center gap-3">
             <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#10b981] flex items-center justify-center text-slate-300 hover:text-white transition-all border border-white/10" href="https://www.youtube.com/@DrJahangirKabir" target="_blank" rel="noopener" aria-label="ইউটিউব চ্যানেল">
-              <span class="material-symbols-outlined text-lg">smart_display</span>
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">smart_display</span>
             </a>
             <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#10b981] flex items-center justify-center text-slate-300 hover:text-white transition-all border border-white/10" href="https://www.facebook.com/DrJahangirkabircmc/" target="_blank" rel="noopener" aria-label="ফেসবুক পেজ">
-              <span class="material-symbols-outlined text-lg">public</span>
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">public</span>
             </a>
             <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#10b981] flex items-center justify-center text-slate-300 hover:text-white transition-all border border-white/10" href="https://wa.me/8809678242404" target="_blank" rel="noopener" aria-label="হোয়াটসঅ্যাপ">
-              <span class="material-symbols-outlined text-lg">chat</span>
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">chat</span>
             </a>
             <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#10b981] flex items-center justify-center text-slate-300 hover:text-white transition-all border border-white/10" href="https://jklifestyleltd.com/" target="_blank" rel="noopener" aria-label="জেকে লাইফস্টাইল অফিশিয়াল ওয়েবসাইট">
-              <span class="material-symbols-outlined text-lg">language</span>
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">language</span>
             </a>
           </div>
         </div>
@@ -960,12 +960,12 @@
         <div class="lg:col-span-3">
           <h4 class="text-xs font-bold uppercase tracking-widest text-[#6ffbbe] mb-6">বিজ্ঞানভিত্তিক বাংলা স্বাস্থ্য প্রবন্ধ</h4>
           <ul class="space-y-3 text-sm text-slate-300">
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/dr-jahangir-kabir-biography"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> ডা. জাহাঙ্গীর কবির: জীবনী ও ৭ উদ্যোগ</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/lifestyle-disease"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> লাইফস্টাইল ডিজিজ ও ইনসুলিন রেজিস্ট্যান্স</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/diet-chart"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> নতুনদের ৭ দিনের জেকে ডায়েট চার্ট</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/diabetes-reversal"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> ডায়াবেটিস রিভার্সাল ৫টি বৈজ্ঞানিক উপায়</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/hypertension-cholesterol"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> উচ্চ রক্তচাপ ও কোলেস্টেরল নিয়ন্ত্রণ</a></li>
-            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/autophagy-fasting"><span class="material-symbols-outlined text-xs text-[#10b981]">chevron_right</span> অটোফেজি ও ১৬:৮ ফাস্টিং নির্দেশিকা</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/dr-jahangir-kabir-biography"><span class="material-symbols-outlined text-xs text-[#10b981]" aria-hidden="true">chevron_right</span> ডা. জাহাঙ্গীর কবির: জীবনী ও ৭ উদ্যোগ</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/lifestyle-disease"><span class="material-symbols-outlined text-xs text-[#10b981]" aria-hidden="true">chevron_right</span> লাইফস্টাইল ডিজিজ ও ইনসুলিন রেজিস্ট্যান্স</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/diet-chart"><span class="material-symbols-outlined text-xs text-[#10b981]" aria-hidden="true">chevron_right</span> নতুনদের ৭ দিনের জেকে ডায়েট চার্ট</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/diabetes-reversal"><span class="material-symbols-outlined text-xs text-[#10b981]" aria-hidden="true">chevron_right</span> ডায়াবেটিস রিভার্সাল ৫টি বৈজ্ঞানিক উপায়</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/hypertension-cholesterol"><span class="material-symbols-outlined text-xs text-[#10b981]" aria-hidden="true">chevron_right</span> উচ্চ রক্তচাপ ও কোলেস্টেরল নিয়ন্ত্রণ</a></li>
+            <li><a class="hover:text-[#6ffbbe] transition-colors flex items-center gap-2" href="/autophagy-fasting"><span class="material-symbols-outlined text-xs text-[#10b981]" aria-hidden="true">chevron_right</span> অটোফেজি ও ১৬:৮ ফাস্টিং নির্দেশিকা</a></li>
           </ul>
         </div>
 
@@ -989,25 +989,25 @@
           <h4 class="text-xs font-bold uppercase tracking-widest text-[#6ffbbe] mb-6">চেম্বার ও ডায়াগনস্টিক সেন্টার</h4>
           <ul class="space-y-4 text-sm text-slate-300">
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-[#10b981] text-xl shrink-0 mt-0.5">location_on</span>
+              <span class="material-symbols-outlined text-[#10b981] text-xl shrink-0 mt-0.5" aria-hidden="true">location_on</span>
               <span>হাউজ ২৯/৩১, নূর টাওয়ার (ব্লক-ডি), রোড ০১, সেক্টর ০২, জহুরুল ইসলাম সিটি, আফতাবনগর, বাড্ডা, ঢাকা-১২১২</span>
             </li>
             <li class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[#10b981] text-xl shrink-0">call</span>
+              <span class="material-symbols-outlined text-[#10b981] text-xl shrink-0" aria-hidden="true">call</span>
               <a href="tel:+8809678242404" class="text-white font-bold hover:text-[#6ffbbe] transition-colors tabular-nums">+880 9678 242404</a>
             </li>
             <li class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[#10b981] text-xl shrink-0">mail</span>
+              <span class="material-symbols-outlined text-[#10b981] text-xl shrink-0" aria-hidden="true">mail</span>
               <a href="mailto:info@ultimateorganiclife.com" class="hover:text-[#6ffbbe] transition-colors">info@ultimateorganiclife.com</a>
             </li>
             <li class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[#10b981] text-xl shrink-0">schedule</span>
+              <span class="material-symbols-outlined text-[#10b981] text-xl shrink-0" aria-hidden="true">schedule</span>
               <span>প্রতিদিন: সকাল ৮:০০টা – বিকেল ৫:০০টা (১০০% ফ্রি ডাক্তার পরামর্শ)</span>
             </li>
           </ul>
           <div class="mt-6">
             <a href="https://jklifestyleltd.com/appointment/" class="inline-flex items-center justify-center gap-2 w-full bg-[#10b981] hover:bg-[#059669] text-white text-xs font-bold px-5 py-3 rounded-xl shadow-lg transition-all">
-              <span class="material-symbols-outlined text-base">calendar_month</span>
+              <span class="material-symbols-outlined text-base" aria-hidden="true">calendar_month</span>
               <span>ফ্রি কনসালটেশন বুক করুন</span>
             </a>
           </div>
@@ -1036,7 +1036,7 @@
 
   <!-- Google Stitch Floating Scroll-To-Top Button -->
   <button type="button" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#10b981] hover:bg-[#00714d] text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-105 opacity-0 pointer-events-none no-print" aria-label="উপরে যান">
-    <span class="material-symbols-outlined text-xl">keyboard_arrow_up</span>
+    <span class="material-symbols-outlined text-xl" aria-hidden="true">keyboard_arrow_up</span>
   </button>
 
   <!-- Global Google Stitch Interactive & 3D Motion Scripts -->
@@ -1502,7 +1502,7 @@
     });
   </script>
   <script src="assets/js/cms-state-public.js?v=20261028-v14"></script>
-  <script src="assets/js/cms-runtime.js?v=20261028-v14"></script>
+  <script src="assets/js/cms-runtime.js?v=20261112-uiux"></script>
 </body>
 
 </html>

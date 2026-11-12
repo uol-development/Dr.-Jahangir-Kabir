@@ -180,7 +180,8 @@
               ? 'whitespace-nowrap px-2.5 2xl:px-3.5 py-2 text-[13px] 2xl:text-sm font-bold text-[#006c49] bg-[#eff4ff] rounded-lg relative after:content-[\'\'] after:absolute after:bottom-0.5 after:left-2.5 after:right-2.5 after:h-0.5 after:bg-[#10b981] after:rounded-full transition-colors'
               : 'whitespace-nowrap px-2.5 2xl:px-3.5 py-2 text-[13px] 2xl:text-sm font-medium text-[#414750] hover:text-[#004b80] hover:bg-[#eff4ff]/60 rounded-lg transition-colors';
             var href = isFileProto && item.file ? item.file : item.url;
-            return '<a class="' + cls + '" href="' + href + '" target="' + (item.target || '_self') + '">' + item.label + '</a>';
+            var ariaCurrent = isActive ? ' aria-current="page"' : '';
+            return '<a class="' + cls + '" href="' + href + '" target="' + (item.target || '_self') + '"' + ariaCurrent + '>' + item.label + '</a>';
           })
           .join('');
       }
@@ -193,9 +194,9 @@
           var labelText = menus.headerCta.label || 'Book Appointment';
           var iconText = menus.headerCta.icon || 'calendar_month';
           if (labelText === 'Book Appointment') {
-            ctaBtn.innerHTML = '<span class="hidden sm:inline">Book Appointment</span><span class="sm:hidden">Appointment</span><span class="material-symbols-outlined text-xs sm:text-base">' + iconText + '</span>';
+            ctaBtn.innerHTML = '<span class="hidden sm:inline">Book Appointment</span><span class="sm:hidden">Appointment</span><span class="material-symbols-outlined text-xs sm:text-base" aria-hidden="true">' + iconText + '</span>';
           } else {
-            ctaBtn.innerHTML = '<span>' + labelText + '</span><span class="material-symbols-outlined text-xs sm:text-base">' + iconText + '</span>';
+            ctaBtn.innerHTML = '<span>' + labelText + '</span><span class="material-symbols-outlined text-xs sm:text-base" aria-hidden="true">' + iconText + '</span>';
           }
         }
       }
@@ -394,6 +395,72 @@
     setTimeout(sendPageStructure, 250);
   }
 
+  function applyAccessibilityAndUxEnhancements() {
+    // 1. Mark all decorative Material Symbols icons aria-hidden="true" so screen readers do not announce ligature strings
+    document.querySelectorAll('.material-symbols-outlined').forEach(function (icon) {
+      if (!icon.hasAttribute('aria-hidden')) {
+        icon.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // 2. Ensure search inputs on blog.html and faq.html have explicit aria-labels
+    var blogSearch = document.getElementById('blogSearchInput');
+    if (blogSearch && !blogSearch.getAttribute('aria-label')) {
+      blogSearch.setAttribute('aria-label', 'ব্লগ আর্টিকেল বা রোগের নাম খুঁজুন');
+    }
+    var faqSearch = document.getElementById('faqSearchBox');
+    if (faqSearch && !faqSearch.getAttribute('aria-label')) {
+      faqSearch.setAttribute('aria-label', 'প্রশ্ন খুঁজুন (যেমন: কিটো, রোজা, ডায়াবেটিস)');
+    }
+
+    // 3. Make clickable card/video divs keyboard-focusable and operable via Enter/Space
+    document.querySelectorAll('div[onclick]').forEach(function (div) {
+      if (!div.hasAttribute('role')) div.setAttribute('role', 'button');
+      if (!div.hasAttribute('tabindex')) div.setAttribute('tabindex', '0');
+      if (!div.dataset.kbBound) {
+        div.dataset.kbBound = '1';
+        div.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            div.click();
+          }
+        });
+      }
+    });
+
+    // 4. Add aria-pressed state management to filter tabs & font-size buttons
+    var filterSelectors = '.blog-tab, .prog-filter-btn, .st-btn, button[onclick^="setFontSize"]';
+    document.querySelectorAll(filterSelectors).forEach(function (btn) {
+      var isActive = btn.classList.contains('active') || btn.classList.contains('bg-[#004b80]') || btn.classList.contains('bg-primary');
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      if (!btn.dataset.ariaBound) {
+        btn.dataset.ariaBound = '1';
+        btn.addEventListener('click', function () {
+          setTimeout(function () {
+            document.querySelectorAll(filterSelectors).forEach(function (b) {
+              var nowActive = b.classList.contains('active') || b.classList.contains('bg-[#004b80]') || b.classList.contains('bg-primary');
+              b.setAttribute('aria-pressed', nowActive ? 'true' : 'false');
+            });
+          }, 20);
+        });
+      }
+    });
+
+    // 5. Enhance mobile nav drawer Escape key & outside-click dismissal
+    var mobileBtn = document.getElementById('mobileMenuBtn');
+    var mobileDrawer = document.getElementById('mobileNavDrawer');
+    if (mobileBtn && mobileDrawer && !mobileDrawer.dataset.uxBound) {
+      mobileDrawer.dataset.uxBound = '1';
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !mobileDrawer.classList.contains('hidden')) {
+          mobileDrawer.classList.add('hidden');
+          mobileBtn.setAttribute('aria-expanded', 'false');
+          mobileBtn.focus();
+        }
+      });
+    }
+  }
+
   function bootCmsRuntime() {
     var state = getMergedState();
     if (state) {
@@ -401,6 +468,7 @@
       applyMenusAndHeader(state.menus, state.meta);
       applyPageContentOverrides(state.pages);
     }
+    applyAccessibilityAndUxEnhancements();
     initVisualEditorBridge();
   }
 
