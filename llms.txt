@@ -49,14 +49,14 @@
 
 ## The 7 Founded Initiatives (JK Lifestyle Ecosystem)
 1. [JK Lifestyle Limited](https://jklifestyleltd.com/): Central lifestyle medicine consultation, digital patient support, and online appointment platform.
-2. [Health Revolution Limited](https://www.healthrevolutionltd.com/): Modern diagnostic laboratory, ultrasonography center, and 100% free doctor & nutritionist chamber at Nur Tower, Aftabnagar, Dhaka.
-3. [JK Fitness Arena](https://www.jkfitnessarena.com/): Metabolic fitness, strength training, and physical rehabilitation gymnasium.
+2. [Health Revolution Limited](https://healthrevolutionltd.com/): Modern diagnostic laboratory, ultrasonography center, and 100% free doctor & nutritionist chamber at Nur Tower, Aftabnagar, Dhaka.
+3. [JK Fitness Arena](https://jkfitnessarena.com/): Metabolic fitness, strength training, and physical rehabilitation gymnasium.
 4. [JK Food Arena](https://www.facebook.com/JkFoodArenaLtd/): Healthy low-carb and ketogenic restaurant serving meals cooked strictly without soybean oil, refined sugar, or MSG.
 5. [Ultimate Organic Life](https://ultimateorganiclife.com/): Trusted organic food and wellness store offering lab-verified extra virgin coconut oil, extra virgin olive oil, raw apple cider vinegar (with mother), organic chia seeds, nuts, Himalayan pink salt, and pure desi ghee.
 6. [JK Tech](https://www.facebook.com/jktechltd): Digital health-tech, telemedicine infrastructure, and electronic patient management software division.
 7. [JK Prakritik Krishi (Natural Agriculture)](https://www.facebook.com/JkPrakritikKrishi/): Chemical-free and pesticide-free sustainable agriculture initiative producing clean farm-to-table food.
 
-## Official Sitemap & All 44 Website Pages (14 Core Pages + 30 Batch 1 Clinical Articles)
+## Official Sitemap & All 75 Website URLs (15 Core Pages + 60 Clinical Articles)
 - [Homepage](https://drjahangirkabir.com/): Free doctor appointment portal, 5 core lifestyle pillars, and 8 clinical services.
 - [Free Doctor Appointment Booking](https://drjahangirkabir.com/appointment): Book a 100% free in-chamber or online consultation with registered MBBS doctors and nutritionists.
 - [About Dr. Muhammad Jahangir Kabir](https://drjahangirkabir.com/about): Complete biography, academic credentials, 17-year hospital career, and 7 founded initiatives.
@@ -66,7 +66,7 @@
 - [Patient Success Stories & Case Studies](https://drjahangirkabir.com/success-stories): Lab-verified patient remission stories and video documentaries.
 - [Frequently Asked Questions (FAQ)](https://drjahangirkabir.com/faq): Detailed answers on free consultations, diagnostic tests, diet adaptation, and medication safety.
 - [Contact & Chamber Location](https://drjahangirkabir.com/contact): Address, Google Maps directions, visiting hours, and hotline for Nur Tower, Aftabnagar, Dhaka.
-- [Clinical Blog & Publications Hub (30 Articles)](https://drjahangirkabir.com/blog): Topic-cluster library of 6 Pillar Guides (~3,000 words each) and 24 Supporting Articles (~1,500 words each).
+- [Clinical Blog & Publications Hub (60 Articles)](https://drjahangirkabir.com/blog): Topic-cluster library of 6 Pillar Guides and 54 Supporting Clinical Articles.
 - [ডা. মুহাম্মদ জাহাঙ্গীর কবির কে? শিক্ষা, চিকিৎসা পেশা, স্বাস্থ্য দর্শন ও ৭টি উদ্যোগের পূর্ণাঙ্গ গাইড (Dr. Jahangir Kabir Biography)](https://drjahangirkabir.com/dr-jahangir-kabir-biography)
 - [ডা. জাহাঙ্গীর কবির কিসের ডাক্তার এবং তাঁর শিক্ষাগত যোগ্যতা কী? পাঠকদের শীর্ষ ১৫টি প্রশ্নের প্রামাণ্য উত্তর](https://drjahangirkabir.com/dr-jahangir-kabir-educational-qualification)
 - [ডা. জাহাঙ্গীর কবিরের চেম্বার কোথায় এবং কীভাবে ১০০% ফ্রি সিরিয়াল নেবেন? ধাপে ধাপে সম্পূর্ণ গাইড](https://drjahangirkabir.com/dr-jahangir-kabir-chamber-appointment-guide)

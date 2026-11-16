@@ -139,9 +139,12 @@
       font-weight: 700;
       border-radius: 0.75rem;
       padding: 0.55rem 1.1rem;
+      min-height: 44px;
+      min-width: 44px;
       font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.45rem;
       transition: all 0.18s ease;
       box-shadow: 0 4px 14px rgba(0, 108, 73, 0.24);
@@ -158,9 +161,12 @@
       font-weight: 600;
       border-radius: 0.75rem;
       padding: 0.52rem 1rem;
+      min-height: 44px;
+      min-width: 44px;
       font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.45rem;
       transition: all 0.18s ease;
     }
@@ -184,14 +190,14 @@
   <div id="cmsAuthOverlay" class="fixed inset-0 z-[150] bg-[#061729]/95 backdrop-blur-xl flex items-center justify-center p-4 overflow-y-auto">
     <div class="w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-[#dbe4f0] overflow-hidden my-8">
       <!-- Top Brand Banner -->
-      <div class="bg-gradient-to-br from-[#0a2540] via-[#004b80] to-[#006c49] p-6 sm:p-8 text-white relative overflow-hidden">
+      <div class="bg-[#004b80] bg-gradient-to-br from-[#0a2540] via-[#004b80] to-[#006c49] p-6 sm:p-8 text-white relative overflow-hidden">
         <div class="absolute -right-12 -bottom-12 w-44 h-44 rounded-full bg-[#6ffbbe]/15 blur-2xl pointer-events-none"></div>
         <div class="flex flex-wrap items-center gap-3.5 mb-4">
           <div class="bg-white px-3.5 py-2 rounded-2xl border border-white/25 shadow-lg shrink-0">
-            <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v11" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-8 sm:h-9 w-auto object-contain" width="195" height="44" decoding="async">
+            <img src="images/dr-jahangir-kabir-logo.png?v=20261116" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-8 sm:h-9 w-auto object-contain" width="195" height="44" decoding="async">
           </div>
           <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-[#6ffbbe] block">Google Stitch Clinical Sanctuary</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#6ffbbe] block">Google Stitch Clinical Sanctuary</span>
             <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">Admin Panel &amp; CMS</h1>
           </div>
         </div>
@@ -210,17 +216,17 @@
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-[#414750] mb-1.5" for="loginUsername">Username or Email</label>
           <div class="relative">
-            <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-[#717781] text-lg" aria-hidden="true">person</span>
-            <input id="loginUsername" type="text" required autocomplete="username" value="admin" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="admin">
+            <span class="material-symbols-outlined absolute left-3.5 top-3 text-[#717781] text-lg" aria-hidden="true">person</span>
+            <input id="loginUsername" name="username" type="text" required autocomplete="username" value="admin" class="w-full min-h-[44px] pl-10 pr-4 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="admin">
           </div>
         </div>
 
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-[#414750] mb-1.5" for="loginPassword">Password</label>
           <div class="relative">
-            <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-[#717781] text-lg" aria-hidden="true">lock</span>
-            <input id="loginPassword" type="password" required autocomplete="current-password" class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="Enter your administrator password">
-            <button type="button" onclick="toggleLoginPassword()" class="absolute right-3 top-2.5 text-[#717781] hover:text-[#004b80]" aria-label="Toggle Password Visibility">
+            <span class="material-symbols-outlined absolute left-3.5 top-3 text-[#717781] text-lg" aria-hidden="true">lock</span>
+            <input id="loginPassword" name="password" type="password" required autocomplete="current-password" class="w-full min-h-[44px] pl-10 pr-12 py-2.5 rounded-xl border border-[#dbe4f0] text-sm font-semibold focus:border-[#006c49] focus:ring-2 focus:ring-[#10b981]/20" placeholder="Enter your administrator password">
+            <button type="button" onclick="toggleLoginPassword()" class="absolute right-0 top-0 w-11 h-11 flex items-center justify-center text-[#414750] hover:text-[#004b80]" aria-label="Toggle Password Visibility">
               <span class="material-symbols-outlined text-lg" id="loginPwdToggleIcon" aria-hidden="true">visibility</span>
             </button>
           </div>
@@ -228,36 +234,36 @@
 
         <!-- Role Account Selector (No Plaintext Passwords in HTML) -->
         <div class="p-3.5 rounded-2xl bg-[#eff4ff] border border-[#c4dcff] space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#004b80] flex items-center gap-1">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#004b80] flex items-center gap-1">
               <span class="material-symbols-outlined text-sm" aria-hidden="true">verified_user</span>
               <span>Select Role Account</span>
             </span>
-            <span class="text-[11px] text-[#006c49] font-bold">WAF + CSRF + Rate-Limited</span>
+            <span class="text-xs text-[#006c49] font-bold">WAF + CSRF + Rate-Limited</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            <button type="button" onclick="fillDemoCredentials('admin')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#006c49] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+            <button type="button" onclick="fillDemoCredentials('admin')" class="min-h-[44px] px-2.5 py-2 rounded-xl bg-white hover:bg-[#006c49] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
               <div class="text-xs font-extrabold">Super Admin</div>
-              <div class="text-[10px] opacity-75 font-mono">admin</div>
+              <div class="text-xs opacity-75 font-mono">admin</div>
             </button>
-            <button type="button" onclick="fillDemoCredentials('editor')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+            <button type="button" onclick="fillDemoCredentials('editor')" class="min-h-[44px] px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
               <div class="text-xs font-extrabold">Content Editor</div>
-              <div class="text-[10px] opacity-75 font-mono">editor</div>
+              <div class="text-xs opacity-75 font-mono">editor</div>
             </button>
-            <button type="button" onclick="fillDemoCredentials('seo')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
+            <button type="button" onclick="fillDemoCredentials('seo')" class="min-h-[44px] px-2.5 py-2 rounded-xl bg-white hover:bg-[#004b80] hover:text-white text-[#001c37] border border-[#dbe4f0] text-left transition-all">
               <div class="text-xs font-extrabold">SEO Manager</div>
-              <div class="text-[10px] opacity-75 font-mono">seo</div>
+              <div class="text-xs opacity-75 font-mono">seo</div>
             </button>
           </div>
         </div>
 
-        <button type="submit" class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#00714d] text-white font-extrabold text-sm shadow-lg flex items-center justify-center gap-2 transition-all">
+        <button type="submit" class="w-full min-h-[44px] py-3 rounded-xl bg-[#006c49] hover:bg-[#005236] text-white font-extrabold text-sm shadow-lg flex items-center justify-center gap-2 transition-all">
           <span class="material-symbols-outlined text-lg" aria-hidden="true">login</span>
           <span>Sign In to Admin Panel</span>
         </button>
 
         <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-[#414750]">
-          <a href="/" class="inline-flex items-center gap-1 font-bold text-[#004b80] hover:underline">
+          <a href="/" class="inline-flex items-center gap-1 min-h-[44px] px-2 font-bold text-[#004b80] hover:underline">
             <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_back</span> Back to Live Website
           </a>
           <span>v2.5 · Google Stitch CMS</span>
@@ -276,14 +282,14 @@
         <div class="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between gap-3">
           <div class="flex items-center gap-3 min-w-0">
             <div class="bg-white px-2.5 py-1.5 rounded-xl shadow-md shrink-0">
-              <img src="images/dr-jahangir-kabir-logo.png?v=20261027-v11" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-6 w-auto object-contain" width="195" height="44" decoding="async">
+              <img src="images/dr-jahangir-kabir-logo.png?v=20261116" alt="Dr. Jahangir Kabir Official Signature Logo" class="h-6 w-auto object-contain" width="195" height="44" decoding="async">
             </div>
             <div class="min-w-0 cms-sidebar-text">
               <div id="cmsBrandTitle" class="text-xs font-extrabold text-white truncate">Admin Panel &amp; CMS</div>
-              <div id="cmsBrandSubtitle" class="text-[10px] text-[#6ffbbe] font-semibold truncate">Dr. Jahangir Kabir</div>
+              <div id="cmsBrandSubtitle" class="text-xs text-[#6ffbbe] font-semibold truncate">Dr. Jahangir Kabir</div>
             </div>
           </div>
-          <button type="button" onclick="toggleMobileAdminMenu()" class="lg:hidden p-2 rounded-lg bg-white/10 text-white" aria-label="Toggle Admin Menu">
+          <button type="button" onclick="toggleMobileAdminMenu()" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-lg bg-white/10 text-white" aria-label="Toggle Admin Menu">
             <span class="material-symbols-outlined" aria-hidden="true">menu</span>
           </button>
         </div>
@@ -299,19 +305,19 @@
             <div class="w-8 h-8 rounded-full bg-[#10b981]/20 border border-[#10b981] text-[#6ffbbe] flex items-center justify-center font-extrabold text-xs shrink-0" id="cmsUserAvatar">A</div>
             <div class="min-w-0">
               <div id="cmsCurrentUserName" class="text-xs font-bold text-white truncate">Dr. Jahangir Kabir</div>
-              <div id="cmsCurrentUserRole" class="text-[10px] font-semibold text-[#6ffbbe] uppercase tracking-wider truncate">SUPER ADMIN</div>
+              <div id="cmsCurrentUserRole" class="text-xs font-semibold text-[#6ffbbe] uppercase tracking-wider truncate">SUPER ADMIN</div>
             </div>
           </div>
-          <button type="button" onclick="cmsLogout()" title="Sign Out" class="p-1.5 rounded-lg bg-white/10 hover:bg-red-500/80 text-white transition-colors">
+          <button type="button" onclick="cmsLogout()" title="Sign Out" aria-label="Sign Out" class="w-11 h-11 flex items-center justify-center rounded-lg bg-white/10 hover:bg-red-500/80 text-white transition-colors">
             <span class="material-symbols-outlined text-base" aria-hidden="true">logout</span>
           </button>
         </div>
-        <div class="flex items-center justify-between text-[11px] text-slate-300 pt-2 border-t border-white/10">
+        <div class="flex items-center justify-between text-xs text-slate-300 pt-2 border-t border-white/10">
           <span class="flex items-center gap-1.5">
             <span id="cmsServerStatusDot" class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
             <span id="cmsServerStatusText">Live Sync Ready</span>
           </span>
-          <a href="/" target="_blank" class="text-[#6ffbbe] hover:underline font-bold flex items-center gap-0.5">
+          <a href="/" target="_blank" class="inline-flex items-center gap-0.5 min-h-[44px] px-2 text-[#6ffbbe] hover:underline font-bold">
             <span>View Site</span>
             <span class="material-symbols-outlined text-xs" aria-hidden="true">open_in_new</span>
           </a>
@@ -329,38 +335,38 @@
             <span class="material-symbols-outlined text-[#006c49]" id="cmsActiveModuleIcon" aria-hidden="true">space_dashboard</span>
             <span>Dashboard</span>
           </h2>
-          <span id="cmsUnsavedBadge" class="hidden px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-[11px] font-bold">Unsaved Changes</span>
+          <span id="cmsUnsavedBadge" class="hidden px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold">Unsaved Changes</span>
         </div>
 
         <div class="flex flex-wrap items-center gap-2">
           <!-- Quick Page Jump -->
-          <div class="hidden md:flex items-center gap-1.5 bg-[#eff4ff] px-3 py-1.5 rounded-xl border border-[#c4dcff]">
+          <div class="hidden md:flex items-center gap-1.5 bg-[#eff4ff] px-3 rounded-xl border border-[#c4dcff] min-h-[44px]">
             <span class="material-symbols-outlined text-sm text-[#004b80]" aria-hidden="true">edit_document</span>
-            <select id="cmsQuickPageJump" onchange="quickJumpToPageEditor(this.value)" class="bg-transparent border-0 text-xs font-bold text-[#001c37] focus:ring-0 p-0 pr-6 cursor-pointer">
+            <select id="cmsQuickPageJump" aria-label="Quick Edit Page" onchange="quickJumpToPageEditor(this.value)" class="bg-transparent border-0 text-xs font-bold text-[#001c37] focus:ring-0 py-2 pr-6 min-h-[44px] cursor-pointer">
               <option value="">Quick Edit Page...</option>
             </select>
           </div>
 
           <!-- Clear Cache Button -->
-          <button type="button" onclick="clearAllSystemCache()" class="admin-btn-secondary !py-1.5 !px-3 !text-xs" title="Purge Browser, LocalStorage, and Server Cache">
+          <button type="button" onclick="clearAllSystemCache()" class="admin-btn-secondary !px-3 !text-xs" title="Purge Browser, LocalStorage, and Server Cache">
             <span class="material-symbols-outlined text-base text-amber-600" aria-hidden="true">cleaning_services</span>
             <span>Clear Cache</span>
           </button>
 
           <!-- Open Admin Customizer Shortcut -->
-          <button type="button" onclick="switchAdminModule('customizer')" class="admin-btn-secondary !py-1.5 !px-3 !text-xs" title="Customize Admin Panel">
+          <button type="button" onclick="switchAdminModule('customizer')" class="admin-btn-secondary !px-3 !text-xs" title="Customize Admin Panel">
             <span class="material-symbols-outlined text-base text-[#004b80]" aria-hidden="true">tune</span>
             <span class="hidden sm:inline">Customize Panel</span>
           </button>
 
           <!-- Live Website Preview Link -->
-          <a href="/" target="_blank" id="cmsTopPreviewLink" class="admin-btn-secondary !py-1.5 !px-3 !text-xs">
+          <a href="/" target="_blank" id="cmsTopPreviewLink" class="admin-btn-secondary !px-3 !text-xs">
             <span class="material-symbols-outlined text-base text-[#006c49]" aria-hidden="true">visibility</span>
             <span>View Live Site</span>
           </a>
 
           <!-- Global Publish / Sync Button -->
-          <button type="button" onclick="publishAllChangesLive()" class="admin-btn-primary !py-1.5 !px-3.5 !text-xs">
+          <button type="button" onclick="publishAllChangesLive()" class="admin-btn-primary !px-3.5 !text-xs">
             <span class="material-symbols-outlined text-base" aria-hidden="true">cloud_upload</span>
             <span>Publish Changes Live</span>
           </button>
@@ -374,11 +380,11 @@
   </div>
 
   <!-- ==================== UNIVERSAL MODAL DIALOG (CREATE PAGE / MEDIA PICKER / REVISIONS) ==================== -->
-  <div id="cmsModalBackdrop" class="fixed inset-0 z-[160] hidden bg-[#001c37]/75 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto">
+  <div id="cmsModalBackdrop" class="fixed inset-0 z-[160] hidden bg-[#001c37]/75 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="cmsModalTitle">
     <div class="w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-[#dbe4f0] overflow-hidden my-8">
       <div class="bg-[#0a2540] text-white px-6 py-4 flex items-center justify-between border-b border-white/10">
         <h3 id="cmsModalTitle" class="text-base sm:text-lg font-extrabold flex items-center gap-2">Modal</h3>
-        <button type="button" onclick="closeCmsModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
+        <button type="button" onclick="closeCmsModal()" aria-label="Close modal" class="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
           <span class="material-symbols-outlined text-lg" aria-hidden="true">close</span>
         </button>
       </div>
@@ -386,9 +392,8 @@
     </div>
   </div>
 
-  <!-- Embedded Full Seed Database & Admin Panel Controller -->
-  <script src="assets/js/cms-seed-db.js?v=20261027-v11"></script>
-  <script src="assets/js/cms-admin-app.js?v=20261027-v11"></script>
+  <!-- Admin Panel Controller (Seed DB is lazy-loaded only when offline or on Factory Reset) -->
+  <script src="assets/js/cms-admin-app.js?v=20261116"></script>
 </body>
 
 </html>

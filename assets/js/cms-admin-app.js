@@ -117,7 +117,8 @@ function escapeHtml(str) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function showToast(message, type = 'success') {
@@ -318,6 +319,17 @@ function updateServerStatusBadge(isServerOnline) {
 }
 
 // Load initial DB from Server API -> LocalStorage -> Embedded Seed DB
+async function ensureSeedDbLoaded() {
+  if (window.JK_CMS_SEED_DB) return window.JK_CMS_SEED_DB;
+  return new Promise((resolve) => {
+    const script = document.createElement('script');
+    script.src = 'assets/js/cms-seed-db.js?v=20261116';
+    script.onload = () => resolve(window.JK_CMS_SEED_DB || null);
+    script.onerror = () => resolve(null);
+    document.head.appendChild(script);
+  });
+}
+
 async function initCmsDatabase() {
   let loadedDb = null;
 
@@ -326,10 +338,6 @@ async function initCmsDatabase() {
     const raw = localStorage.getItem(CMS_STORAGE_KEY);
     if (raw) loadedDb = JSON.parse(raw);
   } catch (e) {}
-
-  if (!loadedDb && window.JK_CMS_SEED_DB) {
-    loadedDb = JSON.parse(JSON.stringify(window.JK_CMS_SEED_DB));
-  }
 
   if (window.location.protocol !== 'file:') {
     try {
@@ -346,11 +354,15 @@ async function initCmsDatabase() {
     }
   } else {
     updateServerStatusBadge(false);
+    if (!loadedDb) {
+      const seed = await ensureSeedDbLoaded();
+      if (seed) loadedDb = JSON.parse(JSON.stringify(seed));
+    }
   }
 
   normalizeAdminEnglishNav(loadedDb);
   cmsState.db = loadedDb;
-  persistLocalDb();
+  if (loadedDb) persistLocalDb();
 }
 
 async function clearAllSystemCache() {
@@ -368,9 +380,12 @@ async function clearAllSystemCache() {
     }
   } catch (e) {}
 
-  if (window.JK_CMS_SEED_DB) {
-    cmsState.db = JSON.parse(JSON.stringify(window.JK_CMS_SEED_DB));
-    normalizeAdminEnglishNav(cmsState.db);
+  if (!cmsState.serverAvailable) {
+    const seed = await ensureSeedDbLoaded();
+    if (seed) {
+      cmsState.db = JSON.parse(JSON.stringify(seed));
+      normalizeAdminEnglishNav(cmsState.db);
+    }
   }
   await callCmsApi('clear_cache', { timestamp: new Date().toISOString() });
   addAuditEntry('CACHE_CLEARED', 'Purged browser CacheStorage, LocalStorage, ServiceWorkers, and PHP OPcache');
@@ -380,11 +395,6 @@ async function clearAllSystemCache() {
 }
 
 // ==================== AUTHENTICATION & SESSION ====================
-const OFFLINE_USER_HASHES = {
-  admin: '8579210885c9159d52e90328a11637e4a5204fb235d936c33b4445a6e4214b80',
-  editor: '73977b6f55250919376942a8e4314a0c3c40b2548441400f3c7c0a0d5471c5b4',
-  seo: 'f62f2c8d3584b445e979787699a24136270e53953350d2b6511510035059641b'
-};
 
 function toggleLoginPassword() {
   const input = document.getElementById('loginPassword');
@@ -414,7 +424,7 @@ async function handleLoginSubmit(e) {
   const errTxt = document.getElementById('cmsLoginErrorText');
   if (errBox) errBox.classList.add('hidden');
 
-  if (cmsState.serverAvailable) {
+  if (window.location.protocol !== 'file:') {
     try {
       const res = await fetch('api/cms.php?action=login', {
         method: 'POST',
@@ -422,8 +432,8 @@ async function handleLoginSubmit(e) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: usernameInput, password: passwordInput })
       });
-      const data = await res.json();
-      if (!res.ok || (data && data.ok === false)) {
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data || data.ok === false) {
         if (errBox && errTxt) {
           errTxt.textContent = (data && data.error) || 'Invalid username or password.';
           errBox.classList.remove('hidden');
@@ -431,6 +441,8 @@ async function handleLoginSubmit(e) {
         return;
       }
       if (data && data.ok && data.token) {
+        cmsState.serverAvailable = true;
+        updateServerStatusBadge(true);
         cmsState.session = {
           token: data.token,
           csrfToken: data.csrfToken || '',
@@ -458,61 +470,49 @@ async function handleLoginSubmit(e) {
         completeLoginSuccess();
         return;
       }
-    } catch (err) {}
+    } catch (err) {
+      if (errBox && errTxt) {
+        errTxt.textContent = 'Authentication server unreachable. Please retry in a moment.';
+        errBox.classList.remove('hidden');
+      }
+      return;
+    }
   }
 
-  // Client-side rate limit check for offline / static fallback
-  const lockKey = 'jk_cms_login_lockout';
-  const attemptsKey = 'jk_cms_login_attempts';
-  const lockUntil = Number(sessionStorage.getItem(lockKey) || 0);
-  if (Date.now() < lockUntil) {
-    const mins = Math.ceil((lockUntil - Date.now()) / 60000);
+  // Local file:// preview mode only (never reachable over HTTP/HTTPS)
+  const seed = await ensureSeedDbLoaded();
+  if (!cmsState.db && seed) {
+    cmsState.db = JSON.parse(JSON.stringify(seed));
+    normalizeAdminEnglishNav(cmsState.db);
+  }
+  if (!passwordInput) {
     if (errBox && errTxt) {
-      errTxt.textContent = `Too many failed login attempts. Account locked for ${mins} minute(s).`;
+      errTxt.textContent = 'Please enter a password.';
       errBox.classList.remove('hidden');
     }
     return;
   }
-
   const users = (cmsState.db && cmsState.db.users) || [];
-  const inputHash = await sha256Hex(passwordInput);
-  const matchedUser = users.find(u => {
-    if (!u.active) return false;
-    const unameMatch = u.username.toLowerCase() === usernameInput.toLowerCase() || (u.email && u.email.toLowerCase() === usernameInput.toLowerCase());
-    if (!unameMatch) return false;
-    const expectedHash = u.passwordHash || OFFLINE_USER_HASHES[u.username];
-    if (expectedHash && expectedHash === inputHash) return true;
-    return false;
-  });
-
+  const matchedUser = users.find(u => u.active && (u.username.toLowerCase() === usernameInput.toLowerCase() || (u.email && u.email.toLowerCase() === usernameInput.toLowerCase())));
   if (!matchedUser) {
-    const attempts = Number(sessionStorage.getItem(attemptsKey) || 0) + 1;
-    sessionStorage.setItem(attemptsKey, String(attempts));
-    if (attempts >= 5) {
-      sessionStorage.setItem(lockKey, String(Date.now() + 15 * 60 * 1000));
-      sessionStorage.removeItem(attemptsKey);
-    }
     if (errBox && errTxt) {
-      errTxt.textContent = 'Invalid username or password. Please verify your credentials and try again.';
+      errTxt.textContent = 'Offline file:// preview requires an active PHP server for credential verification.';
       errBox.classList.remove('hidden');
     }
     return;
   }
-
-  sessionStorage.removeItem(attemptsKey);
-  sessionStorage.removeItem(lockKey);
 
   matchedUser.lastLogin = new Date().toISOString();
   cmsState.session = {
-    token: 'local-token-' + Date.now(),
-    csrfToken: 'local-csrf-' + Date.now(),
+    token: 'local-preview-token-' + Date.now(),
+    csrfToken: 'local-preview-csrf-' + Date.now(),
     username: matchedUser.username,
     name: matchedUser.name,
     role: matchedUser.role,
     email: matchedUser.email
   };
   localStorage.setItem(CMS_SESSION_KEY, JSON.stringify(cmsState.session));
-  addAuditEntry('USER_LOGIN', `Logged in as ${matchedUser.username} (${matchedUser.role})`);
+  addAuditEntry('USER_LOGIN', `Local preview session as ${matchedUser.username} (${matchedUser.role})`);
   persistLocalDb();
   completeLoginSuccess();
 }
@@ -2606,7 +2606,7 @@ function openAddUserModal() {
       </div>
       <div>
         <label class="block text-xs font-bold text-[#414750] mb-1">Password</label>
-        <input id="newUserPassword" type="password" required placeholder="Minimum 8 characters" class="admin-input">
+        <input id="newUserPassword" type="password" required minlength="10" placeholder="Min 10 chars (upper, lower, number, symbol)" class="admin-input">
       </div>
       <div class="flex justify-end gap-2 pt-3 border-t border-[#dbe4f0]">
         <button type="button" onclick="closeCmsModal()" class="admin-btn-secondary">Cancel</button>
@@ -2617,10 +2617,11 @@ function openAddUserModal() {
 }
 
 function validateStrongPassword(pass) {
-  if (!pass || pass.length < 8) return 'Password must be at least 8 characters long.';
+  if (!pass || pass.length < 10) return 'Password must be at least 10 characters long.';
   if (!/[A-Z]/.test(pass)) return 'Password must include at least one uppercase letter.';
   if (!/[a-z]/.test(pass)) return 'Password must include at least one lowercase letter.';
   if (!/[0-9]/.test(pass)) return 'Password must include at least one number.';
+  if (!/[^A-Za-z0-9]/.test(pass)) return 'Password must include at least one special character.';
   return null;
 }
 
@@ -2638,14 +2639,12 @@ async function handleAddNewUser(e) {
     return;
   }
 
-  const passwordHash = await sha256Hex(pass);
   cmsState.db.users.push({
     id: 'usr-' + Date.now(),
     username,
     email,
     name,
     role,
-    passwordHash,
     active: true,
     lastLogin: 'Never'
   });
@@ -2663,15 +2662,15 @@ function openChangePasswordModal(targetUsername) {
   openCmsModal(`Change Password for "${escapeHtml(targetUsername)}"`, `
     <form onsubmit="handleChangePasswordSubmit(event, '${escapeHtml(targetUsername)}')" class="space-y-4 text-xs sm:text-sm">
       <div class="p-3 rounded-xl bg-[#eff4ff] border border-[#c4dcff] text-xs text-[#004b80]">
-        <strong>Password Policy:</strong> Minimum 8 characters, including at least one uppercase letter, one lowercase letter, and one number.
+        <strong>Password Policy:</strong> Minimum 10 characters, including uppercase, lowercase, number, and special character.
       </div>
       <div>
         <label class="block text-xs font-bold text-[#414750] mb-1">New Password</label>
-        <input id="changePwdNew" type="password" required minlength="8" placeholder="Enter strong new password" class="admin-input">
+        <input id="changePwdNew" type="password" required minlength="10" placeholder="Enter strong new password" class="admin-input">
       </div>
       <div>
         <label class="block text-xs font-bold text-[#414750] mb-1">Confirm New Password</label>
-        <input id="changePwdConfirm" type="password" required minlength="8" placeholder="Confirm new password" class="admin-input">
+        <input id="changePwdConfirm" type="password" required minlength="10" placeholder="Confirm new password" class="admin-input">
       </div>
       <div class="flex justify-end gap-2 pt-3 border-t border-[#dbe4f0]">
         <button type="button" onclick="closeCmsModal()" class="admin-btn-secondary">Cancel</button>
@@ -2694,13 +2693,7 @@ async function handleChangePasswordSubmit(e, targetUsername) {
     showToast(pwdErr, 'error');
     return;
   }
-  const newHash = await sha256Hex(newPass);
-  const userObj = (cmsState.db?.users || []).find(u => u.username === targetUsername);
-  if (userObj) {
-    userObj.passwordHash = newHash;
-    delete userObj.plainPassword;
-  }
-  addAuditEntry('PASSWORD_CHANGED', `Updated password hash for user ${targetUsername}`);
+  addAuditEntry('PASSWORD_CHANGED', `Updated password for user ${targetUsername}`);
   closeCmsModal();
   await callCmsApi('change_password', { username: targetUsername, newPassword: newPass });
   showToast(`Password for "${targetUsername}" updated securely!`, 'success');
@@ -3010,11 +3003,16 @@ function importCmsDatabaseJson(event) {
   reader.readAsText(file);
 }
 
-function resetCmsToFactoryDefaults() {
+async function resetCmsToFactoryDefaults() {
   if (!requirePermission('settings.write', 'Factory Reset')) return;
   if (!confirm('Are you sure you want to reset all local overrides back to the default Google Stitch configuration?')) return;
   localStorage.removeItem(CMS_STORAGE_KEY);
-  cmsState.db = JSON.parse(JSON.stringify(window.JK_CMS_SEED_DB));
+  const seed = await ensureSeedDbLoaded();
+  if (!seed) {
+    showToast('Unable to load factory seed database.', 'error');
+    return;
+  }
+  cmsState.db = JSON.parse(JSON.stringify(seed));
   normalizeAdminEnglishNav(cmsState.db);
   persistLocalDb();
   applyAdminPanelPreferences();
@@ -3078,8 +3076,36 @@ document.addEventListener('DOMContentLoaded', async function () {
   try {
     const savedSession = localStorage.getItem(CMS_SESSION_KEY);
     if (savedSession) {
-      cmsState.session = JSON.parse(savedSession);
-      completeLoginSuccess();
+      const parsedSession = JSON.parse(savedSession);
+      if (cmsState.serverAvailable && parsedSession?.token) {
+        const stateRes = await fetch('api/cms.php?action=get_state', {
+          credentials: 'same-origin',
+          headers: {
+            'X-CMS-Token': parsedSession.token,
+            'X-CSRF-Token': parsedSession.csrfToken || ''
+          }
+        });
+        if (stateRes.ok) {
+          const stateData = await stateRes.json();
+          if (stateData && stateData.ok && stateData.db) {
+            normalizeAdminEnglishNav(stateData.db);
+            cmsState.db = stateData.db;
+            persistLocalDb();
+            cmsState.session = parsedSession;
+            completeLoginSuccess();
+            return;
+          }
+        }
+        localStorage.removeItem(CMS_SESSION_KEY);
+        cmsState.session = null;
+        return;
+      }
+      if (window.location.protocol === 'file:' && parsedSession?.username) {
+        cmsState.session = parsedSession;
+        completeLoginSuccess();
+      } else {
+        localStorage.removeItem(CMS_SESSION_KEY);
+      }
     }
   } catch (e) {}
 });
