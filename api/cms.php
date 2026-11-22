@@ -405,6 +405,12 @@ function updateHtmlFileOnDisk($rootDir, $page) {
         $safeRob = htmlspecialchars($page['robots'], ENT_QUOTES, 'UTF-8');
         $html = preg_replace('/(<meta\s+name="robots"\s+content=")[^"]*(")/i', '${1}' . $safeRob . '${2}', $html, 1);
     }
+    if (!empty($page['ogImage'])) {
+        $safeOgImg = htmlspecialchars($page['ogImage'], ENT_QUOTES, 'UTF-8');
+        $html = preg_replace('/(<meta\s+property="og:image"\s+content=")[^"]*(")/i', '${1}' . $safeOgImg . '${2}', $html, 1);
+        $html = preg_replace('/(<meta\s+property="og:image:secure_url"\s+content=")[^"]*(")/i', '${1}' . $safeOgImg . '${2}', $html, 1);
+        $html = preg_replace('/(<meta\s+name="twitter:image"\s+content=")[^"]*(")/i', '${1}' . $safeOgImg . '${2}', $html, 1);
+    }
 
     if (!empty($page['jsonLd'])) {
         $decoded = json_decode($page['jsonLd'], true);
@@ -638,7 +644,7 @@ if ($action === 'create_page') {
         'focusKw' => $body['focusKw'] ?? '',
         'canonical' => 'https://drjahangirkabir.com/' . $slugRaw,
         'robots' => 'index, follow',
-        'ogImage' => 'https://drjahangirkabir.com/images/dr-hero.jpg',
+        'ogImage' => 'https://drjahangirkabir.com/images/og/home-og.jpg?v=20261122',
         'aeoLead' => $body['aeoLead'] ?? '',
         'jsonLd' => '{}',
         'mainHtml' => $safeMain,

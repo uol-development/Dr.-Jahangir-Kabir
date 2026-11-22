@@ -1626,7 +1626,7 @@ async function handleCreateNewPage(e) {
     focusKw: title,
     canonical: 'https://drjahangirkabir.com' + cleanSlug,
     robots: 'index, follow',
-    ogImage: 'https://drjahangirkabir.com/images/dr-hero.jpg',
+    ogImage: 'https://drjahangirkabir.com/images/og/home-og.jpg?v=20261122',
     aeoLead: description,
     jsonLd: '{}',
     mainHtml,
