@@ -262,3 +262,16 @@ body.cms-visual-editor-active [data-cms-selected="true"] {
   outline-offset: 4px !important;
   box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.22) !important;
 }
+
+/* ==========================================================================
+   8. WEBCHAT WIDGET & FLOATING ACTION SEPARATION
+   ========================================================================== */
+#scrollTopBtn {
+  bottom: 5.5rem !important;
+}
+@media print {
+  .webchat-launcher-wrapper,
+  #webchat-window {
+    display: none !important;
+  }
+}

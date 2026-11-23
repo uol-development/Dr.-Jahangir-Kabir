@@ -494,7 +494,7 @@
       .jk-motion-ready .jk-reveal { opacity: 1 !important; transform: none !important; }
     }
   </style>
-  <link rel="stylesheet" href="assets/css/cms-overrides.css?v=20261116">
+  <link rel="stylesheet" href="assets/css/cms-overrides.css?v=20261123">
 </head>
 
 <body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
@@ -1615,6 +1615,35 @@
   </script>
   <script src="assets/js/cms-state-public.js?v=20261116"></script>
   <script src="assets/js/cms-runtime.js?v=20261116"></script>
+  <!-- WebChat Widget -->
+  <script>
+    window.WEBCHAT_API_URL = 'https://api.sonjog.net';
+    window.WEBCHAT_WS_URL = 'wss://api.sonjog.net';
+
+    (function(w,d,s,o,f,js,fjs){
+      w['WebChatWidget']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
+      js=d.createElement(s);
+      fjs=d.getElementsByTagName(s)[0];
+      js.id=o;
+      js.src=f;
+      js.async=1;
+
+      js.onerror = function() {
+        console.error('WebChat: Failed to load widget script from ' + f);
+      };
+
+      fjs.parentNode.insertBefore(js,fjs);
+    })(window,document,'script','webchat','https://ott.sonjog.net/widget/webchat.js');
+
+    setTimeout(function() {
+      if (typeof window.webchat === 'function') {
+        window.webchat('init', { widgetKey: 'n8tS5xjN8zkkFTiKOaiaiMKrpcW-6zTR3Ob9aeJt0j0' });
+      } else {
+        console.error('WebChat: Widget failed to initialize. Verify the script URL is accessible.');
+      }
+    }, 2000);
+  </script>
+  <!-- End WebChat Widget -->
 </body>
 
 </html>
